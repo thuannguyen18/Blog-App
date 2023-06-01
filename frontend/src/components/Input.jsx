@@ -7,7 +7,7 @@ function Input({ label, htmlFor, id, type, placeholder, value, onChange }) {
             </label>
             <input
                 value={value}
-                className="w-full h-12 shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="w-full h-14 shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 id={id}
                 type={type}
                 placeholder={placeholder}

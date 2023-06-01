@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const AppContext = createContext();
@@ -7,7 +8,7 @@ const initalState = {
     name: '',
     email: '',
     password: '',
-    loading: false
+    loading: false,
 }
 
 function reducer(state, action) {
@@ -27,6 +28,9 @@ function reducer(state, action) {
         case 'LOADING': {
             return { ...state, loading: true };
         }
+        case "AUTH_SUCCESS": {
+            return { ...state, isAuth: true };
+        }
         default: return new Error('Invalid action');
     }
 }
@@ -35,6 +39,8 @@ function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initalState);
     const { name, email, password } = state;
 
+    const navigate = useNavigate();
+
     const setName = (value) => dispatch({ type: 'SET_NAME', payload: value });
     const setEmail = (value) => dispatch({ type: 'SET_EMAIL', payload: value });
     const setPassword = (value) => dispatch({ type: 'SET_PASSWORD', payload: value });
@@ -42,8 +48,8 @@ function AppProvider({ children }) {
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
         try {
-            const response = await axios.post('http://localhost:3500/auth/register', { username: name, email, password });
-            console.log(response);
+            await axios.post('http://localhost:3500/auth/register', { username: name, email, password });
+            navigate("/login");
         } catch (error) {
             console.log(error);
         }
@@ -54,11 +60,14 @@ function AppProvider({ children }) {
         dispatch({ type: 'LOADING' });
         try {
             const response = await axios.post('http://localhost:3500/auth/login', { email, password });
-            console.log(response);
+            const token = response.data.accessToken;
+            if (token) {
+                localStorage.setItem("access_token", token);
+                navigate("/");
+            }
         } catch (error) {
             console.log(error);
         }
-        console.log('???');
         dispatch({ type: 'SUBMITTED' });
     }
 

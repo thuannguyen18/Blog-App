@@ -1,21 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import "./App.css";
 
 function App() {
+
+    const LogOut = () => <button onClick={() => localStorage.clear()}>logout</button>
+
     return (
-        <Router>
+        <>
             <Header />
             <main className="container mx-auto">
                 <Routes>
-                    <Route path="/" element={<>HOME PAGE</>} />
+                    <Route path="/" element={<LogOut />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </main>
-        </Router>
+        </>
     );
 }
 
