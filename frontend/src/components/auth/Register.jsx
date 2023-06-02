@@ -21,7 +21,7 @@ function Register() {
                     htmlFor="username"
                     id="username"
                     type="text"
-                    placeholder="Username"
+                    placeholder="John Doe"
                     onChange={setName}
                 />
                 <Input
@@ -30,7 +30,7 @@ function Register() {
                     htmlFor="email"
                     id="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="email@example.com"
                     onChange={setEmail}
                 />
                 <Input

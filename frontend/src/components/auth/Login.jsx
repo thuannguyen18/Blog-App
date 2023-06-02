@@ -19,7 +19,7 @@ function Login() {
                     htmlFor="email"
                     id="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="email@example.com"
                     onChange={setEmail}
                 />
                 <Input

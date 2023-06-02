@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
 import axios from "axios";
+import reducer from "./reducer";
 
 const AppContext = createContext();
 
@@ -13,41 +14,6 @@ const initalState = {
     isAuthenticated: false,
     username: "",
     userEmail: "",
-}
-
-function reducer(state, action) {
-    switch (action.type) {
-        case 'SET_NAME': {
-            return { ...state, name: action.payload };
-        }
-        case 'SET_EMAIL': {
-            return { ...state, email: action.payload };
-        }
-        case 'SET_PASSWORD': {
-            return { ...state, password: action.payload };
-        }
-        case 'SUBMITTED': {
-            return { ...state, loading: false };
-        }
-        case 'LOADING': {
-            return { ...state, loading: true };
-        }
-        case "AUTH_SUCCESS": {
-            return { ...state, isAuthenticated: true };
-        }
-        case "FORM_DATA": {
-            return { ...state, username: action.payload.username, userEmail: action.payload.email };
-        }
-        case "LOG_OUT": {
-            return { 
-                ...state, 
-                isAuthenticated: false,
-                email: "",
-                password: ""
-            };
-        }
-        default: return new Error('Invalid action');
-    }
 }
 
 function AppProvider({ children }) {
@@ -63,7 +29,8 @@ function AppProvider({ children }) {
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
         try {
-            await axios.post('http://localhost:3500/auth/register', { username: name, email, password });
+            const formData = { username: name, email, password };
+            await axios.post('http://localhost:3500/auth/register', formData);
             navigate("/login");
         } catch (error) {
             console.log(error);
@@ -74,13 +41,16 @@ function AppProvider({ children }) {
     const signInSubmit = async () => {
         dispatch({ type: 'LOADING' });
         try {
-            const response = await axios.post('http://localhost:3500/auth/login', { email, password });
+            const formData = { email, password };
+            const response = await axios.post('http://localhost:3500/auth/login', formData);
             const token = response.data.accessToken;
+            
             if (token) {
                 localStorage.setItem("access_token", token);
                 dispatch({ type: "AUTH_SUCCESS" });
-                navigate("/dashboard");
+                navigate("/post");
             }
+            
         } catch (error) {
             console.log(error);
         }

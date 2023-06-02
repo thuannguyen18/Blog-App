@@ -8,8 +8,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import { useGlobalContext } from "./context/context";
 
 function App() {
-    const { isAuthenticated, getUser, logout } = useGlobalContext();
-    const LogOut = () => <button onClick={logout}>logout</button>
+    const { isAuthenticated, getUser } = useGlobalContext();
 
     useEffect(() => {
         getUser();
@@ -20,10 +19,14 @@ function App() {
             <Header />
             <main className="container mx-auto">
                 <Routes>
-                    <Route path="/" element={<LogOut />} />
+                    // Public Route
+                    <Route path="/" element={<>Home Page</>} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/dashboard" element={<PrivateRoute auth={{ isAuthenticated }}>Dash Board & <LogOut /></PrivateRoute>} />
+                    // Private Route
+                    <Route path="/post" element={<PrivateRoute auth={{ isAuthenticated }}>Post</PrivateRoute>} />
+                    <Route path="/user" element={<PrivateRoute auth={{ isAuthenticated }}>User</PrivateRoute>} />
+                    <Route path="/settings" element={<PrivateRoute auth={{ isAuthenticated }}>Settings</PrivateRoute>} />
                 </Routes>
             </main>
         </>
