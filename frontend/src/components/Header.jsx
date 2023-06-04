@@ -6,7 +6,7 @@ import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
 import { useGlobalContext } from "../context/context";
-import UserAvatar from "./UserAvatar";
+import UserAvatar from "./user/UserAvatar";
 
 function Header() {
     const { isAuthenticated, username, userEmail, logout } = useGlobalContext();
@@ -31,24 +31,24 @@ function Header() {
             </Link>
             <Tippy
                 render={attrs => (
-                    <div className="box w-80 shadow-3xl rounded-xl p-2.5" tabIndex="-1" {...attrs}>
-                        <Link className="flex items-center h-14 px-1 rounded-xl hover:bg-zinc-100" to="/user">
-                            <UserAvatar />
+                    <div className="box w-80 shadow-3xl rounded-xl p-2.5 bg-white" tabIndex="-1" {...attrs}>
+                        <Link className="flex items-center h-14 px-2 rounded-xl hover:bg-zinc-100" to="/user">
+                            <UserAvatar height="12" weight="12" />
                             <span className="ml-1 text-lg font-semibold">{username}</span>
                         </Link>
-                        <Link className="flex items-center h-14 mt-2.5 px-1 rounded-xl hover:bg-zinc-100" to="/settings">
-                            <FiSettings className="text-2xl" />
-                            <span className="ml-2 font-semibold">Settings</span>
+                        <Link className="flex items-center h-14 mt-2.5 px-2 rounded-xl hover:bg-zinc-100" to="/settings">
+                            <FiSettings className="text-2xl mr-2" />
+                            <span className="font-semibold">Settings</span>
                         </Link>
                         <button
-                            className="flex items-center h-14 mt-2.5 px-1 rounded-xl hover:bg-zinc-100 w-full"
+                            className="flex items-center h-14 mt-2.5 px-2 rounded-xl hover:bg-zinc-100 w-full"
                             onClick={() => {
                                 logout();
                                 setVisible(false);
                             }}
                         >
-                            <FiLogOut className="text-2xl" />
-                            <span className="ml-2 font-semibold">Log Out</span>
+                            <FiLogOut className="text-2xl mr-2" />
+                            <span className="font-semibold">Log Out</span>
                         </button>
                     </div>
                 )}
@@ -61,7 +61,7 @@ function Header() {
                     className="ml-6 text-slate-100 flex items-center cursor-pointer"
                     onClick={visible ? hide : show}
                 >
-                    <UserAvatar />
+                    <UserAvatar height="12s" weight="12" />
                 </div>
             </Tippy>
         </>

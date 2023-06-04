@@ -22,7 +22,13 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, 'Password is required']
-    }
+    },
+    profilePictureURL: { 
+        type: String 
+    },
+    blogs: {
+        type: [] // BlogSchema
+    } 
 });
 
 module.exports = mongoose.model('User', UserSchema);

@@ -76,6 +76,10 @@ function AppProvider({ children }) {
         }
     }
 
+    const upLoadFile = () => {
+        
+    }
+
     return (
         <AppContext.Provider
             value={{

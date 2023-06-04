@@ -1,6 +1,4 @@
 const asyncHandler = require('express-async-handler');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const getUser = asyncHandler(async (req, res) => {
@@ -9,4 +7,8 @@ const getUser = asyncHandler(async (req, res) => {
     res.status(200).json({ user });
 });
 
-module.exports = { getUser }
+const updateUser = asyncHandler(async (req, res) => {
+    res.send("Update");
+});
+
+module.exports = { getUser, updateUser }
