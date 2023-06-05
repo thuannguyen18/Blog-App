@@ -9,7 +9,7 @@ import { useGlobalContext } from "../context/context";
 import UserAvatar from "./user/UserAvatar";
 
 function Header() {
-    const { isAuthenticated, username, userEmail, logout } = useGlobalContext();
+    const { isAuthenticated, userName, logout } = useGlobalContext();
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
@@ -34,7 +34,7 @@ function Header() {
                     <div className="box w-80 shadow-3xl rounded-xl p-2.5 bg-white" tabIndex="-1" {...attrs}>
                         <Link className="flex items-center h-14 px-2 rounded-xl hover:bg-zinc-100" to="/user">
                             <UserAvatar height="12" weight="12" />
-                            <span className="ml-1 text-lg font-semibold">{username}</span>
+                            <span className="ml-1 text-lg font-semibold">{userName}</span>
                         </Link>
                         <Link className="flex items-center h-14 mt-2.5 px-2 rounded-xl hover:bg-zinc-100" to="/settings">
                             <FiSettings className="text-2xl mr-2" />

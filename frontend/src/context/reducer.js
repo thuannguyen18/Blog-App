@@ -21,7 +21,7 @@ function reducer(state, action) {
         case "SET_USER_NAME": {
             return {
                 ...state,
-                username: action.payload
+                userName: action.payload
             }
         }
         case "SET_USER_EMAIL": {
@@ -57,15 +57,9 @@ function reducer(state, action) {
         case "GET_USER": {
             return { 
                 ...state, 
-                username: action.payload.username, 
+                userName: action.payload.username, 
                 userEmail: action.payload.email, 
             };
-        }
-        case "UPDATE_USER": {
-            return {
-                ...state,
-                loading: false,
-            }
         }
         case "LOG_OUT": {
             return { 

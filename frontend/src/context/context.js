@@ -12,7 +12,7 @@ const initalState = {
     password: '',
     loading: false,
     isAuthenticated: false,
-    username: "",
+    userName: "",
     userEmail: "",
     userPassword: ""
 }
@@ -82,10 +82,16 @@ function AppProvider({ children }) {
     }
 
     const updateUser = async () => {
-        const { username, userEmail } = state;
-        dispatch({ type: "LOADING" })
+        const { userName, userEmail, userPassword } = state;
+
+        dispatch({ type: "LOADING" });
+
         try {
-            const changedData = { username, email: userEmail }
+            const changedData = { 
+                username: userName, 
+                email: userEmail,
+                password: userPassword
+            }
 
             const token = localStorage.getItem("access_token");
             const { UserInfo: { id: userId } } = jwt(token);
@@ -94,6 +100,9 @@ function AppProvider({ children }) {
             });
 
             dispatch({ type: "SUBMITTED" });
+
+            navigate("/user");
+
         } catch (error) {
             console.log(error);
         }

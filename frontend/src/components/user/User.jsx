@@ -7,7 +7,7 @@ import UserAvatar from "./UserAvatar";
 import { useGlobalContext } from "../../context/context";
 
 function User() {
-    const { username, userEmail } = useGlobalContext();
+    const { userName, userEmail } = useGlobalContext();
     const [visible, setVisible] = useState(false);
     const hiddenFileInput = useRef(null);
 
@@ -60,7 +60,7 @@ function User() {
                     </div>
                 </Tippy>
                 <div className="text-center pt-20 mb-8">
-                    <h2 className="text-2xl font-semibold">{username}</h2>
+                    <h2 className="text-2xl font-semibold">{userName}</h2>
                     <h3 className="">{userEmail}</h3>
                 </div>
                 User's Blogs
