@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Password is required']
     },
     profilePictureURL: { 
-        type: String 
+        type: String,
     },
     blogs: {
         type: [] // BlogSchema

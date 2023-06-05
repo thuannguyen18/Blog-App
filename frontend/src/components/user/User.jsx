@@ -56,7 +56,7 @@ function User() {
                         className="relative"
                         onClick={visible ? hide : show}
                     >
-                        <UserAvatar height="40" weight="40" isProfile />
+                        <UserAvatar isProfile />
                     </div>
                 </Tippy>
                 <div className="text-center pt-20 mb-8">

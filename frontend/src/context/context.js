@@ -14,7 +14,8 @@ const initalState = {
     isAuthenticated: false,
     userName: "",
     userEmail: "",
-    userPassword: ""
+    userPassword: "",
+    userAvatar: null,
 }
 
 function AppProvider({ children }) {
@@ -56,10 +57,12 @@ function AppProvider({ children }) {
                 navigate("/post");
             }
             
+            dispatch({ type: 'SUBMITTED' });
+            
         } catch (error) {
             console.log(error);
+            dispatch({ type: 'SUBMITTED' });
         }
-        dispatch({ type: 'SUBMITTED' });
     }
 
     const logout = () => {
@@ -74,8 +77,10 @@ function AppProvider({ children }) {
             const response = await axios.get(`http://localhost:3500/user/${userId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            const { user: { username, email } } = response.data;
-            dispatch({ type: "GET_USER", payload: { username, email }});
+            console.log(response.data);
+            const { user: { username, email, profilePictureURL } } = response.data;
+            console.log(profilePictureURL);
+            dispatch({ type: "GET_USER", payload: { username, email, profilePictureURL }});
         } catch (error) {
             console.log(error);
         }
@@ -106,7 +111,7 @@ function AppProvider({ children }) {
         } catch (error) {
             console.log(error);
         }
-    }   
+    } 
 
     return (
         <AppContext.Provider

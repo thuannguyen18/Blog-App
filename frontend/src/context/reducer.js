@@ -40,6 +40,7 @@ function reducer(state, action) {
             return { 
                 ...state, 
                 loading: false, 
+                userPassword: ""
             };
         }
         case 'LOADING': {
@@ -59,6 +60,7 @@ function reducer(state, action) {
                 ...state, 
                 userName: action.payload.username, 
                 userEmail: action.payload.email, 
+                userAvatar: action.payload.profilePictureURL
             };
         }
         case "LOG_OUT": {

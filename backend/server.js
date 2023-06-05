@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const helmet = require("helmet");
 
 const connectDB = require('./config/dbConnection');
-const verifyToken = require('./middlewares/verifyToken');
 
 dotenv.config();
 
@@ -20,6 +19,8 @@ app.use(cookieParser());
 app.use(helmet());
 
 app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", require("./routes/authRoute"));
 app.use("/user", require("./routes/userRoute"));

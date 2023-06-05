@@ -50,6 +50,10 @@ const login = asyncHandler(async (req, res) => {
     // Check password
     const match = await bcrypt.compare(password, user.password);
 
+    if (!match) {
+        return res.status(400).json({ message: "Email or password is not correct" });
+    }
+
     if (user && match) {
         const accessToken = jwt.sign(
             {

@@ -31,8 +31,25 @@ const updateUser = asyncHandler(async (req, res) => {
     }
 
     await user.save();
-    
+
     res.status(200).json({ message: "Update success" });
 });
 
-module.exports = { getUser, updateUser }
+
+const uploadFile = asyncHandler(async (req, res) => {
+    const { avatar } = req.body;
+
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+        return res.status(400).json({ message: "User not found" });
+    }
+
+    user.profilePictureURL = avatar;
+
+    await user.save();
+
+    res.json({ message: "Successfully uploaded files" });
+});
+
+module.exports = { getUser, updateUser, uploadFile }
