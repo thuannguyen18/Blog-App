@@ -61,7 +61,7 @@ function Header() {
                     className="ml-6 text-slate-100 flex items-center cursor-pointer"
                     onClick={visible ? hide : show}
                 >
-                    <UserAvatar height="12s" weight="12" />
+                    <UserAvatar height="12" weight="12" />
                 </div>
             </Tippy>
         </>

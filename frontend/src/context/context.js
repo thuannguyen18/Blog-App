@@ -14,6 +14,7 @@ const initalState = {
     isAuthenticated: false,
     username: "",
     userEmail: "",
+    userPassword: ""
 }
 
 function AppProvider({ children }) {
@@ -25,6 +26,10 @@ function AppProvider({ children }) {
     const setName = (value) => dispatch({ type: 'SET_NAME', payload: value });
     const setEmail = (value) => dispatch({ type: 'SET_EMAIL', payload: value });
     const setPassword = (value) => dispatch({ type: 'SET_PASSWORD', payload: value });
+
+    const setUserName = (value) => dispatch({ type: "SET_USER_NAME", payload: value });
+    const setUserEmail = (value) => dispatch({ type: "SET_USER_EMAIL", payload: value });
+    const setUserPassword = (value) => dispatch({ type: "SET_USER_PASSWORD", payload: value });
 
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
@@ -66,19 +71,33 @@ function AppProvider({ children }) {
         try {
             const token = localStorage.getItem("access_token");
             const { UserInfo: { id: userId } } = jwt(token);
-            const { data } = await axios.get(`http://localhost:3500/user/${userId}`, {
+            const response = await axios.get(`http://localhost:3500/user/${userId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            const { user: { username, email } } = data;
-            dispatch({ type: "FORM_DATA", payload: { username, email }});
+            const { user: { username, email } } = response.data;
+            dispatch({ type: "GET_USER", payload: { username, email }});
         } catch (error) {
             console.log(error);
         }
     }
 
-    const upLoadFile = () => {
-        
-    }
+    const updateUser = async () => {
+        const { username, userEmail } = state;
+        dispatch({ type: "LOADING" })
+        try {
+            const changedData = { username, email: userEmail }
+
+            const token = localStorage.getItem("access_token");
+            const { UserInfo: { id: userId } } = jwt(token);
+            await axios.patch(`http://localhost:3500/user/${userId}`, changedData, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+
+            dispatch({ type: "SUBMITTED" });
+        } catch (error) {
+            console.log(error);
+        }
+    }   
 
     return (
         <AppContext.Provider
@@ -90,7 +109,11 @@ function AppProvider({ children }) {
                 signUpSubmit,
                 signInSubmit,
                 logout,
-                getUser
+                setUserName,
+                setUserEmail,
+                setUserPassword,
+                getUser,
+                updateUser
             }}
         >
             {children}
