@@ -9,7 +9,6 @@ function PostEditor() {
         setTitle,
         setContent,
         createBlog,
-        updateBlog,
         loading
     } = useGlobalContext();
 

@@ -5,7 +5,12 @@ import { useEffect } from "react";
 function PostDetail() {
     const navigate = useNavigate();
     const { id } = useParams();
-    const { getBlog, article, deleteBlog } = useGlobalContext();
+    const { 
+        getBlog, 
+        articleTitle, 
+        articleContent, 
+        deleteBlog 
+    } = useGlobalContext();
 
     useEffect(() => {
         getBlog(id);
@@ -16,14 +21,14 @@ function PostDetail() {
     }
    
     const handleEdit = () => {
-        navigate("/editor");
+        navigate("/update", { state: id });
     }
 
     return (
         <div>
             {id}
-            <h1>{article.title}</h1>
-            <p>{article.content}</p>
+            <h1>{articleTitle}</h1>
+            <p>{articleContent}</p>
             <button onClick={handleEdit}>Edit</button>
             <button onClick={handleDelete}>Delete</button>
         </div>

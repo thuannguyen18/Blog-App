@@ -19,7 +19,8 @@ const initalState = {
     title: "",
     content: "",
     blogs: [],
-    article: ""
+    articleTitle: "",
+    articleContent: ""
 }
 
 function AppProvider({ children }) {
@@ -38,6 +39,9 @@ function AppProvider({ children }) {
 
     const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value }); 
     const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value }); 
+
+    const setTitleUpdate = (value) => dispatch({ type: "SET_TITLE_UPDATE", payload: value }); 
+    const setContentUpdate = (value) => dispatch({ type: "SET_CONTENT_UPDATE", payload: value }); 
 
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
@@ -167,9 +171,12 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            console.log(response.data.blog);
 
-            dispatch({ type: "GET_BLOG_DETAIL", payload: response.data.blog });
+            const title = response.data.blog.title;
+            const content = response.data.blog.content;
+            const data = { title, content };
+
+            dispatch({ type: "GET_BLOG_DETAIL", payload: data });
         } catch (error) {
             console.log(error);
         }
@@ -216,14 +223,22 @@ function AppProvider({ children }) {
     }
 
     const updateBlog = async (id) => {
+        const { articleTitle, articleContent } = state;
         try {
             const token = localStorage.getItem("access_token");
 
-            await axios.patch(`http://localhost:3500/${id}`, {
+            const updatedData = { 
+                title: articleTitle, 
+                content: articleContent 
+            };
+
+            await axios.patch(`http://localhost:3500/blog/${id}`, updatedData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
+
+            navigate("/user");
         } catch (error) {
             console.log(error);
         }
@@ -252,6 +267,8 @@ function AppProvider({ children }) {
                 createBlog,
                 updateBlog,
                 deleteBlog,
+                setTitleUpdate,
+                setContentUpdate
             }}
         >
             {children}

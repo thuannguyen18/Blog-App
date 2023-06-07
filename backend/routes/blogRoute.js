@@ -5,7 +5,6 @@ const verifyToken = require("../middlewares/verifyToken");
 const router = express.Router();
 
 router.use(verifyToken);
-
 router.get("/", blogController.getAllBlogs);
 router.post("/", blogController.createBlog);
 router.get("/:id", blogController.getBlog);

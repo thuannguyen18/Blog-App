@@ -9,6 +9,7 @@ import User from "./components/user/User";
 import Settings from "./components/user/Settings";
 import PostEditor from "./components/post/PostEditor";
 import PostDetail from "./components/post/PostDetail";
+import PostUpdate from "./components/post/PostUpdate";
 import { useGlobalContext } from "./context/context";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                     <Route path="/user" element={<PrivateRoute auth={{ isAuthenticated }}><User /></PrivateRoute>} />
                     <Route path="/settings" element={<PrivateRoute auth={{ isAuthenticated }}><Settings /></PrivateRoute>} />
                     <Route path="/blog/:id" element={<PrivateRoute auth={{ isAuthenticated }}><PostDetail /></PrivateRoute>} />
+                    <Route path="/update" element={<PrivateRoute auth={{ isAuthenticated }}><PostUpdate /></PrivateRoute>} />
                 </Routes>
             </main>
         </>

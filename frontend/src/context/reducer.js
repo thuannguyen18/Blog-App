@@ -94,7 +94,8 @@ function reducer(state, action) {
         case "GET_BLOG_DETAIL": {
             return {
                 ...state,
-                article: action.payload,
+                articleTitle: action.payload.title,
+                articleContent: action.payload.content,
             }
         }
         case "CREATED_BLOG": {
@@ -104,6 +105,18 @@ function reducer(state, action) {
                 title: "",
                 content: ""
             };
+        }
+        case "SET_TITLE_UPDATE": {
+            return {
+                ...state,
+                articleTitle: action.payload
+            }
+        } 
+        case "SET_CONTENT_UPDATE": {
+            return {
+                ...state,
+                articleContent: action.payload
+            }
         }
         default: return new Error('Invalid action');
     }
