@@ -2,17 +2,16 @@ import defaultAvatar from "../../assets/images/default.png";
 import "../../App.css";
 import { useGlobalContext } from "../../context/context";
 
-function UserAvatar({ width = "2", height = "2", isProfile }) {
+function UserAvatar({ width = "w-2", height = "h-2", isProfile }) {
     const { userAvatar } = useGlobalContext();
+
     const classes = isProfile ? "user-profile" : "";
 
     const avatar = userAvatar ? userAvatar : defaultAvatar;
 
-    console.log(userAvatar);
-
     return ( 
         <img
-            className={`w-${width} h-${height} ${classes} cursor-pointer rounded-full`}
+            className={`${width} ${height} ${classes} rounded-full`}
             src={avatar}
             alt="avatar"
         />

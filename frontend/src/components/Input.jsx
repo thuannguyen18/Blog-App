@@ -7,7 +7,9 @@ function Input({ label, htmlFor, id, type, placeholder, value, onChange }) {
                     className="w-full shadow appearance-none border rounded-lg py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     cols="30"
                     rows="10"
-                    placeholder="Short bio about you"
+                    placeholder={placeholder}
+                    onChange={(e) => onChange(e.target.value)}
+                    value={value}
                 >
                 </textarea>
             </div>

@@ -40,7 +40,7 @@ function reducer(state, action) {
             return { 
                 ...state, 
                 loading: false, 
-                userPassword: ""
+                userPassword: "",
             };
         }
         case 'LOADING': {
@@ -63,6 +63,18 @@ function reducer(state, action) {
                 userAvatar: action.payload.profilePictureURL
             };
         }
+        case "SET_TITLE": {
+            return {
+                ...state,
+                title: action.payload
+            }
+        }
+        case "SET_CONTENT": {
+            return {
+                ...state,
+                content: action.payload
+            }
+        }
         case "LOG_OUT": {
             return { 
                 ...state, 
@@ -70,6 +82,27 @@ function reducer(state, action) {
                 name: "",
                 email: "",
                 password: "",
+            };
+        }
+        case "GET_BLOGS": {
+            return {
+                ...state,
+                loading: false,
+                blogs: action.payload
+            }
+        }
+        case "GET_BLOG_DETAIL": {
+            return {
+                ...state,
+                article: action.payload,
+            }
+        }
+        case "CREATED_BLOG": {
+            return { 
+                ...state, 
+                loading: false,
+                title: "",
+                content: ""
             };
         }
         default: return new Error('Invalid action');

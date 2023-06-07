@@ -16,6 +16,10 @@ const initalState = {
     userEmail: "",
     userPassword: "",
     userAvatar: null,
+    title: "",
+    content: "",
+    blogs: [],
+    article: ""
 }
 
 function AppProvider({ children }) {
@@ -31,6 +35,9 @@ function AppProvider({ children }) {
     const setUserName = (value) => dispatch({ type: "SET_USER_NAME", payload: value });
     const setUserEmail = (value) => dispatch({ type: "SET_USER_EMAIL", payload: value });
     const setUserPassword = (value) => dispatch({ type: "SET_USER_PASSWORD", payload: value });
+
+    const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value }); 
+    const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value }); 
 
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
@@ -76,10 +83,8 @@ function AppProvider({ children }) {
             const { UserInfo: { id: userId } } = jwt(token);
             const response = await axios.get(`http://localhost:3500/user/${userId}`, {
                 headers: { Authorization: `Bearer ${token}` }
-            });
-            console.log(response.data);
+            })
             const { user: { username, email, profilePictureURL } } = response.data;
-            console.log(profilePictureURL);
             dispatch({ type: "GET_USER", payload: { username, email, profilePictureURL }});
         } catch (error) {
             console.log(error);
@@ -100,6 +105,7 @@ function AppProvider({ children }) {
 
             const token = localStorage.getItem("access_token");
             const { UserInfo: { id: userId } } = jwt(token);
+
             await axios.patch(`http://localhost:3500/user/${userId}`, changedData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
@@ -112,6 +118,116 @@ function AppProvider({ children }) {
             console.log(error);
         }
     } 
+
+    const uploadFile = async (url) => {
+        const formData = { avatar: url };
+
+        try {
+            const token = localStorage.getItem("access_token");
+            const { UserInfo: { id: userId } } = jwt(token);
+
+            await axios.post(`http://localhost:3500/user/${userId}/upload-file`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "multipart/form-data"
+                }
+            });    
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getAllBlogs = async () => {
+        dispatch({ type: "LOADING" });
+
+        try {
+            const token = localStorage.getItem("access_token");
+
+            const response = await axios.get("http://localhost:3500/blog", {
+                headers: { 
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            dispatch({ type: "GET_BLOGS", payload: response.data.blogs });
+        } catch (error) {
+            console.log(error);
+            dispatch({ type: "SUBMITTED" });
+        }
+    }
+
+    const getBlog = async (id) => {
+
+        try {
+            const token = localStorage.getItem("access_token");
+            
+            const response = await axios.get(`http://localhost:3500/blog/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            console.log(response.data.blog);
+
+            dispatch({ type: "GET_BLOG_DETAIL", payload: response.data.blog });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const createBlog = async () => {
+        const { title, content } = state;
+
+        dispatch({ type: "LOADING"});
+
+        try {
+            const token = localStorage.getItem("access_token");
+            const { UserInfo: { id } } = jwt(token);
+
+            const formData = { id, title, content };
+
+            await axios.post("http://localhost:3500/blog", formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+
+            dispatch({ type: "CREATED_BLOG" });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const deleteBlog = async (id) => {
+        try {
+            const token = localStorage.getItem("access_token");
+
+            await axios.delete(`http://localhost:3500/blog/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            navigate("/user");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const updateBlog = async (id) => {
+        try {
+            const token = localStorage.getItem("access_token");
+
+            await axios.patch(`http://localhost:3500/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <AppContext.Provider
@@ -127,7 +243,15 @@ function AppProvider({ children }) {
                 setUserEmail,
                 setUserPassword,
                 getUser,
-                updateUser
+                updateUser,
+                uploadFile,
+                setTitle,
+                setContent,
+                getAllBlogs,
+                getBlog,
+                createBlog,
+                updateBlog,
+                deleteBlog,
             }}
         >
             {children}

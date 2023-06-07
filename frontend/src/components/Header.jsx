@@ -25,15 +25,15 @@ function Header() {
     const navbarPrivate = (
         <>
 
-            <Link className="ml-6 text-slate-100 flex items-center" to="/">
-                <BsPencilSquare className="text-xl" />
-                <span className="ml-2">Write</span>
+            <Link className="ml-6 text-slate-100 flex items-center" to="/editor">
+                <BsPencilSquare className="text-lg" />
+                <span className="ml-2">New Article</span>
             </Link>
             <Tippy
                 render={attrs => (
                     <div className="box w-80 shadow-3xl rounded-xl p-2.5 bg-white" tabIndex="-1" {...attrs}>
                         <Link className="flex items-center h-14 px-2 rounded-xl hover:bg-zinc-100" to="/user">
-                            <UserAvatar height="12" weight="12" />
+                            <UserAvatar width="w-12" height="h-12" />
                             <span className="ml-1 text-lg font-semibold">{userName}</span>
                         </Link>
                         <Link className="flex items-center h-14 mt-2.5 px-2 rounded-xl hover:bg-zinc-100" to="/settings">
@@ -61,7 +61,7 @@ function Header() {
                     className="ml-6 text-slate-100 flex items-center cursor-pointer"
                     onClick={visible ? hide : show}
                 >
-                    <UserAvatar height="12" weight="12" />
+                    <UserAvatar width="w-12" height="h-12" />
                 </div>
             </Tippy>
         </>
