@@ -7,6 +7,7 @@ import reducer from "./reducer";
 const AppContext = createContext();
 
 const initalState = {
+    userId: "",
     name: '',
     email: '',
     password: '',
@@ -19,6 +20,7 @@ const initalState = {
     title: "",
     content: "",
     blogs: [],
+    userBlogs: [],
     articleTitle: "",
     articleContent: ""
 }
@@ -37,11 +39,11 @@ function AppProvider({ children }) {
     const setUserEmail = (value) => dispatch({ type: "SET_USER_EMAIL", payload: value });
     const setUserPassword = (value) => dispatch({ type: "SET_USER_PASSWORD", payload: value });
 
-    const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value }); 
-    const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value }); 
+    const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value });
+    const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value });
 
-    const setTitleUpdate = (value) => dispatch({ type: "SET_TITLE_UPDATE", payload: value }); 
-    const setContentUpdate = (value) => dispatch({ type: "SET_CONTENT_UPDATE", payload: value }); 
+    const setTitleUpdate = (value) => dispatch({ type: "SET_TITLE_UPDATE", payload: value });
+    const setContentUpdate = (value) => dispatch({ type: "SET_CONTENT_UPDATE", payload: value });
 
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
@@ -61,15 +63,18 @@ function AppProvider({ children }) {
             const formData = { email, password };
             const response = await axios.post('http://localhost:3500/auth/login', formData);
             const token = response.data.accessToken;
-            
+
+            const { UserInfo: { id } } = jwt(token);
+
+
             if (token) {
                 localStorage.setItem("access_token", token);
-                dispatch({ type: "AUTH_SUCCESS" });
-                navigate("/post");
+                dispatch({ type: "AUTH_SUCCESS", payload: id });
+                navigate("/blogs");
             }
-            
+
             dispatch({ type: 'SUBMITTED' });
-            
+
         } catch (error) {
             console.log(error);
             dispatch({ type: 'SUBMITTED' });
@@ -89,7 +94,7 @@ function AppProvider({ children }) {
                 headers: { Authorization: `Bearer ${token}` }
             })
             const { user: { username, email, profilePictureURL } } = response.data;
-            dispatch({ type: "GET_USER", payload: { username, email, profilePictureURL }});
+            dispatch({ type: "GET_USER", payload: { username, email, profilePictureURL } });
         } catch (error) {
             console.log(error);
         }
@@ -101,8 +106,8 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
 
         try {
-            const changedData = { 
-                username: userName, 
+            const changedData = {
+                username: userName,
                 email: userEmail,
                 password: userPassword
             }
@@ -121,7 +126,7 @@ function AppProvider({ children }) {
         } catch (error) {
             console.log(error);
         }
-    } 
+    }
 
     const uploadFile = async (url) => {
         const formData = { avatar: url };
@@ -135,8 +140,26 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data"
                 }
-            });    
-            
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getUserBlog = async (id) => {
+        dispatch({ type: "LOADING" });
+
+        try {
+            const token = localStorage.getItem("access_token");
+
+            const response = await axios.get(`http://localhost:3500/user/${id}/user-blog`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            dispatch({ type: "GET_USER_BLOGS", payload: response.data.blogs });
         } catch (error) {
             console.log(error);
         }
@@ -149,7 +172,7 @@ function AppProvider({ children }) {
             const token = localStorage.getItem("access_token");
 
             const response = await axios.get("http://localhost:3500/blog", {
-                headers: { 
+                headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
@@ -165,7 +188,7 @@ function AppProvider({ children }) {
 
         try {
             const token = localStorage.getItem("access_token");
-            
+
             const response = await axios.get(`http://localhost:3500/blog/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -185,7 +208,7 @@ function AppProvider({ children }) {
     const createBlog = async () => {
         const { title, content } = state;
 
-        dispatch({ type: "LOADING"});
+        dispatch({ type: "LOADING" });
 
         try {
             const token = localStorage.getItem("access_token");
@@ -227,9 +250,9 @@ function AppProvider({ children }) {
         try {
             const token = localStorage.getItem("access_token");
 
-            const updatedData = { 
-                title: articleTitle, 
-                content: articleContent 
+            const updatedData = {
+                title: articleTitle,
+                content: articleContent
             };
 
             await axios.patch(`http://localhost:3500/blog/${id}`, updatedData, {
@@ -262,6 +285,7 @@ function AppProvider({ children }) {
                 uploadFile,
                 setTitle,
                 setContent,
+                getUserBlog,
                 getAllBlogs,
                 getBlog,
                 createBlog,

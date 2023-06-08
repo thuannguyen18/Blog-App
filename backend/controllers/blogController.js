@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 const Blog = require("../models/Blog");
+const User = require("../models/User");
 
 const getAllBlogs = asyncHandler(async (req, res) => {
     const blogs = await Blog.find();
@@ -30,6 +31,10 @@ const createBlog = asyncHandler(async (req, res) => {
     }
 
     const note = await Blog.create({ user_id: id, title, content });
+
+    const user = await User.findById(id);
+    user.blogs.push(note);
+    await user.save();
 
     if (note) {
         return res.status(201).json({ message: "New blog created" });

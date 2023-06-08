@@ -52,6 +52,7 @@ function reducer(state, action) {
         case "AUTH_SUCCESS": {
             return { 
                 ...state, 
+                userId: action.payload,    
                 isAuthenticated: true, 
             };
         }
@@ -83,6 +84,13 @@ function reducer(state, action) {
                 email: "",
                 password: "",
             };
+        }
+        case "GET_USER_BLOGS": {
+            return {
+                ...state,
+                loading: false,
+                userBlogs: action.payload,
+            }
         }
         case "GET_BLOGS": {
             return {

@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const Blog = require("./Blog");
+
 const validateEmail = (email) => {
     const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return regEx.test(email);
@@ -27,7 +29,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
     },
     blogs: {
-        type: [] // BlogSchema
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Blog' }] // BlogSchema
     } 
 });
 

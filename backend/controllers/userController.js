@@ -12,6 +12,11 @@ const getUser = asyncHandler(async (req, res) => {
     res.status(200).json({ user });
 });
 
+const getUserBlog = asyncHandler(async (req, res) => {
+    const userBlog = await User.findById(req.params.id).populate("blogs");
+    res.json(userBlog);
+});
+
 const updateUser = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -52,4 +57,4 @@ const uploadFile = asyncHandler(async (req, res) => {
     res.json({ message: "Successfully uploaded files" });
 });
 
-module.exports = { getUser, updateUser, uploadFile }
+module.exports = { getUser, getUserBlog, updateUser, uploadFile }

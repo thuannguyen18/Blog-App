@@ -71,9 +71,9 @@ function Header() {
 
     return (
         <header className="h-16 bg-gray-800 px-5">
-            <div className="container mx-auto flex justify-between items-center h-full">
+            <div className="container mx-auto flex justify-between items-center h-full lg:w-2/3">
                 <div className="">
-                    <Link className="text-slate-100 text-2xl" to="/">MyBlog</Link>
+                    <Link className="text-slate-100 text-2xl font-bold" to="/">MyBlog</Link>
                 </div>
                 <nav className="flex items-center">
                     {navbar}

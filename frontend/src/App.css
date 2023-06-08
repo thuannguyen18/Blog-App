@@ -5,3 +5,7 @@
     transform: translateX(-50%);
     z-index: 999;
 }
+
+.blog-title {
+    background-color: #333;
+}

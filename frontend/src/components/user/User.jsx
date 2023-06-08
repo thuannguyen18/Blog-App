@@ -8,12 +8,13 @@ import Loading from "../Loading";
 import { useGlobalContext } from "../../context/context";
 
 function User() {
-    const { 
-        userName, 
-        userEmail, 
-        getAllBlogs, 
-        blogs,
-        loading
+    const {
+        userName,
+        userEmail,
+        getUserBlog,
+        userBlogs,
+        loading,
+        userId,
     } = useGlobalContext();
     // const hiddenFileInput = useRef(null);
 
@@ -28,13 +29,13 @@ function User() {
     // };
 
     useEffect(() => {
-        getAllBlogs();
+        getUserBlog(userId);
     }, []);
 
-    console.log(blogs);
+    console.log(userBlogs);
 
-    const renderBlogs = blogs.length < 1 ? (<div>No blogs.</div>) : blogs.map(item => (
-        <article className="border-b py-5">
+    const renderBlogs = userBlogs.length < 1 ? (<div>No blogs.</div>) : userBlogs.map(item => (
+        <article className="border-b py-5" key={item._id}>
             <div className="flex justify-between">
                 <span className="flex items-center">
                     <UserAvatar width="w-10" height="h-10" />
@@ -47,7 +48,16 @@ function User() {
             </div>
             <div className="mt-2">
                 <h2 className="text-2xl font-semibold">{item.title}</h2>
-                <p className="text-lg mt-2">{item.content} <Link to={`/blog/${item._id}`}>Read more</Link></p>
+                <p className="text-lg mt-2">
+                    {item.content.substring(0, 200)}... 
+                    <Link
+                        className="font-semibold"
+                        to={`/blog/${item._id}`}
+                    >
+                        Read more
+                    </Link>
+                </p>
+
             </div>
         </article>
     ));
@@ -61,10 +71,9 @@ function User() {
                     <h2 className="text-2xl font-semibold">{userName}</h2>
                     <h3 className="">{userEmail}</h3>
                 </div>
-                {/* My Blog */}
                 <div>
-                    <div>
-                        <span>My Blogs</span>
+                    <div className="border-b">
+                        <span className="text-lg">My Blogs</span>
                     </div>
                     {loading ? <div className="flex justify-center mt-10"><Loading /></div> : renderBlogs}
                 </div>

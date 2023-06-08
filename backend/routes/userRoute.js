@@ -8,6 +8,7 @@ const upload = multer({ dest: "uploads/" });
 
 router.use(verifyToken);
 router.get("/:id", userController.getUser);
+router.get("/:id/user-blog", userController.getUserBlog);
 router.patch("/:id", userController.updateUser);
 router.post("/:id/upload-file", upload.single("avatar"), userController.uploadFile);
 
