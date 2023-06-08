@@ -71,9 +71,8 @@ function User() {
                     <h2 className="text-2xl font-semibold">{userName}</h2>
                     <h3 className="">{userEmail}</h3>
                 </div>
-                <div>
+                <div className="px-4 lg:px-0">
                     <div className="border-b">
-                        <span className="text-lg">My Blogs</span>
                     </div>
                     {loading ? <div className="flex justify-center mt-10"><Loading /></div> : renderBlogs}
                 </div>

@@ -31,7 +31,7 @@ function PostDetail() {
     return (
         <>
             <div className="text-white blog-title">
-                <div className="container mx-auto py-6 lg:w-2/3">
+                <div className="container mx-auto py-6 px-4 lg:w-2/3 lg:px-0">
                     <h1 className="text-4xl font-semibold">{articleTitle}</h1>
                     <span className="flex items-center mt-8">
                         <UserAvatar width="w-10" height="h-10" />
@@ -49,7 +49,7 @@ function PostDetail() {
                     </span>
                 </div>
             </div>
-            <div className="container mx-auto lg:w-2/3">
+            <div className="container mx-auto px-4 lg:w-2/3 lg:px-0">
                 <p className="text-xl align-middle">{articleContent}</p>
             </div>
         </>

@@ -70,7 +70,7 @@ function Header() {
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
-        <header className="h-16 bg-gray-800 px-5">
+        <header className="h-16 bg-gray-800 px-5 lg:px-0">
             <div className="container mx-auto flex justify-between items-center h-full lg:w-2/3">
                 <div className="">
                     <Link className="text-slate-100 text-2xl font-bold" to="/">MyBlog</Link>
