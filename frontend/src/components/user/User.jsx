@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import 'tippy.js/dist/tippy.css';
 
@@ -42,7 +42,7 @@ function User() {
                     <h3 className="ml-2">{userName}</h3>
                 </span>
                 <button className="flex justify-center items-center border rounded w-12">
-                    <AiFillHeart className="mr-1" />
+                    <AiOutlineHeart className="mr-1" />
                     <span className="">0</span>
                 </button>
             </div>

@@ -54,7 +54,7 @@ const uploadFile = asyncHandler(async (req, res) => {
 
     await user.save();
 
-    res.json({ message: "Successfully uploaded files" });
+    res.json({ message: "Successfully uploaded files", file: user.profilePictureURL });
 });
 
 module.exports = { getUser, getUserBlog, updateUser, uploadFile }

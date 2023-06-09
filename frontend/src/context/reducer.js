@@ -76,9 +76,16 @@ function reducer(state, action) {
                 content: action.payload
             }
         }
+        case "SET_AVATAR": {
+            return {
+                ...state,
+                userAvatar: action.payload
+            }
+        }
         case "LOG_OUT": {
             return { 
                 ...state, 
+                userId: "",
                 isAuthenticated: false,
                 name: "",
                 email: "",
@@ -102,8 +109,12 @@ function reducer(state, action) {
         case "GET_BLOG_DETAIL": {
             return {
                 ...state,
+                loading: false,
                 articleTitle: action.payload.title,
                 articleContent: action.payload.content,
+                userNameBlog: action.payload.otherUserName,
+                userIdBlog: action.payload.otherUserId,
+                otherUserAvatar: action.payload.otherUserAvatar
             }
         }
         case "CREATED_BLOG": {

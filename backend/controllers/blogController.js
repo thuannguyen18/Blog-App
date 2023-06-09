@@ -4,7 +4,7 @@ const Blog = require("../models/Blog");
 const User = require("../models/User");
 
 const getAllBlogs = asyncHandler(async (req, res) => {
-    const blogs = await Blog.find();
+    const blogs = await Blog.find().populate("user_id");
 
     if (blogs.length < 1) {
         return res.status(400).json({ message: "Blogs not found" });
@@ -14,7 +14,7 @@ const getAllBlogs = asyncHandler(async (req, res) => {
 });
 
 const getBlog = asyncHandler(async (req, res) => {
-    const blog = await Blog.findById(req.params.id).select("-user_id");
+    const blog = await Blog.findById(req.params.id).select("-user_id").populate("user_id");
 
     if (!blog) {
         return res.status(400).json({ message: "Blog not found" });

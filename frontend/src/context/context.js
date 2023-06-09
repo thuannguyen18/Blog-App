@@ -16,13 +16,16 @@ const initalState = {
     userName: "",
     userEmail: "",
     userPassword: "",
-    userAvatar: null,
+    userAvatar: "",
     title: "",
     content: "",
     blogs: [],
     userBlogs: [],
     articleTitle: "",
-    articleContent: ""
+    articleContent: "",
+    userNameBlog: "",
+    userIdBlog: "",
+    otherUserAvatar: "",
 }
 
 function AppProvider({ children }) {
@@ -135,12 +138,14 @@ function AppProvider({ children }) {
             const token = localStorage.getItem("access_token");
             const { UserInfo: { id: userId } } = jwt(token);
 
-            await axios.post(`http://localhost:3500/user/${userId}/upload-file`, formData, {
+            const response = await axios.post(`http://localhost:3500/user/${userId}/upload-file`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data"
                 }
             });
+
+            dispatch({ type: "SET_AVATAR", payload: response.data.file });
 
         } catch (error) {
             console.log(error);
@@ -177,6 +182,8 @@ function AppProvider({ children }) {
                 }
             });
 
+            console.log(response.data.blogs)
+
             dispatch({ type: "GET_BLOGS", payload: response.data.blogs });
         } catch (error) {
             console.log(error);
@@ -185,7 +192,8 @@ function AppProvider({ children }) {
     }
 
     const getBlog = async (id) => {
-
+        dispatch({ type: "LOADING" });
+        
         try {
             const token = localStorage.getItem("access_token");
 
@@ -197,7 +205,17 @@ function AppProvider({ children }) {
 
             const title = response.data.blog.title;
             const content = response.data.blog.content;
-            const data = { title, content };
+            const otherUserName = response.data.blog.user_id.username;
+            const otherUserId = response.data.blog.user_id._id;
+            const otherUserAvatar = response.data.blog.user_id.profilePictureURL;
+
+            const data = { 
+                title, 
+                content, 
+                otherUserName, 
+                otherUserId, 
+                otherUserAvatar 
+            };
 
             dispatch({ type: "GET_BLOG_DETAIL", payload: data });
         } catch (error) {
