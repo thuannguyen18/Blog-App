@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaPen, FaTrashAlt } from "react-icons/fa"
 import { AiFillHeart, AiOutlinePlus } from "react-icons/ai";
 
@@ -11,6 +11,10 @@ import Loading from "../Loading";
 function PostDetail() {
     const navigate = useNavigate();
     const { id } = useParams();
+
+    const [follow, setFollow] = useState(false);
+    const [like, setLike] = useState(false);
+
     const {
         getBlog,
         articleTitle,
@@ -24,6 +28,8 @@ function PostDetail() {
         loading
     } = useGlobalContext();
 
+
+
     useEffect(() => {
         getBlog(id);
     }, []);
@@ -35,6 +41,10 @@ function PostDetail() {
     const handleEdit = () => {
         navigate("/update", { state: id });
     }
+
+    const handleFollow = () => setFollow(!follow);
+
+    const handleLike = () => setLike(!like);
 
     const buttons = userId === userIdBlog ? (
         <>
@@ -49,13 +59,15 @@ function PostDetail() {
         </>
     ) : (
         <>
-            <button className="flex items-center border ml-2 p-1 rounded hover:bg-zinc-500" onClick={handleEdit}>
-                <AiOutlinePlus className="mr-1" />
-                <span>Follow</span>
+            <button className="flex items-center border ml-2 p-1 rounded hover:bg-zinc-500" onClick={handleFollow}>
+                {follow ? "" :<AiOutlinePlus className="mr-1" />}
+                <span>{follow ? " Unfollow" : "Follow"}</span>
             </button>
-            <button className="flex items-center border border-green-500 rounded ml-2 p-1 hover:bg-green-500" onClick={handleDelete}>
+            <button className={`flex items-center border border-green-500 rounded ml-2 p-1 hover:bg-green-500 ${like && "bg-green-500"}`} onClick={handleLike}>
                 <AiFillHeart className="mr-2" />
-                <span className="tracking-wide">Like</span>
+                <span className="tracking-wide">
+                    {like ? "Unlike" : "Like"}
+                </span>
             </button>
         </>
     );

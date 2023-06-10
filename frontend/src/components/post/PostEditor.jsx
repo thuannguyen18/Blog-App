@@ -1,8 +1,11 @@
+import { useNavigate }from "react-router-dom";
 import Input from "../Input";
 import Loading from "../Loading";
 import { useGlobalContext } from "../../context/context";
 
 function PostEditor() {
+    const navigate = useNavigate();
+
     const {
         title,
         content,
@@ -15,7 +18,9 @@ function PostEditor() {
     const handleSubmit = e => {
         e.preventDefault();
         createBlog();
+        navigate("/blogs");
     }
+
 
     const button = loading ? <Loading /> : "Publish Article";
 
@@ -25,7 +30,7 @@ function PostEditor() {
                 <h1 className="text-4xl font-lg text-center mb-4">Start Creating Your Blog</h1>
                 <Input type="text" placeholder="Article Title" value={title} onChange={setTitle} />
                 <Input type="textarea" placeholder="Write your article (in markdown)" value={content} onChange={setContent} />
-                <button className="w-full h-12 lg:w-40 bg-gray-800 text-white text-xl float-right border rounded-lg">
+                <button className="w-full h-12 lg:w-40 bg-green-600 text-white text-xl float-right border rounded-lg">
                     {button}
                 </button>
             </form>

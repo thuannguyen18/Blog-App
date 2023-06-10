@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import HomePage from "./components/HomePage"
 import PrivateRoute from "./routes/PrivateRoute";
 import User from "./components/user/User";
 import Settings from "./components/user/Settings";
@@ -27,7 +28,7 @@ function App() {
             <main className="">
                 <Routes>
                     {/* Public Route */}
-                    <Route path="/" element={<>Home Page</>} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     {/* Private Route */}

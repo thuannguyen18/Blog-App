@@ -24,7 +24,7 @@ function Form({ title, to, link, buttonText, children }) {
             </div>
             {children}
             <button
-                className="w-full h-12 lg:w-28 mt-4 bg-gray-800 text-white text-xl float-right border rounded-lg"
+                className="w-full h-12 lg:w-28 mt-4 bg-green-600 text-white text-xl float-right border rounded-lg"
             >
                 {button}
             </button>

@@ -13,6 +13,7 @@ function Blogs() {
         userId,
         blogs,
         getAllBlogs,
+        loading
     } = useGlobalContext();
 
     useEffect(() => {
@@ -32,13 +33,13 @@ function Blogs() {
                     }
                     <h3 className="ml-2">{blog.user_id.username}</h3>
                 </span>
-                <button className="flex justify-center items-center border border-gray-800 rounded w-12">
-                    <AiOutlineHeart className="mr-1" />
-                    <span className="">0</span>
+                <button className="flex justify-center items-center border border-green-600 rounded w-12">
+                    <AiOutlineHeart className="mr-1 text-green-600" />
+                    <span className="text-green-600">0</span>
                 </button>
             </div>
             <div className="mt-2">
-                <h2 className="text-2xl font-semibold">{blog.title}</h2>
+                <h2 className="text-2xl font-semibold text-blue-700">{blog.title}</h2>
                 <p className="text-lg mt-2">
                     {blog.content.substring(0, 200)}...
                     <Link
@@ -52,6 +53,16 @@ function Blogs() {
             </div>
         </article>
     ));
+
+    if (loading) {
+        return (
+            <section className="container mx-auto py-6 px-4 lg:w-2/3 lg:px-0">
+                <span className="flex justify-center items-center">
+                    <Loading />
+                </span>
+            </section>
+        );
+    }
 
     return (
         <div className="container mx-auto lg:w-2/3">

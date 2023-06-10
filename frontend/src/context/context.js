@@ -19,6 +19,7 @@ const initalState = {
     userAvatar: "",
     title: "",
     content: "",
+    blogsPublic: [],
     blogs: [],
     userBlogs: [],
     articleTitle: "",
@@ -176,15 +177,20 @@ function AppProvider({ children }) {
         try {
             const token = localStorage.getItem("access_token");
 
+            if (!token) {
+                const response = await axios.get("http://localhost:3500");
+                console.log(response.data);
+                dispatch({ type: "GET_BLOGS_PUBLIC", payload: response.data.blogs });
+                return;
+            }
+
             const response = await axios.get("http://localhost:3500/blog", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
 
-            console.log(response.data.blogs)
-
-            dispatch({ type: "GET_BLOGS", payload: response.data.blogs });
+            dispatch({ type: "GET_BLOGS", payload: response.data.blogs.reverse() });
         } catch (error) {
             console.log(error);
             dispatch({ type: "SUBMITTED" });

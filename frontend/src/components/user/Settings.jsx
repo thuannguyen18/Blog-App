@@ -50,7 +50,7 @@ function Settings() {
                 <Input type="textarea" placeholder="Short bio about you"/>
                 <Input type="email" placeholder="Email" value={userEmail} onChange={setUserEmail}/>
                 <Input type="password" placeholder="New Password" value={userPassword} onChange={setUserPassword}/>
-                <button className="w-full h-12 mt-4 bg-gray-800 text-white text-xl float-right border rounded-lg">
+                <button className="w-full h-12 mt-4 bg-green-600 text-white text-xl float-right border rounded-lg">
                     {button}
                 </button>
             </form>

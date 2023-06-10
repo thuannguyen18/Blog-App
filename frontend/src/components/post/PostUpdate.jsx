@@ -34,7 +34,7 @@ function PostUpdate() {
                 <h1 className="text-4xl font-lg text-center mb-4">Edit Your Article</h1>
                 <Input type="text" placeholder="Article Title" value={articleTitle} onChange={setTitleUpdate} />
                 <Input type="textarea" placeholder="Write your article (in markdown)" value={articleContent} onChange={setContentUpdate} /> 
-                <button className="w-full h-12 lg:w-40 bg-gray-800 text-white text-xl float-right border rounded-lg">
+                <button className="w-full h-12 lg:w-40 bg-green-600 text-white text-xl float-right border rounded-lg">
                     Update Article
                 </button>
             </form>

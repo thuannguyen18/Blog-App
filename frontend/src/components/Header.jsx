@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPencilSquare } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
 import { FiSettings, FiLogOut } from "react-icons/fi"
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
@@ -16,16 +17,18 @@ function Header() {
 
     const navbarPublic = (
         <>
-            <Link className="ml-6 text-slate-100" to="/">Home</Link>
-            <Link className="ml-6 text-slate-100" to="/login">Sign in</Link>
-            <Link className="ml-6 text-slate-100" to="/register">Sign up</Link>
+            <Link className="ml-6 text-slate-900" to="/login">Sign in</Link>
+            <Link className="ml-6 text-slate-900" to="/register">Sign up</Link>
         </>
     );
 
     const navbarPrivate = (
         <>
-
-            <Link className="ml-6 text-slate-100 flex items-center" to="/editor">
+            <Link className="ml-6 text-slate-900 flex items-center" to="/blogs">
+                <CgNotes className="text-lg" />
+                <span className="ml-2">Blogs</span>
+            </Link>
+            <Link className="ml-6 text-slate-900 flex items-center" to="/editor">
                 <BsPencilSquare className="text-lg" />
                 <span className="ml-2">New Article</span>
             </Link>
@@ -58,7 +61,7 @@ function Header() {
                 placement="bottom-start"
             >
                 <div
-                    className="ml-6 text-slate-100 flex items-center cursor-pointer"
+                    className="ml-6 text-slate-900 flex items-center cursor-pointer"
                     onClick={visible ? hide : show}
                 >
                     <UserAvatar width="w-12" height="h-12" />
@@ -70,10 +73,10 @@ function Header() {
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
-        <header className="h-16 bg-gray-800 px-5 lg:px-0">
+        <header className="h-16 px-5 lg:px-0 border-b border-green-600">
             <div className="container mx-auto flex justify-between items-center h-full lg:w-2/3">
                 <div className="">
-                    <Link className="text-slate-100 text-2xl font-bold" to="/">MyBlog</Link>
+                    <Link className="text-green-600 text-2xl font-bold" to="/">MyBlog</Link>
                 </div>
                 <nav className="flex items-center">
                     {navbar}

@@ -25,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", require("./routes/authRoute"));
 app.use("/user", require("./routes/userRoute"));
 app.use("/blog", require("./routes/blogRoute"));
+app.use("/", require("./routes/publicRoute"));
 
 app.listen(process.env.PORT, (err) => {
     if (err) console.log(err);

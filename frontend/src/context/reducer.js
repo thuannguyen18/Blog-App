@@ -99,6 +99,13 @@ function reducer(state, action) {
                 userBlogs: action.payload,
             }
         }
+        case "GET_BLOGS_PUBLIC": {
+            return {
+                ...state,
+                loading: false,
+                blogsPublic: action.payload
+            }
+        }
         case "GET_BLOGS": {
             return {
                 ...state,

@@ -5,6 +5,7 @@ import 'tippy.js/dist/tippy.css';
 
 import UserAvatar from "./UserAvatar";
 import Loading from "../Loading";
+import NoBlog from "../NoBlog";
 import { useGlobalContext } from "../../context/context";
 
 function User() {
@@ -16,17 +17,6 @@ function User() {
         loading,
         userId,
     } = useGlobalContext();
-    // const hiddenFileInput = useRef(null);
-
-
-    // const handleClick = () => {
-    //     hiddenFileInput.current.click();
-    // }
-
-    // const handleChange = (e) => {
-    //     const fileUploaded = e.target.files[0];
-    //     uploadFile(URL.createObjectURL(fileUploaded));
-    // };
 
     useEffect(() => {
         getUserBlog(userId);
@@ -34,16 +24,16 @@ function User() {
 
     console.log(userBlogs);
 
-    const renderBlogs = userBlogs.length < 1 ? (<div>No blogs.</div>) : userBlogs.map(item => (
+    const renderBlogs = userBlogs.length < 1 ? (<NoBlog />) : userBlogs.map(item => (
         <article className="border-b py-5" key={item._id}>
             <div className="flex justify-between">
                 <span className="flex items-center">
                     <UserAvatar width="w-10" height="h-10" />
                     <h3 className="ml-2">{userName}</h3>
                 </span>
-                <button className="flex justify-center items-center border rounded w-12">
-                    <AiOutlineHeart className="mr-1" />
-                    <span className="">0</span>
+                <button className="flex justify-center items-center border border-green-600 rounded w-12">
+                    <AiOutlineHeart className="mr-1 text-green-600" />
+                    <span className="text-green-600">0</span>
                 </button>
             </div>
             <div className="mt-2">
