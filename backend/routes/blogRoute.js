@@ -7,8 +7,9 @@ const router = express.Router();
 router.use(verifyToken);
 router.get("/", blogController.getAllBlogs);
 router.post("/", blogController.createBlog);
-router.get("/:id", blogController.getBlog);
-router.patch("/:id", blogController.updateBlog);
-router.delete("/:id", blogController.deleteBlog);
+router.route("/:id")
+    .get(blogController.getBlog)
+    .patch(blogController.updateBlog)
+    .delete(blogController.deleteBlog);
 
-module.exports = router
+module.exports = router;

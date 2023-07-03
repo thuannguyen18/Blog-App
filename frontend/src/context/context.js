@@ -2,15 +2,16 @@ import { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
 import axios from "axios";
+
 import reducer from "./reducer";
 
 const AppContext = createContext();
 
 const initalState = {
     userId: "",
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
     loading: false,
     isAuthenticated: false,
     userName: "",
@@ -52,13 +53,18 @@ function AppProvider({ children }) {
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
         try {
-            const formData = { username: name, email, password };
+            const formData = { 
+                username: name, 
+                email, 
+                password 
+            };
             await axios.post('http://localhost:3500/auth/register', formData);
             navigate("/login");
+            dispatch({ type: 'SUBMITTED' });
         } catch (error) {
             console.log(error);
+            dispatch({ type: 'SUBMITTED' });
         }
-        dispatch({ type: 'SUBMITTED' });
     }
 
     const signInSubmit = async () => {

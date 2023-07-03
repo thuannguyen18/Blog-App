@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import { useGlobalContext } from "../context/context";
 import UserAvatar from "./user/UserAvatar";
 
@@ -20,7 +19,7 @@ function HomePage() {
                 </span>
             </div>
             <div className="mt-2">
-                <h2 className="text-2xl font-semibold text-blue-700">{blog.title}</h2>
+                <h2 className="text-2xl font-semibold text-green-700">{blog.title}</h2>
                 <p className="text-lg mt-2">
                     {blog.content.substring(0, 200)}...
                     <Link
