@@ -17,14 +17,17 @@ function Form({ title, to, link, buttonText, children }) {
     const button = loading ? <Loading /> : buttonText;
 
     return (
-        <form className="w-full lg:w-1/2 xl:w-2/5 p-6" onSubmit={handleSubmit}>
+        <form 
+            className="w-full md:w-96 p-6 border md:shadow-lg" 
+            onSubmit={handleSubmit}
+        >
             <div className="text-center mb-2">
                 <h1 className="text-4xl mb-3">{title}</h1>
                 <Link className="text-base hover:underline hover:underline-offset-2" to={to}>{link}</Link>
             </div>
             {children}
             <button
-                className="w-full h-12 lg:w-28 mt-4 bg-green-600 text-white text-xl float-right border rounded-lg"
+                className="w-full h-12 mt-4 bg-green-600 text-white text-xl float-right border rounded"
             >
                 {button}
             </button>

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
 import { useGlobalContext } from "./context/context";
 import { publicRoutes } from "./routes/public";
 import { privateRoutes } from './routes/private';
 import PrivateRoute from "./routes/private";
+import Header from "./components/Header";
 
 function App() {
     const { isAuthenticated, getUser } = useGlobalContext();

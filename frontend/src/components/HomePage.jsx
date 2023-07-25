@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 import UserAvatar from "./user/UserAvatar";
+import Banner from "./Banner";
 
 function HomePage() {
     const { getAllBlogs, blogsPublic, isAuthenticated } = useGlobalContext();
@@ -35,15 +36,10 @@ function HomePage() {
     ));
 
     return (
-        <section className="bg-green-600 h-44">
-            <div className="container mx-auto w-2/3 text-center pt-8">
-                <h1 className="text-white text-5xl font-semibold">MyBlog</h1>
-                <p className="text-white text-2xl mt-4">A place to share your knowledge.</p>
-            </div>
-            <div className="container mx-auto lg:w-2/3 mt-16">
-                {renderBlogs}
-            </div>
-        </section>
+        <div className="container mx-auto md:w-3/4">
+            <Banner />
+            {renderBlogs}
+        </div>
     )
 }
 

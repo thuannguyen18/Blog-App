@@ -11,7 +11,7 @@ function Login() {
     } = useGlobalContext();
 
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center md:h-[80vh]">
             <Form title="Sign in" to="/register" link="Need an account?" buttonText="Sign in">
                 <Input
                     value={email}
