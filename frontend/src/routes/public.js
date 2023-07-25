@@ -1,11 +1,11 @@
-import HomePage from "../components/HomePage";
-import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
+import Home from "pages/home";
+import Login from "pages/auth/login";
+import Register from "pages/auth/register";
 
 export const publicRoutes = [
     {
         path: '/',
-        element: HomePage
+        element: Home
     },
     {
         path: '/login',
@@ -15,5 +15,4 @@ export const publicRoutes = [
         path: '/register',
         element: Register
     }
-
 ];

@@ -1,8 +1,8 @@
-import Form from "../Form";
-import Input from "../Input";
-import { useGlobalContext } from "../../context/context";
+import Form from "components/Form";
+import Input from "components/Input";
+import { useGlobalContext } from "context/context";
 
-function Register() {
+export default function Register() {
     const {
         name,
         email,
@@ -46,5 +46,3 @@ function Register() {
         </div>
     );
 }
-
-export default Register;

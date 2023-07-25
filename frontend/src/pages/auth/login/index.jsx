@@ -1,8 +1,8 @@
-import Form from "../Form";
-import Input from "../Input";
-import { useGlobalContext } from "../../context/context";
+import Form from "components/Form";
+import Input from "components/Input";
+import { useGlobalContext } from "context/context";
 
-function Login() {
+export default function Login() {
     const {
         email,
         password,
@@ -35,5 +35,3 @@ function Login() {
         </div>
     );
 }
-
-export default Login;

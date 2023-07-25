@@ -17,14 +17,17 @@ function Header() {
 
     const navbarPublic = (
         <>
-            <Link className="ml-6 text-slate-900 text-lg" to="/login">
-                Sign in
+            <Link className="ml-6 text-slate-900" to="/login">
+                Contact
+            </Link>
+            <Link className="ml-6 text-slate-900" to="/login">
+                Log in
             </Link>
             <Link
-                className="ml-6 text-emerald-500 border border-emerald-500 text-lg p-1 rounded hover:bg-emerald-100"
+                className="ml-6 text-white bg-sky-500 p-2 rounded hover:bg-sky-600"
                 to="/register"
             >
-                Create an Account
+                Create Account
             </Link>
         </>
     );
@@ -81,8 +84,8 @@ function Header() {
 
     return (
         <header className="h-20">
-            <div className="container mx-auto flex justify-between items-center h-full md:w-3/4 border-b border-green-600">
-                <Link className="text-green-600 text-3xl font-bold" to="/">MyBlog</Link>
+            <div className="container mx-auto flex justify-between items-center h-full lg:w-2/3 border-b border-slate-300 px-4 lg:px-0">
+                <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                 <nav className="flex items-center">
                     {navbar}
                 </nav>
