@@ -17,14 +17,14 @@ export default function Header() {
 
     const navbarPublic = (
         <>
-            <Link className="ml-6 text-slate-900" to="/login">
+            <Link className="lg:text-lg ml-6 text-slate-900" to="/login">
                 Contact
             </Link>
-            <Link className="ml-6 text-slate-900" to="/login">
+            <Link className="lg:text-lg ml-6 text-slate-900" to="/login">
                 Log in
             </Link>
             <Link
-                className="ml-6 text-white bg-sky-500 p-2 rounded hover:bg-sky-600"
+                className="lg:text-lg ml-6 text-white bg-sky-500 p-2 rounded hover:bg-sky-600"
                 to="/register"
             >
                 Create Account
@@ -83,7 +83,7 @@ export default function Header() {
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
-        <header className="fixed top-0 right-0 left-0 z-10 h-20 shadow bg-white">
+        <header className="fixed top-0 right-0 left-0 z-10 h-20 shadow-lg bg-white">
             <div className="container mx-auto flex justify-between items-center h-full lg:w-3/4 px-4 lg:px-0">
                 <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                 <nav className="flex items-center">
