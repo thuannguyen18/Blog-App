@@ -1,54 +1,93 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useGlobalContext } from "context/context";
-import Article from "components/Article";
+import PopularArticle from "components/article/PopularArticle";
+import MayLikeArticle from "components/article/MayLikeArticle";
 import Banner from "components/Banner";
-import UserAvatar from "components/user/UserAvatar";
 
 export default function Home() {
-    const { getAllBlogs, blogsPublic, isAuthenticated } = useGlobalContext();
+    const { getAllBlogs, blogsPublic } = useGlobalContext();
+    const [allTopics, setAllTopics] = useState(true);
+    const [bestTopics, setBestTopics] = useState(false);
 
     useEffect(() => {
         getAllBlogs();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const renderBlogs = blogsPublic.length < 1 ? (<div>No blogs</div>) : blogsPublic.map(blog => (
-        // <article className="border-b py-5 px-4 lg:px-0" key={blog._id}>
-        //     <div className="flex justify-between">
-        //         <span className="flex items-center">
-        //             <UserAvatar width="w-10" height="h-10" isDefault={true} />
-        //             <h3 className="ml-2">{blog.user_id.username}</h3>
-        //         </span>
-        //     </div>
-        //     <div className="mt-2">
-        //         <h2 className="text-2xl font-semibold text-green-700">{blog.title}</h2>
-        //         <p className="text-lg mt-2">
-        //             {blog.content.substring(0, 200)}...
-        //             <Link
-        //                 className="font-semibold"
-        //                 to={`/blog/${blog._id}`}
-        //             >
-        //                 Read more
-        //             </Link>
-        //         </p>
-
-        //     </div>
-        // </article>
-        <Article
-            key={blog._id}
-            id={blog._id}
-            title={blog.title}
-            content={blog.content}
-            userName={blog.user_id.username}
-        />
-    ));
-
     return (
-        <div className="container mx-auto lg:w-2/3">
+        <>
             <Banner />
-            <div className="mt-12 grid grid-cols-2 gap-x-20 gap-y-10">
-                {renderBlogs}
+            <div className="container mx-auto mt-4 px-4 lg:px-0 lg:w-3/4">
+                {/* POPULAR BLOG */}
+                <h3 className="lg:text-xl font-semibold my-5">POPULAR ON MYBLOG</h3>
+                <div className="grid md:grid-cols-2 gap-8">
+                    {blogsPublic.map(({ _id, title, content, category, userId }) => (
+                        <PopularArticle
+                            key={_id}
+                            id={_id}
+                            title={title}
+                            content={content}
+                            category={category}
+                            userName={userId}
+                        />
+                    ))}
+                </div>
+
+                {/* YOU MAY LIKE THESE BLOG */}
+                <h3 className="lg:text-xl font-semibold mt-20 mb-5">YOU MAY LIKE THESE</h3>
+                <div className="grid md:grid-cols-4 gap-8">
+                    {blogsPublic.map(({ _id, title, userId }) => (
+                        <MayLikeArticle
+                            key={_id}
+                            id={_id}
+                            title={title}
+                            userName={userId}
+                        />
+                    ))}
+                </div>
+
+                {/* FOR YOU & BEST TOPICS */}
+                <div className="grid md:grid-cols-6 my-20">
+                    <div className="order-last col-span-6 lg:col-span-4 lg:order-first">
+                        <nav className="border-b border-slate-300">
+                            <button
+                                className={`${allTopics && "border-b-4 border-sky-600"}  text-lg font-semibold h-10 mr-4 w-32`}
+                                onClick={() => {
+                                    setAllTopics(true);
+                                    setBestTopics(false);
+                                }}
+                            >
+                                FOR YOU
+                            </button>
+                            <button
+                                className={`${bestTopics && "border-b-4 border-sky-600"} text-lg font-semibold h-10 w-40`}
+                                onClick={() => {
+                                    setAllTopics(false);
+                                    setBestTopics(true);
+                                }}
+                            >
+                                BEST TOPICS
+                            </button>
+                        </nav>
+                        <div className="pt-10">
+                            {blogsPublic.map(({ _id, title, content, category, userId }) => (
+                                <PopularArticle
+                                    key={_id}
+                                    id={_id}
+                                    title={title}
+                                    content={content}
+                                    category={category}
+                                    userName={userId}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="bg-green-200 col-spa-6n lg:col-span-2">
+
+                    </div>
+                </div>
             </div>
-        </div>
-    )
+
+        </>
+    );
 }

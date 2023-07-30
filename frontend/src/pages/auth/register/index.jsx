@@ -13,8 +13,14 @@ export default function Register() {
     } = useGlobalContext();
 
     return (
-        <div className="flex justify-center items-center md:h-[80vh]">
-            <Form title="Sign up" to="/login" link="Already have an account?" buttonText="Sign up">
+        <div className="flex justify-center items-center md:h-[100vh] pt-20">
+            <Form
+                title="Sign up"
+                to="/login"
+                text="Already have an account?"
+                buttonText="Sign up"
+                linkText="Sign in"
+            >
                 <Input
                     value={name}
                     label="Username"

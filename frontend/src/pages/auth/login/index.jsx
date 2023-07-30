@@ -11,8 +11,14 @@ export default function Login() {
     } = useGlobalContext();
 
     return (
-        <div className="flex justify-center items-center md:h-[80vh]">
-            <Form title="Sign in" to="/register" link="Need an account?" buttonText="Sign in">
+        <div className="flex justify-center items-center md:h-[100vh] pt-20">
+            <Form
+                title="Sign in"
+                to="/register"
+                text="Need an account?"
+                buttonText="Sign in"
+                linkText="Sign up"
+            >
                 <Input
                     value={email}
                     label="Email"
@@ -28,7 +34,7 @@ export default function Login() {
                     htmlFor="password"
                     id="password"
                     type="password"
-                    placeholder="Password" 
+                    placeholder="Password"
                     onChange={setPassword}
                 />
             </Form>

@@ -1,25 +1,20 @@
-import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import { useGlobalContext } from "./context/context";
 import { publicRoutes } from "./routes/public";
 import { privateRoutes } from './routes/private';
 import PrivateRoute from "./routes/private";
 import Header from "./components/Header";
+import NotFound from "pages/error";
 
-function App() {
-    const { isAuthenticated, getUser } = useGlobalContext();
-
-    // useEffect(() => {
-    //     if (isAuthenticated)
-    //         getUser();
-    // }, [isAuthenticated]);
+export default function App() {
+    const { isAuthenticated } = useGlobalContext();
 
     return (
         <>
             <Header />
             <main className="">
                 <Routes>
+                    <Route path="*" element={<NotFound />} />
                     {publicRoutes.map((route, index) => {
                         const Element = route.element;
                         return <Route key={index} path={route.path} element={<Element />} />;
@@ -39,5 +34,3 @@ function App() {
         </>
     );
 }
-
-export default App;

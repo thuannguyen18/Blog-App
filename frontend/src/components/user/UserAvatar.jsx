@@ -1,4 +1,4 @@
-import defaultAvatar from "../../assets/images/default.png";
+import defaultAvatar from "assets/images/default-avatar.webp";
 import "../../App.css";
 import { useGlobalContext } from "../../context/context";
 

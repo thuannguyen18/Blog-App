@@ -1,5 +1,4 @@
-
-function Loading() {
+export default function Loading() {
     return (
         <div role="status">
             <svg aria-hidden="true" className="inline w-8 h-8 mr-2 text-white animate-spin dark:text-gray-600 fill-green-700" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,5 +9,3 @@ function Loading() {
         </div>
     );
 }
-
-export default Loading;

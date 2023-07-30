@@ -9,7 +9,7 @@ import 'tippy.js/dist/tippy.css';
 import { useGlobalContext } from "../context/context";
 import UserAvatar from "./user/UserAvatar";
 
-function Header() {
+export default function Header() {
     const { isAuthenticated, userName, logout } = useGlobalContext();
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
@@ -83,8 +83,8 @@ function Header() {
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
-        <header className="h-20">
-            <div className="container mx-auto flex justify-between items-center h-full lg:w-2/3 border-b border-slate-300 px-4 lg:px-0">
+        <header className="fixed top-0 right-0 left-0 z-10 h-20 shadow bg-white">
+            <div className="container mx-auto flex justify-between items-center h-full lg:w-3/4 px-4 lg:px-0">
                 <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                 <nav className="flex items-center">
                     {navbar}
@@ -93,5 +93,3 @@ function Header() {
         </header>
     );
 }
-
-export default Header;
