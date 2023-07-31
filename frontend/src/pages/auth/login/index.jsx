@@ -11,7 +11,7 @@ export default function Login() {
     } = useGlobalContext();
 
     return (
-        <div className="flex justify-center items-center md:h-[100vh] pt-20">
+        <div className="flex justify-center items-center h-screen">
             <Form
                 title="Sign in"
                 to="/register"

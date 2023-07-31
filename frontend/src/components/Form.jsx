@@ -2,14 +2,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 import Loading from "./Loading";
 
-export default function Form({ 
-    title, 
-    to, 
-    text, 
-    buttonText,
-    linkText, 
-    children,
-}) {
+function Form({ title, to, text, buttonText, linkText, children }) {
     const { signUpSubmit, signInSubmit, loading } = useGlobalContext();
 
     const handleSubmit = (e) => {
@@ -23,7 +16,7 @@ export default function Form({
 
     return (
         <form 
-            className="w-full md:w-96 p-6 border md:shadow-lg" 
+            className="w-full  p-6 rounded-md md:w-96 lg:border lg:shadow-lg" 
             onSubmit={handleSubmit}
         >
             <div className="text-center mb-4">
@@ -35,7 +28,7 @@ export default function Form({
             >
                 {loading ? <Loading /> : buttonText}
             </button>
-            <span className="inline-block mt-2">
+            <span className="inline-block mt-4 text-sm">
                 {text}
                 <Link className="ml-1 text-sky-500 font-semibold hover:underline hover:underline-offset-2" to={to}>
                     {linkText}
@@ -44,3 +37,5 @@ export default function Form({
         </form>
     );
 }
+
+export default Form;

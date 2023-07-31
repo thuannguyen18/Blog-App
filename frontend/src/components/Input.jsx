@@ -1,13 +1,5 @@
 
-export default function Input({
-    label,
-    htmlFor,
-    id,
-    type,
-    placeholder,
-    value,
-    onChange
-}) {
+function Input({ label, htmlFor, id, type, placeholder, value, onChange }) {
     if (type === "textarea") {
         return (
             <div className="mb-6">
@@ -42,3 +34,4 @@ export default function Input({
     );
 }
 
+export default Input;
