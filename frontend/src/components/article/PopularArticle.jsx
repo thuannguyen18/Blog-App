@@ -4,22 +4,26 @@ import UserAvatar from "components/user/UserAvatar";
 
 export default function PopularArticle({ id, title, content, category, userName }) {
     return (
-        <article className="col-span-1 flex justify-between h-fit">
+        <article className="col-span-1 flex justify-between">
             <Link to="/login">
-                <img className="h-full w-full border" src={thumbnail} alt="thumbnail" />
+                <div className="h-28 w-28 md:h-38 md:w-38 lg:h-44 lg:w-48">
+                    <img className="object-cover h-full" src={thumbnail} alt="thumbnail" />
+                </div>
             </Link>
-            <div className="lg:flex lg:flex-col lg:justify-between pl-4 grow">
-                <div>
-                    <Link className="text-sm text-sky-500 block mb-2 hover:text-sky-600" to="/login">{category || "Programming Language"}</Link>
-                    <Link className="text-sm lg:text-base font-semibold" to="/login">{title}</Link>
+            <div className="grow pl-4 flex flex-col justify-between">
+                <Link className="text-sm text-sky-500 block mb-2 hover:text-sky-600" to="/login">{category || "Programming Language"}</Link>
+                <div className="mb-3 grow">
+                    <Link to="/login">
+                        <h2 className="max-h-[40px] text-sm lg:text-base font-semibold">{title}</h2>
+                    </Link>
                     <p className="hidden lg:block text-sm mt-2">
-                        {content.substring(0, 80)}...
-                        <Link
+                        {content.substring(0, 53)}
+                        {/* <Link
                             className="font-semibold"
                             to={`/blog/${id}`}
                         >
                             Read more
-                        </Link>
+                        </Link> */}
                     </p>
                 </div>
                 <div className="flex items-center mt-2">

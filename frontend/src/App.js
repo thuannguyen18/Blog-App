@@ -12,7 +12,7 @@ export default function App() {
     return (
         <>
             <Header />
-            <main className="">
+            <main className="app">
                 <Routes>
                     <Route path="*" element={<NotFound />} />
                     {publicRoutes.map((route, index) => {

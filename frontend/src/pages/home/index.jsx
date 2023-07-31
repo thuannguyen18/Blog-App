@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "context/context";
 import PopularArticle from "components/article/PopularArticle";
 import MayLikeArticle from "components/article/MayLikeArticle";
@@ -15,12 +15,12 @@ export default function Home() {
     }, []);
 
     return (
-        <>
+        <React.Fragment>
             <Banner />
             <div className="container mx-auto mt-4 px-4 lg:px-0 lg:w-3/4">
                 {/* POPULAR BLOG */}
                 <h3 className="lg:text-xl font-semibold my-5">POPULAR ON MYBLOG</h3>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2  md:gap-8">
                     {blogsPublic.map(({ _id, title, content, category, userId }) => (
                         <PopularArticle
                             key={_id}
@@ -87,7 +87,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
-        </>
+        </React.Fragment>
     );
 }
