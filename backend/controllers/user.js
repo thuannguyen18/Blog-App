@@ -1,8 +1,8 @@
-const asyncHandler = require('express-async-handler');
-const bcrypt = require("bcrypt");
-const User = require('../models/User');
+import asyncHandler from "express-async-handler";
+import bcrypt from "bcrypt";
+import User from "../models/User.js";
 
-const getUser = asyncHandler(async (req, res) => {
+export const getUser = asyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id).select("-password");
 
     if (!user) {
@@ -12,12 +12,12 @@ const getUser = asyncHandler(async (req, res) => {
     res.status(200).json({ user });
 });
 
-const getUserBlog = asyncHandler(async (req, res) => {
+export const getUserBlog = asyncHandler(async (req, res) => {
     const userBlog = await User.findById(req.params.id).populate("blogs");
     res.json(userBlog);
 });
 
-const updateUser = asyncHandler(async (req, res) => {
+export const updateUser = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
 
     const user = await User.findById(req.params.id);
@@ -41,7 +41,7 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 
-const uploadFile = asyncHandler(async (req, res) => {
+export const uploadFile = asyncHandler(async (req, res) => {
     const { avatar } = req.body;
 
     const user = await User.findById(req.params.id);
@@ -56,5 +56,3 @@ const uploadFile = asyncHandler(async (req, res) => {
 
     res.json({ message: "Successfully uploaded files", file: user.profilePictureURL });
 });
-
-module.exports = { getUser, getUserBlog, updateUser, uploadFile }

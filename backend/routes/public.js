@@ -1,7 +1,7 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import Blog from "../models/Blog.js";
 
-const Blog = require("../models/Blog");
+const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
@@ -17,4 +17,4 @@ router.get("/", async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

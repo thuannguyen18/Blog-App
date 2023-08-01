@@ -1,9 +1,8 @@
-const asyncHandler = require("express-async-handler");
+import asyncHandler from "express-async-handler";
+import Blog from "../models/Blog.js";
+import User from "../models/User.js";
 
-const Blog = require("../models/Blog");
-const User = require("../models/User");
-
-const getAllBlogs = asyncHandler(async (req, res) => {
+export const getAllBlogs = asyncHandler(async (req, res) => {
     const blogs = await Blog.find().populate("user_id");
 
     if (blogs.length < 1) {
@@ -13,7 +12,7 @@ const getAllBlogs = asyncHandler(async (req, res) => {
     res.status(200).json({ blogs });
 });
 
-const getBlog = asyncHandler(async (req, res) => {
+export const getBlog = asyncHandler(async (req, res) => {
     const blog = await Blog.findById(req.params.id).select("-user_id").populate("user_id");
 
     if (!blog) {
@@ -23,7 +22,7 @@ const getBlog = asyncHandler(async (req, res) => {
     res.status(200).json({ blog });
 });
 
-const createBlog = asyncHandler(async (req, res) => {
+export const createBlog = asyncHandler(async (req, res) => {
     const { id, title, content } = req.body;
 
     if (!id || !title || !content) {
@@ -43,7 +42,7 @@ const createBlog = asyncHandler(async (req, res) => {
     }
 });
 
-const updateBlog = asyncHandler(async (req, res) => {
+export const updateBlog = asyncHandler(async (req, res) => {
     const { title, content } = req.body;
     const { id } = req.params;
 
@@ -65,7 +64,7 @@ const updateBlog = asyncHandler(async (req, res) => {
     res.status(200).json(`'${updatedBlog.title}' updated`);
 });
 
-const deleteBlog = asyncHandler(async (req, res) => {
+export const deleteBlog = asyncHandler(async (req, res) => {
     const blog = await Blog.findById(req.params.id);
 
     if (!blog) {
@@ -78,11 +77,3 @@ const deleteBlog = asyncHandler(async (req, res) => {
 
     res.json(reply);
 });
-
-module.exports = {
-    getAllBlogs,
-    getBlog,
-    createBlog,
-    updateBlog,
-    deleteBlog
-};

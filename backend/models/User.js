@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const Blog = require("./Blog");
+import mongoose from "mongoose";
 
 const validateEmail = (email) => {
     const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -33,4 +31,5 @@ const UserSchema = new mongoose.Schema({
     } 
 });
 
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
+export default User;
