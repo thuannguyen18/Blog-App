@@ -31,6 +31,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: rgb(203 213 225);
+    border-radius: 15px;
 }
 
 ::-moz-selection {

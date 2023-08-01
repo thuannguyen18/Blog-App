@@ -17,14 +17,14 @@ export default function Header() {
 
     const navbarPublic = (
         <>
-            <Link className="lg:text-lg ml-6 text-slate-900" to="/login">
+            <Link className="hidden ml-6 text-slate-900 lg:text-lg md:block" to="/login">
                 Contact
             </Link>
-            <Link className="lg:text-lg ml-6 text-slate-900" to="/login">
+            <Link className="hidden ml-6 text-slate-900 lg:text-lg md:block" to="/login">
                 Log in
             </Link>
             <Link
-                className="lg:text-lg ml-6 text-white bg-sky-500 p-2 rounded hover:bg-sky-600"
+                className="lg:text-lg ml-6 text-white bg-sky-500 py-2 px-4 rounded-full hover:bg-sky-600"
                 to="/register"
             >
                 Create Account
@@ -84,7 +84,7 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 right-0 left-0 z-10 h-20 shadow-lg bg-white">
-            <div className="container mx-auto flex justify-between items-center h-full lg:w-3/4 px-4 lg:px-0">
+            <div className="container mx-auto flex justify-between items-center h-full px-4">
                 <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                 <nav className="flex items-center">
                     {navbar}
