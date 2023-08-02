@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRoute);
 app.use("/user", userRoute);
-app.use("/blog", blogRoute);
+app.use("/blogs", blogRoute);
 app.use("/", publicRoute);
 
 app.listen(process.env.PORT, (err) => {

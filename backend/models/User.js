@@ -8,7 +8,9 @@ const validateEmail = (email) => {
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: [true, 'Username is required']
+        required: [true, 'Username is required'],
+        min: 2,
+        max: 50,
     },
     email: {
         type: String,
@@ -17,19 +19,22 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         required: [true, 'Email address is required'],
         validate: [validateEmail, 'Please fill a valid email address'],
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
+        max: 50,
     },
     password: {
         type: String,
         required: [true, 'Password is required']
     },
-    profilePictureURL: { 
-        type: String,
+    profilePicturePath: {
+        type: String, 
+        default: "",
     },
-    blogs: {
-        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Blog' }] // BlogSchema
-    } 
-});
+    followers: {
+        type: Array,
+        default: [],
+    }
+}, { timestamps: true });
 
 const User = mongoose.model('User', UserSchema);
 export default User;

@@ -184,7 +184,7 @@ function AppProvider({ children }) {
             const token = localStorage.getItem("access_token");
 
             if (!token) {
-                const response = await axios.get("http://localhost:3500");
+                const response = await axios.get("http://localhost:3500/blog");
                 console.log(response.data);
                 dispatch({ type: "GET_BLOGS_PUBLIC", payload: response.data.blogs });
                 return;

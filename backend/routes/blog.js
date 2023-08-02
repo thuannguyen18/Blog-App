@@ -10,12 +10,11 @@ import {
 
 const router = express.Router();
 
-router.use(verifyToken);
 router.get("/", getAllBlogs);
-router.post("/", createBlog);
+router.post("/", verifyToken, createBlog);
 router.route("/:id")
     .get(getBlog)
-    .patch(updateBlog)
-    .delete(deleteBlog);
+    .patch(verifyToken, updateBlog)
+    .delete(verifyToken, deleteBlog);
 
 export default router;

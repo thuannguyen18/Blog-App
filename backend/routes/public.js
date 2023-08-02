@@ -5,12 +5,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        const blogs = await Blog.find({}).populate("user_id");
-
-        if (blogs.length < 1) {
-            return res.status(400).json({ message: "Blog empty" });
-        }
-
+        const blogs = await Blog.find({}).populate("userId");
         res.status(200).json({ blogs });
     } catch (error) {
         console.log(error);
