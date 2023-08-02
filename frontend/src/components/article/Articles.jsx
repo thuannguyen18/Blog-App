@@ -4,11 +4,11 @@ import UserAvatar from "components/user/UserAvatar";
 
 export default function Article({ id, title, content, userName }) {
     return (
-        <div className="md:flex mb-12">
-            <Link>
-                <img className="object-cover w-full h-48" src={thumbnail} alt="thumbnail" />
+        <div className="grid lg:grid-cols-8 mb-12">
+            <Link className="lg:col-span-2">
+                <img className="object-cove h-full" src={thumbnail} alt="thumbnail" />
             </Link>
-            <div className="grow flex flex-col justify-between md:pl-4">
+            <div className="lg:col-span-6 flex flex-col justify-between md:pl-4">
                 <Link className="text-sm text-sky-500 block mb-2 hover:text-sky-600" to="/login">{"Programming Language"}</Link>
                 <div className="grow">
                     <Link to="/login">
