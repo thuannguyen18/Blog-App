@@ -8,43 +8,54 @@ import Banner from "components/Banner";
 const categories = ["Science - Technology", "History", "Music", "Technology", "Sport", "Fashion"];
 
 export default function Home() {
-    const { getAllBlogs, blogsPublic } = useGlobalContext();
+    const { 
+        getAllBlogs, 
+        blogsPublic,
+        getBlogs,
+        newestBlogs,
+        randomBlogs,
+    } = useGlobalContext();
+
     const [allTopics, setAllTopics] = useState(true);
     const [bestTopics, setBestTopics] = useState(false);
 
     useEffect(() => {
         getAllBlogs();
+        getBlogs("GET_NEWEST_BLOGS", "newest");
+        getBlogs("GET_RANDOM_BLOGS", "random");
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    console.log(randomBlogs)
 
     return (
         <React.Fragment>
             <Banner />
             <div className="container mx-auto mt-4 px-4">
-                {/* POPULAR BLOG */}
+                {/* NEWEST BLOG */}
                 <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Newest on MyBlog</h3>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-                    {blogsPublic.map(({ _id, title, content, category, userId }) => (
+                    {newestBlogs.map(({ _id, title, content, category, userId }) => (
                         <NewestAriticle
                             key={_id}
                             id={_id}
                             title={title}
                             content={content}
                             category={category}
-                            userName={userId}
+                            userName={userId.username}
                         />
                     ))}
                 </div>
 
-                {/* YOU MAY LIKE THESE BLOG */}
-                <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Recommended to you</h3>
+                {/* RECOMMEDED FOR YOU */}
+                <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Recommended for you</h3>
                 <div className="grid md:grid-cols-4 gap-4">
-                    {blogsPublic.map(({ _id, title, userId }) => (
+                    {randomBlogs.map(({ _id, title, user }) => (
                         <RecommendArticle
                             key={_id}
                             id={_id}
                             title={title}
-                            userName={userId}
+                            userName={user.username}
                         />
                     ))}
                 </div>
@@ -80,7 +91,7 @@ export default function Home() {
                                     title={title}
                                     content={content}
                                     category={category}
-                                    userName={userId}
+                                    userName={userId.username}
                                 />
                             ))}
                         </div>

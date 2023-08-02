@@ -14,7 +14,7 @@ export default function RecommendArticle({ id, title, userName }) {
                 </Link>
                 <div className="flex items-center mt-4">
                     <UserAvatar width="w-6" height="h-6" isDefault={true} />
-                    <Link className="text-sm font-semibold block ml-2" to="/login">ADMIN</Link>
+                    <Link className="text-sm font-semibold block ml-2" to="/login">{userName}</Link>
                 </div>
             </div>
         </article>

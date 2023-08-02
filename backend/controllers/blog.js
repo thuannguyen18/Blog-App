@@ -18,8 +18,12 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
         blogs = await Blog
             .find()
             .populate("userId", "-password -followers -email")
+            .sort({ createdAt: -1 })
             .limit(limit * 1);
-    } else if (random) {
+        return res.status(200).json(blogs);
+    }
+
+    if (random) {
         blogs = await Blog.aggregate([
             {
                 $lookup: {
@@ -43,17 +47,18 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
             },
             { $sample: { size: limit * 1 } },
         ]);
-    } else {
-        blogs = await Blog
-            .find()
-            .populate("userId", "-password -followers -email")
-            .limit(limit * 1)
-            .skip((page - 1) * limit);
+        return res.status(200).json(blogs);
     }
-    
+
+    blogs = await Blog
+        .find()
+        .populate("userId", "-password -followers -email")
+        .sort({ createdAt: -1 })
+        .limit(limit * 1)
+        .skip((page - 1) * limit);
     const count = await Blog.count();
 
-    res.status(200).json({ 
+    res.status(200).json({
         blogs,
         totalPages: Math.ceil(count / limit),
         currentPage: page,
@@ -77,11 +82,7 @@ export const createBlog = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: "All fields are required" });
     }
 
-    const note = await Blog.create({ user_id: id, title, content });
-
-    const user = await User.findById(id);
-    user.blogs.push(note);
-    await user.save();
+    const note = await Blog.create({ userId: id, title, content });
 
     if (note) {
         return res.status(201).json({ message: "New blog created" });

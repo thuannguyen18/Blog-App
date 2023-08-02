@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
 import axios from "axios";
+import axiosConfig from "config/axiosConfig";
 
 import reducer from "./reducer";
 
@@ -28,6 +29,8 @@ const initalState = {
     userNameBlog: "",
     userIdBlog: "",
     otherUserAvatar: "",
+    newestBlogs: [],
+    randomBlogs: [],
 }
 
 function AppProvider({ children }) {
@@ -184,19 +187,29 @@ function AppProvider({ children }) {
             const token = localStorage.getItem("access_token");
 
             if (!token) {
-                const response = await axios.get("http://localhost:3500/blog");
-                console.log(response.data);
+                const response = await axios.get("http://localhost:3500/blogs?page=1&limit=5");
                 dispatch({ type: "GET_BLOGS_PUBLIC", payload: response.data.blogs });
                 return;
             }
 
-            const response = await axios.get("http://localhost:3500/blog", {
+            const response = await axios.get("http://localhost:3500/blogs", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
 
             dispatch({ type: "GET_BLOGS", payload: response.data.blogs.reverse() });
+        } catch (error) {
+            console.log(error);
+            dispatch({ type: "SUBMITTED" });
+        }
+    }
+
+    const getBlogs = async (dispatchType, queryType) => {
+        dispatch({ type: "LOADING" });
+        try {
+            const { data } = await axiosConfig.get(`/blogs?${queryType}=true&limit=4`);
+            dispatch({ type: dispatchType, payload: data });
         } catch (error) {
             console.log(error);
             dispatch({ type: "SUBMITTED" });
@@ -322,7 +335,8 @@ function AppProvider({ children }) {
                 updateBlog,
                 deleteBlog,
                 setTitleUpdate,
-                setContentUpdate
+                setContentUpdate,
+                getBlogs
             }}
         >
             {children}

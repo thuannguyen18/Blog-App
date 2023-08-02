@@ -1,21 +1,21 @@
 function reducer(state, action) {
     switch (action.type) {
         case 'SET_NAME': {
-            return { 
-                ...state, 
+            return {
+                ...state,
                 name: action.payload,
             };
         }
         case 'SET_EMAIL': {
-            return { 
-                ...state, 
-                email: action.payload, 
+            return {
+                ...state,
+                email: action.payload,
             };
         }
         case 'SET_PASSWORD': {
-            return { 
-                ...state, 
-                password: action.payload, 
+            return {
+                ...state,
+                password: action.payload,
             };
         }
         case "SET_USER_NAME": {
@@ -37,30 +37,30 @@ function reducer(state, action) {
             }
         }
         case 'SUBMITTED': {
-            return { 
-                ...state, 
-                loading: false, 
+            return {
+                ...state,
+                loading: false,
                 userPassword: "",
             };
         }
         case 'LOADING': {
-            return { 
-                ...state, 
+            return {
+                ...state,
                 loading: true,
             };
         }
         case "AUTH_SUCCESS": {
-            return { 
-                ...state, 
-                userId: action.payload,    
-                isAuthenticated: true, 
+            return {
+                ...state,
+                userId: action.payload,
+                isAuthenticated: true,
             };
         }
         case "GET_USER": {
-            return { 
-                ...state, 
-                userName: action.payload.username, 
-                userEmail: action.payload.email, 
+            return {
+                ...state,
+                userName: action.payload.username,
+                userEmail: action.payload.email,
                 userAvatar: action.payload.profilePictureURL
             };
         }
@@ -83,8 +83,8 @@ function reducer(state, action) {
             }
         }
         case "LOG_OUT": {
-            return { 
-                ...state, 
+            return {
+                ...state,
                 userId: "",
                 isAuthenticated: false,
                 name: "",
@@ -106,6 +106,18 @@ function reducer(state, action) {
                 blogsPublic: action.payload
             }
         }
+        case "GET_NEWEST_BLOGS":
+            return {
+                ...state,
+                loading: false,
+                newestBlogs: action.payload
+            }
+        case "GET_RANDOM_BLOGS":
+            return {
+                ...state,
+                loading: false,
+                randomBlogs: action.payload
+            }
         case "GET_BLOGS": {
             return {
                 ...state,
@@ -125,8 +137,8 @@ function reducer(state, action) {
             }
         }
         case "CREATED_BLOG": {
-            return { 
-                ...state, 
+            return {
+                ...state,
                 loading: false,
                 title: "",
                 content: ""
@@ -137,7 +149,7 @@ function reducer(state, action) {
                 ...state,
                 articleTitle: action.payload
             }
-        } 
+        }
         case "SET_CONTENT_UPDATE": {
             return {
                 ...state,
