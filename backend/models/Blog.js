@@ -9,13 +9,17 @@ const BlogShema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    subTitle: {
+        type: String,
+        required: true,
+    },
     content: {
         type: String,
         required: true,
     },
     category: {
         type: String,
-        enum: [""],
+        enum: ["Science-Technology", "Movie", "Design", "Tips"],
         default: "",
         required: true,
     },

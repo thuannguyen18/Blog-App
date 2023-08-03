@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import thumbnail from "assets/images/testing.jpg";
 import UserAvatar from "components/user/UserAvatar";
 
-export default function RecommendArticle({ id, title, userName }) {
+export default function RecommendArticle({ id, title, userName, picturePath }) {
     return (
         <article className="md:col-span-2 lg:col-span-1 flex flex-col justify-between">
             <Link to="/login">
-                <img className="object-cover w-full h-38 lg:h-58" src={thumbnail} alt="thumbnail" />
+                {picturePath && <img className="object-cover w-full h-38 lg:h-58" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="grow flex flex-col justify-between">
                 <Link to="/login">

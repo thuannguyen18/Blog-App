@@ -5,13 +5,13 @@ export default function Banner() {
     return (
         <div className="pt-20">
             <div
-                className="bg-no-repeat bg-contain bg-center bg-origin-content h-[288px] md:h-[388px] lg:h-[588px]"
+                className="bg-no-repeat bg-contain bg-center h-[288px] md:h-[388px] lg:h-[588px]"
                 style={{ backgroundImage: `url(${bannerImage})` }}
             >
                 <div className="container mx-auto px-4 h-full relative">
                     <div className="absolute lg:grid lg:grid-cols-5 top-[15%] md:top-[20%]">
                         <div className="col-span-2">
-                            <h2 className="text-xl text-white font-bold leading-10 md:text-3xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 via-blue-600 to-sky-800">Title of A Longer Featured Blog Post</h2>
+                            <h2 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 via-blue-600 to-sky-800 font-bold md:text-3xl lg:text-5xl ">Title of A Longer Featured Blog Post</h2>
                             <p className="text-sm text-slate-700 font-semibold mt-6 md:text-lg lg:text-xl">
                                 Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.
                             </p>
