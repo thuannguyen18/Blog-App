@@ -23,6 +23,16 @@ h2 {
     overflow: hidden;
 }
 
+.paragraph-per-line {
+    padding: 8px 0;
+    margin-bottom: 20px;
+}
+
+.heading-per-line {
+    padding: 8px 0;
+    margin-bottom: 10px;
+}
+
 .user-profile {
     position: absolute;
     top: 30%;

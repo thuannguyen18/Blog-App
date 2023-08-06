@@ -9,7 +9,7 @@ function UserAvatar({ width = "w-2", height = "h-2", isProfile, isDefault, isOth
     return ( 
         <img
             className={`${width} ${height} ${classes} rounded-full object-cover`}
-            src={`http://localhost:3500/assets/${profilePicturePath}`}
+            src={`http://localhost:3500/assets/${profilePicturePath}` || defaultAvatar}
             alt="avatar"
         />
     );
