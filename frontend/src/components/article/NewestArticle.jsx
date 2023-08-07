@@ -4,7 +4,7 @@ import UserAvatar from "components/user/UserAvatar";
 
 export default function NewestArticle({ id, userId, title, subTitle, category, userName, profilePicturePath, picturePath }) {
     return (
-        <article className="col-span-1 lg:grid lg:grid-cols-6">
+        <article className="md:col-span-1 grid lg:grid-cols-6">
             <Link className="lg:col-span-2" to={`/blog/${id}`}>
                 {picturePath && <img className="rounded object-cover h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
