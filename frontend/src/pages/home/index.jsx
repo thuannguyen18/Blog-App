@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import { useGlobalContext } from "context/context";
 import Article from "components/article/Articles";
 import NewestAriticle from "components/article/NewestArticle";
 import RecommendArticle from "components/article/RecommendArticle";
 import Banner from "components/Banner";
+import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
+import CardPlaceholder from "components/skeleton/CardPlaceholder";
 
 const categories = ["Science - Technology", "History", "Music", "Technology", "Sport", "Fashion"];
 
@@ -15,6 +16,7 @@ export default function Home() {
         blogsPublic,
         newestBlogs,
         randomBlogs,
+        loading
     } = useGlobalContext();
 
     const [allTopics, setAllTopics] = useState(true);
@@ -26,23 +28,23 @@ export default function Home() {
         getBlogs("GET_RANDOM_BLOGS", "random");
     }, []);
 
-    console.log(newestBlogs)
-
     return (
         <React.Fragment>
             <Banner />
             {/* LATEST BLOG */}
             <div className="container mx-auto my-4 p-4">
                 <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Latest on MyBlog</h3>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6">
                     {newestBlogs.map(({ _id, title, subTitle, category, userId, picturePath }) => (
-                        <NewestAriticle
+                        loading ? <ImagePlaceholder /> : <NewestAriticle
                             key={_id}
                             id={_id}
+                            userId={userId._id}
+                            userName={userId.username}
+                            profilePicturePath={userId.profilePicturePath}
                             title={title}
                             subTitle={subTitle}
                             category={category}
-                            userName={userId.username}
                             picturePath={picturePath}
                         />
                     ))}
@@ -52,13 +54,15 @@ export default function Home() {
             <div style={{ backgroundColor: "#f5f7fa" }}>
                 <div className="container mx-auto my-4 p-4">
                     <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Recommended for You</h3>
-                    <div className="grid md:grid-cols-4 gap-4">
+                    <div className="grid md:grid-cols-4 gap-8 lg:gap-4">
                         {randomBlogs.map(({ _id, title, user, picturePath }) => (
-                            <RecommendArticle
+                            loading ? <CardPlaceholder /> : <RecommendArticle
                                 key={_id}
                                 id={_id}
+                                userId={user._id}
                                 title={title}
                                 userName={user.username}
+                                profilePicturePath={user.profilePicturePath}
                                 picturePath={picturePath}
                             />
                         ))}
@@ -91,13 +95,15 @@ export default function Home() {
                         </nav>
                         <div className="pt-8">
                             {blogsPublic.map(({ _id, title, subTitle, category, userId, picturePath }) => (
-                                <Article
+                                loading ? <ImagePlaceholder /> : <Article
                                     key={_id}
                                     id={_id}
+                                    userId={userId._id}
+                                    userName={userId.username}
+                                    profilePicturePath={userId.profilePicturePath}
                                     title={title}
                                     subTitle={subTitle}
                                     category={category}
-                                    userName={userId.username}
                                     picturePath={picturePath}
                                 />
                             ))}

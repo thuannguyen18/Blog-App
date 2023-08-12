@@ -3,7 +3,7 @@ import bannerImage from "assets/images/banner.jpg";
 
 export default function Banner() {
     return (
-        <div className="pt-20">
+        <div className="">
             <div
                 className="bg-no-repeat bg-contain bg-center h-[288px] md:h-[388px] lg:h-[588px]"
                 style={{ backgroundImage: `url(${bannerImage})` }}

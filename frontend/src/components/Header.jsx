@@ -6,8 +6,8 @@ import { FiSettings, FiLogOut } from "react-icons/fi"
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
-import { useGlobalContext } from "../context/context";
-import UserAvatar from "./user/UserAvatar";
+import { useGlobalContext } from "context/context";
+import UserAvatar from "components/user/UserAvatar";
 
 export default function Header() {
     const { isAuthenticated, userName, logout } = useGlobalContext();
@@ -83,7 +83,7 @@ export default function Header() {
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
-        <header className="fixed top-0 right-0 left-0 z-10 h-20 shadow-lg bg-white">
+        <header className="h-20 shadow-lg bg-white">
             <div className="container mx-auto flex justify-between items-center h-full px-4">
                 <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                 <nav className="flex items-center">

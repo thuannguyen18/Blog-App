@@ -1,19 +1,15 @@
 import defaultAvatar from "assets/images/default-avatar.webp";
 import "../../App.css";
-import { useGlobalContext } from "../../context/context";
+import { useGlobalContext } from "context/context";
 
-function UserAvatar({ width = "w-2", height = "h-2", isProfile, isDefault, isOtherAvatar }) {
+function UserAvatar({ width = "w-2", height = "h-2", isProfile, center, isOtherAvatar, profilePicturePath }) {
     const { userAvatar, otherUserAvatar } = useGlobalContext();
-
     const classes = isProfile ? "user-profile" : "";
-
-    const avatar = (userAvatar && !isDefault) ? userAvatar : defaultAvatar;
-    const otherAvatar = (otherUserAvatar && !isDefault) ? otherUserAvatar : defaultAvatar;
 
     return ( 
         <img
-            className={`${width} ${height} ${classes} rounded-full`}
-            src={!isOtherAvatar ? avatar : otherAvatar}
+            className={`${width} ${height} ${classes} ${center && "mx-auto"} rounded-full object-cover`}
+            src={`http://localhost:3500/assets/${profilePicturePath}` || defaultAvatar}
             alt="avatar"
         />
     );

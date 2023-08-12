@@ -16,11 +16,21 @@ h2 {
     overflow: hidden;
 }
 
-p {
+.paragraph-max-line {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.paragraph-per-line {
+    padding: 8px 0;
+    margin-bottom: 20px;
+}
+
+.heading-per-line {
+    padding: 8px 0;
+    margin-bottom: 10px;
 }
 
 .user-profile {
