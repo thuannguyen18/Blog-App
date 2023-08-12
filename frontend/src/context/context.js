@@ -187,12 +187,12 @@ function AppProvider({ children }) {
             const token = localStorage.getItem("access_token");
 
             if (!token) {
-                const response = await axios.get("http://localhost:3500/blogs?page=1&limit=5");
+                const response = await axios.get("http://localhost:3500/blog?page=1&limit=5");
                 dispatch({ type: "GET_BLOGS_PUBLIC", payload: response.data.blogs });
                 return;
             }
 
-            const response = await axios.get("http://localhost:3500/blogs", {
+            const response = await axios.get("http://localhost:3500/blog", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -208,7 +208,7 @@ function AppProvider({ children }) {
     const getBlogs = async (dispatchType, queryType) => {
         dispatch({ type: "LOADING" });
         try {
-            const { data } = await axiosConfig.get(`/blogs?${queryType}=true&limit=4`);
+            const { data } = await axiosConfig.get(`/blog?${queryType}=true&limit=4`);
             dispatch({ type: dispatchType, payload: data });
         } catch (error) {
             console.log(error);
@@ -220,13 +220,7 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
         
         try {
-            const token = localStorage.getItem("access_token");
-
-            const response = await axios.get(`http://localhost:3500/blog/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
+            const response = await axios.get(`http://localhost:3500/blog/${id}`);
 
             const title = response.data.blog.title;
             const content = response.data.blog.content;

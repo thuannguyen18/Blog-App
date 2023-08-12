@@ -2,13 +2,13 @@ import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 import User from "../models/User.js";
 
-/*  @desc: Get all blogs 
-    @method: GET
-    @route: /blogs
-    @params: 
-        ?page=""&limit=""
-        ?newest=""&limit="" 
-        ?random=""&limit="" 
+/** 
+*    @desc: Get all blogs 
+*    @method: GET
+*    @param: 
+*       ?page=""&limit=""
+*       ?newest=""&limit="" 
+*       ?random=""&limit="" 
 */
 export const getAllBlogs = asyncHandler(async (req, res) => {
     const { page, newest, random, limit } = req.query;
@@ -65,14 +65,20 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
     });
 });
 
+/** 
+*    @desc: Get one blog
+*    @method: GET
+*/
 export const getBlog = asyncHandler(async (req, res) => {
-    const blog = await Blog.findById(req.params.id).select("-user_id").populate("user_id");
+    const blog = await Blog
+        .findById(req.params.id)
+        .populate("userId", "username email profilePicturePath");
 
     if (!blog) {
         return res.status(400).json({ message: "Blog not found" });
     }
 
-    res.status(200).json({ blog });
+    res.status(200).json(blog);
 });
 
 export const createBlog = asyncHandler(async (req, res) => {

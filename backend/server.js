@@ -49,7 +49,7 @@ const upload = multer({ storage });
 /* ROUTES */
 app.use("/auth", authRoute);
 app.use("/user", userRoute);
-app.use("/blogs", blogRoute);
+app.use("/blog", blogRoute);
 app.use("/", publicRoute);
 
 app.listen(process.env.PORT, (err) => {
