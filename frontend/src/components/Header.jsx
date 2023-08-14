@@ -8,6 +8,7 @@ import 'tippy.js/dist/tippy.css';
 
 import { useGlobalContext } from "context/context";
 import UserAvatar from "components/user/UserAvatar";
+import Container from "components/Container";
 
 export default function Header() {
     const { isAuthenticated, userName, logout } = useGlobalContext();
@@ -84,13 +85,13 @@ export default function Header() {
 
     return (
         <React.Fragment>
-            <header className="h-20 shadow-lg bg-white">
-                <div className="container mx-auto flex justify-between items-center h-full px-4">
+            <header className="h-20 shadow-lg bg-white z-50 relative">
+                <Container styles={"flex justify-between items-center h-full"}>
                     <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                     <nav className="flex items-center">
                         {navbar}
                     </nav>
-                </div>
+                </Container>
             </header>
             <Outlet />
         </React.Fragment>

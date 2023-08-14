@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Container from "components/Container";
+import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import UserAvatar from "components/user/UserAvatar";
 import UserArticle from "components/article/UserArticle";
-import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import UserInfoPlaceholder from "components/skeleton/UserInfoPlaceholder";
 import { useGlobalContext } from "context/context";
 
@@ -22,7 +23,7 @@ export default function User() {
     }, []);
 
     return (
-        <div className="container mx-auto lg:grid lg:grid-cols-4 lg:gap-4 md:mt-4">
+        <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-4"}>
             {loading ? <UserInfoPlaceholder /> :
                 <React.Fragment>
                     <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
@@ -71,6 +72,6 @@ export default function User() {
                     ))}
                 </div>
             </div>
-        </div>
+        </Container>
     );
 }
