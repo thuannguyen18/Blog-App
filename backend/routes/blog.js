@@ -5,7 +5,8 @@ import {
     getBlog,
     createBlog,
     updateBlog,
-    deleteBlog
+    deleteBlog,
+    getComments
 } from "../controllers/blog.js";
 
 const router = express.Router();
@@ -16,5 +17,6 @@ router.route("/:id")
     .get(getBlog)
     .patch(verifyToken, updateBlog)
     .delete(verifyToken, deleteBlog);
+router.get("/:id/comments", getComments);
 
 export default router;

@@ -1,14 +1,16 @@
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 import User from "../models/User.js";
+import Comment from "../models/Comment.js";
 
 /** 
-*    @desc: Get all blogs 
-*    @method: GET
-*    @param: 
-*       ?page=""&limit=""
-*       ?newest=""&limit="" 
-*       ?random=""&limit="" 
+*    @desc Get all blogs (maximun 10 blogs per page)
+*    @method GET
+*    @path http://localhost:3500/blog
+*    @query
+*       ?page=[number]&limit=[number]
+*       ?newest=[boolean]&limit=[number] 
+*       ?random=[boolean]&limit=[number] 
 */
 export const getAllBlogs = asyncHandler(async (req, res) => {
     const { page, newest, random, limit } = req.query;
@@ -50,6 +52,7 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
         return res.status(200).json(blogs);
     }
 
+    
     blogs = await Blog
         .find()
         .populate("userId", "-password -followers -email")
@@ -66,19 +69,42 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
 });
 
 /** 
-*    @desc: Get one blog
-*    @method: GET
+*    @desc Get one blog
+8    @path http://localhost:3500/blog/:id
+*    @method GET
 */
 export const getBlog = asyncHandler(async (req, res) => {
     const blog = await Blog
         .findById(req.params.id)
         .populate("userId", "username email profilePicturePath");
 
-    if (!blog) {
-        return res.status(400).json({ message: "Blog not found" });
-    }
+    if (!blog)
+        return res.status(404).json({ message: "Blog not found" });
 
     res.status(200).json(blog);
+});
+
+/** 
+*    @desc Get comments
+*    @method GET
+*    @path http://localhost:3500/blog/:id/comments
+*    @query ?page=""&limit=""
+*/
+export const getComments = asyncHandler(async (req, res) => {
+    const { page, limit } = req.query;
+    const blog = await Blog.findById(req.params.id);
+
+    if (!blog)
+        return res.status(404).json({ message: "Blog not found" });
+
+    const comments = await Comment
+        .find({ blogId: blog._id })
+        .populate("userId", "username email profilePicturePath")
+        .sort({ createdAt: -1 })
+        .limit(limit * 1)
+        .skip((page - 1) * limit);
+
+    res.status(200).json(comments);
 });
 
 export const createBlog = asyncHandler(async (req, res) => {

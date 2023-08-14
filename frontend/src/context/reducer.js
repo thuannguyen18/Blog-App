@@ -56,14 +56,15 @@ function reducer(state, action) {
                 isAuthenticated: true,
             };
         }
-        case "GET_USER": {
+        case "GET_USER":
             return {
                 ...state,
-                userName: action.payload.username,
-                userEmail: action.payload.email,
-                userAvatar: action.payload.profilePictureURL
+                loading: false,
+                authorName: action.payload.user.username,
+                authorEmail: action.payload.user.email,
+                authorProfilePicturePath: action.payload.user.profilePicturePath,
+                authorBlogs: action.payload.userBlog,
             };
-        }
         case "SET_TITLE": {
             return {
                 ...state,
@@ -129,13 +130,21 @@ function reducer(state, action) {
             return {
                 ...state,
                 loading: false,
-                articleTitle: action.payload.title,
-                articleContent: action.payload.content,
-                userNameBlog: action.payload.otherUserName,
-                userIdBlog: action.payload.otherUserId,
-                otherUserAvatar: action.payload.otherUserAvatar
+                authorName: action.payload.userId.username,
+                authorEmail: action.payload.userId.email,
+                authorProfilePicturePath: action.payload.userId.profilePicturePath,
+                blogTitle: action.payload.title,
+                blogSubtitle: action.payload.subTitle,
+                blogContent: action.payload.content,
+                blogPicturePath: action.payload.picturePath,
+                blogCategory: action.payload.category,
             }
         }
+        case "GET_COMMENTS":
+            return {
+                ...state,
+                comments: action.payload
+            }
         case "CREATED_BLOG": {
             return {
                 ...state,

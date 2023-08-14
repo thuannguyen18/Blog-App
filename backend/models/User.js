@@ -8,7 +8,7 @@ const validateEmail = (email) => {
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: [true, 'Username is required'],
+        required: [true, "Username is required"],
         min: 2,
         max: 50,
     },
@@ -17,14 +17,14 @@ const UserSchema = new mongoose.Schema({
         trim: true,
         lowercase: true,
         unique: true,
-        required: [true, 'Email address is required'],
-        validate: [validateEmail, 'Please fill a valid email address'],
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
+        required: [true, "Email address is required"],
+        validate: [validateEmail, "Please fill a valid email address"],
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Please fill a valid email address"],
         max: 50,
     },
     password: {
         type: String,
-        required: [true, 'Password is required']
+        required: [true, "Password is required"]
     },
     profilePicturePath: {
         type: String, 
@@ -36,5 +36,5 @@ const UserSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model("User", UserSchema);
 export default User;

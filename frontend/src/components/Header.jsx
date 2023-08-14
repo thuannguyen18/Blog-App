@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import { BsPencilSquare } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
 import { FiSettings, FiLogOut } from "react-icons/fi"
@@ -83,13 +83,16 @@ export default function Header() {
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
-        <header className="h-20 shadow-lg bg-white">
-            <div className="container mx-auto flex justify-between items-center h-full px-4">
-                <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
-                <nav className="flex items-center">
-                    {navbar}
-                </nav>
-            </div>
-        </header>
+        <React.Fragment>
+            <header className="h-20 shadow-lg bg-white">
+                <div className="container mx-auto flex justify-between items-center h-full px-4">
+                    <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
+                    <nav className="flex items-center">
+                        {navbar}
+                    </nav>
+                </div>
+            </header>
+            <Outlet />
+        </React.Fragment>
     );
 }

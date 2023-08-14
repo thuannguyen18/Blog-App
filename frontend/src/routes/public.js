@@ -22,6 +22,9 @@ export const publicRoutes = [
         path: "/category",
         element: Category,
     },
+];
+
+export const authRoutes = [
     {
         path: '/login',
         element: Login

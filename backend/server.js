@@ -7,7 +7,6 @@ import helmet from "helmet";
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
-
 import connectDB from "./config/dbConnection.js";
 import authRoute from "./routes/auth.js";
 import userRoute from "./routes/user.js";
@@ -20,7 +19,6 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 const app = express();
 connectDB();
-
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());

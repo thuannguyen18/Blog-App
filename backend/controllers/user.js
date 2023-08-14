@@ -1,15 +1,20 @@
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
+import Blog from "../models/Blog.js";
 
 export const getUser = asyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id).select("-password");
+
+    const userBlog = await Blog
+        .find({ userId: req.params.id })
+        .select("-content -comments -category");
 
     if (!user) {
         return res.status(400).json({ message: "User not found" });
     }
 
-    res.status(200).json({ user });
+    res.status(200).json({ user, userBlog });
 });
 
 export const getUserBlog = asyncHandler(async (req, res) => {

@@ -1,8 +1,10 @@
 import Comment from "./Comment";
+import { useGlobalContext } from "context/context";
 
 export default function FormComment() {
+    const { comments } = useGlobalContext();
     return (
-        <div className="rounded border border-gray-200 p-5 lg:p-10 my-6 shadow-lg">
+        <div className="rounded border border-gray-200 p-5 lg:px-10 lg:pt-10 my-6 shadow-lg">
             <form className="w-full bg-white rounded-lg px-4 pt-2">
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-full lg:px-3 mb-2 mt-2">
@@ -17,10 +19,16 @@ export default function FormComment() {
                     </div>
                 </div>
             </form>
-            <Comment />
-            <Comment />
-            <Comment />
-            <Comment />
+            <div className="mt-6">
+                {comments.map(comment => (
+                    <Comment
+                        key={comment._id}
+                        content={comment.content}
+                        userInfo={comment.userId}
+                    />
+                ))}
+            </div>
+            <button className="h-10 w-full mt-6 ">Load more</button>
         </div>
     );
 }

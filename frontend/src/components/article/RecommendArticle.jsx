@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import thumbnail from "assets/images/testing.jpg";
 import UserAvatar from "components/user/UserAvatar";
 
 export default function RecommendArticle({ id, userId, title, userName, profilePicturePath, picturePath }) {

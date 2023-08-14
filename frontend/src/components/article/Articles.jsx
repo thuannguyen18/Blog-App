@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import thumbnail from "assets/images/testing.jpg";
 import UserAvatar from "components/user/UserAvatar";
 
 export default function Article({ id, userId, title, subTitle, category, userName, profilePicturePath, picturePath }) {

@@ -6,8 +6,25 @@ import RecommendArticle from "components/article/RecommendArticle";
 import Banner from "components/Banner";
 import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
+//import { categories } from "constants";
 
-const categories = ["Science - Technology", "History", "Music", "Technology", "Sport", "Fashion"];
+const categories = [
+    "Travel",
+    "Science - Technology", 
+    "History", 
+    "Music", 
+    "Technology", 
+    "Design",
+    "Sport", 
+    "Fashion",
+    "Life Style",
+    "Design - Tips",
+    "Science",
+    "Education",
+    "Book",
+    "Game",
+    "Fitness"
+];
 
 export default function Home() {
     const {
@@ -36,17 +53,18 @@ export default function Home() {
                 <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Latest on MyBlog</h3>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6">
                     {newestBlogs.map(({ _id, title, subTitle, category, userId, picturePath }) => (
-                        loading ? <ImagePlaceholder /> : <NewestAriticle
-                            key={_id}
-                            id={_id}
-                            userId={userId._id}
-                            userName={userId.username}
-                            profilePicturePath={userId.profilePicturePath}
-                            title={title}
-                            subTitle={subTitle}
-                            category={category}
-                            picturePath={picturePath}
-                        />
+                        loading ? <ImagePlaceholder key={_id} /> :
+                            <NewestAriticle
+                                key={_id}
+                                id={_id}
+                                userId={userId._id}
+                                userName={userId.username}
+                                profilePicturePath={userId.profilePicturePath}
+                                title={title}
+                                subTitle={subTitle}
+                                category={category}
+                                picturePath={picturePath}
+                            />
                     ))}
                 </div>
             </div>
@@ -56,15 +74,16 @@ export default function Home() {
                     <h3 className="font-semibold my-5 text-lg md:text-xl lg:text-2xl">Recommended for You</h3>
                     <div className="grid md:grid-cols-4 gap-8 lg:gap-4">
                         {randomBlogs.map(({ _id, title, user, picturePath }) => (
-                            loading ? <CardPlaceholder /> : <RecommendArticle
-                                key={_id}
-                                id={_id}
-                                userId={user._id}
-                                title={title}
-                                userName={user.username}
-                                profilePicturePath={user.profilePicturePath}
-                                picturePath={picturePath}
-                            />
+                            loading ? <CardPlaceholder key={_id} /> :
+                                <RecommendArticle
+                                    key={_id}
+                                    id={_id}
+                                    userId={user._id}
+                                    title={title}
+                                    userName={user.username}
+                                    profilePicturePath={user.profilePicturePath}
+                                    picturePath={picturePath}
+                                />
                         ))}
                     </div>
                 </div>
@@ -95,7 +114,7 @@ export default function Home() {
                         </nav>
                         <div className="pt-8">
                             {blogsPublic.map(({ _id, title, subTitle, category, userId, picturePath }) => (
-                                loading ? <ImagePlaceholder /> : <Article
+                                loading ? <ImagePlaceholder key={_id} /> : <Article
                                     key={_id}
                                     id={_id}
                                     userId={userId._id}

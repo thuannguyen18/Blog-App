@@ -29,8 +29,22 @@ const initalState = {
     userNameBlog: "",
     userIdBlog: "",
     otherUserAvatar: "",
+    // ========== Author ==========
+    authorName: "",
+    authorEmail: "",
+    authorProfilePicturePath: "",
+    // ========== Blogs ==========
     newestBlogs: [],
     randomBlogs: [],
+    authorBlogs: [],
+    // ========== Blog Detail ==========
+    blogTitle: "",
+    blogSubtitle: "",
+    blogContent: "",
+    blogPicturePath: "",
+    blogCategory: "",
+    comments: [],
+    // ========== User Detail ==========
 }
 
 function AppProvider({ children }) {
@@ -56,10 +70,10 @@ function AppProvider({ children }) {
     const signUpSubmit = async () => {
         dispatch({ type: 'LOADING' });
         try {
-            const formData = { 
-                username: name, 
-                email, 
-                password 
+            const formData = {
+                username: name,
+                email,
+                password
             };
             await axios.post('http://localhost:3500/auth/register', formData);
             navigate("/login");
@@ -99,15 +113,12 @@ function AppProvider({ children }) {
         dispatch({ type: "LOG_OUT" });
     }
 
-    const getUser = async () => {
+    const getUser = async (id) => {
+        dispatch({ type: "LOADING" });
         try {
-            const token = localStorage.getItem("access_token");
-            const { UserInfo: { id: userId } } = jwt(token);
-            const response = await axios.get(`http://localhost:3500/user/${userId}`, {
-                headers: { Authorization: `Bearer ${token}` }
-            })
-            const { user: { username, email, profilePictureURL } } = response.data;
-            dispatch({ type: "GET_USER", payload: { username, email, profilePictureURL } });
+            const { data } = await axios.get(`http://localhost:3500/user/${id}`);
+            dispatch({ type: "GET_USER", payload: data });
+            console.log(data );
         } catch (error) {
             console.log(error);
         }
@@ -218,25 +229,14 @@ function AppProvider({ children }) {
 
     const getBlog = async (id) => {
         dispatch({ type: "LOADING" });
-        
         try {
-            const response = await axios.get(`http://localhost:3500/blog/${id}`);
-
-            const title = response.data.blog.title;
-            const content = response.data.blog.content;
-            const otherUserName = response.data.blog.user_id.username;
-            const otherUserId = response.data.blog.user_id._id;
-            const otherUserAvatar = response.data.blog.user_id.profilePictureURL;
-
-            const data = { 
-                title, 
-                content, 
-                otherUserName, 
-                otherUserId, 
-                otherUserAvatar 
-            };
-
-            dispatch({ type: "GET_BLOG_DETAIL", payload: data });
+            const response = await Promise.all([
+                axios.get(`http://localhost:3500/blog/${id}`),
+                axios.get(`http://localhost:3500/blog/${id}/comments?page=1&limit=5`)
+            ]);
+            console.log(response)
+            dispatch({ type: "GET_BLOG_DETAIL", payload: response[0].data });
+            dispatch({ type: "GET_COMMENTS", payload: response[1].data });
         } catch (error) {
             console.log(error);
         }

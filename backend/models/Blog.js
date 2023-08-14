@@ -19,7 +19,7 @@ const BlogShema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ["Science-Technology", "Movie", "Design", "Tips"],
+        enum: ["Science - Technology", "Movie", "Design - Tips", "Tips"],
         default: "",
         required: true,
     },
@@ -27,9 +27,6 @@ const BlogShema = new mongoose.Schema({
     likes: {
         type: Map,
         of: Boolean,
-    },
-    commentId: {
-        type: [{ type: mongoose.Types.ObjectId, ref: "Comment" }],
     }
 }, { timestamps: true });
 
