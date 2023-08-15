@@ -1,7 +1,7 @@
 export default function Pagination() {
     return (
         <nav className="lg:grid lg:grid-cols-6" aria-label="Page navigation example">
-            <ul className="flex items-center justify-between -space-x-px h-10 text-base lg:col-span-4">
+            <ul className="flex flex-wrap items-center justify-between -space-x-px h-10 text-base lg:col-span-4">
                 <li>
                     <a href="#" className="flex items-center justify-center px-4 h-10 ml-0 leading-tight hover:bg-gray-200">
                         <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">

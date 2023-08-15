@@ -17,24 +17,24 @@ export default function Header() {
     const hide = () => setVisible(false);
 
     const navbarPublic = (
-        <>
-            <Link className="hidden ml-6 text-slate-900 lg:text-lg md:block" to="/login">
+        <React.Fragment>
+            <Link className="hidden ml-6 text-slate-900 md:block" to="/login">
                 Contact
             </Link>
-            <Link className="hidden ml-6 text-slate-900 lg:text-lg md:block" to="/login">
+            <Link className="hidden ml-6 text-slate-900 md:block" to="/login">
                 Log in
             </Link>
             <Link
-                className="lg:text-lg ml-6 text-white bg-sky-500 py-2 px-4 rounded-full hover:bg-sky-600"
+                className="ml-6 text-white bg-sky-500 py-2 px-4 rounded-full hover:bg-sky-600"
                 to="/register"
             >
                 Create Account
             </Link>
-        </>
+        </React.Fragment>
     );
 
     const navbarPrivate = (
-        <>
+        <React.Fragment>
             <Link className="ml-6 text-slate-900 flex items-center" to="/blogs">
                 <CgNotes className="text-lg" />
                 <span className="ml-2">Blogs</span>
@@ -78,14 +78,14 @@ export default function Header() {
                     <UserAvatar width="w-12" height="h-12" />
                 </div>
             </Tippy>
-        </>
+        </React.Fragment>
     );
 
     const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
 
     return (
         <React.Fragment>
-            <header className="h-20 shadow-lg bg-white z-50 relative">
+            <header className="h-[70px] shadow-lg bg-white z-50 relative">
                 <Container styles={"flex justify-between items-center h-full"}>
                     <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
                     <nav className="flex items-center">

@@ -19,8 +19,6 @@ const BlogShema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ["Science - Technology", "Movie", "Design - Tips", "Tips"],
-        default: "",
         required: true,
     },
     picturePath: String,

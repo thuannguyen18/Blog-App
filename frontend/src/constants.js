@@ -1,6 +1,6 @@
 export const CATEGORIES = [
-    "Design - Tips",
     "Science - Technology", 
+    "Design - Tips",
     "History", 
     "Music", 
     "Technology", 

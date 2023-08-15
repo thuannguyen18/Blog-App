@@ -3,9 +3,9 @@ import UserAvatar from "components/user/UserAvatar";
 
 export default function Article({ id, userId, title, subTitle, category, userName, profilePicturePath, picturePath }) {
     return (
-        <div className="grid lg:grid-cols-8 mb-12">
-            <Link className="lg:col-span-2" to={`/blog/${id}`}>
-                {picturePath && <img className="rounded object-cove h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
+        <div className="grid lg:grid-cols-9 mb-12">
+            <Link className="lg:col-span-3" to={`/blog/${id}`}>
+                {picturePath && <img className="rounded object-cover h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="lg:col-span-6 flex flex-col justify-between lg:pl-4">
                 <Link className="text-sm text-sky-500 hover:text-sky-600" to="/category">{category}</Link>

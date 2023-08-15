@@ -77,7 +77,7 @@ export default function Home() {
             <Container styles={"my-4 py-4"}>
                 <div className="grid md:grid-cols-6">
                     <div className="order-last col-span-6 lg:col-span-4 lg:order-first lg:pr-10">
-                        <nav className="border-b border-slate-300">
+                        <nav className="border-b border-slate-200">
                             <button
                                 className={`${allTopics && "border-b-4 border-sky-600"} font-semibold h-10 w-32`}
                                 onClick={() => {
@@ -113,7 +113,7 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
-                    <div className="col-span-6 lg:col-span-2 sticky top-0 right-0">
+                    <div className="col-span-6 lg:col-span-2">
                         <h2 className="font-semibold pt-5 text-lg lg:text-xl">Categories</h2>
                         <div className="flex flex-wrap mt-4">
                             {categories.map((category, index) => (
