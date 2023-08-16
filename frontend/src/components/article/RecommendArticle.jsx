@@ -4,8 +4,8 @@ import UserAvatar from "components/user/UserAvatar";
 export default function RecommendArticle({ id, userId, title, userName, profilePicturePath, picturePath }) {
     return (
         <article className="md:col-span-2 lg:col-span-1 flex flex-col justify-between">
-            <Link to={`/blog/${id}`}>
-                {picturePath && <img className="rounded object-cover w-full h-38 lg:h-58" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
+            <Link className="max-h-52" to={`/blog/${id}`}>
+                {picturePath && <img className="rounded object-cover w-full h-52" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="grow flex flex-col justify-between">
                 <Link to={`/blog/${id}`}>

@@ -1,6 +1,7 @@
 export const CATEGORIES = [
-    "Science - Technology", 
-    "Design - Tips",
+    "Science-Technology", 
+    "Beauty",
+    "Design-Tips",
     "History", 
     "Music", 
     "Technology", 
@@ -13,5 +14,13 @@ export const CATEGORIES = [
     "Design",
     "Book",
     "Game",
-    "Fitness"
+    "Fitness",
+    "Health",
+    "Business",
+    "Photograpy",
+    "Art",
+    "Food",
+    "Careers",
+    "Entertainment",
+    "Computer-IT Business"
 ];

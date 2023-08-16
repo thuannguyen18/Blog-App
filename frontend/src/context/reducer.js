@@ -100,11 +100,12 @@ function reducer(state, action) {
                 userBlogs: action.payload,
             }
         }
-        case "GET_BLOGS_PUBLIC": {
+        case "GET_ALL_BLOGS": {
             return {
                 ...state,
                 loading: false,
-                blogsPublic: action.payload
+                blogsPublic: action.payload.blogs,
+                totalPages: action.payload.totalPages
             }
         }
         case "GET_NEWEST_BLOGS":
@@ -165,6 +166,12 @@ function reducer(state, action) {
                 articleContent: action.payload
             }
         }
+        case "CHANGE_PAGE": 
+            return {
+                ...state,
+                activePage: action.payload,
+                currentPage: action.payload
+            }
         default: return new Error('Invalid action');
     }
 }

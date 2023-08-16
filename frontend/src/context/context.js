@@ -44,7 +44,11 @@ const initalState = {
     blogPicturePath: "",
     blogCategory: "",
     comments: [],
-    // ========== User Detail ==========
+    // ========== Pagination ==========
+    totalPages: "",
+    currentPage: 1,
+    limitPerPage: 8,
+    activePage: 1,
 }
 
 function AppProvider({ children }) {
@@ -193,23 +197,11 @@ function AppProvider({ children }) {
 
     const getAllBlogs = async () => {
         dispatch({ type: "LOADING" });
-
         try {
-            const token = localStorage.getItem("access_token");
-
-            if (!token) {
-                const response = await axios.get("http://localhost:3500/blog?page=1&limit=5");
-                dispatch({ type: "GET_BLOGS_PUBLIC", payload: response.data.blogs });
-                return;
-            }
-
-            const response = await axios.get("http://localhost:3500/blog", {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-
-            dispatch({ type: "GET_BLOGS", payload: response.data.blogs.reverse() });
+            const { data } = await axiosConfig
+                .get(`/blog?page=${state.currentPage}&limit=${state.limitPerPage}`);
+            console.log(data);
+            dispatch({ type: "GET_ALL_BLOGS", payload: data });
         } catch (error) {
             console.log(error);
             dispatch({ type: "SUBMITTED" });
@@ -234,7 +226,6 @@ function AppProvider({ children }) {
                 axios.get(`http://localhost:3500/blog/${id}`),
                 axios.get(`http://localhost:3500/blog/${id}/comments?page=1&limit=5`)
             ]);
-            console.log(response)
             dispatch({ type: "GET_BLOG_DETAIL", payload: response[0].data });
             dispatch({ type: "GET_COMMENTS", payload: response[1].data });
         } catch (error) {
@@ -304,6 +295,8 @@ function AppProvider({ children }) {
         }
     }
 
+    const changePage = (page) => dispatch({ type: "CHANGE_PAGE", payload: page });
+
     return (
         <AppContext.Provider
             value={{
@@ -330,7 +323,8 @@ function AppProvider({ children }) {
                 deleteBlog,
                 setTitleUpdate,
                 setContentUpdate,
-                getBlogs
+                getBlogs,
+                changePage
             }}
         >
             {children}

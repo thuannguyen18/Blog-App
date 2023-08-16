@@ -4,8 +4,8 @@ import UserAvatar from "components/user/UserAvatar";
 export default function UserArticle({ title, subtitle, picturePath }) {
     return (
         <article className="md:col-span-1">
-            <Link to={``}>
-                <img className="rounded object-cover w-full h-38 lg:h-58" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />
+            <Link className="max-h-52" to={``}>
+                <img className="rounded object-cover w-full h-52" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />
             </Link>
             <div className="">
                 <Link to={``}>

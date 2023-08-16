@@ -10,6 +10,7 @@ import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
 import NewestAriticle from "components/article/NewestArticle";
 import RecommendArticle from "components/article/RecommendArticle";
 import Pagination from "components/Pagination";
+import Latest from "components/Latest";
 
 export default function Home() {
     const {
@@ -18,7 +19,8 @@ export default function Home() {
         blogsPublic,
         newestBlogs,
         randomBlogs,
-        loading
+        loading,
+        currentPage
     } = useGlobalContext();
 
     const [allTopics, setAllTopics] = useState(true);
@@ -26,6 +28,9 @@ export default function Home() {
 
     useEffect(() => {
         getAllBlogs();
+    }, [currentPage]);
+
+    useEffect(() => {
         getBlogs("GET_NEWEST_BLOGS", "newest");
         getBlogs("GET_RANDOM_BLOGS", "random");
     }, []);
