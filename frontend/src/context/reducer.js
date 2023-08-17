@@ -36,6 +36,22 @@ function reducer(state, action) {
                 userPassword: action.payload
             }
         }
+        case "SET_ALL_TOPICS":
+            return {
+                ...state,
+                allTopics: true,
+                bestTopics: false,
+                currentPage: 1,
+                activePage: 1,
+            }
+        case "SET_BEST_TOPICS":
+            return {
+                ...state,
+                allTopics: false,
+                bestTopics: true,
+                currentPage: 1,
+                activePage: 1,
+            }
         case 'SUBMITTED': {
             return {
                 ...state,
@@ -49,6 +65,11 @@ function reducer(state, action) {
                 loading: true,
             };
         }
+        case "FEED_LOADING":
+            return {
+                ...state,
+                feedLoading: true,
+            }
         case "AUTH_SUCCESS": {
             return {
                 ...state,
@@ -103,11 +124,18 @@ function reducer(state, action) {
         case "GET_ALL_BLOGS": {
             return {
                 ...state,
-                loading: false,
+                feedLoading: false,
                 blogsPublic: action.payload.blogs,
                 totalPages: action.payload.totalPages
             }
         }
+        case "GET_TOP_BLOGS":
+            return {
+                ...state,
+                feedLoading: false,
+                topBlogs: action.payload.blogs,
+                totalPages: action.payload.totalPages
+            }
         case "GET_NEWEST_BLOGS":
             return {
                 ...state,
@@ -166,7 +194,7 @@ function reducer(state, action) {
                 articleContent: action.payload
             }
         }
-        case "CHANGE_PAGE": 
+        case "CHANGE_PAGE":
             return {
                 ...state,
                 activePage: action.payload,

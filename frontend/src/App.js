@@ -10,32 +10,30 @@ export default function App() {
     const { isAuthenticated } = useGlobalContext();
 
     return (
-        <>
-            <main className="app">
-                <Routes>
-                    <Route path="*" element={<NotFound />} />
-                    <Route path="/" element={<Header />}>
-                        {publicRoutes.map((route, index) => {
-                            const Element = route.element;
-                            return <Route key={index} path={route.path} element={<Element />} />;
-                        })}
-                        {privateRoutes.map((route, index) => {
-                            const Element = route.element;
-                            return (
-                                <Route key={index} path={route.path} element={
-                                    <PrivateRoute auth={{ isAuthenticated }}>
-                                        <Element />
-                                    </PrivateRoute>
-                                } />
-                            );
-                        })}
-                    </Route>
-                    {authRoutes.map((route, index) => {
+        <main className="app">
+            <Routes>
+                <Route path="*" element={<NotFound />} />
+                <Route path="/" element={<Header />}>
+                    {publicRoutes.map((route, index) => {
                         const Element = route.element;
                         return <Route key={index} path={route.path} element={<Element />} />;
                     })}
-                </Routes>
-            </main>
-        </>
+                    {privateRoutes.map((route, index) => {
+                        const Element = route.element;
+                        return (
+                            <Route key={index} path={route.path} element={
+                                <PrivateRoute auth={{ isAuthenticated }}>
+                                    <Element />
+                                </PrivateRoute>
+                            } />
+                        );
+                    })}
+                </Route>
+                {authRoutes.map((route, index) => {
+                    const Element = route.element;
+                    return <Route key={index} path={route.path} element={<Element />} />;
+                })}
+            </Routes>
+        </main>
     );
 }

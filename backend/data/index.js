@@ -427,12 +427,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Entertainment",
         picturePath: "po1.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-        ])
+        likes: Math.floor(Math.random() * 100)
     },
     {
         _id: blogIds[1],
@@ -471,16 +466,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "History",
         picturePath: "po2.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-        ])
+        likes: Math.floor(Math.random() * 100)
     },
     {
         _id: blogIds[2],
@@ -522,12 +508,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design-Tips",
         picturePath: "po3.png",
-        likes: new Map([
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[3],
@@ -567,20 +548,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Education",
         picturePath: "po4.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[4],
@@ -620,20 +588,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Life Style",
         picturePath: "po5.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[5],
@@ -675,18 +630,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Health",
         picturePath: "po6.jpg",
-        likes: new Map([
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[1], true],
-            [userIds[9], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[6],
@@ -725,10 +669,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Health",
         picturePath: "po7.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[7],
@@ -773,20 +714,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Beauty",
         picturePath: "po8.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[9], true],
-            [userIds[0], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[19], true],
-            [userIds[16], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[8],
@@ -826,16 +754,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Art",
         picturePath: "po9.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[9],
@@ -877,9 +796,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Business",
         picturePath: "po10.png",
-        likes: new Map([
-            [userIds[5], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[10],
@@ -918,16 +835,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Design",
         picturePath: "po11.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-        ])
+        likes: Math.floor(Math.random() * 100)
     },
     {
         _id: blogIds[11],
@@ -972,13 +880,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Fitness",
         picturePath: "po12.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[9], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[12],
@@ -1018,17 +920,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Technology",
         picturePath: "po13.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[13],
@@ -1070,12 +962,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design-Tip",
         picturePath: "po14.png",
-        likes: new Map([
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[14],
@@ -1114,19 +1001,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Music",
         picturePath: "po15.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[15],
@@ -1171,19 +1046,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Fashion",
         picturePath: "po16.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[16],
@@ -1223,15 +1086,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Design",
         picturePath: "po17.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[17],
@@ -1273,12 +1128,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Careers",
         picturePath: "po18.png",
-        likes: new Map([
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[18],
@@ -1317,19 +1167,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Music",
         picturePath: "po19.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[19],
@@ -1374,19 +1212,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design-Tip",
         picturePath: "po20.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[20],
@@ -1426,15 +1252,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "History",
         picturePath: "po21.jpg",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[21],
@@ -1476,12 +1294,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Photography",
         picturePath: "po22.png",
-        likes: new Map([
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[22],
@@ -1520,19 +1333,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Food",
         picturePath: "po23.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[23],
@@ -1577,19 +1378,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Technology",
         picturePath: "po24.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[24],
@@ -1629,15 +1418,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Art",
         picturePath: "po25.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[25],
@@ -1677,15 +1458,7 @@ export const posts = [
             A simple hamburger menu with the following will work: Work, About, Contact.`,
         category: "Careers",
         picturePath: "po26.jpg",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[26],
@@ -1724,17 +1497,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Science",
         picturePath: "po27.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[27],
@@ -1779,14 +1542,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design",
         picturePath: "po28.jpg",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[28],
@@ -1825,12 +1581,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Education",
         picturePath: "po29.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-        ])
+        likes: Math.floor(Math.random() * 100)
     },
     {
         _id: blogIds[29],
@@ -1875,24 +1626,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "History",
         picturePath: "po30.jpg",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-            [userIds[15], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[30],
@@ -1937,18 +1671,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design",
         picturePath: "po31.jpg",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[31],
@@ -1987,12 +1710,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Book",
         picturePath: "po32.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-        ])
+        likes: Math.floor(Math.random() * 100)
     },
     {
         _id: blogIds[32],
@@ -2031,12 +1749,7 @@ export const posts = [
             It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.`,
         category: "Art",
         picturePath: "po33.png",
-        likes: new Map([
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[33],
@@ -2081,20 +1794,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Music",
         picturePath: "po34.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[16], true],
-            [userIds[17], true],
-            [userIds[18], true],
-            [userIds[9], true],
-            [userIds[19], true],
-            [userIds[16], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[34],
@@ -2139,14 +1839,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Health",
         picturePath: "po35.png",
-        likes: new Map([
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-            [userIds[15], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[35],
@@ -2191,14 +1884,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design-Tip",
         picturePath: "po36.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[36],
@@ -2243,14 +1929,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Music",
         picturePath: "po37.png",
-        likes: new Map([
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-            [userIds[15], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[37],
@@ -2295,14 +1974,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Life Style",
         picturePath: "po38.png",
-        likes: new Map([
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-            [userIds[15], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[38],
@@ -2347,18 +2019,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design - Tip",
         picturePath: "po39.png",
-        likes: new Map([
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-            [userIds[15], true],
-            [userIds[16], true],
-            [userIds[17], true],
-            [userIds[18], true],
-            [userIds[19], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[39],
@@ -2403,13 +2064,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Travel",
         picturePath: "po40.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[40],
@@ -2454,23 +2109,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Game",
         picturePath: "po41.avif",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[41],
@@ -2515,23 +2154,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design-Tip",
         picturePath: "po42.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[42],
@@ -2576,28 +2199,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Game",
         picturePath: "po43.jpg",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-            [userIds[12], true],
-            [userIds[13], true],
-            [userIds[14], true],
-            [userIds[15], true],
-            [userIds[16], true],
-            [userIds[17], true],
-            [userIds[18], true],
-            [userIds[19], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[43],
@@ -2642,12 +2244,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Business",
         picturePath: "po44.webp",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[44],
@@ -2692,20 +2289,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Game",
         picturePath: "po45.jpg",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[45],
@@ -2750,11 +2334,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Science",
         picturePath: "po46.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[46],
@@ -2799,13 +2379,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Design",
         picturePath: "po47.png",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[47],
@@ -2850,16 +2424,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Game",
         picturePath: "po48.webp",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[48],
@@ -2904,14 +2469,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Fashion",
         picturePath: "po49.webp",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
     {
         _id: blogIds[49],
@@ -2956,20 +2514,7 @@ export const posts = [
             ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
         category: "Technology",
         picturePath: "po50.webp",
-        likes: new Map([
-            [userIds[0], true],
-            [userIds[1], true],
-            [userIds[2], true],
-            [userIds[3], true],
-            [userIds[4], true],
-            [userIds[5], true],
-            [userIds[6], true],
-            [userIds[7], true],
-            [userIds[8], true],
-            [userIds[9], true],
-            [userIds[10], true],
-            [userIds[11], true],
-        ])
+        likes: Math.floor(Math.random() * 100),
     },
 ];
 

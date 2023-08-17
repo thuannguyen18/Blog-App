@@ -3,18 +3,21 @@ import Blog from "../models/Blog.js";
 import User from "../models/User.js";
 import Comment from "../models/Comment.js";
 
+
 /** 
-*    @desc Get all blogs (maximun 10 blogs per page)
+*    @desc Get all blogs (maximum 8 blogs per page)
 *    @method GET
 *    @path http://localhost:3500/blog
 *    @query
 *       ?page=[number]&limit=[number]
 *       ?newest=[boolean]&limit=[number] 
 *       ?random=[boolean]&limit=[number] 
+*       ?sort=top&page=[number]&limit=[number]
 */
 export const getAllBlogs = asyncHandler(async (req, res) => {
-    const { page, newest, random, limit } = req.query;
+    const { page, newest, random, limit, sort } = req.query;
     let blogs;
+    let sortBy;
 
     if (newest) {
         blogs = await Blog
@@ -52,11 +55,16 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
         return res.status(200).json(blogs);
     }
 
-    
+    if (sort === "top") {
+        sortBy = { likes: -1 };
+    } else {
+        sortBy = { _id: -1 };
+    }
+
     blogs = await Blog
         .find()
-        .populate("userId", "-password -followers -email")
-        .sort({ createdAt: -1 })
+        .populate("userId", "_id username profilePicturePath")
+        .sort(sortBy)
         .limit(limit * 1)
         .skip((page - 1) * limit);
     const count = await Blog.count();
@@ -68,10 +76,12 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
     });
 });
 
+
 /** 
 *    @desc Get one blog
-8    @path http://localhost:3500/blog/:id
+*    @path http://localhost:3500/blog
 *    @method GET
+*    @param /:id
 */
 export const getBlog = asyncHandler(async (req, res) => {
     const blog = await Blog
@@ -83,6 +93,7 @@ export const getBlog = asyncHandler(async (req, res) => {
 
     res.status(200).json(blog);
 });
+
 
 /** 
 *    @desc Get comments

@@ -11,12 +11,12 @@ export const publicRoutes = [
         element: Home
     },
     {
-        path: "/blog/:id",
-        element: Blog,
-    },
-    {
         path: "/user/:id",
         element: User,
+    },
+    {
+        path: "/blog/:id",
+        element: Blog,
     },
     {
         path: "/category",
@@ -32,5 +32,5 @@ export const authRoutes = [
     {
         path: '/register',
         element: Register
-    }
+    },   
 ];

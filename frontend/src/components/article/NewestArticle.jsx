@@ -3,11 +3,11 @@ import UserAvatar from "components/user/UserAvatar";
 
 export default function NewestArticle({ id, userId, title, subTitle, category, userName, profilePicturePath, picturePath }) {
     return (
-        <article className="md:col-span-1 grid lg:grid-cols-6">
-            <Link className="lg:col-span-2" to={`/blog/${id}`}>
-                {picturePath && <img className="rounded object-cover h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
+        <article className="md:col-span-1 grid grid-cols-12">
+            <Link className="md:max-h-28 lg:max-h-36 col-span-4" to={`/blog/${id}`}>
+                {picturePath && <img className="rounded object-cover w-full h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
-            <div className="lg:col-span-4 lg:pl-4 flex flex-col">
+            <div className="col-span-8 md:pl-4 flex flex-col">
                 <Link className="text-sm text-sky-500 block hover:text-sky-600" to="/category">{category}</Link>
                 <div className="grow">
                     <Link to={`/blog/${id}`}>

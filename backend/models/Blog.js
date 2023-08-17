@@ -22,10 +22,7 @@ const BlogShema = new mongoose.Schema({
         required: true,
     },
     picturePath: String,
-    likes: {
-        type: Map,
-        of: Boolean,
-    }
+    likes: Number
 }, { timestamps: true });
 
 const Blog = mongoose.model("Blog", BlogShema);

@@ -13,7 +13,6 @@ const initalState = {
     name: "",
     email: "",
     password: "",
-    loading: false,
     isAuthenticated: false,
     userName: "",
     userEmail: "",
@@ -37,6 +36,7 @@ const initalState = {
     newestBlogs: [],
     randomBlogs: [],
     authorBlogs: [],
+    topBlogs: [],
     // ========== Blog Detail ==========
     blogTitle: "",
     blogSubtitle: "",
@@ -49,6 +49,12 @@ const initalState = {
     currentPage: 1,
     limitPerPage: 8,
     activePage: 1,
+    // ========== Loader ==========
+    loading: false,
+    feedLoading: false,
+    // ========== Topics ==========
+    allTopics: true,
+    bestTopics: false
 }
 
 function AppProvider({ children }) {
@@ -196,15 +202,25 @@ function AppProvider({ children }) {
     }
 
     const getAllBlogs = async () => {
-        dispatch({ type: "LOADING" });
+        dispatch({ type: "FEED_LOADING" });
         try {
             const { data } = await axiosConfig
                 .get(`/blog?page=${state.currentPage}&limit=${state.limitPerPage}`);
-            console.log(data);
             dispatch({ type: "GET_ALL_BLOGS", payload: data });
         } catch (error) {
             console.log(error);
             dispatch({ type: "SUBMITTED" });
+        }
+    }
+
+    const getTopBlogs = async () => {
+        dispatch({ type: "FEED_LOADING" });
+        try {
+            const { data } = await axiosConfig
+                .get(`/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}`);
+            dispatch({ type: "GET_TOP_BLOGS", payload: data });
+        } catch (error) {
+
         }
     }
 
@@ -296,6 +312,9 @@ function AppProvider({ children }) {
     }
 
     const changePage = (page) => dispatch({ type: "CHANGE_PAGE", payload: page });
+    
+    const setAllTopics = () => dispatch({ type: "SET_ALL_TOPICS" });
+    const setBestTopics = () => dispatch({ type: "SET_BEST_TOPICS" });
 
     return (
         <AppContext.Provider
@@ -324,7 +343,10 @@ function AppProvider({ children }) {
                 setTitleUpdate,
                 setContentUpdate,
                 getBlogs,
-                changePage
+                getTopBlogs,
+                changePage,
+                setAllTopics,
+                setBestTopics,
             }}
         >
             {children}

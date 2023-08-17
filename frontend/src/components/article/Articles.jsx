@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
+import { BiLike } from "react-icons/bi";
 import UserAvatar from "components/user/UserAvatar";
 
-export default function Article({ id, userId, title, subTitle, category, userName, profilePicturePath, picturePath }) {
+export default function Article({
+    id,
+    userId,
+    title,
+    subTitle,
+    category,
+    userName,
+    profilePicturePath,
+    picturePath,
+    likes
+}) {
     return (
         <div className="grid lg:grid-cols-9 mb-12">
             <Link className="max-h-48 lg:col-span-3" to={`/blog/${id}`}>
@@ -17,9 +28,15 @@ export default function Article({ id, userId, title, subTitle, category, userNam
                         {subTitle}
                     </p>
                 </div>
-                <div className="flex items-center mt-4">
-                    <UserAvatar width="w-10" height="h-10" isDefault={true} profilePicturePath={profilePicturePath} />
-                    <Link className="text-sm font-semibold block ml-2" to={`/user/${userId}`}>{userName}</Link>
+                <div className="flex items-center justify-between mt-2">
+                    <div className="flex items-center">
+                        <UserAvatar width="w-10" height="h-10" isDefault={true} profilePicturePath={profilePicturePath} />
+                        <Link className="text-sm font-semibold block ml-2" to={`/user/${userId}`}>{userName}</Link>
+                    </div>
+                    <div className="flex items-center">
+                        <BiLike />
+                        <span className="ml-2 text-sm">{likes}</span>
+                    </div>
                 </div>
             </div>
         </div>
