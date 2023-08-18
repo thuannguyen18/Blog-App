@@ -49,9 +49,12 @@ const initalState = {
     currentPage: 1,
     limitPerPage: 8,
     activePage: 1,
+    nextComments: 1,
+    isFinalComment: false,
     // ========== Loader ==========
     loading: false,
     feedLoading: false,
+    commentLoading: false,
     // ========== Topics ==========
     allTopics: true,
     bestTopics: false
@@ -128,7 +131,7 @@ function AppProvider({ children }) {
         try {
             const { data } = await axios.get(`http://localhost:3500/user/${id}`);
             dispatch({ type: "GET_USER", payload: data });
-            console.log(data );
+            console.log(data);
         } catch (error) {
             console.log(error);
         }
@@ -239,11 +242,22 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
         try {
             const response = await Promise.all([
-                axios.get(`http://localhost:3500/blog/${id}`),
-                axios.get(`http://localhost:3500/blog/${id}/comments?page=1&limit=5`)
+                axiosConfig.get(`/blog/${id}`),
+                axiosConfig.get(`/blog/${id}/comments?page=1&limit=5`)
             ]);
             dispatch({ type: "GET_BLOG_DETAIL", payload: response[0].data });
             dispatch({ type: "GET_COMMENTS", payload: response[1].data });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getMoreComments = async (id) => {
+        dispatch({ type: "COMMENT_LOADING" });
+        try {
+            const { data } = await axiosConfig
+                .get(`/blog/${id}/comments?page=${state.nextComments += 1}&limit=5`);
+            dispatch({ type: "GET_MORE_COMMENTS", payload: data })
         } catch (error) {
             console.log(error);
         }
@@ -312,7 +326,7 @@ function AppProvider({ children }) {
     }
 
     const changePage = (page) => dispatch({ type: "CHANGE_PAGE", payload: page });
-    
+
     const setAllTopics = () => dispatch({ type: "SET_ALL_TOPICS" });
     const setBestTopics = () => dispatch({ type: "SET_BEST_TOPICS" });
 
@@ -347,6 +361,7 @@ function AppProvider({ children }) {
                 changePage,
                 setAllTopics,
                 setBestTopics,
+                getMoreComments,
             }}
         >
             {children}

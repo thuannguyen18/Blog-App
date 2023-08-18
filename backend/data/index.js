@@ -2516,6 +2516,2256 @@ export const posts = [
         picturePath: "po50.webp",
         likes: Math.floor(Math.random() * 100),
     },
+    {
+        _id: blogIds[50],
+        userId: userIds[9],
+        username: "Steven Hopkin",
+        userPicturePath: "p10.jpeg",
+        title: "Magdalena’s Bones By Dave Ungless An Enigmatic Saga of Human Origin",
+        subTitle: "“Magdalena’s Bones” is a breathtaking saga of human origin and its timeless journey from nothingness to eternity",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Book",
+        picturePath: "po51.webp",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[51],
+        userId: userIds[15],
+        username: "Brain Smith",
+        userPicturePath: "p16.jpeg",
+        title: "How does Open Science practice differ between research disciplines?",
+        subTitle: "Written by Lauren Cadwallader and Lindsay Morton Different research communities have different priorities, needs, norms, and challenges in…",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Science-Technology",
+        picturePath: "po52.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[52],
+        userId: userIds[12],
+        username: "Alex Robinson",
+        userPicturePath: "p13.jpeg",
+        title: "How To Improve As a Drummer: Advice From The R&B Pros",
+        subTitle: "I’m sure you don’t need us to remind you. Still, there are some seriously great R&B pros out there who have not only conquered the music scene but have also become influential mentors for aspiring musicians, especially drummers. One name that instantly comes to mind is Questlove, the drumming virtuoso behind The Roots.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Music",
+        picturePath: "po53.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[53],
+        userId: userIds[14],
+        username: "Lois",
+        userPicturePath: "p15.jpeg",
+        title: "30 Easy Back-to-School Recipes (Nut-Free!)",
+        subTitle: "Back-to-school season has arrived! It’s the time of year when we get lots of requests for nut-free recipes that can be packed in lunchboxes.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Food",
+        picturePath: "po54.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[54],
+        userId: userIds[1],
+        username: "Jane Roger",
+        userPicturePath: "p2.jpeg",
+        title: "15 Best Slot Canyons Near Las Vegas Nevada",
+        subTitle: "These may not be the slots you had in mind for Vegas, but believe it or not, there are a bunch of great slot canyons near Las Vegas",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Travel",
+        picturePath: "po55.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[55],
+        userId: userIds[15],
+        username: "Brian Smith",
+        userPicturePath: "p16.jpeg",
+        title: "Open Science is better science",
+        subTitle: "At the heart of the Open Science movement is the conviction that Open Science is better science. More rigorous. More inclusive.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Science",
+        picturePath: "po56.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[56],
+        userId: userIds[13],
+        username: "Henry Mark",
+        userPicturePath: "p14.jpeg",
+        title: "To Beard or not To Beard? The 3 Best Trade Packages for James Harden",
+        subTitle: "76ers Point Guard James Harden has requested a trade for the third time in three years, now wanting out of Philadelphia.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Sport",
+        picturePath: "po57.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[57],
+        userId: userIds[17],
+        username: "Ronald Lyon",
+        userPicturePath: "p18.jpeg",
+        title: "Smite Won’t Launch On PC: How to Force It And Play Smoothly",
+        subTitle: "Smite not launching on PC can be annoying and get in the way of fun. Learn how to force it to launch ",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Game",
+        picturePath: "po58.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[58],
+        userId: userIds[14],
+        username: "Lois",
+        userPicturePath: "p15.jpeg",
+        title: "Pesto Veggie Burgers with Balsamic Aioli",
+        subTitle: "Just 30 minutes required for this satisfying plant-based main perfect for summer BBQs or a quick weeknight meal!",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Food",
+        picturePath: "po59.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[59],
+        userId: userIds[11],
+        username: "Anna Geller",
+        userPicturePath: "p12.jpeg",
+        title: "Tourette syndrome: Understanding the basics",
+        subTitle: "Involuntary tics are very common, with as many as one in five children experiencing them at some point. They may be temporary or long-lasting.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Health",
+        picturePath: "po60.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[60],
+        userId: userIds[12],
+        username: "Alex Robinson",
+        userPicturePath: "p13.jpeg",
+        title: "Exercise may counteract inherited risk for diabetes",
+        subTitle: "etting regular exercise can help fend off diabetes, even in people with a genetic propensity for the disease, according to a 2023 study.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Fitness",
+        picturePath: "po61.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[61],
+        userId: userIds[6],
+        username: "John Lee",
+        userPicturePath: "p7.jpeg",
+        title: "Weekly aerobic exercise may help reduce flu and pneumonia deaths",
+        subTitle: "A 2023 study found that people who met guidelines for engaged weekly aerobic activity had a lower risk of dying from pneumonia or influenza than those who did no activity.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Fitness",
+        picturePath: "po62.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[62],
+        userId: userIds[10],
+        username: "Annie Chambers",
+        userPicturePath: "p11.jpeg",
+        title: "Make More, Work Less: Artificial Intelligence Tools for Every Type of Creative",
+        subTitle: "Check out the artificial intelligence (AI) tools supporting the creative process and making creating easier.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Photography",
+        picturePath: "po63.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[63],
+        userId: userIds[18],
+        username: "Bruce Myer",
+        userPicturePath: "p19.jpeg",
+        title: "Meet Now What? The essential new podcast for evolving designers",
+        subTitle: "New podcast alert, Dribbblers! Here’s the low down on the new podcast that explores where design & development is headed next.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Entertainment",
+        picturePath: "po64.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[64],
+        userId: userIds[14],
+        username: "Henry Mark",
+        userPicturePath: "p15.jpeg",
+        title: "Try this: Swinging with kettlebells",
+        subTitle: "Kettlebell swings are a simple exercise that helps improve posture and strengthens muscle groups that often do not get enough attention, such as those in the back of the thighs, the buttocks, the hips, and the lower back.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Fitness",
+        picturePath: "po65.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[65],
+        userId: userIds[11],
+        username: "Anna Geller",
+        userPicturePath: "p12.jpeg",
+        title: "Who Was the First Convicted Murderer in America?",
+        subTitle: "John Billington, known as America’s first convicted murderer, had developed a reputation as a ‘knave’ among his fellow Plymouth colonists.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "History",
+        picturePath: "po66.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[66],
+        userId: userIds[13],
+        username: "Henry Mark",
+        userPicturePath: "p14.jpeg",
+        title: "The FDA relaxes restrictions on blood donation",
+        subTitle: "While the FDA rules for blood donation were revised twice in the last decade, one group — men who have sex with men — continued to be turned away from donating. Now new, evidence-based FDA rules will focus on individual risk rather than groupwide restrictions.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Health",
+        picturePath: "po67.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[67],
+        userId: userIds[3],
+        username: "Edward Norton",
+        userPicturePath: "p4.jpeg",
+        title: "Halo Infinite Won’t Update: Fix Like A Pro",
+        subTitle: "Embarking on your virtual journey in Halo Infinite is an interesting experience—until you encounter Halo Infinite won't update. This issue leaves you staring at a stagnant percentage, or no download progress at all.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Game",
+        picturePath: "po68.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[68],
+        userId: userIds[17],
+        username: "Ronald Lyon",
+        userPicturePath: "p18.jpeg",
+        title: "12 graphic design memes that will make you laugh (or cry)",
+        subTitle: "Have a laugh (and a cry) at these hilarious graphic designer memes only designers would understand.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Design",
+        picturePath: "po69.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[69],
+        userId: userIds[10],
+        username: "Annie Chambers",
+        userPicturePath: "p11.jpeg",
+        title: "4 signs your product is not as accessible as you think",
+        subTitle: "Accessibility is a key ingredient in your product cake — and it’ll always taste best when it’s added to the mix at the beginning.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Music",
+        picturePath: "po70.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[70],
+        userId: userIds[9],
+        username: "Steven Hopkin",
+        userPicturePath: "p10.jpeg",
+        title: "Meet the 3 creators driving change on the web, and in the world.",
+        subTitle: "What’s in store for the next iteration of the web? Take a look at the designers making waves in web creation.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Art",
+        picturePath: "po71.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[71],
+        userId: userIds[8],
+        username: "Carly",
+        userPicturePath: "p9.jpeg",
+        title: "Building a Career in Character Design: A chat with Sarah Beth Morgan",
+        subTitle: "Curious about pursuing a career in character design? Get some advice from professional character designer & Dribbble crash-course instructor, Sarah Beth Morgan.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Careers",
+        picturePath: "po72.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[72],
+        userId: userIds[3],
+        username: "Edward Norton",
+        userPicturePath: "p4.jpeg",
+        title: "Phillies Fans Makes Mom Cry. In A Good Way.",
+        subTitle: "This is not another Philadelphia sports fans throwing ice balls at Santa Claus story or booing the Pope or punting puppies.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Careers",
+        picturePath: "po73.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[73],
+        userId: userIds[18],
+        username: "Bruce Myer",
+        userPicturePath: "p19.jpeg",
+        title: "Wolf on the Fells by August Astrom: An Entertaining Historical Fantasy",
+        subTitle: "Wolf on the fells by August Astrom is a Historical Fantasy novel published on February 24, 2023. In the Norwegian Country of Finnmark, a roving hunter named Ib is on the trail of a man-eating wolf that had terrorized the area and ended the life of some persons.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Book",
+        picturePath: "po74.webp",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[74],
+        userId: userIds[6],
+        username: "John Lee",
+        userPicturePath: "p7.jpeg",
+        title: "SportsBlog newsletter 7/11: The stars are brighter in Hollywood!",
+        subTitle: "Every Monday morning, the SportsBlog staff sends a comprehensive email out covering all the biggest news in the sporting world from the week that was.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Sport",
+        picturePath: "po75.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[75],
+        userId: userIds[4],
+        username: "Jane Doe",
+        userPicturePath: "p5.jpeg",
+        title: "10 online mistakes that could cost you your work",
+        subTitle: "Stop making these common mistakes online: Learn how to protect yourself and your work on the internet.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Computer-IT Business",
+        picturePath: "po76.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[76],
+        userId: userIds[18],
+        username: "Bruce Myer",
+        userPicturePath: "p19.jpeg",
+        title: "Half Dome Hike: Epic Cables Climb In Yosemite National Park",
+        subTitle: "The Half Dome hike is the single most epic hike in California’s Yosemite National Park, with a thrilling and scary cables section at the end of the trail that leads you to panoramic views of the entire Yosemite valley!",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Travel",
+        picturePath: "po77.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[77],
+        userId: userIds[0],
+        username: "Emily Osment",
+        userPicturePath: "p1.jpeg",
+        title: "‘Avatar 2’: Everything we know about the upcoming sci-fi epic",
+        subTitle: "Back to Pandora we go!",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Movies",
+        picturePath: "po78.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[78],
+        userId: userIds[9],
+        username: "Steven Hopkin",
+        userPicturePath: "p10.jpeg",
+        title: "How to land your first UX design internship (2021)",
+        subTitle: "Ready to launch your UX career? Keep reading for details on how to find and land your first UX design internship.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Careers",
+        picturePath: "po79.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[79],
+        userId: userIds[0],
+        username: "Emily Osment",
+        userPicturePath: "p1.jpeg",
+        title: "‘The Matrix Resurrections’: release date, trailers, cast and everything we know so far",
+        subTitle: "Neo is back in business",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Movies",
+        picturePath: "po80.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[80],
+        userId: userIds[13],
+        username: "Henry Mark",
+        userPicturePath: "p14.jpeg",
+        title: "Upcoming Webinar: June 28th, 2021",
+        subTitle: "Please join PLOS’ Partnerships team for an office hours session regarding all-titles offer for CRL/NERL members.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Science",
+        picturePath: "po81.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[81],
+        userId: userIds[9],
+        username: "Steven Hopkin",
+        userPicturePath: "p10.jpeg",
+        title: "How Lewis Strauss Shaped the Atomic Age—and Orchestrated Robert Oppenheimer’s Downfall",
+        subTitle: "Amateur physicist Lewis Strauss spurred the hydrogen bomb’s development—and became Robert Oppenheimer’s nemesis.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "History",
+        picturePath: "po82.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[82],
+        userId: userIds[3],
+        username: "Edward Norton",
+        userPicturePath: "p4.jpeg",
+        title: "Exercise tied to reduced risks of dying from flu or pneumonia",
+        subTitle: "A 2023 study of more than 577,000 people found that people who said they met the guidelines for weekly physical activity had a 48% lower risk of dying from flu or pneumonia over a nine-year period, compared with people who said they didn't meet the guidelines.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Fitness",
+        picturePath: "po83.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[83],
+        userId: userIds[19],
+        username: "Alex Morgan",
+        userPicturePath: "p20.jpeg",
+        title: "Unclutter your creative workspace with the versatility of USB-C",
+        subTitle: "How designers can take advantage of the versatility of USB-C",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Photography",
+        picturePath: "po84.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[84],
+        userId: userIds[13],
+        username: "Alex Robinson",
+        userPicturePath: "p14.jpeg",
+        title: "This Woman's $545 Winter Beauty Routine Is Going Viral On Reddit",
+        subTitle: "Call it the Reddit effect: What started as an unassuming selfie shared by London-based YouTube vlogger",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Beauty",
+        picturePath: "po85.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[85],
+        userId: userIds[9],
+        username: "Steven Hopkin",
+        userPicturePath: "p10.jpeg",
+        title: "How to reverse engineer your dream design career (3 simple steps)",
+        subTitle: "Use this 3 step approach to reverse engineer your next career move and get your dream graphic design job.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Careers",
+        picturePath: "po86.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[86],
+        userId: userIds[15],
+        username: "Brian Smith",
+        userPicturePath: "p16.jpeg",
+        title: "Make More, Work Less: Artificial Intelligence Tools for Every Type of Creative",
+        subTitle: "Check out the artificial intelligence (AI) tools supporting the creative process and making creating easier.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Computer-IT Business",
+        picturePath: "po87.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[87],
+        userId: userIds[2],
+        username: "Peter Thomson",
+        userPicturePath: "p3.jpeg",
+        title: "6 self-care tips every remote worker needs for WFH success",
+        subTitle: "Check out six simple self-care tips that will help ensure your WFH experience is both positive and productive.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Life Style",
+        picturePath: "po88.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[88],
+        userId: userIds[10],
+        username: "Annie Chambers",
+        userPicturePath: "p11.jpeg",
+        title: "Best 1:1 Gluten-Free Flour Blend (Our Secret Recipe!)",
+        subTitle: "Friends, we’re SO excited to share the BEST 1:1 gluten-free flour blend recipe with you! It’s our perfected SECRET formula we began selling last year after countless rounds of testing.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Food",
+        picturePath: "po89.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[89],
+        userId: userIds[1],
+        username: "Jane Roger",
+        userPicturePath: "p2.jpeg",
+        title: "Age and muscle loss",
+        subTitle: "As the years pass, muscle mass in the body generally shrinks, and strength and power decline. The pro­cess begins earlier than you might think.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Fitness",
+        picturePath: "po90.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[90],
+        userId: userIds[7],
+        username: "Jessica",
+        userPicturePath: "p8.jpeg",
+        title: "I studied the fonts of the top 1000 websites. Here's what I learned.",
+        subTitle: "A design-curious data scientist crawled the top 1000 websites to analyze their font selections. Here are the fascinating results and how you can use them to guide your web design decisions.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Education",
+        picturePath: "po91.png",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[91],
+        userId: userIds[12],
+        username: "Alex Robinson",
+        userPicturePath: "p13.jpeg",
+        title: "Seven spooktacular Halloween movie cameos by your favourite musicians",
+        subTitle: "Stick these guest-starring horror flicks on your movie list",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Entertainment",
+        picturePath: "po92.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[92],
+        userId: userIds[11],
+        username: "Anna Geller",
+        userPicturePath: "p12.jpeg",
+        title: "Oscars 2022: all the snubs, shocks and surprises",
+        subTitle: "From a missed chance at an EGOT to a continuing zero-win streak for an acclaimed director",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Art",
+        picturePath: "po93.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[93],
+        userId: userIds[8],
+        username: "Carly",
+        userPicturePath: "p9.jpeg",
+        title: "Why Upgrading Your Fleet Vehicles Is A Smart Investment",
+        subTitle: "The fast-paced business world, any opportunity to optimize operations, improve efficiency, and bolster profitability is a welcome prospect.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Business",
+        picturePath: "po94.webp",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[94],
+        userId: userIds[16],
+        username: "Emma Walker",
+        userPicturePath: "p17.jpeg",
+        title: "Alexander the Great: 6 Key Battles and a Siege",
+        subTitle: "Here’s how Alexander, one of history’s most iconic military leaders, grew the ancient Greek kingdom of Macedonia and conquered the Persian Empire.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "History",
+        picturePath: "po95.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[95],
+        userId: userIds[18],
+        username: "Bruce Myer",
+        userPicturePath: "p19.jpeg",
+        title: "…Hey, uh hey, BAD MARY The Floor is Lava",
+        subTitle: "Looking to turn your romper room into a hazardous good time and need some jams to blast as you and your crew try to avoid a magma-induced death (metaphorically, of course)? Rock-n-rollers Bad Mary has just the song for ya!",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Music",
+        picturePath: "po96.webp",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[96],
+        userId: userIds[1],
+        username: "Jane Roger",
+        userPicturePath: "p2.jpeg",
+        title: "Great Blue Hole Belize: Scenic Flight & Photos",
+        subTitle: "The Great Blue Hole in Belize is probably one of the most famous travel photos ever. ",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Travel",
+        picturePath: "po97.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[97],
+        userId: userIds[10],
+        username: "Annie Chambers",
+        userPicturePath: "p11.jpeg",
+        title: "How Brown Women Can Embrace a Sunless Tan This Summer",
+        subTitle: "One day, in around the year 2000, Stella Simona, a high schooler growing up in Los Angeles, drove to her local Sally’s to buy some self-tanner.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Beauty",
+        picturePath: "po98.webp",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[98],
+        userId: userIds[4],
+        username: "Jane Doe",
+        userPicturePath: "p5.jpeg",
+        title: "Where Emerging Tech Startups Are Thriving",
+        subTitle: "The tech startup industry is experiencing a boom as businesses recognize the value of investing in emerging technologies.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Technology",
+        picturePath: "po99.webp",
+        likes: Math.floor(Math.random() * 100),
+    },
+    {
+        _id: blogIds[99],
+        userId: userIds[7],
+        username: "Jessica",
+        userPicturePath: "p8.jpeg",
+        title: "Thinking of going freelance? Here are 6 pieces of advice from a pro",
+        subTitle: "After three years of freelancing full-time, graphic designer James Round stops by to share his biggest lessons learned and advice for anyone considering taking the leap.",
+        content: `If you're a Marvel fan, you've probably watched most of the movies or TV shows in their collection—especially Phase Four. You might know all of the characters, the crazy Reddit theories, and you can't wait for the new Thor: Love and Thunder.
+            Now think about your friends—the ones that are not into Marvel or maybe just watch it because it's popular and they love going to the movie theater. I'm going to assume you know a few of these people. I know I do. Here's the thing: When talking about The Avengers, I noticed most of them recognize names like Iron Man, Thor, and Black Widow. They might even mention Captain America and Hulk (or the big green guy), but the one name they will almost always forget is Hawkeye.
+            It's a serious branding issue, one that Marvel is completely aware of. So much so that in their recent TV show Hawkeye, Kate Bishop (future Young Avenger) explains to Clint Burton (Hawkeye) that he has a branding problem which is why no one likes him, and that he should do something about it—which is absolutely true! Her efforts convey the entire meaning of the Hawkeye series as a whole, an attempt to turn the least marketable Avenger into something more. And they succeed in that, to a certain extent.\nWhile Hawkeye may not be looking for more attention, Kate is, and she learns from his branding mistakes. As a result, she starts building her personal brand at the very beginning of her career (first season in the MCU) which is something you should do too.
+            Phase 1: Discover and define your personal brand
+            Imagine that a handful of key people in your industry get together for a dinner party and your name comes up in conversation. Wouldn't it be nice (and great for your business) if you could pre-determine what they say about you? Of course, it would. That's the power of a personal brand.\nRemember, it's not about putting on a show for the masses, it's all about engineering a powerful reputation amongst the key people of influence in your industry.\nIf you're starting from scratch, try to summarize three aspects of yourself—aspects that you'll want to be reflected in your personal brand. Your brand will be a driving force behind your career, so it should make you feel alive and uncompromised. If it doesn't inspire you, how can you expect it to inspire others to want to work with you?
+            📌 PRO TIP: YOU DON'T NEED TO APPEAL TO EVERYONE
+            A common issue people run into when developing their personal brand is trying to appeal to everyone. This shouldn't be your goal. By doing so, you risk appealing to no one. More importantly, you'll potentially miss out on new clients who would've otherwise been drawn to your brand. Ignore the people that don't mesh with your aesthetic and work towards better servicing those that do. It's about sorting, not convincing.
+            Phase 2: Build your online presence (put yourself out there).
+            From Twitter to podcasts, blog posts, to Dribbble, it's important to get your voice out there to establish your personal brand. Your first step should be to secure things like URLs and social handles that are the best fit for your brand before someone else does. This includes both your personal website and any social networks you choose to join.
+            Once you define how you'd like to present yourself via a personal brand statement, commit to memory and share widely. Whenever you're asked to introduce yourself or write a short biographical summary, refer to your brand.
+            Designing a personal website (or a portfolio) is another important way to start broadcasting your brand. Think of it as a corner of the internet dedicated solely to your skills and life updates. Then, create social media pages, business cards, and email signatures that not only capture your personal brand sentiment, but also direct peers to your personal website (or portfolio) to learn more. Having an interconnected online presence helps people find you online and showcases your most favorable assets.
+            📌 PRO TIP: GET A PERSONAL DOMAIN NAME
+            Choosing a domain name for your personal website is an important decision you'll have to make. Investing in a personalized domain name is critical to owning the search results that come up when someone Googles your name. Remember, potential clients and employers will do their research. Having a personalized domain that links to your design portfolio will enable you to own the results that come up when anyone searches your name.
+            Choose a personalized domain name that speaks to who you are. We recommend .ME, a trusted domain extension that many creatives from around the world have already chosen as their online home. .ME allows you to brand your website, blog, or portfolio with a domain name that's just as unique as you!
+            Phase 3: Become the go-to expert and constantly deliver value
+            Create content that positions you as the star of your brand. Try to create content that engages and disrupts—content that makes your audience to stop scrolling. Check out hashtags in your niche, and start scrolling through social media Reels to see what type of content surfaces to the top. Come up with a plan: Pick a theme for a specific day, for example, where you can dive deep into a topic. Then, just share from your heart. Don't be afraid to be unconventional. Take risks.
+            Publish your thoughts via blog posts or articles (like this one) so that you can become known (and, fingers crossed, respected) for your ideas.
+            📌 PRO TIP: DON'T FORGET TO TREAT YOUR WEBSITE AS YOUR CENTRAL PILLAR
+            Everything you do on the internet should link back to your website and it should always be up to date. That way, you 'own your name' online so when people search you, they find your website and see the content you want them to.
+            Start building your personal brand today
+            It can take decades to build a reputation in your industry organically. I can’t count the number of times I’ve heard someone say “I’ll just let my good work speak for itself.” Two or three years later, despite consistently creating good (and hard) work, they’re still struggling. The reality is, in today’s hyper-competitive market, being good at what you do isn’t enough.
+            Your personal brand is essentially your reputation. Whether you’ve worked towards intentionally developing it or not, you have one. So, why not work on it? After all, if you’re going to be an Avenger, why not be a recognizable one!
+            As freelancers, we often sit with these common questions regarding financial management: Should I maintain separate bank accounts? How can I effectively build my savings? What is the recommended amount to save for taxes and retirement? Are there tools to help me manage my finances?
+            It is well-known that setting up and managing finances as a self-employed individual can be a daunting task. The world of freelancing brings with it a unique set of financial challenges, from separating personal and business expenses to dealing with unpredictable income.
+            To put your mind at ease, we have gathered actionable tips and lessons learned from financial experts who specialize in assisting freelancers and entrepreneurs. Let's dive into these useful tips, focusing on how freelancers can establish a solid financial foundation for long-term success!
+            Thanks to our friends at SumIt for sponsoring this blog post!            
+            What's the first thing self-employed creatives should do to set up their finances for long-term success?
+            When you're a self-employed individual, it's hard to have a sense of you versus your business. It is essential to have a visual setup for “what's mine, and what's not.” This can be achieved by setting up a business account, creating a tangible barrier that helps you mentally separate the two realms.           
+            By having a dedicated business account, you can better track your income and expenses, ensuring a clearer financial picture for your freelancer venture. No more digging through a jumble of personal transactions to figure out which ones are business-related. It's like finally untangling that mess of charging cables in your drawer.
+            ✅ Pro tip: It's essential to have a visual set up for “what's mine and what's not.”
+            What's a common mistake freelancers make with their finances?
+            One common mistake is neglecting your business needs, particularly when it comes to taxes. It's essential to address tax obligations promptly to avoid being caught off guard.
+            In addition to maintaining a business account separation, it's crucial to establish a tax separation. Remember, the money allocated for taxes is not technically yours, and by keeping this mindset, you'll be better prepared for tax obligations. Remember, almost all business owners spend Q1 trying to figure out how to pay taxes from last year. Don't be that person!
+            ✅ Pro tip: Hold the mindset that the money you put into a tax account is not technically yours.`,
+        category: "Book",
+        picturePath: "po100.jpg",
+        likes: Math.floor(Math.random() * 100),
+    },
 ];
 
 export const comments = [
@@ -2523,32 +4773,24 @@ export const comments = [
     {
         _id: commentIds[0],
         userId: userIds[1],
-        username: "Steve Roger",
-        userPicturePath: "p2.jpeg",
         blogId: blogIds[0],
         content: "This is a comment 1 at blog 1, just testing the comment feature"
     },
     {
         _id: commentIds[1],
         userId: userIds[2],
-        username: "Peter Griffin",
-        profilePicturePath: "p3.jpeg",
         blogId: blogIds[0],
         content: "This is a comment 2 at blog 1, just testing the comment feature"
     },
     {
         _id: commentIds[2],
         userId: userIds[3],
-        username: "Saddy",
-        profilePicturePath: "p4.jpeg",
         blogId: blogIds[0],
         content: "This is a comment 3 at blog 1, just testing the comment feature"
     },
     {
         _id: commentIds[3],
         userId: userIds[4],
-        username: "Jane Doe",
-        profilePicturePath: "p5.jpeg",
         blogId: blogIds[0],
         content: "This is a comment 4 at blog 1, just testing the comment feature"
     },
@@ -2556,64 +4798,48 @@ export const comments = [
     {
         _id: commentIds[4],
         userId: userIds[1],
-        username: "Steve Roger",
-        userPicturePath: "p2.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 1 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[5],
         userId: userIds[2],
-        username: "Peter Griffin",
-        profilePicturePath: "p3.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 2 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[6],
         userId: userIds[3],
-        username: "Saddy",
-        profilePicturePath: "p4.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 3 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[7],
         userId: userIds[4],
-        username: "Jane Doe",
-        profilePicturePath: "p5.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 4 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[8],
         userId: userIds[5],
-        username: "Harvey Dun",
-        profilePicturePath: "p6.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 5 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[9],
         userId: userIds[6],
-        username: "Carly",
-        profilePicturePath: "p7.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 6 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[10],
         userId: userIds[7],
-        username: "Jessica",
-        profilePicturePath: "p8.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 7 at blog 2, just testing the comment feature"
     },
     {
         _id: commentIds[11],
         userId: userIds[8],
-        username: "John Lee",
-        profilePicturePath: "p9.jpeg",
         blogId: blogIds[1],
         content: "This is a comment 8 at blog 2, just testing the comment feature"
     },
@@ -2621,32 +4847,24 @@ export const comments = [
     {
         _id: commentIds[12],
         userId: userIds[5],
-        username: "Harvey Dun",
-        profilePicturePath: "p6.jpeg",
         blogId: blogIds[2],
         content: "This is a comment 1 at blog 3, just testing the comment feature"
     },
     {
         _id: commentIds[13],
         userId: userIds[6],
-        username: "Carly",
-        profilePicturePath: "p7.jpeg",
         blogId: blogIds[2],
         content: "This is a comment 2 at blog 3, just testing the comment feature"
     },
     {
         _id: commentIds[14],
         userId: userIds[7],
-        username: "Jessica",
-        profilePicturePath: "p8.jpeg",
         blogId: blogIds[2],
         content: "This is a comment 3 at blog 3, just testing the comment feature"
     },
     {
         _id: commentIds[15],
         userId: userIds[8],
-        username: "John Lee",
-        profilePicturePath: "p9.jpeg",
         blogId: blogIds[2],
         content: "This is a comment 4 at blog 3, just testing the comment feature"
     },
@@ -2654,96 +4872,72 @@ export const comments = [
     {
         _id: commentIds[16],
         userId: userIds[1],
-        username: "Steven Roger",
-        profilePicturePath: "p2.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 1 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[17],
         userId: userIds[2],
-        username: "Peter Griffin",
-        profilePicturePath: "p3.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 2 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[18],
         userId: userIds[3],
-        username: "Saddy",
-        profilePicturePath: "p4.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 3 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[19],
         userId: userIds[4],
-        username: "Jane Doe",
-        profilePicturePath: "p5.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 4 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[20],
         userId: userIds[5],
-        username: "Harvey Dun",
-        profilePicturePath: "p6.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 5 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[21],
         userId: userIds[6],
-        username: "Carly",
-        profilePicturePath: "p7.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 6 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[22],
         userId: userIds[7],
-        username: "Jessica",
-        profilePicturePath: "p8.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 7 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[23],
         userId: userIds[8],
-        username: "John Lee",
-        profilePicturePath: "p9.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 8 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[24],
         userId: userIds[9],
-        username: "Stephen Hopkin",
-        profilePicturePath: "p10.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 9 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[25],
         userId: userIds[10],
-        username: "Robert Chambers",
-        profilePicturePath: "p11.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 10 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[26],
         userId: userIds[11],
-        username: "Anna Geller",
-        profilePicturePath: "p12.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 11 at blog 4, just testing the comment feature"
     },
     {
         _id: commentIds[27],
         userId: userIds[12],
-        username: "Justin Robinson",
-        profilePicturePath: "p13.jpeg",
         blogId: blogIds[3],
         content: "This is a comment 12 at blog 4, just testing the comment feature"
     },

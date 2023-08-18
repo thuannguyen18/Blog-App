@@ -45,8 +45,8 @@ export default function Blog() {
                         {/* CONTENTS */}
                         <div className="mt-4">
                             {/* <h3 className="heading-per-line semibold text-2xl font-bold">1- Một quyển sách khó:</h3>*/}
-                            {blogContent.split("\n").map(paragraph => (
-                                <p key={paragraph} className="paragraph-per-line text-lg">
+                            {blogContent.split("\n").map((paragraph, index) => (
+                                <p key={index} className="paragraph-per-line text-lg">
                                     {paragraph}
                                 </p>
                             ))}

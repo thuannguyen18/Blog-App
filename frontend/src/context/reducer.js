@@ -70,6 +70,11 @@ function reducer(state, action) {
                 ...state,
                 feedLoading: true,
             }
+        case "COMMENT_LOADING":
+            return {
+                ...state,
+                commentLoading: true,
+            }
         case "AUTH_SUCCESS": {
             return {
                 ...state,
@@ -172,7 +177,23 @@ function reducer(state, action) {
         case "GET_COMMENTS":
             return {
                 ...state,
-                comments: action.payload
+                comments: action.payload,
+                isFinalComment: false,
+            }
+        case "GET_MORE_COMMENTS":
+            if (action.payload.length < 5) {
+                return {
+                    ...state,
+                    commentLoading: false,
+                    isFinalComment: true,
+                    comments: [...state.comments, ...action.payload],
+                    nextComments: 1,
+                }
+            }
+            return {
+                ...state,
+                commentLoading: false,
+                comments: [...state.comments, ...action.payload],
             }
         case "CREATED_BLOG": {
             return {
