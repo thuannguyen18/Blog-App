@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGlobalContext } from "context/context";
 
-import { CATEGORIES as categories } from "constants";
 import Article from "components/article/Articles";
+import Category from "components/Category";
 import Container from "components/Container";
 import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
 import Pagination from "components/Pagination";
@@ -67,15 +67,15 @@ export default function Feed() {
     return (
         <Container styles={"my-4 py-4"}>
             <div ref={ref} className="grid md:grid-cols-6">
-                <div className="order-last col-span-6 lg:col-span-4 lg:order-first lg:pr-10">
+                <div className="order-last col-span-6 lg:col-span-4 lg:order-first lg:pr-10 mt-6 lg:mt-0">
                     <nav className="border-b border-slate-200">
                         <button
-                            className={`${allTopics && "border-b-4 border-sky-600"} font-semibold h-10 w-32`}
+                            className={`${allTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-32 lg:text-base`}
                             onClick={() => setAllTopics()}>
                             FOR YOU
                         </button>
                         <button
-                            className={`${bestTopics && "border-b-4 border-sky-600"} font-semibold h-10 w-40`}
+                            className={`${bestTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-40 lg:text-base`}
                             onClick={() => setBestTopics()}
                         >
                             BEST TOPICS
@@ -86,12 +86,7 @@ export default function Feed() {
                     </div>
                 </div>
                 <div className="col-span-6 lg:col-span-2">
-                    <h2 className="font-semibold pt-5 text-lg lg:text-xl">Categories</h2>
-                    <div className="flex flex-wrap mt-4">
-                        {categories.map((category, index) => (
-                            <button key={index} className="border border-slate-300 rounded-full py-2 px-4 mr-2 mb-3 lg:h-10">{category}</button>
-                        ))}
-                    </div>
+                    <Category />
                 </div>
             </div>
             <Pagination handleClick={handleClick} />

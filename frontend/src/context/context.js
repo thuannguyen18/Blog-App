@@ -37,6 +37,7 @@ const initalState = {
     randomBlogs: [],
     authorBlogs: [],
     topBlogs: [],
+    categoryBlogs: [],
     // ========== Blog Detail ==========
     blogTitle: "",
     blogSubtitle: "",
@@ -44,20 +45,25 @@ const initalState = {
     blogPicturePath: "",
     blogCategory: "",
     comments: [],
-    // ========== Pagination ==========
+    // ========== Blog Pagination ==========
     totalPages: "",
     currentPage: 1,
-    limitPerPage: 8,
     activePage: 1,
+    limitPerPage: 8,
+    // ========== Comment Pagination ==========
     nextComments: 1,
     isFinalComment: false,
+    // ========== Category Pagination ==========
+    categoryTotalPages: "",
+    categoryCurrentPage: 1,
+    categoryActivePage: 1,
     // ========== Loader ==========
     loading: false,
     feedLoading: false,
     commentLoading: false,
     // ========== Topics ==========
     allTopics: true,
-    bestTopics: false
+    bestTopics: false,
 }
 
 function AppProvider({ children }) {
@@ -263,6 +269,17 @@ function AppProvider({ children }) {
         }
     }
 
+    const getCategoryBlogs = async (category) => {
+        dispatch({ type: "LOADING" });
+        try {
+            const { data } = await axiosConfig
+                .get(`/blog/category?name=${category}&page=${state.categoryCurrentPage}`)
+            dispatch({ type: "GET_CATEGORY_BLOGS", payload: data });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const createBlog = async () => {
         const { title, content } = state;
 
@@ -362,6 +379,7 @@ function AppProvider({ children }) {
                 setAllTopics,
                 setBestTopics,
                 getMoreComments,
+                getCategoryBlogs,
             }}
         >
             {children}

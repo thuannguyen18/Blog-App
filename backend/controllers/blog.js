@@ -5,14 +5,14 @@ import Comment from "../models/Comment.js";
 
 
 /** 
-*    @desc Get all blogs (maximum 8 blogs per page)
+*    @desc Get all blogs (10 blogs per page)
 *    @method GET
 *    @path http://localhost:3500/blog
 *    @query
-*       ?page=[number]&limit=[number]
-*       ?newest=[boolean]&limit=[number] 
-*       ?random=[boolean]&limit=[number] 
-*       ?sort=top&page=[number]&limit=[number]
+*       ?page=1&limit=10
+*       ?sort=latest&limit=10
+*       ?sort=random&limit=10
+*       ?sort=top&page=1&limit=10
 */
 export const getAllBlogs = asyncHandler(async (req, res) => {
     const { page, newest, random, limit, sort } = req.query;
@@ -116,6 +116,29 @@ export const getComments = asyncHandler(async (req, res) => {
         .skip((page - 1) * limit);
 
     res.status(200).json(comments);
+});
+
+/** 
+*    @desc Get category blogs
+*    @method GET
+*    @path http://localhost:3500/blog/category
+*    @query ?name="game"&page="1"
+*/
+export const getCategoryBlogs = asyncHandler(async (req, res) => {
+    const { name, page } = req.query;
+    
+    const blogs = await Blog
+        .find({ category: name })
+        .populate("userId", "_id username profilePicturePath")
+        .limit(10)
+        .skip((page - 1) * 10);
+    const count = await Blog.count();
+
+    res.status(200).json({
+        blogs,
+        totalPages: Math.ceil(count / 10),
+        currentPage: page,
+    });
 });
 
 export const createBlog = asyncHandler(async (req, res) => {

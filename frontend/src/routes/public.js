@@ -19,7 +19,7 @@ export const publicRoutes = [
         element: Blog,
     },
     {
-        path: "/category",
+        path: "/category/:id",
         element: Category,
     },
 ];

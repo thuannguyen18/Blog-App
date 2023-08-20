@@ -195,6 +195,13 @@ function reducer(state, action) {
                 commentLoading: false,
                 comments: [...state.comments, ...action.payload],
             }
+        case "GET_CATEGORY_BLOGS": 
+            return {
+                ...state,
+                loading: false,
+                categoryBlogs: action.payload.blogs,
+                categoryCurrentPage: action.payload.currentPage,
+            }
         case "CREATED_BLOG": {
             return {
                 ...state,

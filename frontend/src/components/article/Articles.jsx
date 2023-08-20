@@ -15,11 +15,11 @@ export default function Article({
 }) {
     return (
         <div className="grid lg:grid-cols-9 mb-12">
-            <Link className="max-h-48 lg:col-span-3" to={`/blog/${id}`}>
-                {picturePath && <img className="rounded object-cover w-full h-48" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
+            <Link className="max-h-48 lg:col-span-3 border border-gray-200 rounded-sm" to={`/blog/${id}`}>
+                {picturePath && <img className="rounded object-cover w-full h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="lg:col-span-6 flex flex-col justify-between lg:pl-4">
-                <Link className="text-sm text-sky-500 hover:text-sky-600" to="/category">{category}</Link>
+                <Link className="text-sm text-sky-500 hover:text-sky-600 uppercase mt-1 lg:mt-0" to="/category">{category}</Link>
                 <div className="grow">
                     <Link className="block" to={`/blog/${id}`}>
                         <h2 className="font-semibold mt-1 lg:text-lg">{title}</h2>

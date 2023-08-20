@@ -1,20 +1,29 @@
 import { Link } from "react-router-dom";
 import UserAvatar from "components/user/UserAvatar";
 
-export default function NewestArticle({ id, userId, title, subTitle, category, userName, profilePicturePath, picturePath }) {
+export default function NewestArticle({ 
+    id, 
+    userId, 
+    title, 
+    subTitle, 
+    category, 
+    userName, 
+    profilePicturePath,
+    picturePath 
+}) {
     return (
         <article className="md:col-span-1 grid grid-cols-12">
-            <Link className="md:max-h-28 lg:max-h-36 col-span-4" to={`/blog/${id}`}>
+            <Link className="md:max-h-28 lg:max-h-36 col-span-4 border border-gray-200 rounded" to={`/blog/${id}`}>
                 {picturePath && <img className="rounded object-cover w-full h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
-            <div className="col-span-8 md:pl-4 flex flex-col">
+            <div className="col-span-8 pl-4 flex flex-col">
                 <Link className="text-sm text-sky-500 block hover:text-sky-600" to="/category">{category}</Link>
                 <div className="grow">
                     <Link to={`/blog/${id}`}>
                         <h2 className="text-sm font-semibold lg:text-base">{title}</h2>
                     </Link>
-                    <p className="paragraph-max-line hidden lg:block text-sm mt-2">
-                        {subTitle}
+                    <p className="hidden lg:block text-xs mt-2">
+                        {subTitle.substring(0, 60)}...
                     </p>
                 </div>
                 <div className="flex items-center mt-2">

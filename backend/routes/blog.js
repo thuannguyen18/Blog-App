@@ -6,12 +6,14 @@ import {
     createBlog,
     updateBlog,
     deleteBlog,
-    getComments
+    getComments,
+    getCategoryBlogs
 } from "../controllers/blog.js";
 
 const router = express.Router();
 
 router.get("/", getAllBlogs);
+router.get("/category", getCategoryBlogs);
 router.post("/", verifyToken, createBlog);
 router.route("/:id")
     .get(getBlog)

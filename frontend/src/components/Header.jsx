@@ -87,7 +87,7 @@ export default function Header() {
         <React.Fragment>
             <header className="h-[70px] shadow-lg bg-white z-50 relative">
                 <Container styles={"flex justify-between items-center h-full"}>
-                    <Link className="text-sky-700 text-3xl font-normal" to="/">MyBlog</Link>
+                    <Link className="text-sky-700 text-2xl md:text-3xl font-normal" to="/">MyBlog</Link>
                     <nav className="flex items-center">
                         {navbar}
                     </nav>
