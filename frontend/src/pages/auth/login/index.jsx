@@ -1,3 +1,5 @@
+import { useState } from "react";
+import AlertMessage from "components/AlertMessge";
 import Form from "components/Form";
 import Input from "components/Input";
 import { useGlobalContext } from "context/context";
@@ -7,11 +9,34 @@ export default function Login() {
         email,
         password,
         setEmail,
-        setPassword
+        setPassword,
+        isAlert
     } = useGlobalContext();
+
+    const inputs = [
+        {
+            value: email,
+            id: "email",
+            label: "Email",
+            htmlFor: "email",
+            type: "email",
+            placeholder: "email@example.com",
+            onChange: setEmail,
+        },
+        {
+            value: password,
+            label: "Password",
+            htmlFor: "password",
+            id: "password",
+            type: "password",
+            placeholder: "password",
+            onChange: setPassword,
+        }
+    ];
 
     return (
         <div className="flex justify-center items-center h-screen">
+            {isAlert && <AlertMessage />}
             <Form
                 title="Sign in"
                 to="/register"
@@ -19,24 +44,18 @@ export default function Login() {
                 buttonText="Sign in"
                 linkText="Sign up"
             >
-                <Input
-                    value={email}
-                    label="Email"
-                    htmlFor="email"
-                    id="email"
-                    type="email"
-                    placeholder="email@example.com"
-                    onChange={setEmail}
-                />
-                <Input
-                    value={password}
-                    label="Password"
-                    htmlFor="password"
-                    id="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={setPassword}
-                />
+                {inputs.map(input => (
+                    <Input
+                        key={input.id}
+                        value={input.value}
+                        label={input.label}
+                        htmlFor={input.htmlFor}
+                        id={input.id}
+                        type={input.type}
+                        placeholder={input.placeholder}
+                        onChange={input.onChange}
+                    />
+                ))}
             </Form>
         </div>
     );

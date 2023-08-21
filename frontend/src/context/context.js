@@ -66,11 +66,15 @@ const initalState = {
     // ========== Topics ==========
     allTopics: true,
     bestTopics: false,
+    // ========== Alert message ==========
+    isAlert: false,
+    isFail: false,
+    isSuccess: false,
+    message: "",
 }
 
 function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initalState);
-    const { name, email, password } = state;
 
     const navigate = useNavigate();
 
@@ -88,39 +92,36 @@ function AppProvider({ children }) {
     const setTitleUpdate = (value) => dispatch({ type: "SET_TITLE_UPDATE", payload: value });
     const setContentUpdate = (value) => dispatch({ type: "SET_CONTENT_UPDATE", payload: value });
 
-    const signUpSubmit = async () => {
-        dispatch({ type: 'LOADING' });
+    const signUp = async () => {
+        dispatch({ type: "LOADING" });
         try {
+            const { name, email, password } = state;
             const formData = {
                 username: name,
                 email,
                 password
             };
-            await axios.post('http://localhost:3500/auth/register', formData);
+            const { data } = await axiosConfig.post("auth/register", formData);
             navigate("/login");
-            dispatch({ type: 'SUBMITTED' });
+            dispatch({ type: "SIGN_UP_SUCCESS", payload: data.message });
         } catch (error) {
-            console.log(error);
-            dispatch({ type: 'SUBMITTED' });
+            dispatch({ type: "SIGN_UP_FAIL", payload: error.response.data.message });
         }
     }
 
-    const signInSubmit = async () => {
+    const signIn = async () => {
         dispatch({ type: 'LOADING' });
         try {
+            const { email, password } = state;
             const formData = { email, password };
-            const response = await axios.post('http://localhost:3500/auth/login', formData);
+            const response = await axiosConfig.post('/auth/login', formData);
             const token = response.data.accessToken;
-
             const { UserInfo: { id } } = jwt(token);
-
-
             if (token) {
                 localStorage.setItem("access_token", token);
                 dispatch({ type: "AUTH_SUCCESS", payload: id });
                 navigate("/blogs");
             }
-
             dispatch({ type: 'SUBMITTED' });
 
         } catch (error) {
@@ -348,6 +349,7 @@ function AppProvider({ children }) {
 
     const setAllTopics = () => dispatch({ type: "SET_ALL_TOPICS" });
     const setBestTopics = () => dispatch({ type: "SET_BEST_TOPICS" });
+    const closeAlertMessage = () => dispatch({ type: "CLOSE_ALERT_MESSAGE" });
 
     return (
         <AppContext.Provider
@@ -356,8 +358,8 @@ function AppProvider({ children }) {
                 setName,
                 setEmail,
                 setPassword,
-                signUpSubmit,
-                signInSubmit,
+                signUp,
+                signIn,
                 logout,
                 setUserName,
                 setUserEmail,
@@ -382,6 +384,7 @@ function AppProvider({ children }) {
                 setBestTopics,
                 getMoreComments,
                 getCategoryBlogs,
+                closeAlertMessage,
             }}
         >
             {children}

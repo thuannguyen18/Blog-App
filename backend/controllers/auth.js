@@ -8,14 +8,14 @@ export const register = asyncHandler(async (req, res) => {
 
     // Confirm data
     if (!username || !email || !password) {
-        return res.status(400).json({ message: 'All fields are required' });
+        return res.status(400).json({ message: "All fields are required" });
     }
 
     const duplicate = await User.findOne({ email });
 
     // Check Duplicate 
     if (duplicate) {
-        return res.status(409).json({ message: 'This email is already exist' });
+        return res.status(409).json({ message: "This email is already exist" });
     }
 
     // Hash password
@@ -24,10 +24,11 @@ export const register = asyncHandler(async (req, res) => {
     // Form data
     const userObj = { username, email, password: hashedPassword };
     const user = await User.create(userObj);
+    
     if (user) {
-        res.status(201).json({ message: `New user ${username} created` });
+        res.status(201).json({ message: "Register success" });
     } else {
-        res.status(400).json({ message: 'Invalid user data received' });
+        res.status(400).json({ message: "Invalid user data received" });
     }
 });
 

@@ -29,6 +29,7 @@ function Input({ label, htmlFor, id, type, placeholder, value, onChange }) {
                 placeholder={placeholder}
                 autoComplete="on"
                 onChange={(e) => onChange(e.target.value)}
+                required
             />
         </div>
     );

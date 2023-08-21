@@ -1,3 +1,4 @@
+import AlertMessage from "components/AlertMessge";
 import Form from "components/Form";
 import Input from "components/Input";
 import { useGlobalContext } from "context/context";
@@ -9,11 +10,13 @@ export default function Register() {
         password,
         setName,
         setEmail,
-        setPassword
+        setPassword,
+        isAlert
     } = useGlobalContext();
 
     return (
-        <div className="flex justify-center items-center h-screen">
+        <div className="relative flex flex-col justify-center items-center h-screen">
+            {isAlert && <AlertMessage />}
             <Form
                 title="Sign up"
                 to="/login"

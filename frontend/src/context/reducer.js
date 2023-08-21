@@ -59,6 +59,29 @@ function reducer(state, action) {
                 userPassword: "",
             };
         }
+        case "SIGN_UP_SUCCESS":
+            return {
+                ...state,
+                loading: false,
+                isAlert: true,
+                isFail: false,
+                isSuccess: true,
+                message: action.payload,
+            }
+        case "SIGN_UP_FAIL":
+            return {
+                ...state,
+                loading: false,
+                isAlert: true,
+                isFail: true,
+                message: action.payload,
+            }
+        case "CLOSE_ALERT_MESSAGE":
+            return {
+                ...state,
+                isAlert: false,
+                isFail: false,
+            }
         case 'LOADING': {
             return {
                 ...state,
