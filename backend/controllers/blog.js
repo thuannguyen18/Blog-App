@@ -111,7 +111,6 @@ export const getComments = asyncHandler(async (req, res) => {
     const comments = await Comment
         .find({ blogId: blog._id })
         .populate("userId", "username email profilePicturePath")
-        .sort({ createdAt: -1 })
         .limit(limit * 1)
         .skip((page - 1) * limit);
 

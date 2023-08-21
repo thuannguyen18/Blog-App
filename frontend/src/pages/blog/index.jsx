@@ -15,6 +15,7 @@ export default function Blog() {
         blogContent,
         blogPicturePath,
         blogCategory,
+        authorId,
         authorName,
         authorEmail,
         authorProfilePicturePath,
@@ -31,10 +32,11 @@ export default function Blog() {
                     <React.Fragment>
                         {/* USER AND BLOG INFO */}
                         <div className="mb-4">
-                            <Link className="text-sm hover:underline">{blogCategory}</Link>
+                            <Link to={`/category/${blogCategory}`} className="text-sm text-gray-500 hover:underline">{blogCategory}</Link>
                             <h1 className="text-4xl lg:text-5xl lg:leading-normal font-semibold my-2">{blogTitle}</h1>
-                            <p>{blogSubtitle}</p>
+                            <p className="text-gray-500 italic">{blogSubtitle}</p>
                             <UserInfo
+                                id={authorId}
                                 name={authorName}
                                 email={authorEmail}
                                 profilePath={authorProfilePicturePath}
@@ -53,6 +55,7 @@ export default function Blog() {
                         </div>
                         {/* COMMENTS */}
                         <FormComment />
+                        <div className="">sdaf</div>
                     </React.Fragment>
                 }
             </div>

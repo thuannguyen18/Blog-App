@@ -1,14 +1,21 @@
 import { useParams } from "react-router-dom";
 import { useGlobalContext } from "context/context";
 import Comment from "./Comment";
+import NoComment from "components/NoComment";
 
 export default function FormComment() {
     const { id } = useParams();
-    const { comments, commentLoading, getMoreComments, isFinalComment } = useGlobalContext();
+    const { 
+        comments, 
+        commentLoading, 
+        getMoreComments, 
+        isFinalComment,
+        isHasComment, 
+    } = useGlobalContext();
 
     return (
-        <div className="rounded border border-gray-200 p-5 lg:px-10 lg:pt-10 my-6 shadow-lg">
-            <form className="w-full bg-white rounded-lg px-4 pt-2">
+        <div className="rounded border border-gray-200 p-5 lg:px-10 lg:pt-10 my-12 shadow-lg">
+            <form className="w-full bg-white rounded-lg px-4">
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-full lg:px-3 mb-2 mt-2">
                         <textarea className="border-b border-gray-200 leading-normal resize-none w-full h-20 py-2 font-medium placeholder-gray-300 focus:outline-none focus:bg-white" name="body" placeholder="Type your feeling" required></textarea>
@@ -17,7 +24,7 @@ export default function FormComment() {
                         <div className="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
                         </div>
                         <div className="-mr-1">
-                            <button type="submit" className="bg-white text-gray-900 font-medium py-1 px-4 border border-gray-300 rounded tracking-wide mr-1 hover:bg-gray-100">Post</button>
+                            <button type="submit" className="bg-sky-500 text-white font-medium py-1 px-4 border border-gray-300 rounded tracking-wide mr-1 hover:bg-sky-600">Post</button>
                         </div>
                     </div>
                 </div>
@@ -31,8 +38,8 @@ export default function FormComment() {
                     />
                 ))}
             </div>
-            {!isFinalComment && <button
-                className="h-10 w-full mt-6 p-2 border-t-2 border-slate-300 font-semibold hover:text-sky-500"
+            {(!isFinalComment && isHasComment) && <button
+                className="h-10 w-full mt-6 p-2 border-t border-slate-300 font-semibold hover:text-sky-500"
                 onClick={() => getMoreComments(id)}
             >
                 {commentLoading && <svg aria-hidden="true" role="status" className="inline w-4 h-4 mr-3 text-slate-900 animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,6 +48,7 @@ export default function FormComment() {
                 </svg>}
                 Load more
             </button>}
+            {!isHasComment && <NoComment />}
         </div>
     );
 }

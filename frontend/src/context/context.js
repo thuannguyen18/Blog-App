@@ -29,6 +29,7 @@ const initalState = {
     userIdBlog: "",
     otherUserAvatar: "",
     // ========== Author ==========
+    authorId: "",
     authorName: "",
     authorEmail: "",
     authorProfilePicturePath: "",
@@ -53,6 +54,7 @@ const initalState = {
     // ========== Comment Pagination ==========
     nextComments: 1,
     isFinalComment: false,
+    isHasComment: false,
     // ========== Category Pagination ==========
     categoryTotalPages: "",
     categoryCurrentPage: 1,
@@ -137,7 +139,6 @@ function AppProvider({ children }) {
         try {
             const { data } = await axios.get(`http://localhost:3500/user/${id}`);
             dispatch({ type: "GET_USER", payload: data });
-            console.log(data);
         } catch (error) {
             console.log(error);
         }
@@ -252,6 +253,7 @@ function AppProvider({ children }) {
                 axiosConfig.get(`/blog/${id}/comments?page=1&limit=5`)
             ]);
             dispatch({ type: "GET_BLOG_DETAIL", payload: response[0].data });
+            console.log(response[0].data);
             dispatch({ type: "GET_COMMENTS", payload: response[1].data });
         } catch (error) {
             console.log(error);

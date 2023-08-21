@@ -22,8 +22,10 @@ export default function User() {
         getUser(id);
     }, []);
 
+    console.log(authorBlogs)
+
     return (
-        <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-4"}>
+        <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
             {loading ? <UserInfoPlaceholder /> :
                 <React.Fragment>
                     <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
@@ -32,7 +34,7 @@ export default function User() {
                         </div>
                         <div className="text-center">
                             <h3 className="text-lg font-bold mt-2">{authorName}</h3>
-                            <p className="text-sm">@{authorEmail}</p>
+                            <p className="text-sm">{authorEmail}</p>
                         </div>
                         <div className="grid grid-cols-3 mt-4 gap-8 text-center">
                             <div className="col-span-1">
@@ -61,13 +63,15 @@ export default function User() {
                     </button>
                 </nav>
                 <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
-                    {authorBlogs.map(({ _id, title, subTitle, picturePath }) => (
+                    {authorBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
                         loading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
                             <UserArticle
                                 key={_id}
+                                id={_id}
                                 title={title}
                                 subtitle={subTitle}
                                 picturePath={picturePath}
+                                likes={likes}
                             />
                     ))}
                 </div>

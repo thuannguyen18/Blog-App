@@ -164,6 +164,7 @@ function reducer(state, action) {
             return {
                 ...state,
                 loading: false,
+                authorId: action.payload.userId._id,
                 authorName: action.payload.userId.username,
                 authorEmail: action.payload.userId.email,
                 authorProfilePicturePath: action.payload.userId.profilePicturePath,
@@ -175,10 +176,25 @@ function reducer(state, action) {
             }
         }
         case "GET_COMMENTS":
+            if (action.payload.length < 5) {
+                if (action.payload.length === 0) {
+                    return { 
+                        ...state,
+                        isHasComment: false,
+                    };
+                }
+                return {
+                    ...state,
+                    comments: action.payload,
+                    isFinalComment: true,
+                    isHasComment: true,
+                }
+            }
             return {
                 ...state,
                 comments: action.payload,
                 isFinalComment: false,
+                isHasComment: true,
             }
         case "GET_MORE_COMMENTS":
             if (action.payload.length < 5) {

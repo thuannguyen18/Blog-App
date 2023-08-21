@@ -13,8 +13,8 @@ export default function NewestArticle({
 }) {
     return (
         <article className="md:col-span-1 grid grid-cols-12">
-            <Link className="md:max-h-28 lg:max-h-36 col-span-4 border border-gray-200 rounded" to={`/blog/${id}`}>
-                {picturePath && <img className="rounded object-cover w-full h-full" src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
+            <Link className="md:max-h-28 lg:max-h-36 col-span-4 rounded" to={`/blog/${id}`}>
+                {picturePath && <img className="rounded object-cover w-full h-full md:h-28 lg:h-36 border border-gray-200 " src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="col-span-8 pl-4 flex flex-col">
                 <Link className="text-sm text-sky-500 block hover:text-sky-600" to="/category">{category}</Link>
