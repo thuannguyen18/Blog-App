@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { BsPencilSquare } from "react-icons/bs";
+import { BiBookmark } from "react-icons/bi";
 import { CgNotes } from "react-icons/cg";
-import { FiSettings, FiLogOut } from "react-icons/fi"
+import { FiLogOut } from "react-icons/fi";
+import { IoIosSettings } from "react-icons/io";
+import { ImProfile } from "react-icons/im";
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
@@ -11,7 +14,14 @@ import UserAvatar from "components/user/UserAvatar";
 import Container from "components/Container";
 
 export default function Header() {
-    const { isAuthenticated, userName, logout } = useGlobalContext();
+    const {
+        isAuthenticated,
+        userName,
+        userEmail,
+        userProfilePicturePath,
+        logout,
+    } = useGlobalContext();
+
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
@@ -25,10 +35,10 @@ export default function Header() {
                 Log in
             </Link>
             <Link
-                className="ml-6 text-white bg-sky-500 py-2 px-4 rounded-full hover:bg-sky-600"
+                className="ml-6 w-[120px] text-center text-white bg-sky-500 py-2 px-4 rounded-full hover:bg-sky-600"
                 to="/register"
             >
-                Create Account
+                Sign up
             </Link>
         </React.Fragment>
     );
@@ -45,25 +55,44 @@ export default function Header() {
             </Link>
             <Tippy
                 render={attrs => (
-                    <div className="box w-80 shadow-3xl rounded-xl p-2.5 bg-white" tabIndex="-1" {...attrs}>
-                        <Link className="flex items-center h-14 px-2 rounded-xl hover:bg-zinc-100" to="/user">
+                    <div className="box w-72 shadow rounded bg-white border border-gray-200" tabIndex="-1" {...attrs}>
+                        <div className="flex items-center justify-evenly p-2 h-[96px] w-full">
                             <UserAvatar width="w-12" height="h-12" />
-                            <span className="ml-1 text-lg font-semibold">{userName}</span>
-                        </Link>
-                        <Link className="flex items-center h-14 mt-2.5 px-2 rounded-xl hover:bg-zinc-100" to="/settings">
-                            <FiSettings className="text-2xl mr-2" />
-                            <span className="font-semibold">Settings</span>
-                        </Link>
-                        <button
-                            className="flex items-center h-14 mt-2.5 px-2 rounded-xl hover:bg-zinc-100 w-full"
-                            onClick={() => {
-                                logout();
-                                setVisible(false);
-                            }}
-                        >
-                            <FiLogOut className="text-2xl mr-2" />
-                            <span className="font-semibold">Log Out</span>
-                        </button>
+                            <div className="ml-2">
+                                <span className="block font-semibold">{userName}</span>
+                                <span className="block ">@{userEmail.replace("@gmail.com", "")}</span>
+                            </div>
+                        </div>
+                        <div className="border-t border-gray-200 p-2">
+                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="/user">
+                                <ImProfile className="text-xl mr-2" />
+                                <span className="text-gray-700">Profile</span>
+                            </Link>
+                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="/user">
+                                <BsPencilSquare className="text-xl mr-2" />
+                                <span className="text-gray-700">All my posts</span>
+                            </Link>
+                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="">
+                                <BiBookmark className="text-2xl relative left-[-1px] mr-1" />
+                                <span className="text-gray-700">Saved</span>
+                            </Link>
+                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="/user/settings">
+                                <IoIosSettings className="text-2xl mr-1" />
+                                <span className="text-gray-700">Account settings</span>
+                            </Link>
+                        </div>
+                        <div className="border-t border-gray-200 p-2">
+                            <button
+                                className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100 w-full"
+                                onClick={() => {
+                                    logout();
+                                    setVisible(false);
+                                }}
+                            >
+                                <FiLogOut className="text-xl mr-2" />
+                                <span className="">Log out</span>
+                            </button>
+                        </div>
                     </div>
                 )}
                 interactive={true}
@@ -75,7 +104,11 @@ export default function Header() {
                     className="ml-6 text-slate-900 flex items-center cursor-pointer"
                     onClick={visible ? hide : show}
                 >
-                    <UserAvatar width="w-12" height="h-12" />
+                    <UserAvatar
+                        width="w-12"
+                        height="h-12"
+                        profilePicturePath={userProfilePicturePath}
+                    />
                 </div>
             </Tippy>
         </React.Fragment>
@@ -85,7 +118,7 @@ export default function Header() {
 
     return (
         <React.Fragment>
-            <header className="h-[70px] shadow-lg bg-white z-50 relative">
+            <header className="h-[69px] shadow-lg bg-white z-50 relative">
                 <Container styles={"flex justify-between items-center h-full"}>
                     <Link className="text-sky-700 text-2xl md:text-3xl font-normal" to="/">MyBlog</Link>
                     <nav className="flex items-center">

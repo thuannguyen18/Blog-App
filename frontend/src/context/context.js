@@ -9,20 +9,20 @@ import reducer from "./reducer";
 const AppContext = createContext();
 
 const initalState = {
+    // ========== Auth ==========
     userId: "",
+    userName: "",
+    userEmail: "",
+    userProfilePicturePath: "",
+    isAuthenticated: false,
+    // ==========================
     name: "",
     email: "",
     password: "",
-    isAuthenticated: false,
-    userName: "",
-    userEmail: "",
-    userPassword: "",
-    userAvatar: "",
     title: "",
     content: "",
     blogsPublic: [],
     blogs: [],
-    userBlogs: [],
     articleTitle: "",
     articleContent: "",
     userNameBlog: "",
@@ -34,6 +34,7 @@ const initalState = {
     authorEmail: "",
     authorProfilePicturePath: "",
     // ========== Blogs ==========
+    userBlogs: [],
     newestBlogs: [],
     randomBlogs: [],
     authorBlogs: [],
@@ -110,23 +111,28 @@ function AppProvider({ children }) {
     }
 
     const signIn = async () => {
-        dispatch({ type: 'LOADING' });
+        dispatch({ type: "LOADING" });
         try {
             const { email, password } = state;
-            const formData = { email, password };
-            const response = await axiosConfig.post('/auth/login', formData);
+            const payload = { email, password };
+            const response = await axiosConfig.post("/auth/login", payload);
+            console.log("???")
+
             const token = response.data.accessToken;
-            const { UserInfo: { id } } = jwt(token);
+            const { UserInfo } = jwt(token);
+            console.log(UserInfo);
+
+
             if (token) {
                 localStorage.setItem("access_token", token);
-                dispatch({ type: "AUTH_SUCCESS", payload: id });
-                navigate("/blogs");
+                dispatch({ type: "AUTH_SUCCESS", payload: UserInfo });
+                navigate("/");
             }
-            dispatch({ type: 'SUBMITTED' });
+
+            dispatch({ type: "SIGN_IN_SUCCESS" });
 
         } catch (error) {
-            console.log(error);
-            dispatch({ type: 'SUBMITTED' });
+            dispatch({ type: "SIGN_IN_FAIL", payload: error.response.data.message });
         }
     }
 
@@ -151,7 +157,7 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
 
         try {
-            const changedData = {
+            const payload = {
                 username: userName,
                 email: userEmail,
                 password: userPassword
@@ -160,7 +166,7 @@ function AppProvider({ children }) {
             const token = localStorage.getItem("access_token");
             const { UserInfo: { id: userId } } = jwt(token);
 
-            await axios.patch(`http://localhost:3500/user/${userId}`, changedData, {
+            await axios.patch(`http://localhost:3500/user/${userId}`, payload, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -200,13 +206,13 @@ function AppProvider({ children }) {
         try {
             const token = localStorage.getItem("access_token");
 
-            const response = await axios.get(`http://localhost:3500/user/${id}/user-blog`, {
+            const { data } = await axiosConfig.get(`/user/${id}/user-blog`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
 
-            dispatch({ type: "GET_USER_BLOGS", payload: response.data.blogs });
+            dispatch({ type: "GET_USER_BLOGS", payload: data });
         } catch (error) {
             console.log(error);
         }

@@ -1,6 +1,6 @@
 import Home from "pages/home";
 import Blog from "pages/blog";
-import User from "pages/user";
+import Author from "pages/author";
 import Category from "pages/category";
 import Login from "pages/auth/login";
 import Register from "pages/auth/register";
@@ -12,7 +12,7 @@ export const publicRoutes = [
     },
     {
         path: "/user/:id",
-        element: User,
+        element: Author,
     },
     {
         path: "/blog/:id",

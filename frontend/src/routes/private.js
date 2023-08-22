@@ -1,36 +1,19 @@
 import { Navigate } from "react-router-dom";
-
+import Profile from "pages/user/profile";
+import Settings from "pages/user/settings";
 import PostEditor from "../components/post/PostEditor";
-import User from "../components/user/User";
-import Settings from "../components/user/Settings";
 import Blogs from "../components/Blogs";
 import PostDetail from "../components/post/PostDetail";
 import PostUpdate from "../components/post/PostUpdate";
 
 export const privateRoutes = [
     {
-        path: '/editor',
-        element: PostEditor
-    },
-    {
         path: '/user',
-        element: User
+        element: Profile
     },
     {
-        path: '/settings',
+        path: '/user/settings',
         element: Settings
-    },
-    {
-        path: '/blogs',
-        element: Blogs
-    }, 
-    {
-        path: '/blog/:id',
-        element: PostDetail
-    },
-    {
-        path: '/update',
-        element: PostUpdate
     }
 ];
 

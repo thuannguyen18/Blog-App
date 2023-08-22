@@ -7,7 +7,7 @@ import UserArticle from "components/article/UserArticle";
 import UserInfoPlaceholder from "components/skeleton/UserInfoPlaceholder";
 import { useGlobalContext } from "context/context";
 
-export default function User() {
+export default function Author() {
     const { id } = useParams();
     const {
         loading,
@@ -21,8 +21,6 @@ export default function User() {
     useEffect(() => {
         getUser(id);
     }, []);
-
-    console.log(authorBlogs)
 
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>

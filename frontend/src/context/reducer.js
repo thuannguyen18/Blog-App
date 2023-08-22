@@ -52,13 +52,6 @@ function reducer(state, action) {
                 currentPage: 1,
                 activePage: 1,
             }
-        case 'SUBMITTED': {
-            return {
-                ...state,
-                loading: false,
-                userPassword: "",
-            };
-        }
         case "SIGN_UP_SUCCESS":
             return {
                 ...state,
@@ -76,18 +69,32 @@ function reducer(state, action) {
                 isFail: true,
                 message: action.payload,
             }
+        case "SIGN_IN_SUCCESS":
+            return {
+                ...state,
+                loading: false,
+                userPassword: "",
+            }
+        case "SIGN_IN_FAIL":
+            return {
+                ...state,
+                loading: false,
+                isAlert: true,
+                isFail: true,
+                isSuccess: false,
+                message: action.payload
+            }
         case "CLOSE_ALERT_MESSAGE":
             return {
                 ...state,
                 isAlert: false,
                 isFail: false,
             }
-        case 'LOADING': {
+        case "LOADING":
             return {
                 ...state,
                 loading: true,
             };
-        }
         case "FEED_LOADING":
             return {
                 ...state,
@@ -98,13 +105,15 @@ function reducer(state, action) {
                 ...state,
                 commentLoading: true,
             }
-        case "AUTH_SUCCESS": {
+        case "AUTH_SUCCESS":
             return {
                 ...state,
-                userId: action.payload,
+                userId: action.payload.id,
+                userName: action.payload.username,
+                userEmail: action.payload.email,
+                userProfilePicturePath: action.payload.profilePicturePath,
                 isAuthenticated: true,
             };
-        }
         case "GET_USER":
             return {
                 ...state,
@@ -114,6 +123,12 @@ function reducer(state, action) {
                 authorProfilePicturePath: action.payload.user.profilePicturePath,
                 authorBlogs: action.payload.userBlog,
             };
+        case "GET_USER_BLOGS":
+            return {
+                ...state,
+                loading: false,
+                userBlogs: action.payload,
+            }
         case "SET_TITLE": {
             return {
                 ...state,
@@ -142,13 +157,7 @@ function reducer(state, action) {
                 password: "",
             };
         }
-        case "GET_USER_BLOGS": {
-            return {
-                ...state,
-                loading: false,
-                userBlogs: action.payload,
-            }
-        }
+
         case "GET_ALL_BLOGS": {
             return {
                 ...state,
@@ -201,7 +210,7 @@ function reducer(state, action) {
         case "GET_COMMENTS":
             if (action.payload.length < 5) {
                 if (action.payload.length === 0) {
-                    return { 
+                    return {
                         ...state,
                         isHasComment: false,
                     };
@@ -234,7 +243,7 @@ function reducer(state, action) {
                 commentLoading: false,
                 comments: [...state.comments, ...action.payload],
             }
-        case "GET_CATEGORY_BLOGS": 
+        case "GET_CATEGORY_BLOGS":
             return {
                 ...state,
                 loading: false,

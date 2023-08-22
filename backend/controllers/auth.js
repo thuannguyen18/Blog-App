@@ -24,7 +24,7 @@ export const register = asyncHandler(async (req, res) => {
     // Form data
     const userObj = { username, email, password: hashedPassword };
     const user = await User.create(userObj);
-    
+
     if (user) {
         res.status(201).json({ message: "Register success" });
     } else {
@@ -60,72 +60,13 @@ export const login = asyncHandler(async (req, res) => {
                 "UserInfo": {
                     "id": user._id,
                     "username": user.username,
-                    "email": user.email
+                    "email": user.email,
+                    "profilePicturePath": user.profilePicturePath,
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '15m' }
-        );     
-
-        const refreshToken = jwt.sign(
-            { email: user.email },
-            process.env.REFRESH_TOKEN_SECRET,
-            { expiresIn: '7d' }
+            { expiresIn: "30m" }
         );
-
-        // Create secure cookie with refresh token 
-        res.cookie('jwt', refreshToken, {
-            httpOnly: true, // accessible only by web server 
-            secure: false, // https - set true when deploy
-            sameSite: 'None', // cross-site cookie 
-            maxAge: 7 * 24 * 60 * 60 * 1000 // cookie expiry: set to match rT
-        });
-
         res.status(200).json({ accessToken });
     }
 });
-
-export const refresh = (req, res) => {
-    const cookies = req.cookies;
-
-    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' });
-
-    const refreshToken = cookies.jwt;
-
-    jwt.verify(
-        refreshToken,
-        process.env.REFRESH_TOKEN_SECRET,
-        asyncHandler(async (err, decoded) => {
-            if (err) return res.status(403).json({ message: 'Forbidden' });
-
-            const user = await User.findOne({ email: decoded.email });
-
-            if (!user) return res.status(401).json({ message: 'Unauthorized' });
-
-            const accessToken = jwt.sign(
-                {
-                    "UserInfo": {
-                        "id": user._id,
-                        "username": user.username,
-                        "email": user.email
-                    }
-                },
-                process.env.ACCESS_TOKEN_SECRET,
-                { expiresIn: '15m' }
-            );
-
-            res.json({ accessToken });
-        })
-    );
-}
-
-export const logout = (req, res) => {
-    const cookies = req.cookies;
-    if (!cookies?.jwt) return res.sendStatus(204); //No content
-    res.clearCookie('jwt', { 
-        httpOnly: true, 
-        sameSite: 'None', 
-        secure: true }
-    );
-    res.json({ message: 'Cookie cleared' });
-}
