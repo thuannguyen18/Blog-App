@@ -56,8 +56,8 @@ export default function Header() {
             <Tippy
                 render={attrs => (
                     <div className="box w-72 shadow rounded bg-white border border-gray-200" tabIndex="-1" {...attrs}>
-                        <div className="flex items-center justify-evenly p-2 h-[96px] w-full">
-                            <UserAvatar width="w-12" height="h-12" />
+                        <div className="flex items-center p-4 h-[96px] w-full">
+                            <UserAvatar width="w-12" height="h-12" rounded profilePicturePath={userProfilePicturePath}/>
                             <div className="ml-2">
                                 <span className="block font-semibold">{userName}</span>
                                 <span className="block ">@{userEmail.replace("@gmail.com", "")}</span>
@@ -101,12 +101,13 @@ export default function Header() {
                 placement="bottom-start"
             >
                 <div
-                    className="ml-6 text-slate-900 flex items-center cursor-pointer"
+                    className="ml-6 text-slate-900 flex items-center cursor-pointer bg-gray-200 h-12 w-12 rounded-full"
                     onClick={visible ? hide : show}
                 >
                     <UserAvatar
-                        width="w-12"
-                        height="h-12"
+                        width="w-10"
+                        height="h-10"
+                        center
                         profilePicturePath={userProfilePicturePath}
                     />
                 </div>

@@ -18,16 +18,33 @@ function reducer(state, action) {
                 password: action.payload,
             };
         }
+        case "SET_USER_AVATAR": {
+            return {
+                ...state,
+                userAvatar: action.payload,
+                isChange: true,
+            }
+        }
         case "SET_USER_NAME": {
             return {
                 ...state,
-                userName: action.payload
+                userNameUpdate: action.payload,
+                isChange: true,
             }
         }
         case "SET_USER_EMAIL": {
             return {
                 ...state,
-                userEmail: action.payload
+                userEmailUpdate: action.payload,
+                isChange: true,
+            }
+        }
+        case "SET_DEFAULT": {
+            return {
+                ...state,
+                userNameUpdate: state.userName,
+                userEmailUpdate: state.userEmail,
+                isChange: false
             }
         }
         case "SET_USER_PASSWORD": {
@@ -113,6 +130,8 @@ function reducer(state, action) {
                 userEmail: action.payload.email,
                 userProfilePicturePath: action.payload.profilePicturePath,
                 isAuthenticated: true,
+                userNameUpdate: action.payload.username,
+                userEmailUpdate: action.payload.email,
             };
         case "GET_USER":
             return {

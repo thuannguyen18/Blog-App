@@ -21,7 +21,7 @@ export default function Profile() {
         getUserBlog(userId);
     }, []);
 
-    console.log(userBlogs)
+    console.log(userProfilePicturePath)
 
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>

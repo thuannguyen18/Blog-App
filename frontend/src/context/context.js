@@ -15,7 +15,12 @@ const initalState = {
     userEmail: "",
     userProfilePicturePath: "",
     isAuthenticated: false,
-    // ==========================
+    // ========== Account Setting ==========
+    isChange: false,
+    userNameUpdate: "",
+    userEmailUpdate: "",
+    userAvatar: undefined,
+    // =====================================
     name: "",
     email: "",
     password: "",
@@ -47,12 +52,12 @@ const initalState = {
     blogPicturePath: "",
     blogCategory: "",
     comments: [],
-    // ========== Blog Pagination ==========
+    // ========== Blog Detail Pagination ==========
     totalPages: "",
     currentPage: 1,
     activePage: 1,
     limitPerPage: 8,
-    // ========== Comment Pagination ==========
+    // ========== Blog Detail Comments Pagination ==========
     nextComments: 1,
     isFinalComment: false,
     isHasComment: false,
@@ -67,7 +72,7 @@ const initalState = {
     // ========== Topics ==========
     allTopics: true,
     bestTopics: false,
-    // ========== Alert message ==========
+    // ========== Alert Message ==========
     isAlert: false,
     isFail: false,
     isSuccess: false,
@@ -79,14 +84,19 @@ function AppProvider({ children }) {
 
     const navigate = useNavigate();
 
-    const setName = (value) => dispatch({ type: 'SET_NAME', payload: value });
-    const setEmail = (value) => dispatch({ type: 'SET_EMAIL', payload: value });
-    const setPassword = (value) => dispatch({ type: 'SET_PASSWORD', payload: value });
+    // Authentication
+    const setName = (value) => dispatch({ type: "SET_NAME", payload: value });
+    const setEmail = (value) => dispatch({ type: "SET_EMAIL", payload: value });
+    const setPassword = (value) => dispatch({ type: "SET_PASSWORD", payload: value });
 
+    // User Account Settings
+    const setUserAvatar = (value) => dispatch({ type: "SET_USER_AVATAR", payload: value })
     const setUserName = (value) => dispatch({ type: "SET_USER_NAME", payload: value });
     const setUserEmail = (value) => dispatch({ type: "SET_USER_EMAIL", payload: value });
+    const setDefault = () => dispatch({ type: "SET_DEFAULT" });
     const setUserPassword = (value) => dispatch({ type: "SET_USER_PASSWORD", payload: value });
 
+    // Create Blog
     const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value });
     const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value });
 
@@ -116,15 +126,14 @@ function AppProvider({ children }) {
             const { email, password } = state;
             const payload = { email, password };
             const response = await axiosConfig.post("/auth/login", payload);
-            console.log("???")
 
             const token = response.data.accessToken;
-            const { UserInfo } = jwt(token);
-            console.log(UserInfo);
-
 
             if (token) {
+                const { UserInfo } = jwt(token);
+
                 localStorage.setItem("access_token", token);
+
                 dispatch({ type: "AUTH_SUCCESS", payload: UserInfo });
                 navigate("/");
             }
@@ -152,30 +161,44 @@ function AppProvider({ children }) {
     }
 
     const updateUser = async () => {
-        const { userName, userEmail, userPassword } = state;
-
         dispatch({ type: "LOADING" });
 
         try {
-            const payload = {
-                username: userName,
-                email: userEmail,
-                password: userPassword
+            const token = localStorage.getItem("access_token");
+            const { UserInfo } = jwt(token);
+            
+            const formData = new FormData();
+
+            const {
+                userNameUpdate,
+                userEmailUpdate,
+                userAvatar
+            } = state;
+
+            formData.append("username", userNameUpdate);
+            formData.append("email", userEmailUpdate);
+            if (userAvatar) {
+                formData.append("picture", userAvatar);
             }
 
-            const token = localStorage.getItem("access_token");
-            const { UserInfo: { id: userId } } = jwt(token);
+            for (let key of formData.entries()) {
+                console.log(key[0] + ', ' + key[1]);
+            }        
 
-            await axios.patch(`http://localhost:3500/user/${userId}`, payload, {
-                headers: { Authorization: `Bearer ${token}` }
+            const { data } = await axiosConfig.patch(`/user/${UserInfo.id}`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
             });
 
-            dispatch({ type: "SUBMITTED" });
+            console.log(data);
 
-            navigate("/user");
+            // dispatch({ type: "UPDATE_USER_SUCCESS" });
+            // navigate("/user");
 
         } catch (error) {
             console.log(error);
+            dispatch({ type: "UPDATE_USER_FAIL" });
         }
     }
 
@@ -367,8 +390,10 @@ function AppProvider({ children }) {
                 signUp,
                 signIn,
                 logout,
+                setUserAvatar,
                 setUserName,
                 setUserEmail,
+                setDefault,
                 setUserPassword,
                 getUser,
                 updateUser,

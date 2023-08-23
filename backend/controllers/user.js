@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
@@ -29,26 +30,29 @@ export const getUserBlog = asyncHandler(async (req, res) => {
 });
 
 export const updateUser = asyncHandler(async (req, res) => {
-    const { username, email, password } = req.body;
-
     const user = await User.findById(req.params.id);
 
     if (!user) {
         return res.status(400).json({ message: "User not found" });
     }
 
-    if (username && email) {
-        user.username = username;
-        user.email = email;
+    const file = req.file;
+
+    if (!file) {
+        user.profilePicturePath = user.profilePicturePath;
+        user.username = req.body.username;
+        user.email = req.body.email;
+        await user.save();
+        return res.status(200).json("Update success");
     }
 
-    if (password) {
-        user.password = await bcrypt.hash(password, 10);
-    }
+    user.username = req.body.username;
+    user.email = req.body.email;
+    user.profilePicturePath = file.path.slice(14);
 
     await user.save();
 
-    res.status(200).json({ message: "Update success" });
+    res.status(200).json("Update success");
 });
 
 
