@@ -55,6 +55,19 @@ export const updateUser = asyncHandler(async (req, res) => {
     res.status(200).json("Update success");
 });
 
+export const changePassword = asyncHandler(async (req, res) => {
+    const { password, newPassword, confirmNewPassword } = req.body;
+    const user = await User.findById(req.params.id);
+    const hashedPassword = newPassword === confirmNewPassword && await bcrypt.hash(confirmNewPassword, 10);
+    const match = bcrypt.compare(password, user.password);
+
+    if (match) {
+        user.password = hashedPassword;
+        await user.save();
+        return res.status(200).json("Change password success");
+    }
+});
+
 
 export const uploadFile = asyncHandler(async (req, res) => {
     const { avatar } = req.body;

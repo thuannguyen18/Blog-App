@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import Container from "components/Container";
 import { AiOutlineCamera } from "react-icons/ai";
 import { useGlobalContext } from "context/context";
@@ -14,13 +16,36 @@ export default function Settings() {
         setUserAvatar,
         isChange,
         setDefault,
-        updateUser
+        updateUser,
+        changePassword
     } = useGlobalContext();
-    const [isOpen, setIsOpen] = useState(false);
-    const [avatar, setAvatar] = useState();
 
-    console.log(userNameUpdate)
-    console.log(userEmailUpdate)
+    const formik = useFormik({
+        initialValues: {
+            password: "",
+            newPassword: "",
+            confirmNewPassword: "",
+        },
+        validationSchema: Yup.object({
+            password: Yup
+                .string()
+                .min(6, "Your password must be at least 6 characters")
+                .required("You must enter your current password"),
+            newPassword: Yup
+                .string()
+                .min(6, "Your password must be at least 6 characters")
+                .required("You must enter your new password"),
+            confirmNewPassword: Yup
+                .string()
+                .oneOf([Yup.ref("newPassword")], "New password does not match")
+                .required("You must enter your new password")
+        }),
+        onSubmit: (values) => {
+            changePassword(values);
+        }
+    });
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const options = [
         {
@@ -42,22 +67,40 @@ export default function Settings() {
 
     const passwords = [
         {
+            autoComplete: "password",
             id: "password",
+            name: "password",
             htmlFor: "password",
             placeholder: "**********",
             type: "password",
+            value: formik.values.password,
+            errors: formik.errors.password,
+            touched: formik.touched.password,
+            onChange: formik.handleChange,
         },
         {
+            autoComplete: "new-password",
             id: "new password",
+            name: "newPassword",
             htmlFor: "new password",
             placeholder: "**********",
             type: "password",
+            value: formik.values.newPassword,
+            errors: formik.errors.newPassword,
+            touched: formik.touched.newPassword,
+            onChange: formik.handleChange,
         },
         {
+            autoComplete: "current-password",
             id: "confirm new password",
+            name: "confirmNewPassword",
             htmlFor: "confirm new password",
             placeholder: "**********",
             type: "password",
+            value: formik.values.confirmNewPassword,
+            errors: formik.errors.confirmNewPassword,
+            touched: formik.touched.confirmNewPassword,
+            onChange: formik.handleChange,
         },
     ];
 
@@ -70,8 +113,12 @@ export default function Settings() {
         setUserAvatar(fileUpload);
     }
 
-    const disableStyle = isChange ? "bg-sky-500" : "bg-sky-300 cursor-not-allowed";
-
+    const disableSaveBtn = isChange ? "bg-sky-500 hover:bg-sky-600" : "bg-sky-300 cursor-not-allowed";
+    const disablePasswordBtn = 
+        (formik.errors.password === undefined
+            && formik.errors.newPassword === undefined
+            && formik.errors.confirmNewPassword === undefined
+        ) ? "bg-sky-500" : "bg-sky-300 cursor-not-allowed";
 
     return (
         <Container>
@@ -110,19 +157,40 @@ export default function Settings() {
                 >
                     Change password
                 </button>
-                {isOpen && <React.Fragment>
-                    {passwords.map(password => (
-                        <div key={password.id} className="mt-3">
-                            <label className="block text-xs uppercase font-semibold mb-1 text-gray-600" htmlFor={password.htmlFor}>{password.id}</label>
-                            <input className="w-full h-12 py-2 px-3 bg-gray-350 border border-gray-300 rounded outline-none focus:bg-white mb-4" placeholder={password.placeholder} type={password.type} id={password.id} />
-                        </div>
-                    ))}
-                    <button type="button" className="w-full text-white bg-sky-300 dark:bg-sky-500 cursor-not-allowed rounded-full px-5 py-2.5 text-center" disabled>Change</button>
-                </React.Fragment>}
+                {isOpen &&
+                    <form onSubmit={formik.handleSubmit}>
+                        {passwords.map(password => (
+                            <div key={password.id} className="my-5">
+                                <label className="block text-xs uppercase font-semibold mb-1 text-gray-600" htmlFor={password.htmlFor}>{password.id}</label>
+                                <input
+                                    autoComplete={password.autoComplete}
+                                    className="w-full h-12 py-2 px-3 bg-gray-350 border border-gray-300 rounded outline-none focus:bg-white"
+                                    placeholder={password.placeholder}
+                                    name={password.name}
+                                    type={password.type}
+                                    id={password.id}
+                                    value={password.value}
+                                    onChange={password.onChange}
+                                />
+                                {
+                                    password.errors &&
+                                    password.touched &&
+                                    (<p className="text-xs text-red-500 mt-2">{password.errors}</p>)
+                                }
+                            </div>
+                        ))}
+                        <button
+                            type="submit"
+                            className={`w-full text-white rounded-full px-5 py-2.5 text-center ${disablePasswordBtn}`}
+                        >
+                            Change
+                        </button>
+                    </form>
+                }
                 <div className="flex flex-row-reverse py-6">
                     <button
                         type="button"
-                        className={`text-white h-10 px-6 rounded-full ml-2 ${disableStyle}`}
+                        className={`text-white h-10 px-6 rounded-full ml-2 ${disableSaveBtn}`}
                         onClick={updateUser}
                     >
                         Update
@@ -133,11 +201,6 @@ export default function Settings() {
                         onClick={setDefault}
                     >
                         Cancel
-                    </button>
-                </div>
-                <div className="border-t border-gray-300 mt-5">
-                    <button className="h-12 w-full border border-gray-200 rounded mt-5 bg-red-300 text-white">
-                        Delete account
                     </button>
                 </div>
             </div>

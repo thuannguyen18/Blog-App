@@ -166,7 +166,7 @@ function AppProvider({ children }) {
         try {
             const token = localStorage.getItem("access_token");
             const { UserInfo } = jwt(token);
-            
+
             const formData = new FormData();
 
             const {
@@ -183,7 +183,7 @@ function AppProvider({ children }) {
 
             for (let key of formData.entries()) {
                 console.log(key[0] + ', ' + key[1]);
-            }        
+            }
 
             const { data } = await axiosConfig.patch(`/user/${UserInfo.id}`, formData, {
                 headers: {
@@ -199,6 +199,25 @@ function AppProvider({ children }) {
         } catch (error) {
             console.log(error);
             dispatch({ type: "UPDATE_USER_FAIL" });
+        }
+    }
+
+    const changePassword = async (payload) => {
+        dispatch({ type: "LOADING" });
+        try {
+            const token = localStorage.getItem("access_token");
+            const { UserInfo } = jwt(token);
+
+            const { data } = await axiosConfig
+                .patch(`/user/${UserInfo.id}/change-password`, payload, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+
+            console.log(data);
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -397,6 +416,7 @@ function AppProvider({ children }) {
                 setUserPassword,
                 getUser,
                 updateUser,
+                changePassword,
                 uploadFile,
                 setTitle,
                 setContent,
