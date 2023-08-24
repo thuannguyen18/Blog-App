@@ -1,4 +1,6 @@
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { useGlobalContext } from "context/context";
 import { publicRoutes, authRoutes } from "routes/public";
 import { privateRoutes } from 'routes/private';
@@ -34,6 +36,7 @@ export default function App() {
                     return <Route key={index} path={route.path} element={<Element />} />;
                 })}
             </Routes>
+            <ToastContainer autoClose={3000} theme="colored" />
         </main>
     );
 }

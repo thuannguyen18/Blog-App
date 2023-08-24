@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
 import Container from "components/Container";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import UserInfoPlaceholder from "components/skeleton/UserInfoPlaceholder";
@@ -18,22 +15,11 @@ export default function Profile() {
         userProfilePicturePath,
         getUserBlog,
         userBlogs,
-        toastMessage,
     } = useGlobalContext();
-
-    const toastMsg = (message) => {
-        toast.success(message, {
-            autoClose: 3000
-        });
-    }
 
     useEffect(() => {
         getUserBlog(userId);
-        if (toastMessage) {
-            toastMsg(toastMessage);
-        }
     }, []);
-
 
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
@@ -87,7 +73,6 @@ export default function Profile() {
                     ))}
                 </div>
             </div>
-            <ToastContainer />
         </Container>
     );
 }

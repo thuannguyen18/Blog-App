@@ -1,41 +1,43 @@
 function reducer(state, action) {
+    const data = action.payload;
+
     switch (action.type) {
         case 'SET_NAME': {
             return {
                 ...state,
-                name: action.payload,
+                username: data,
             };
         }
         case 'SET_EMAIL': {
             return {
                 ...state,
-                email: action.payload,
+                email: data,
             };
         }
         case 'SET_PASSWORD': {
             return {
                 ...state,
-                password: action.payload,
+                password: data,
             };
         }
         case "SET_USER_AVATAR": {
             return {
                 ...state,
-                userAvatar: action.payload,
+                userAvatar: data,
                 isChange: true,
             }
         }
         case "SET_USER_NAME": {
             return {
                 ...state,
-                userNameUpdate: action.payload,
+                userNameUpdate: data,
                 isChange: true,
             }
         }
         case "SET_USER_EMAIL": {
             return {
                 ...state,
-                userEmailUpdate: action.payload,
+                userEmailUpdate: data,
                 isChange: true,
             }
         }
@@ -45,12 +47,6 @@ function reducer(state, action) {
                 userNameUpdate: state.userName,
                 userEmailUpdate: state.userEmail,
                 isChange: false
-            }
-        }
-        case "SET_USER_PASSWORD": {
-            return {
-                ...state,
-                userPassword: action.payload
             }
         }
         case "SET_ALL_TOPICS":
@@ -76,7 +72,7 @@ function reducer(state, action) {
                 isAlert: true,
                 isFail: false,
                 isSuccess: true,
-                message: action.payload,
+                message: data,
             }
         case "SIGN_UP_FAIL":
             return {
@@ -84,7 +80,7 @@ function reducer(state, action) {
                 loading: false,
                 isAlert: true,
                 isFail: true,
-                message: action.payload,
+                message: data,
             }
         case "SIGN_IN_SUCCESS":
             return {
@@ -99,7 +95,7 @@ function reducer(state, action) {
                 isAlert: true,
                 isFail: true,
                 isSuccess: false,
-                message: action.payload
+                message: data
             }
         case "CLOSE_ALERT_MESSAGE":
             return {
@@ -135,60 +131,54 @@ function reducer(state, action) {
         case "AUTH_SUCCESS":
             return {
                 ...state,
-                userId: action.payload.id,
-                userName: action.payload.username,
-                userEmail: action.payload.email,
-                userProfilePicturePath: action.payload.profilePicturePath,
                 isAuthenticated: true,
-                userNameUpdate: action.payload.username,
-                userEmailUpdate: action.payload.email,
-            };
-        case "GET_AUTHOR":
-            return {
-                ...state,
-                loading: false,
-                authorName: action.payload.user.username,
-                authorEmail: action.payload.user.email,
-                authorProfilePicturePath: action.payload.user.profilePicturePath,
-                authorBlogs: action.payload.userBlog,
+                isAlert: false,
+                isFail: false,
+                isSuccess: false,
+                userId: data.id,
+                userName: data.username,
+                userEmail: data.email,
+                userProfilePicturePath: data.profilePicturePath,
+                userNameUpdate: data.username,
+                userEmailUpdate: data.email,
             };
         case "GET_USER_BLOGS":
             return {
                 ...state,
                 loading: false,
-                userBlogs: action.payload,
+                userBlogs: data,
                 toastMessage: "",
             }
         case "UPDATE_USER_SUCCESS":
             return {
                 ...state,
                 updateUserLoading: false,
-                toastMessage: action.payload,
+                toastMessage: data,
                 isChange: false,
             }
         case "CHANGE_PASSWORD_SUCCESS": {
             return {
                 ...state,
                 changePasswordLoading: false,
-                toastMessage: action.payload,
+                toastMessage: data,
             }
         }
         case "SET_TITLE": {
             return {
                 ...state,
-                title: action.payload
+                title: data
             }
         }
         case "SET_CONTENT": {
             return {
                 ...state,
-                content: action.payload
+                content: data
             }
         }
         case "SET_AVATAR": {
             return {
                 ...state,
-                userAvatar: action.payload
+                userAvatar: data
             }
         }
         case "LOG_OUT": {
@@ -201,59 +191,67 @@ function reducer(state, action) {
                 password: "",
             };
         }
-
+        case "GET_AUTHOR":
+            return {
+                ...state,
+                loading: false,
+                authorName: data.user.username,
+                authorEmail: data.user.email,
+                authorProfilePicturePath: data.user.profilePicturePath,
+                authorBlogs: data.userBlog,
+            };
         case "GET_ALL_BLOGS": {
             return {
                 ...state,
                 feedLoading: false,
-                blogsPublic: action.payload.blogs,
-                totalPages: action.payload.totalPages
+                blogsPublic: data.blogs,
+                totalPages: data.totalPages
             }
         }
         case "GET_TOP_BLOGS":
             return {
                 ...state,
                 feedLoading: false,
-                topBlogs: action.payload.blogs,
-                totalPages: action.payload.totalPages
+                topBlogs: data.blogs,
+                totalPages: data.totalPages
             }
         case "GET_NEWEST_BLOGS":
             return {
                 ...state,
                 loading: false,
-                newestBlogs: action.payload
+                newestBlogs: data
             }
         case "GET_RANDOM_BLOGS":
             return {
                 ...state,
                 loading: false,
-                randomBlogs: action.payload
+                randomBlogs: data
             }
         case "GET_BLOGS": {
             return {
                 ...state,
                 loading: false,
-                blogs: action.payload
+                blogs: data
             }
         }
         case "GET_BLOG_DETAIL": {
             return {
                 ...state,
                 loading: false,
-                authorId: action.payload.userId._id,
-                authorName: action.payload.userId.username,
-                authorEmail: action.payload.userId.email,
-                authorProfilePicturePath: action.payload.userId.profilePicturePath,
-                blogTitle: action.payload.title,
-                blogSubtitle: action.payload.subTitle,
-                blogContent: action.payload.content,
-                blogPicturePath: action.payload.picturePath,
-                blogCategory: action.payload.category,
+                authorId: data.userId._id,
+                authorName: data.userId.username,
+                authorEmail: data.userId.email,
+                authorProfilePicturePath: data.userId.profilePicturePath,
+                blogTitle: data.title,
+                blogSubtitle: data.subTitle,
+                blogContent: data.content,
+                blogPicturePath: data.picturePath,
+                blogCategory: data.category,
             }
         }
         case "GET_COMMENTS":
-            if (action.payload.length < 5) {
-                if (action.payload.length === 0) {
+            if (data.length < 5) {
+                if (data.length === 0) {
                     return {
                         ...state,
                         isHasComment: false,
@@ -261,38 +259,38 @@ function reducer(state, action) {
                 }
                 return {
                     ...state,
-                    comments: action.payload,
+                    comments: data,
                     isFinalComment: true,
                     isHasComment: true,
                 }
             }
             return {
                 ...state,
-                comments: action.payload,
+                comments: data,
                 isFinalComment: false,
                 isHasComment: true,
             }
         case "GET_MORE_COMMENTS":
-            if (action.payload.length < 5) {
+            if (data.length < 5) {
                 return {
                     ...state,
                     commentLoading: false,
                     isFinalComment: true,
-                    comments: [...state.comments, ...action.payload],
+                    comments: [...state.comments, ...data],
                     nextComments: 1,
                 }
             }
             return {
                 ...state,
                 commentLoading: false,
-                comments: [...state.comments, ...action.payload],
+                comments: [...state.comments, ...data],
             }
         case "GET_CATEGORY_BLOGS":
             return {
                 ...state,
                 loading: false,
-                categoryBlogs: action.payload.blogs,
-                categoryCurrentPage: action.payload.currentPage,
+                categoryBlogs: data.blogs,
+                categoryCurrentPage: data.currentPage,
             }
         case "CREATED_BLOG": {
             return {
@@ -305,20 +303,20 @@ function reducer(state, action) {
         case "SET_TITLE_UPDATE": {
             return {
                 ...state,
-                articleTitle: action.payload
+                articleTitle: data
             }
         }
         case "SET_CONTENT_UPDATE": {
             return {
                 ...state,
-                articleContent: action.payload
+                articleContent: data
             }
         }
         case "CHANGE_PAGE":
             return {
                 ...state,
-                activePage: action.payload,
-                currentPage: action.payload
+                activePage: data,
+                currentPage: data
             }
         default: return new Error('Invalid action');
     }

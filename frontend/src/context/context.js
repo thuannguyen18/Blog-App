@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import jwt from "jwt-decode";
 import axios from "axios";
 import axiosConfig from "config/axiosConfig";
@@ -9,12 +10,16 @@ import reducer from "./reducer";
 const AppContext = createContext();
 
 const initalState = {
-    // ========== Auth ==========
+    // ========== Authorization ==========
     userId: "",
     userName: "",
     userEmail: "",
     userProfilePicturePath: "",
     isAuthenticated: false,
+    // ========== Authentication ==========
+    username: "",
+    email: "",
+    password: "",
     // ========== Account Setting ==========
     isChange: false,
     userNameUpdate: "",
@@ -22,9 +27,6 @@ const initalState = {
     userAvatar: undefined,
     toastMessage: "",
     // =====================================
-    name: "",
-    email: "",
-    password: "",
     title: "",
     content: "",
     blogsPublic: [],
@@ -84,20 +86,28 @@ const initalState = {
 
 function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initalState);
-
     const navigate = useNavigate();
 
-    // Authentication
+    // @access: public --- Set values for form Sign up page
     const setName = (value) => dispatch({ type: "SET_NAME", payload: value });
     const setEmail = (value) => dispatch({ type: "SET_EMAIL", payload: value });
     const setPassword = (value) => dispatch({ type: "SET_PASSWORD", payload: value });
 
-    // User Account Settings
+    // @access: private --- User Account Settings
     const setUserAvatar = (value) => dispatch({ type: "SET_USER_AVATAR", payload: value })
     const setUserName = (value) => dispatch({ type: "SET_USER_NAME", payload: value });
     const setUserEmail = (value) => dispatch({ type: "SET_USER_EMAIL", payload: value });
     const setDefault = () => dispatch({ type: "SET_DEFAULT" });
-    const setUserPassword = (value) => dispatch({ type: "SET_USER_PASSWORD", payload: value });
+
+    // @access: public --- Set values to get the specific topic
+    const setAllTopics = () => dispatch({ type: "SET_ALL_TOPICS" });
+    const setBestTopics = () => dispatch({ type: "SET_BEST_TOPICS" });
+
+    // @access: public --- Close alert message when submit fail on Sign in page 
+    const closeAlertMessage = () => dispatch({ type: "CLOSE_ALERT_MESSAGE" });
+
+    // @access: public --- Change page for pagination
+    const changePage = (page) => dispatch({ type: "CHANGE_PAGE", payload: page });
 
     // Create Blog
     const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value });
@@ -106,6 +116,7 @@ function AppProvider({ children }) {
     const setTitleUpdate = (value) => dispatch({ type: "SET_TITLE_UPDATE", payload: value });
     const setContentUpdate = (value) => dispatch({ type: "SET_CONTENT_UPDATE", payload: value });
 
+    // @access: public 
     const signUp = async () => {
         dispatch({ type: "LOADING" });
         try {
@@ -123,6 +134,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public
     const signIn = async () => {
         dispatch({ type: "LOADING" });
         try {
@@ -148,11 +160,13 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: private
     const logout = () => {
         localStorage.clear();
         dispatch({ type: "LOG_OUT" });
     }
 
+    // @access: public --- Get author information when user want to know who write this blog
     const getUser = async (id) => {
         dispatch({ type: "LOADING" });
         try {
@@ -163,6 +177,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: private
     const updateUser = async () => {
         dispatch({ type: "UPDATE_USER_LOADING" });
 
@@ -198,13 +213,14 @@ function AppProvider({ children }) {
 
             dispatch({ type: "UPDATE_USER_SUCCESS", payload: data });
             navigate("/user");
-
+            toast.success("Update success");
         } catch (error) {
             console.log(error);
             dispatch({ type: "UPDATE_USER_FAIL" });
         }
     }
 
+    // @access: private
     const changePassword = async (payload) => {
         dispatch({ type: "CHANGE_PASSWORD_LOADING" });
         try {
@@ -218,32 +234,13 @@ function AppProvider({ children }) {
                     },
                 });
             dispatch({ type: "CHANGE_PASSWORD_SUCCESS", payload: data });
+            toast.success("Change password success");
         } catch (error) {
             console.log(error);
         }
     }
 
-    const uploadFile = async (url) => {
-        const formData = { avatar: url };
-
-        try {
-            const token = localStorage.getItem("access_token");
-            const { UserInfo: { id: userId } } = jwt(token);
-
-            const response = await axios.post(`http://localhost:3500/user/${userId}/upload-file`, formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Content-Type": "multipart/form-data"
-                }
-            });
-
-            dispatch({ type: "SET_AVATAR", payload: response.data.file });
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
+    // @access: private --- Get all blogs belong to user who has authorized
     const getUserBlog = async (id) => {
         dispatch({ type: "LOADING" });
 
@@ -262,6 +259,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public
     const getAllBlogs = async () => {
         dispatch({ type: "FEED_LOADING" });
         try {
@@ -274,6 +272,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public --- Get all blogs which have the most like
     const getTopBlogs = async () => {
         dispatch({ type: "FEED_LOADING" });
         try {
@@ -285,6 +284,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public
     const getBlogs = async (dispatchType, queryType) => {
         dispatch({ type: "LOADING" });
         try {
@@ -296,6 +296,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public
     const getBlog = async (id) => {
         dispatch({ type: "LOADING" });
         try {
@@ -311,6 +312,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public
     const getMoreComments = async (id) => {
         dispatch({ type: "COMMENT_LOADING" });
         try {
@@ -322,6 +324,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // @access: public
     const getCategoryBlogs = async (category) => {
         dispatch({ type: "LOADING" });
         try {
@@ -333,6 +336,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // Authorization
     const createBlog = async () => {
         const { title, content } = state;
 
@@ -395,12 +399,6 @@ function AppProvider({ children }) {
         }
     }
 
-    const changePage = (page) => dispatch({ type: "CHANGE_PAGE", payload: page });
-
-    const setAllTopics = () => dispatch({ type: "SET_ALL_TOPICS" });
-    const setBestTopics = () => dispatch({ type: "SET_BEST_TOPICS" });
-    const closeAlertMessage = () => dispatch({ type: "CLOSE_ALERT_MESSAGE" });
-
     return (
         <AppContext.Provider
             value={{
@@ -415,11 +413,9 @@ function AppProvider({ children }) {
                 setUserName,
                 setUserEmail,
                 setDefault,
-                setUserPassword,
                 getUser,
                 updateUser,
                 changePassword,
-                uploadFile,
                 setTitle,
                 setContent,
                 getUserBlog,
