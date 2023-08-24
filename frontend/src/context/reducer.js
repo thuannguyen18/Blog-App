@@ -122,6 +122,16 @@ function reducer(state, action) {
                 ...state,
                 commentLoading: true,
             }
+        case "UPDATE_USER_LOADING":
+            return {
+                ...state,
+                updateUserLoading: true,
+            }
+        case "CHANGE_PASSWORD_LOADING":
+            return {
+                ...state,
+                changePasswordLoading: true,
+            }
         case "AUTH_SUCCESS":
             return {
                 ...state,
@@ -133,7 +143,7 @@ function reducer(state, action) {
                 userNameUpdate: action.payload.username,
                 userEmailUpdate: action.payload.email,
             };
-        case "GET_USER":
+        case "GET_AUTHOR":
             return {
                 ...state,
                 loading: false,
@@ -147,7 +157,22 @@ function reducer(state, action) {
                 ...state,
                 loading: false,
                 userBlogs: action.payload,
+                toastMessage: "",
             }
+        case "UPDATE_USER_SUCCESS":
+            return {
+                ...state,
+                updateUserLoading: false,
+                toastMessage: action.payload,
+                isChange: false,
+            }
+        case "CHANGE_PASSWORD_SUCCESS": {
+            return {
+                ...state,
+                changePasswordLoading: false,
+                toastMessage: action.payload,
+            }
+        }
         case "SET_TITLE": {
             return {
                 ...state,

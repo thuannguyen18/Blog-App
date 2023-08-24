@@ -20,6 +20,7 @@ const initalState = {
     userNameUpdate: "",
     userEmailUpdate: "",
     userAvatar: undefined,
+    toastMessage: "",
     // =====================================
     name: "",
     email: "",
@@ -65,10 +66,12 @@ const initalState = {
     categoryTotalPages: "",
     categoryCurrentPage: 1,
     categoryActivePage: 1,
-    // ========== Loader ==========
+    // ========== Loading ==========
     loading: false,
     feedLoading: false,
     commentLoading: false,
+    updateUserLoading: false,
+    changePasswordLoading: false,
     // ========== Topics ==========
     allTopics: true,
     bestTopics: false,
@@ -154,14 +157,14 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
         try {
             const { data } = await axios.get(`http://localhost:3500/user/${id}`);
-            dispatch({ type: "GET_USER", payload: data });
+            dispatch({ type: "GET_AUTHOR", payload: data });
         } catch (error) {
             console.log(error);
         }
     }
 
     const updateUser = async () => {
-        dispatch({ type: "LOADING" });
+        dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
             const token = localStorage.getItem("access_token");
@@ -191,10 +194,10 @@ function AppProvider({ children }) {
                 },
             });
 
-            console.log(data);
+            console.log(data)
 
-            // dispatch({ type: "UPDATE_USER_SUCCESS" });
-            // navigate("/user");
+            dispatch({ type: "UPDATE_USER_SUCCESS", payload: data });
+            navigate("/user");
 
         } catch (error) {
             console.log(error);
@@ -203,7 +206,7 @@ function AppProvider({ children }) {
     }
 
     const changePassword = async (payload) => {
-        dispatch({ type: "LOADING" });
+        dispatch({ type: "CHANGE_PASSWORD_LOADING" });
         try {
             const token = localStorage.getItem("access_token");
             const { UserInfo } = jwt(token);
@@ -214,8 +217,7 @@ function AppProvider({ children }) {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-
-            console.log(data);
+            dispatch({ type: "CHANGE_PASSWORD_SUCCESS", payload: data });
         } catch (error) {
             console.log(error);
         }
