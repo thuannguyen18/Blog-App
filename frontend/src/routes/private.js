@@ -1,6 +1,8 @@
 import { Navigate } from "react-router-dom";
 import Profile from "pages/user/profile";
 import Settings from "pages/user/settings";
+import EditorPost from "pages/post/editor";
+
 import PostEditor from "../components/post/PostEditor";
 import Blogs from "../components/Blogs";
 import PostDetail from "../components/post/PostDetail";
@@ -14,6 +16,10 @@ export const privateRoutes = [
     {
         path: '/user/settings',
         element: Settings
+    },
+    {
+        path: "/blog/editor",
+        element: EditorPost
     }
 ];
 

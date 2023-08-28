@@ -49,7 +49,7 @@ export default function Header() {
                 <CgNotes className="text-lg" />
                 <span className="ml-2">Blogs</span>
             </Link>
-            <Link className="ml-6 text-slate-900 flex items-center" to="/editor">
+            <Link className="ml-6 text-slate-900 flex items-center" to="/blog/editor">
                 <BsPencilSquare className="text-lg" />
                 <span className="ml-2">New Article</span>
             </Link>
@@ -98,7 +98,7 @@ export default function Header() {
                 interactive={true}
                 visible={visible}
                 onClickOutside={hide}
-                placement="bottom-start"
+                placement="bottom-end"
             >
                 <div
                     className="ml-6 text-slate-900 flex items-center cursor-pointer bg-gray-200 h-12 w-12 rounded-full"

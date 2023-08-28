@@ -52,6 +52,14 @@ h2 {
     background-color: #333;
 }
 
+.tox .tox-statusbar__branding svg {
+    display: none;
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+    box-shadow: none;
+}
+
 body::-webkit-scrollbar {
     width: 10px;
 }
