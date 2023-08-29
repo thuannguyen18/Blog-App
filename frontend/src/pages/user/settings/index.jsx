@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { AiOutlineCamera } from "react-icons/ai";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Container from "components/Container";
-import { AiOutlineCamera } from "react-icons/ai";
 import { useGlobalContext } from "context/context";
 
 export default function Settings() {
@@ -23,6 +23,7 @@ export default function Settings() {
     } = useGlobalContext();
     const [isOpen, setIsOpen] = useState(false);
 
+    // Using formik to validate password fields
     const formik = useFormik({
         initialValues: {
             password: "",
@@ -66,6 +67,7 @@ export default function Settings() {
         },
     ];
 
+    // Validate password fields with formik
     const passwords = [
         {
             autoComplete: "password",
@@ -105,6 +107,7 @@ export default function Settings() {
         },
     ];
 
+    // Preview avatar
     const handleFile = (e) => {
         const fileUpload = e.target.files[0];
         const previewUrl = URL.createObjectURL(fileUpload);
@@ -112,6 +115,7 @@ export default function Settings() {
         setUserAvatar(fileUpload);
     }
 
+    // disable & enable setting buttons
     const disableSaveBtn = isChange && !updateUserLoading ? "bg-sky-500 hover:bg-sky-600" : "bg-sky-300 cursor-not-allowed";
     const disablePasswordBtn =
         (formik.values.password

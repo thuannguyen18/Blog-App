@@ -1,38 +1,76 @@
-import React, { useState } from "react";
-import { Editor } from "@tinymce/tinymce-react";
+import React, { useState, useEffect, useRef } from "react";
+import { createReactEditorJS } from "react-editor-js";
+import Embed from '@editorjs/embed';
+import Header from '@editorjs/header';
+import EditorJS from "@editorjs/editorjs";
 import Container from "components/Container";
 
-export default function EditorPost() {
-    const [content, setContent] = useState("");
-    const [value, setValue] = useState("");
+const ReactEditorJS = createReactEditorJS();
+const DEFAULT_INITIAL_DATA = {
+    "time": new Date().getTime(),
+    "blocks": [
+        {
+            "type": "header",
+            "data": {
+                "text": "Writting content here...",
+                "level": 1
+            }
+        },
+    ]
+}
 
-    console.log(value);
+export default function EditorPost() {
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState([]);
+    const ejInstance = useRef();
+    const initEditor = () => {
+        const editor = new EditorJS({
+            holder: 'editorjs',
+            onReady: () => {
+                ejInstance.current = editor;
+            },
+            autofocus: true,
+            data: DEFAULT_INITIAL_DATA,
+            onChange: async () => {
+                let content = await editor.saver.save();
+                setContent(content.blocks);
+            },
+            tools: {
+                embed: Embed,
+                header: Header,
+            }
+        });
+    }
+
+    useEffect(() => {
+        if (!ejInstance.current) {
+            initEditor();
+        }
+
+        return () => {
+            ejInstance?.current?.destroy();
+            ejInstance.current = null;
+        };
+    }, []);
+
+    console.log(title);
     console.log(content);
 
     return (
         <Container>
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
-                <div className="text-3xl text-gray-450 font-semibold mb-4">New blog title here......</div>
-                <Editor
-                    apiKey="wsa23774t6ncb0427t0siawwncy8j2oqk1b3qmpybivf0kun"
-                    value={value}
-                    initialValue="Start writting your blog"
-                    onEditorChange={(newValue, editor) => {
-                        setValue(newValue);
-                        setContent(editor.getContent({ format: "text" }));
-                    }}
-                    onInit={(evt, editor) => {
-                        setContent(editor.getContent({ format: "text" }));
-                    }}
-                    init={{
-                        menubar: false,
-                        toolbar: 'undo redo | blocks | ' +
-                            'bold italic forecolor | alignleft aligncenter ' +
-                            'alignright alignjustify | bullist numlist outdent indent | ' +
-                            'removeformat | help',
-                        plugins: "mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss"
-                    }}
+                <input 
+                    value={title}
+                    type="text" 
+                    placeholder="New title post here......" 
+                    className="text-3xl text-gray-700 placeholder-gray-450 font-semibold mb-4 px-4 w-full focus:outline-0" 
+                    onChange={(e) => setTitle(e.target.value)}
                 />
+                <div id="editorjs"></div>
+            </div>
+            <div className="fixed md:top-[92%] md:left-[42%] z-10">
+                <button className="text-sm border border-gray-300 rounded h-10 px-4 hover:bg-gray-200 mr-2">Save draft</button>
+                <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600">Next step</button>
             </div>
         </Container>
     );

@@ -117,6 +117,7 @@ export const getComments = asyncHandler(async (req, res) => {
     res.status(200).json(comments);
 });
 
+
 /** 
 *    @desc Get category blogs
 *    @method GET
@@ -140,20 +141,40 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
     });
 });
 
+
+/** 
+*    @desc Create a new blog
+*    @method POST
+*    @path http://localhost:3500/blog
+*/
 export const createBlog = asyncHandler(async (req, res) => {
-    const { id, title, content } = req.body;
+    const { 
+        userId, 
+        title, 
+        subTitle, 
+        content, 
+        picturePath, 
+        category 
+    } = req.body;
+    const file = req.file;
 
-    if (!id || !title || !content) {
-        return res.status(400).json({ message: "All fields are required" });
+    const user = await User.findById(userId);
+
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
     }
 
-    const note = await Blog.create({ userId: id, title, content });
+    console.log(file)
+    // const blogCreated = await Blog.create({ 
+    //     userId, 
+    //     title, 
+    //     subTitle, 
+    //     content, 
+    //     picturePath, 
+    //     category 
+    // });
 
-    if (note) {
-        return res.status(201).json({ message: "New blog created" });
-    } else {
-        return res.status(400).json({ message: "Invalid note data received" });
-    }
+    res.status(201).json({ message: "created", user });
 });
 
 export const updateBlog = asyncHandler(async (req, res) => {
