@@ -88,7 +88,7 @@ function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initalState);
     const navigate = useNavigate();
 
-    // @access: public --- Set values for form Sign up page
+    // @access: public --- Set values for form signup & login page
     const setName = (value) => dispatch({ type: "SET_NAME", payload: value });
     const setEmail = (value) => dispatch({ type: "SET_EMAIL", payload: value });
     const setPassword = (value) => dispatch({ type: "SET_PASSWORD", payload: value });
@@ -109,7 +109,7 @@ function AppProvider({ children }) {
     // @access: public --- Change page for pagination
     const changePage = (page) => dispatch({ type: "CHANGE_PAGE", payload: page });
 
-    // Create Blog
+    // @access: private --- Create a new blog by user
     const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value });
     const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value });
 
@@ -120,9 +120,9 @@ function AppProvider({ children }) {
     const signUp = async () => {
         dispatch({ type: "LOADING" });
         try {
-            const { name, email, password } = state;
+            const { username, email, password } = state;
             const formData = {
-                username: name,
+                username,
                 email,
                 password
             };
@@ -177,21 +177,15 @@ function AppProvider({ children }) {
         }
     }
 
-    // @access: private
+    // @access: private --- Update user's information
     const updateUser = async () => {
         dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
             const token = localStorage.getItem("access_token");
             const { UserInfo } = jwt(token);
-
+            const { userNameUpdate, userEmailUpdate, userAvatar } = state;
             const formData = new FormData();
-
-            const {
-                userNameUpdate,
-                userEmailUpdate,
-                userAvatar
-            } = state;
 
             formData.append("username", userNameUpdate);
             formData.append("email", userEmailUpdate);
@@ -336,26 +330,35 @@ function AppProvider({ children }) {
         }
     }
 
-    // Authorization
-    const createBlog = async () => {
-        const { title, content } = state;
-
+     // @access: private --- Create a new blog by user
+    const createBlog = async (blogInfo) => {
         dispatch({ type: "LOADING" });
-
         try {
             const token = localStorage.getItem("access_token");
-            const { UserInfo: { id } } = jwt(token);
+            const { UserInfo } = jwt(token);
+            const { title, subTitle, content, category, thumbnail} = blogInfo;
+            const formData = new FormData();
 
-            const formData = { id, title, content };
+            formData.append("userId", UserInfo.id)
+            formData.append("title", title);
+            formData.append("subTitle", subTitle);
+            formData.append("content", JSON.stringify(content));
+            formData.append("category", category);
+            if (thumbnail) {
+                formData.append("picture", thumbnail);
+            }
 
-            await axios.post("http://localhost:3500/blog", formData, {
+            for (let key of formData.entries()) {
+                console.log(key[0] + ', ' + key[1]);
+            }
+
+            const { data } = await axiosConfig.post("/blog", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            });
+            })
 
-
-            dispatch({ type: "CREATED_BLOG" });
+            console.log(data);
         } catch (error) {
             console.log(error);
         }

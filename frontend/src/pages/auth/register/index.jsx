@@ -5,7 +5,7 @@ import { useGlobalContext } from "context/context";
 
 export default function Register() {
     const {
-        name,
+        username,
         email,
         password,
         setName,
@@ -13,6 +13,40 @@ export default function Register() {
         setPassword,
         isAlert
     } = useGlobalContext();
+
+    console.log(username);
+    console.log(email);
+    console.log(password);
+
+    const inputs = [
+        {
+            value: username,
+            id: "username",
+            label: "Username",
+            htmlFor: "username",
+            type: "text",
+            placeholder: "email@example.com",
+            onChange: setName,
+        },
+        {
+            value: email,
+            id: "email",
+            label: "Email",
+            htmlFor: "email",
+            type: "email",
+            placeholder: "email@example.com",
+            onChange: setEmail,
+        },
+        {
+            value: password,
+            label: "Password",
+            htmlFor: "password",
+            id: "password",
+            type: "password",
+            placeholder: "password",
+            onChange: setPassword,
+        }
+    ];
 
     return (
         <div className="relative flex flex-col justify-center items-center h-screen">
@@ -24,33 +58,18 @@ export default function Register() {
                 buttonText="Sign up"
                 linkText="Sign in"
             >
-                <Input
-                    value={name}
-                    label="Username"
-                    htmlFor="username"
-                    id="username"
-                    type="text"
-                    placeholder="John Doe"
-                    onChange={setName}
-                />
-                <Input
-                    value={email}
-                    label="Email"
-                    htmlFor="email"
-                    id="email"
-                    type="email"
-                    placeholder="email@example.com"
-                    onChange={setEmail}
-                />
-                <Input
-                    value={password}
-                    label="Password"
-                    htmlFor="password"
-                    id="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={setPassword}
-                />
+                {inputs.map(input => (
+                    <Input
+                        key={input.id}
+                        value={input.value}
+                        label={input.label}
+                        htmlFor={input.htmlFor}
+                        id={input.id}
+                        type={input.type}
+                        placeholder={input.placeholder}
+                        onChange={input.onChange}
+                    />
+                ))}
             </Form>
         </div>
     );

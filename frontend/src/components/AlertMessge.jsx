@@ -3,11 +3,11 @@ import { useGlobalContext } from "context/context";
 export default function AlertMessage() {
     const { message, closeAlertMessage, isSuccess } = useGlobalContext();
 
-    let alert = "text-red-800 border-t-4 border-red-300 bg-red-50 dark:text-red-400 dark:bg-gray-800 dark:border-red-800";
+    let alert = "text-red-800 border-t-4 border-red-300 bg-red-50";
     let alertBtn = "bg-red-50 text-red-500 focus:ring-red-400 hover:bg-red-200";
 
     if (isSuccess) {
-        alert = "text-green-800 border-t-4 border-green-300 bg-green-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800";
+        alert = "text-green-800 border-t-4 border-green-300 bg-green-50";
         alertBtn = "bg-green-50 text-green-500 focus:ring-green-400 hover:bg-green-200";
     }
 
@@ -22,7 +22,7 @@ export default function AlertMessage() {
             <button
                 onClick={closeAlertMessage}
                 type="button"
-                className={`ml-auto -mx-1.5 -my-1.5  rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 ${alertBtn}`} data-dismiss-target="#alert-border-3" aria-label="Close"
+                className={`ml-auto -mx-1.5 -my-1.5  rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 ${alertBtn}`} data-dismiss-target="#alert-border-3" aria-label="Close"
             >
                 <span className="sr-only">Dismiss</span>
                 <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">

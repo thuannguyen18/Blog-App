@@ -126,7 +126,7 @@ export const getComments = asyncHandler(async (req, res) => {
 */
 export const getCategoryBlogs = asyncHandler(async (req, res) => {
     const { name, page } = req.query;
-    
+
     const blogs = await Blog
         .find({ category: name })
         .populate("userId", "_id username profilePicturePath")
@@ -148,33 +148,33 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
 *    @path http://localhost:3500/blog
 */
 export const createBlog = asyncHandler(async (req, res) => {
-    const { 
-        userId, 
-        title, 
-        subTitle, 
-        content, 
-        picturePath, 
-        category 
+    const {
+        userId,
+        title,
+        subTitle,
+        content,
+        category
     } = req.body;
     const file = req.file;
 
-    const user = await User.findById(userId);
-
-    if (!user) {
-        return res.status(404).json({ message: "User not found" });
+    if (!file) {
+        return res.json("nhu cc")
     }
 
-    console.log(file)
-    // const blogCreated = await Blog.create({ 
-    //     userId, 
-    //     title, 
-    //     subTitle, 
-    //     content, 
-    //     picturePath, 
-    //     category 
-    // });
+    const contents = JSON.parse(content);
 
-    res.status(201).json({ message: "created", user });
+    const blogCreated = await Blog.create({
+        userId,
+        title,
+        subTitle,
+        content: contents
+            .map(content => content.data.text)
+            .join("\n"),
+        picturePath: file.path.slice(14),
+        category
+    });
+
+    res.status(201).json({ message: "Created blog successfully", blogCreated });
 });
 
 export const updateBlog = asyncHandler(async (req, res) => {
