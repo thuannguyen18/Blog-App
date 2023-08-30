@@ -7,13 +7,12 @@ import { useGlobalContext } from "context/context";
 
 export default function Settings() {
     const {
-        userId,
         userAvatar,
         userNameUpdate,
         userEmailUpdate,
+        setUserAvatar,
         setUserName,
         setUserEmail,
-        setUserAvatar,
         isChange,
         setDefault,
         updateUser,

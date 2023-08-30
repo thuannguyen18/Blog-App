@@ -156,12 +156,11 @@ export const createBlog = asyncHandler(async (req, res) => {
         category
     } = req.body;
     const file = req.file;
+    const contents = JSON.parse(content);
 
     if (!file) {
         return res.json("nhu cc")
     }
-
-    const contents = JSON.parse(content);
 
     const blogCreated = await Blog.create({
         userId,
@@ -171,7 +170,8 @@ export const createBlog = asyncHandler(async (req, res) => {
             .map(content => content.data.text)
             .join("\n"),
         picturePath: file.path.slice(14),
-        category
+        category,
+        draftContents: contents,
     });
 
     res.status(201).json({ message: "Created blog successfully", blogCreated });
@@ -199,6 +199,11 @@ export const updateBlog = asyncHandler(async (req, res) => {
     res.status(200).json(`'${updatedBlog.title}' updated`);
 });
 
+/** 
+*    @desc Delete a blog
+*    @method DELETE
+*    @path http://localhost:3500/blog/:id
+*/
 export const deleteBlog = asyncHandler(async (req, res) => {
     const blog = await Blog.findById(req.params.id);
 
@@ -206,9 +211,9 @@ export const deleteBlog = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: 'Blog not found' });
     }
 
-    const result = await blog.deleteOne();
+    const deletedBlog = await blog.deleteOne();
 
-    const reply = `Note '${result.title}' with ID ${result._id} deleted`;
+    const reply = `Blog '${deletedBlog.title}' with ID ${deletedBlog._id} deleted`;
 
-    res.json(reply);
+    res.status(200).json(reply);
 });

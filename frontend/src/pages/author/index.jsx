@@ -11,7 +11,7 @@ export default function Author() {
     const { id } = useParams();
     const {
         loading,
-        getUser,
+        getAuthor,
         authorName,
         authorEmail,
         authorProfilePicturePath,
@@ -19,7 +19,7 @@ export default function Author() {
     } = useGlobalContext();
 
     useEffect(() => {
-        getUser(id);
+        getAuthor(id);
     }, []);
 
     return (

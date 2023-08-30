@@ -21,6 +21,10 @@ const BlogShema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    draftContents: {
+        type: Array,
+        default: []
+    },
     picturePath: String,
     likes: Number
 }, { timestamps: true });

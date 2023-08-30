@@ -7,27 +7,41 @@ import EditorModal from "components/EditorModal";
 import { CATEGORIES as categories } from "constants";
 import { useGlobalContext } from "context/context";
 
-const DEFAULT_INITIAL_DATA = {
-    "time": new Date().getTime(),
-    "blocks": [
-        {
-            "type": "header",
-            "data": {
-                "text": "Writting content here...",
-                "level": 1
-            }
-        },
-    ]
-}
 
-export default function EditorPost() {
+export default function EditPost() {
     const [open, setOpen] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState([]);
     const [subTitle, setSubTitle] = useState("");
     const [category, setCategory] = useState("");
     const [thumbnail, setThumbnail] = useState();
-    const { createBlog } = useGlobalContext();
+    const { 
+        blogIdUpdate,
+        blogTitleUpdate,
+        blogSubtitleUpdate,
+        blogContentUpdate,
+        blogPicturePathUpdate,
+        blogCategoryUpdate,
+    } = useGlobalContext();
+
+    useEffect(() => {
+        setTitle(blogTitleUpdate);
+        setThumbnail(blogPicturePathUpdate);
+        setCategory(blogCategoryUpdate);
+    }, []);
+
+    console.log(blogIdUpdate)
+    console.log(blogTitleUpdate)
+    console.log(blogSubtitleUpdate)
+    console.log(blogContentUpdate)
+    console.log(blogPicturePathUpdate)
+    console.log(blogCategoryUpdate)
+
+    // Get content which user need to update from database
+    const DEFAULT_INITIAL_DATA = {
+        "time": new Date().getTime(),
+        "blocks": blogContentUpdate
+    }
 
     const ejInstance = useRef();
     const initEditor = () => {
@@ -67,19 +81,7 @@ export default function EditorPost() {
         fileUpload.preview = previewUrl;
         setThumbnail(fileUpload);
     }
-
-    // When user click create button
-    const handleCreate = () => {
-        const blogInfo = {
-            title,
-            subTitle,
-            content,
-            category,
-            thumbnail
-        }
-        createBlog(blogInfo);
-    }
-
+ 
     return (
         <Container>
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
@@ -139,7 +141,7 @@ export default function EditorPost() {
                     </div>
                     <div className="mt-4">
                         <button className="text-sm border border-gray-300 rounded h-10 px-4 hover:bg-gray-200 mr-2" onClick={() => setOpen(false)}>Back</button>
-                        <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600" onClick={handleCreate}>Create</button>
+                        <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600">Create</button>
                     </div>
                 </div>
             </EditorModal>

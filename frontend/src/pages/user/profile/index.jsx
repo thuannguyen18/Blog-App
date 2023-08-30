@@ -9,11 +9,11 @@ import { useGlobalContext } from "context/context";
 export default function Profile() {
     const {
         loading,
+        getUserBlog,
         userId,
         userName,
         userEmail,
         userProfilePicturePath,
-        getUserBlog,
         userBlogs,
     } = useGlobalContext();
 

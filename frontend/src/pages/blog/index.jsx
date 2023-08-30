@@ -9,7 +9,7 @@ export default function Blog() {
     const { id } = useParams();
     const {
         loading,
-        getBlog,
+        getBlogDetail,
         blogTitle,
         blogSubtitle,
         blogContent,
@@ -22,7 +22,7 @@ export default function Blog() {
     } = useGlobalContext();
 
     useEffect(() => {
-        getBlog(id);
+        getBlogDetail(id);
     }, []);
 
     return (

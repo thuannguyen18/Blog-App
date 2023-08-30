@@ -2,84 +2,25 @@ function reducer(state, action) {
     const data = action.payload;
 
     switch (action.type) {
-        case 'SET_NAME': {
-            return {
-                ...state,
-                username: data,
-            };
-        }
-        case 'SET_EMAIL': {
-            return {
-                ...state,
-                email: data,
-            };
-        }
-        case 'SET_PASSWORD': {
-            return {
-                ...state,
-                password: data,
-            };
-        }
-        case "SET_USER_AVATAR": {
-            return {
-                ...state,
-                userAvatar: data,
-                isChange: true,
-            }
-        }
-        case "SET_USER_NAME": {
-            return {
-                ...state,
-                userNameUpdate: data,
-                isChange: true,
-            }
-        }
-        case "SET_USER_EMAIL": {
-            return {
-                ...state,
-                userEmailUpdate: data,
-                isChange: true,
-            }
-        }
-        case "SET_DEFAULT": {
-            return {
-                ...state,
-                userNameUpdate: state.userName,
-                userEmailUpdate: state.userEmail,
-                isChange: false
-            }
-        }
-        case "SET_ALL_TOPICS":
-            return {
-                ...state,
-                allTopics: true,
-                bestTopics: false,
-                currentPage: 1,
-                activePage: 1,
-            }
-        case "SET_BEST_TOPICS":
-            return {
-                ...state,
-                allTopics: false,
-                bestTopics: true,
-                currentPage: 1,
-                activePage: 1,
-            }
+        case "SET_NAME":
+            return { ...state, username: data };
+        case "SET_EMAIL":
+            return { ...state, email: data };
+        case "SET_PASSWORD":
+            return { ...state, password: data };
         case "SIGN_UP_SUCCESS":
             return {
                 ...state,
                 loading: false,
                 isAlert: true,
-                isFail: false,
-                isSuccess: true,
                 message: data,
+                isSuccess: true,
             }
         case "SIGN_UP_FAIL":
             return {
                 ...state,
                 loading: false,
                 isAlert: true,
-                isFail: true,
                 message: data,
             }
         case "SIGN_IN_SUCCESS":
@@ -93,95 +34,10 @@ function reducer(state, action) {
                 ...state,
                 loading: false,
                 isAlert: true,
-                isFail: true,
-                isSuccess: false,
-                message: data
+                message: data,
+                isSuccess: false
             }
-        case "CLOSE_ALERT_MESSAGE":
-            return {
-                ...state,
-                isAlert: false,
-                isFail: false,
-            }
-        case "LOADING":
-            return {
-                ...state,
-                loading: true,
-            };
-        case "FEED_LOADING":
-            return {
-                ...state,
-                feedLoading: true,
-            }
-        case "COMMENT_LOADING":
-            return {
-                ...state,
-                commentLoading: true,
-            }
-        case "UPDATE_USER_LOADING":
-            return {
-                ...state,
-                updateUserLoading: true,
-            }
-        case "CHANGE_PASSWORD_LOADING":
-            return {
-                ...state,
-                changePasswordLoading: true,
-            }
-        case "AUTH_SUCCESS":
-            return {
-                ...state,
-                isAuthenticated: true,
-                isAlert: false,
-                isFail: false,
-                isSuccess: false,
-                userId: data.id,
-                userName: data.username,
-                userEmail: data.email,
-                userProfilePicturePath: data.profilePicturePath,
-                userNameUpdate: data.username,
-                userEmailUpdate: data.email,
-            };
-        case "GET_USER_BLOGS":
-            return {
-                ...state,
-                loading: false,
-                userBlogs: data,
-                toastMessage: "",
-            }
-        case "UPDATE_USER_SUCCESS":
-            return {
-                ...state,
-                updateUserLoading: false,
-                toastMessage: data,
-                isChange: false,
-            }
-        case "CHANGE_PASSWORD_SUCCESS": {
-            return {
-                ...state,
-                changePasswordLoading: false,
-                toastMessage: data,
-            }
-        }
-        case "SET_TITLE": {
-            return {
-                ...state,
-                title: data
-            }
-        }
-        case "SET_CONTENT": {
-            return {
-                ...state,
-                content: data
-            }
-        }
-        case "SET_AVATAR": {
-            return {
-                ...state,
-                userAvatar: data
-            }
-        }
-        case "LOG_OUT": {
+        case "LOG_OUT":
             return {
                 ...state,
                 userId: "",
@@ -190,30 +46,10 @@ function reducer(state, action) {
                 email: "",
                 password: "",
             };
-        }
-        case "GET_AUTHOR":
+        case "CLOSE_ALERT_MESSAGE":
             return {
                 ...state,
-                loading: false,
-                authorName: data.user.username,
-                authorEmail: data.user.email,
-                authorProfilePicturePath: data.user.profilePicturePath,
-                authorBlogs: data.userBlog,
-            };
-        case "GET_ALL_BLOGS": {
-            return {
-                ...state,
-                feedLoading: false,
-                blogsPublic: data.blogs,
-                totalPages: data.totalPages
-            }
-        }
-        case "GET_TOP_BLOGS":
-            return {
-                ...state,
-                feedLoading: false,
-                topBlogs: data.blogs,
-                totalPages: data.totalPages
+                isAlert: false,
             }
         case "GET_NEWEST_BLOGS":
             return {
@@ -227,13 +63,36 @@ function reducer(state, action) {
                 loading: false,
                 randomBlogs: data
             }
-        case "GET_BLOGS": {
+        case "SET_ALL_TOPICS":
             return {
                 ...state,
-                loading: false,
-                blogs: data
+                isAllTopics: true,
+                isBestTopics: false,
+                currentPage: 1,
+                activePage: 1,
             }
-        }
+        case "GET_ALL_BLOGS":
+            return {
+                ...state,
+                feedLoading: false,
+                allBlogs: data.blogs,
+                totalPages: data.totalPages
+            }
+        case "SET_BEST_TOPICS":
+            return {
+                ...state,
+                isAllTopics: false,
+                isBestTopics: true,
+                currentPage: 1,
+                activePage: 1,
+            }
+        case "GET_TOP_BLOGS":
+            return {
+                ...state,
+                feedLoading: false,
+                topBlogs: data.blogs,
+                totalPages: data.totalPages
+            }
         case "GET_BLOG_DETAIL": {
             return {
                 ...state,
@@ -292,26 +151,111 @@ function reducer(state, action) {
                 categoryBlogs: data.blogs,
                 categoryCurrentPage: data.currentPage,
             }
-        case "CREATED_BLOG": {
+        case "GET_AUTHOR":
             return {
                 ...state,
                 loading: false,
-                title: "",
-                content: ""
+                authorName: data.user.username,
+                authorEmail: data.user.email,
+                authorProfilePicturePath: data.user.profilePicturePath,
+                authorBlogs: data.userBlog,
             };
-        }
-        case "SET_TITLE_UPDATE": {
+        case "AUTH_SUCCESS":
             return {
                 ...state,
-                articleTitle: data
+                isAlert: false,
+                isSuccess: false,
+                isAuthenticated: true,
+                userId: data.id,
+                userName: data.username,
+                userEmail: data.email,
+                userProfilePicturePath: data.profilePicturePath,
+                userNameUpdate: data.username,
+                userEmailUpdate: data.email,
             }
-        }
-        case "SET_CONTENT_UPDATE": {
+        case "GET_USER_BLOG":
             return {
                 ...state,
-                articleContent: data
+                loading: false,
+                userBlogs: data,
+            }
+        case "UPDATE_USER_SUCCESS":
+            return {
+                ...state,
+                updateUserLoading: false,
+                isChange: false,
+            }
+        case "CHANGE_PASSWORD_SUCCESS": {
+            return {
+                ...state,
+                changePasswordLoading: false,
             }
         }
+        case "SET_USER_AVATAR": {
+            return {
+                ...state,
+                userAvatar: data,
+                isChange: true,
+            }
+        }
+        case "SET_USER_NAME": {
+            return {
+                ...state,
+                userNameUpdate: data,
+                isChange: true,
+            }
+        }
+        case "SET_USER_EMAIL": {
+            return {
+                ...state,
+                userEmailUpdate: data,
+                isChange: true,
+            }
+        }
+        case "SET_DEFAULT": {
+            return {
+                ...state,
+                userNameUpdate: state.userName,
+                userEmailUpdate: state.userEmail,
+                isChange: false
+            }
+        }
+        case "CREATE_BLOG_SUCCESS":
+            return {
+                ...state,
+                loading: false,
+                blogIdUpdate: data.blogCreated._id,
+                blogTitleUpdate: data.blogCreated.title,
+                blogSubtitleUpdate: data.blogCreated.subTitle,
+                blogContentUpdate: data.blogCreated.draftContents,
+                blogCategoryUpdate: data.blogCreated.category,
+                blogPicturePathUpdate: data.blogCreated.picturePath,
+            }
+        case "LOADING":
+            return {
+                ...state,
+                loading: true,
+            };
+        case "FEED_LOADING":
+            return {
+                ...state,
+                feedLoading: true,
+            }
+        case "COMMENT_LOADING":
+            return {
+                ...state,
+                commentLoading: true,
+            }
+        case "UPDATE_USER_LOADING":
+            return {
+                ...state,
+                updateUserLoading: true,
+            }
+        case "CHANGE_PASSWORD_LOADING":
+            return {
+                ...state,
+                changePasswordLoading: true,
+            }
         case "CHANGE_PAGE":
             return {
                 ...state,
