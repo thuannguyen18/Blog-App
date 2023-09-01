@@ -119,10 +119,10 @@ export const getComments = asyncHandler(async (req, res) => {
 
 
 /** 
-*    @desc Get category blogs
-*    @method GET
-*    @path http://localhost:3500/blog/category
-*    @query ?name="game"&page="1"
+* @desc Get category blogs
+* @method GET
+* @path http://localhost:3500/blog/category
+* @query ?name="game"&page="1"
 */
 export const getCategoryBlogs = asyncHandler(async (req, res) => {
     const { name, page } = req.query;
@@ -143,18 +143,12 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
 
 
 /** 
-*    @desc Create a new blog
-*    @method POST
-*    @path http://localhost:3500/blog
-*/
+** @desc Create a new blog
+** @method POST
+** @path http://localhost:3500/blog
+**/
 export const createBlog = asyncHandler(async (req, res) => {
-    const {
-        userId,
-        title,
-        subTitle,
-        content,
-        category
-    } = req.body;
+    const { userId, title, subTitle, content, category } = req.body;
     const file = req.file;
     const contents = JSON.parse(content);
 
@@ -162,58 +156,75 @@ export const createBlog = asyncHandler(async (req, res) => {
         return res.json("nhu cc")
     }
 
-    const blogCreated = await Blog.create({
+    const blogData = {
         userId,
         title,
         subTitle,
-        content: contents
-            .map(content => content.data.text)
-            .join("\n"),
+        content: contents.map(content => content.data.text).join("\n"),
         picturePath: file.path.slice(14),
         category,
         draftContents: contents,
-    });
-
-    res.status(201).json({ message: "Created blog successfully", blogCreated });
-});
-
-export const updateBlog = asyncHandler(async (req, res) => {
-    const { title, content } = req.body;
-    const { id } = req.params;
-
-    if (!id || !title || !content) {
-        return res.status(400).json({ message: "All fields are required" });
     }
 
-    const blog = await Blog.findById(id);
+    const blogCreated = await Blog.create(blogData);
+
+    return res.status(201).json({ 
+        message: "Created blog successfully", 
+        blogCreated 
+    });
+});
+
+
+/** 
+** @desc Update a blog
+** @method PATCH
+** @path http://localhost:3500/blog/:id
+**/
+export const updateBlog = asyncHandler(async (req, res) => {
+    const { userId, blogId, title, subTitle, content, category } = req.body;
+    const file = req.file;
+    const contents = JSON.parse(content);
+    const blog = await Blog.findById(blogId);
+
+    if (!blog) {
+        return res.status(400).json("Blog not found");
+    }
+
+    if (!file) {
+        blog.picturePath = blog.picturePath;
+    } else {
+        blog.picturePath = file.path.slice(14);
+    }
+
+    blog.userId = userId;
+    blog.title = title;
+    blog.subTitle = subTitle;
+    blog.content = contents.map(content => content.data.text).join("\n");
+    blog.category = category;
+    blog.draftContents = contents;
+    await blog.save();
+
+    return res.status(200).json({
+        message: "Update success",
+        blogUpdated: blog
+    });
+});
+
+
+/** 
+** @desc Delete a blog
+** @method DELETE
+** @path http://localhost:3500/blog/:id
+**/
+export const deleteBlog = asyncHandler(async (req, res) => {
+    const blog = await Blog.findById(req.params.id);
 
     if (!blog) {
         return res.status(400).json({ message: "Blog not found" });
     }
 
-    blog.title = title;
-    blog.content = content;
-
-    const updatedBlog = await blog.save();
-
-    res.status(200).json(`'${updatedBlog.title}' updated`);
-});
-
-/** 
-*    @desc Delete a blog
-*    @method DELETE
-*    @path http://localhost:3500/blog/:id
-*/
-export const deleteBlog = asyncHandler(async (req, res) => {
-    const blog = await Blog.findById(req.params.id);
-
-    if (!blog) {
-        return res.status(400).json({ message: 'Blog not found' });
-    }
-
     const deletedBlog = await blog.deleteOne();
-
     const reply = `Blog '${deletedBlog.title}' with ID ${deletedBlog._id} deleted`;
 
-    res.status(200).json(reply);
+    return res.status(200).json(reply);
 });

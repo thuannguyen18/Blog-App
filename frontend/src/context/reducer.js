@@ -231,6 +231,17 @@ function reducer(state, action) {
                 blogCategoryUpdate: data.blogCreated.category,
                 blogPicturePathUpdate: data.blogCreated.picturePath,
             }
+        case "UPDATE_BLOG_SUCCESS": 
+            return {
+                ...state,
+                loading: false,
+                blogIdUpdate: data._id,
+                blogTitleUpdate: data.title,
+                blogSubtitleUpdate: data.subTitle,
+                blogContentUpdate: data.draftContents,
+                blogCategoryUpdate: data.category,
+                blogPicturePathUpdate: data.picturePath,
+            }
         case "LOADING":
             return {
                 ...state,

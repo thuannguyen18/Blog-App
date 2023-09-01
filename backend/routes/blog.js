@@ -28,7 +28,7 @@ router.get("/category", getCategoryBlogs);
 router.post("/", verifyToken, upload.single("picture"), createBlog);
 router.route("/:id")
     .get(getBlog)
-    .patch(verifyToken, updateBlog)
+    .patch(verifyToken, upload.single("picture"), updateBlog)
     .delete(verifyToken, deleteBlog);
 router.get("/:id/comments", getComments);
 

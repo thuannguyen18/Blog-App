@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 import Embed from '@editorjs/embed';
 import Header from '@editorjs/header';
 import EditorJS from "@editorjs/editorjs";
@@ -9,33 +10,22 @@ import { useGlobalContext } from "context/context";
 
 
 export default function EditPost() {
+    const { 
+        blogTitleUpdate,
+        blogSubtitleUpdate,
+        blogContentUpdate,
+        blogPicturePathUpdate,
+        blogCategoryUpdate,
+        updateBlog
+    } = useGlobalContext();
+    const { id } = useParams();
+    
     const [open, setOpen] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState([]);
     const [subTitle, setSubTitle] = useState("");
     const [category, setCategory] = useState("");
     const [thumbnail, setThumbnail] = useState();
-    const { 
-        blogIdUpdate,
-        blogTitleUpdate,
-        blogSubtitleUpdate,
-        blogContentUpdate,
-        blogPicturePathUpdate,
-        blogCategoryUpdate,
-    } = useGlobalContext();
-
-    useEffect(() => {
-        setTitle(blogTitleUpdate);
-        setThumbnail(blogPicturePathUpdate);
-        setCategory(blogCategoryUpdate);
-    }, []);
-
-    console.log(blogIdUpdate)
-    console.log(blogTitleUpdate)
-    console.log(blogSubtitleUpdate)
-    console.log(blogContentUpdate)
-    console.log(blogPicturePathUpdate)
-    console.log(blogCategoryUpdate)
 
     // Get content which user need to update from database
     const DEFAULT_INITIAL_DATA = {
@@ -81,7 +71,33 @@ export default function EditPost() {
         fileUpload.preview = previewUrl;
         setThumbnail(fileUpload);
     }
- 
+
+    // Update blog 
+    const handleUpdate = () => {
+        const blogInfo = {
+            id,
+            title,
+            subTitle,
+            content,
+            category,
+            thumbnail,
+        }
+        console.log(title);
+        console.log(subTitle);
+        console.log(content);
+        console.log(category);
+        console.log(thumbnail)
+        updateBlog(blogInfo);
+    }
+
+    useEffect(() => {
+        setTitle(blogTitleUpdate);
+        setSubTitle(blogSubtitleUpdate);
+        setContent(blogContentUpdate);
+        setThumbnail(blogPicturePathUpdate);
+        setCategory(blogCategoryUpdate);
+    }, []);
+
     return (
         <Container>
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
@@ -106,7 +122,9 @@ export default function EditPost() {
                             className="w-full h-[69px] border border-gray-300 rounded px-4 py-3 focus:outline-0"
                             value={subTitle}
                             onChange={(e) => setSubTitle(e.target.value)}
-                        ></textarea>
+                        >
+                            {subTitle}
+                        </textarea>
                     </div>
                     <div className="py-3">
                         <p className="text-sm text-gray-700 mb-2 font-semibold">Category</p>
@@ -116,6 +134,7 @@ export default function EditPost() {
                             className="w-full h-[43px] rounded px-3 focus:outline-0 bg-gray-350"
                             onChange={(e) => setCategory(e.target.value)}
                         >
+                            <option selected disabled hidden>{category || "-- Choose category --"}</option>
                             {categories.map(category => (
                                 <option value={category}>{category}</option>
                             ))}
@@ -134,14 +153,14 @@ export default function EditPost() {
                                         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Click to upload</span> or drag and drop</p>
                                         <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                     </div>
-                                    <input id="dropzone-file" type="file" className="hidden" onChange={handleFile} />
                                 </React.Fragment>}
+                                <input id="dropzone-file" type="file" className="hidden" onChange={handleFile} />
                             </label>
                         </div>
                     </div>
                     <div className="mt-4">
                         <button className="text-sm border border-gray-300 rounded h-10 px-4 hover:bg-gray-200 mr-2" onClick={() => setOpen(false)}>Back</button>
-                        <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600">Create</button>
+                        <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600" onClick={handleUpdate}>Update</button>
                     </div>
                 </div>
             </EditorModal>

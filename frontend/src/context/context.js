@@ -270,7 +270,7 @@ function AppProvider({ children }) {
         try {
             const response = await axiosConfig
                 .get(`/blog/category?name=${category}&page=${state.categoryCurrentPage}`);
-            
+
             dispatch({
                 type: "GET_CATEGORY_BLOGS",
                 payload: response.data
@@ -360,7 +360,7 @@ function AppProvider({ children }) {
                 type: "UPDATE_USER_SUCCESS",
                 payload: response.data
             });
-            
+
             navigate("/user");
             toast.success("Update success");
         } catch (error) {
@@ -372,7 +372,7 @@ function AppProvider({ children }) {
     // Change password in user settings
     const changePassword = async (payload) => {
         dispatch({ type: "CHANGE_PASSWORD_LOADING" });
-        
+
         try {
             const token = localStorage.getItem("access_token");
             const response = await axiosConfig
@@ -454,40 +454,42 @@ function AppProvider({ children }) {
         }
     }
 
+    // Update blog by user
+    const updateBlog = async (blogInfo) => {
+        dispatch({ type: "LOADING" });
 
+        const token = localStorage.getItem("access_token");
+        const formData = new FormData();
+        formData.append("userId", state.userId);
+        formData.append("blogId", blogInfo.id)
+        formData.append("title", blogInfo.title);
+        formData.append("subTitle", blogInfo.subTitle);
+        formData.append("content", JSON.stringify(blogInfo.content));
+        formData.append("category", blogInfo.category);
 
+        if (blogInfo.thumbnail) {
+            formData.append("picture", blogInfo.thumbnail);
+        } else {
+            formData.append("picture", null);
+        }
 
-
-
-
-
-
-    // @access: private --- Create a new blog by user
-    const setTitle = (value) => dispatch({ type: "SET_TITLE", payload: value });
-    const setContent = (value) => dispatch({ type: "SET_CONTENT", payload: value });
-
-    const setTitleUpdate = (value) => dispatch({ type: "SET_TITLE_UPDATE", payload: value });
-    const setContentUpdate = (value) => dispatch({ type: "SET_CONTENT_UPDATE", payload: value });
-
-    const updateBlog = async (id) => {
-        const { articleTitle, articleContent } = state;
         try {
-            const token = localStorage.getItem("access_token");
-
-            const updatedData = {
-                title: articleTitle,
-                content: articleContent
-            };
-
-            await axios.patch(`http://localhost:3500/blog/${id}`, updatedData, {
+            const response = await axiosConfig.patch(`/blog/${state.userId}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
+            
+            dispatch({ 
+                type: "UPDATE_BLOG_SUCCESS", 
+                payload: response.data.blogUpdated 
+            });
 
-            navigate("/user");
+            navigate(`/blog/${response.data.blogUpdated._id}`);
+            toast.success("Update post success");
         } catch (error) {
             console.log(error);
+            toast.error("Update post fail");
         }
     }
 
@@ -508,16 +510,12 @@ function AppProvider({ children }) {
                 getAuthor,
                 updateUser,
                 changePassword,
-                setTitle,
-                setContent,
                 getUserBlog,
                 getAllBlogs,
                 getBlogDetail,
                 createBlog,
                 updateBlog,
                 deleteBlog,
-                setTitleUpdate,
-                setContentUpdate,
                 getBlogs,
                 getTopBlogs,
                 changePage,

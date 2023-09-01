@@ -6,8 +6,10 @@ import { useGlobalContext } from "context/context";
 
 
 export default function UserInfo({ id, name, email, profilePath }) {
-    const { isAuthenticated } = useGlobalContext();
+    const { isAuthenticated, blogIdUpdate } = useGlobalContext();
     const [open, setOpen] = useState(false);
+
+    console.log(blogIdUpdate)
 
     return (
         <>
@@ -22,7 +24,7 @@ export default function UserInfo({ id, name, email, profilePath }) {
                     </div>
                 </div>
                 {isAuthenticated && <div className="">
-                    <Link to={`/blog/edit`} className="border border-gray-500 text-gray-400 py-2 px-4 text-center rounded hover:bg-gray-500 hover:text-white">Update</Link>
+                    <Link to={`/blog/edit/${blogIdUpdate}`} className="border border-gray-500 text-gray-400 py-2 px-4 text-center rounded hover:bg-gray-500 hover:text-white">Update</Link>
                     <button
                         onClick={() => setOpen(true)}
                         className="border border-red-500 text-red-400 py-2 px-4 ml-3 rounded hover:bg-red-500 hover:text-white"

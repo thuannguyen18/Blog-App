@@ -13,7 +13,7 @@ const DEFAULT_INITIAL_DATA = {
         {
             "type": "header",
             "data": {
-                "text": "Writting content here...",
+                "text": "",
                 "level": 1
             }
         },
@@ -111,9 +111,10 @@ export default function EditorPost() {
                         <select
                             name="category"
                             id="category"
-                            className="w-full h-[43px] rounded px-3 focus:outline-0 bg-gray-350"
+                            className="w-full h-[43px] rounded px-3 focus:outline-0 bg-gray-350 text-sm"
                             onChange={(e) => setCategory(e.target.value)}
                         >
+                            <option selected disabled hidden>{category || "-- Choose category --"}</option>
                             {categories.map(category => (
                                 <option value={category}>{category}</option>
                             ))}

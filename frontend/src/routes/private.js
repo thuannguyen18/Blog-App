@@ -23,7 +23,7 @@ export const privateRoutes = [
         element: EditorPost,
     },
     {
-        path: "/blog/edit",
+        path: "/blog/edit/:id",
         element: EditPost,
     },
 ];
