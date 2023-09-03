@@ -3,11 +3,10 @@ import multer from "multer";
 import verifyToken from "../middlewares/verifyToken.js";
 import {
     getAllBlogs,
-    getBlog,
+    getBlogDetail,
     createBlog,
     updateBlog,
     deleteBlog,
-    getComments,
     getCategoryBlogs
 } from "../controllers/blog.js";
 
@@ -24,12 +23,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get("/", getAllBlogs);
+router.get("/:id", getBlogDetail);
 router.get("/category", getCategoryBlogs);
+
 router.post("/", verifyToken, upload.single("picture"), createBlog);
-router.route("/:id")
-    .get(getBlog)
-    .patch(verifyToken, upload.single("picture"), updateBlog)
-    .delete(verifyToken, deleteBlog);
-router.get("/:id/comments", getComments);
+router.patch("/:id", verifyToken, upload.single("picture"), updateBlog);
+router.delete("/:id", verifyToken, deleteBlog);
 
 export default router;

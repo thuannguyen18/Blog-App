@@ -1,23 +1,19 @@
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
-import User from "../models/User.js";
-import Comment from "../models/Comment.js";
-
-
 /** 
-*    @desc Get all blogs (10 blogs per page)
-*    @method GET
-*    @path http://localhost:3500/blog
-*    @query
-*       ?page=1&limit=10
-*       ?sort=latest&limit=10
-*       ?sort=random&limit=10
-*       ?sort=top&page=1&limit=10
+** @access Public
+** @desc Get all blogs (10 blogs per page)
+** @method GET
+** @path http://localhost:3500/blog?
+** @query
+**  page=1&limit=10
+**  sort=latest&limit=10
+**  sort=random&limit=10
+**  sort=top&page=1&limit=10
 */
 export const getAllBlogs = asyncHandler(async (req, res) => {
     const { page, newest, random, limit, sort } = req.query;
-    let blogs;
-    let sortBy;
+    let blogs, sortBy;
 
     if (newest) {
         blogs = await Blog
@@ -69,7 +65,7 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
         .skip((page - 1) * limit);
     const count = await Blog.count();
 
-    res.status(200).json({
+    return res.status(200).json({
         blogs,
         totalPages: Math.ceil(count / limit),
         currentPage: page,
@@ -78,51 +74,31 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
 
 
 /** 
-*    @desc Get one blog
-*    @path http://localhost:3500/blog
-*    @method GET
-*    @param /:id
+** @access Public
+** @desc Get blog detail by id
+** @path http://localhost:3500/blog/:id
+** @method GET
+** @param id
 */
-export const getBlog = asyncHandler(async (req, res) => {
-    const blog = await Blog
+export const getBlogDetail = asyncHandler(async (req, res) => {
+    const blogDetail = await Blog
         .findById(req.params.id)
         .populate("userId", "username email profilePicturePath");
 
-    if (!blog)
+    if (!blogDetail) {
         return res.status(404).json({ message: "Blog not found" });
+    } 
 
-    res.status(200).json(blog);
+    return res.status(200).json(blogDetail);
 });
 
 
 /** 
-*    @desc Get comments
-*    @method GET
-*    @path http://localhost:3500/blog/:id/comments
-*    @query ?page=""&limit=""
-*/
-export const getComments = asyncHandler(async (req, res) => {
-    const { page, limit } = req.query;
-    const blog = await Blog.findById(req.params.id);
-
-    if (!blog)
-        return res.status(404).json({ message: "Blog not found" });
-
-    const comments = await Comment
-        .find({ blogId: blog._id })
-        .populate("userId", "username email profilePicturePath")
-        .limit(limit * 1)
-        .skip((page - 1) * limit);
-
-    res.status(200).json(comments);
-});
-
-
-/** 
-* @desc Get category blogs
-* @method GET
-* @path http://localhost:3500/blog/category
-* @query ?name="game"&page="1"
+** @access Public
+** @desc Get category blogs
+** @method GET
+** @path http://localhost:3500/blog/category?
+** @query name="game"&page="1"
 */
 export const getCategoryBlogs = asyncHandler(async (req, res) => {
     const { name, page } = req.query;
@@ -134,7 +110,7 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
         .skip((page - 1) * 10);
     const count = await Blog.count();
 
-    res.status(200).json({
+    return res.status(200).json({
         blogs,
         totalPages: Math.ceil(count / 10),
         currentPage: page,
@@ -143,7 +119,8 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
 
 
 /** 
-** @desc Create a new blog
+** @access Private
+** @desc Create a new blog by user
 ** @method POST
 ** @path http://localhost:3500/blog
 **/
@@ -153,7 +130,7 @@ export const createBlog = asyncHandler(async (req, res) => {
     const contents = JSON.parse(content);
 
     if (!file) {
-        return res.json("nhu cc")
+        return res.sendStatus(400);
     }
 
     const blogData = {
@@ -168,15 +145,20 @@ export const createBlog = asyncHandler(async (req, res) => {
 
     const blogCreated = await Blog.create(blogData);
 
+    if (!blogCreated) {
+        return res.sendStatus(500);
+    }
+
     return res.status(201).json({ 
-        message: "Created blog successfully", 
+        message: "Create success", 
         blogCreated 
     });
 });
 
 
 /** 
-** @desc Update a blog
+** @accesse Private
+** @desc Update a blog by user
 ** @method PATCH
 ** @path http://localhost:3500/blog/:id
 **/
@@ -187,7 +169,7 @@ export const updateBlog = asyncHandler(async (req, res) => {
     const blog = await Blog.findById(blogId);
 
     if (!blog) {
-        return res.status(400).json("Blog not found");
+        return res.sendStatus(404);
     }
 
     if (!file) {
@@ -212,7 +194,8 @@ export const updateBlog = asyncHandler(async (req, res) => {
 
 
 /** 
-** @desc Delete a blog
+** @access Private
+** @desc Delete a blog by user
 ** @method DELETE
 ** @path http://localhost:3500/blog/:id
 **/
@@ -220,11 +203,10 @@ export const deleteBlog = asyncHandler(async (req, res) => {
     const blog = await Blog.findById(req.params.id);
 
     if (!blog) {
-        return res.status(400).json({ message: "Blog not found" });
+        return res.sendStatus(404);
     }
 
     const deletedBlog = await blog.deleteOne();
     const reply = `Blog '${deletedBlog.title}' with ID ${deletedBlog._id} deleted`;
-
     return res.status(200).json(reply);
 });
