@@ -1,6 +1,7 @@
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 import Comment from "../models/Comment.js";
+import User from "../models/User.js";
 /** 
 ** @access Public
 ** @desc Get comments for specific blog
@@ -31,10 +32,12 @@ export const getComments = asyncHandler(async (req, res) => {
 ** @access Private
 ** @desc Create a comment by user in specific blog
 ** @method POST
-** @path http://localhost:3500/blog-detail/:id/create-comment
+** @path http://localhost:3500/blog-detail/create-comment
 */
 export const createComment = asyncHandler(async (req, res) => {
-    res.status(200).json("Create comment");
+    const { userId, blogId, content } = req.body;
+    await Comment.create({ userId, blogId, content });
+    return res.status(200).json("Comment created");
 });
 
 
@@ -42,7 +45,7 @@ export const createComment = asyncHandler(async (req, res) => {
 ** @access Private
 ** @desc Update a comment by user in specific blog
 ** @method PATCH
-** @path http://localhost:3500/blog-detail/:id/update-comment
+** @path http://localhost:3500/blog-detail/update-comment
 */
 export const updateComment = asyncHandler(async (req, res) => {
     res.status(200).json("Update comment");
@@ -53,7 +56,7 @@ export const updateComment = asyncHandler(async (req, res) => {
 ** @access Private
 ** @desc Delete a comment by user in specific blog
 ** @method DELETE
-** @path http://localhost:3500/blog-detail/:id/delete-comment
+** @path http://localhost:3500/blog-detail/delete-comment
 */
 export const deleteComment = asyncHandler(async (req, res) => {
     res.status(200).json("Delete comment");

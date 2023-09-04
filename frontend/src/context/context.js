@@ -37,10 +37,12 @@ const initalState = {
     blogPicturePath: "",
     blogCategory: "",
     // Get comments and pagination
+    userIdComment: {},
     comments: [],
     nextComments: 1,
     isFinalComment: false,
     isHasComment: false,
+    isNewComment: false,
     // Get blogs have same category and pagination
     categoryBlogs: [],
     categoryTotalPages: "",
@@ -91,6 +93,7 @@ const initalState = {
     commentLoading: false,
     updateUserLoading: false,
     changePasswordLoading: false,
+    postCommentLoading: false,
 }
 
 function AppProvider({ children }) {
@@ -226,22 +229,33 @@ function AppProvider({ children }) {
     });
 
     // Get blog detail and comments belong to that blog
-    const getBlogDetail = async (id) => {
+    const getBlogDetail = async (blogId) => {
         dispatch({ type: "LOADING" });
         try {
             const response = await Promise.all([
-                axiosConfig.get(`/blog/${id}`),
-                axiosConfig.get(`/blog/${id}/comments?page=1&limit=5`)
+                axiosConfig.get(`/blog/${blogId}`),
+                axiosConfig.get(`/blog-detail/${blogId}/comments?page=1&limit=5`)
             ]);
+
 
             dispatch({
                 type: "GET_BLOG_DETAIL",
                 payload: response[0].data
             });
 
+            const commentData = {};
+            const user = response[1].data.find(item => item.userId._id === state.userId);
+
+            if (user) {
+                const { userId } = user;
+                commentData.id = userId._id;
+            }
+
+            commentData.comments = response[1].data;
+
             dispatch({
                 type: "GET_COMMENTS",
-                payload: response[1].data
+                payload: commentData
             });
         } catch (error) {
             console.log(error);
@@ -253,11 +267,21 @@ function AppProvider({ children }) {
         dispatch({ type: "COMMENT_LOADING" });
         try {
             const response = await axiosConfig
-                .get(`/blog/${id}/comments?page=${state.nextComments += 1}&limit=5`);
+                .get(`/blog-detail/${id}/comments?page=${state.nextComments += 1}&limit=5`);
+
+            const commentData = {};
+            const user = response.data.find(item => item.userId._id === state.userId);
+
+            if (user) {
+                const { userId } = user;
+                commentData.id = userId._id;
+            }
+
+            commentData.comments = response.data;
 
             dispatch({
                 type: "GET_MORE_COMMENTS",
-                payload: response.data
+                payload: commentData
             });
         } catch (error) {
             console.log(error);
@@ -280,7 +304,7 @@ function AppProvider({ children }) {
         }
     }
 
-    // Get author's information when user wants to know who writes this blog
+    // Get author's information 
     const getAuthor = async (id) => {
         dispatch({ type: "LOADING" });
         try {
@@ -289,13 +313,14 @@ function AppProvider({ children }) {
                 type: "GET_AUTHOR",
                 payload: response.data
             });
+            console.log(response.data)
         } catch (error) {
             console.log(error);
         }
     }
 
     // Get user's blog who has authorized
-    const getUserBlog = async (id) => {
+    const getAllUserBlog = async (id) => {
         dispatch({ type: "LOADING" });
         try {
             const token = localStorage.getItem("access_token");
@@ -306,7 +331,7 @@ function AppProvider({ children }) {
             });
 
             dispatch({
-                type: "GET_USER_BLOG",
+                type: "GET_ALL_USER_BLOG",
                 payload: response.data
             });
         } catch (error) {
@@ -479,10 +504,10 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            
-            dispatch({ 
-                type: "UPDATE_BLOG_SUCCESS", 
-                payload: response.data.blogUpdated 
+
+            dispatch({
+                type: "UPDATE_BLOG_SUCCESS",
+                payload: response.data.blogUpdated
             });
 
             navigate(`/blog/${response.data.blogUpdated._id}`);
@@ -490,6 +515,54 @@ function AppProvider({ children }) {
         } catch (error) {
             console.log(error);
             toast.error("Update post fail");
+        }
+    }
+
+    const getComments = async (blogId) => {
+        let limit = 5;
+        if (state.isNewComment) {
+            limit = 6;
+        }
+
+        try {
+            const response = await axiosConfig
+                .get(`/blog-detail/${blogId}/comments?page=1&limit=${limit}`);
+
+            dispatch({
+                type: "GET_COMMENTS",
+                payload: response.data
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // User comment 
+    const postComment = async (blogId, content) => {
+        const token = localStorage.getItem("access_token");
+
+        if (!token) {
+            navigate("/login");
+            return;
+        }
+
+        dispatch({ type: "POST_COMMENT_LOADING" });
+
+        const payload = { userId: state.userId, blogId, content }
+        console.log(payload.userId)
+        try {
+            const response = await axiosConfig
+                .post(`/blog-detail/create-comment`, payload, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            dispatch({ type: "POST_COMMENT_SUCCESS" });
+            toast.success("Post comment success");
+        } catch (error) {
+            console.log(error);
+            dispatch({ type: "POST_COMMENT_FAIL" });
+            toast.error("Something went wrong");
         }
     }
 
@@ -510,7 +583,7 @@ function AppProvider({ children }) {
                 getAuthor,
                 updateUser,
                 changePassword,
-                getUserBlog,
+                getAllUserBlog,
                 getAllBlogs,
                 getBlogDetail,
                 createBlog,
@@ -524,6 +597,8 @@ function AppProvider({ children }) {
                 getMoreComments,
                 getCategoryBlogs,
                 closeAlertMessage,
+                postComment,
+                getComments,
             }}
         >
             {children}

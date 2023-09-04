@@ -109,40 +109,45 @@ function reducer(state, action) {
             }
         }
         case "GET_COMMENTS":
-            if (data.length < 5) {
-                if (data.length === 0) {
+            if (data.comments.length <= 5) {
+                if (data.comments.length === 0) {
                     return {
                         ...state,
+                        comments: [],
                         isHasComment: false,
                     };
                 }
                 return {
                     ...state,
-                    comments: data,
+                    comments: data.comments,
+                    userIdComment: data.id ?? 0,
                     isFinalComment: true,
                     isHasComment: true,
                 }
             }
             return {
                 ...state,
-                comments: data,
+                comments: data.comments,
+                userIdComment: data.id ?? 0,
                 isFinalComment: false,
                 isHasComment: true,
             }
         case "GET_MORE_COMMENTS":
-            if (data.length < 5) {
+            if (data.comments.length < 5) {
                 return {
                     ...state,
                     commentLoading: false,
                     isFinalComment: true,
-                    comments: [...state.comments, ...data],
+                    comments: [...state.comments, ...data.comments],
+                    userIdComment: data.id ?? 0,
                     nextComments: 1,
                 }
             }
             return {
                 ...state,
                 commentLoading: false,
-                comments: [...state.comments, ...data],
+                comments: [...state.comments, ...data.comments],
+                userIdComment: data.id ?? 0,
             }
         case "GET_CATEGORY_BLOGS":
             return {
@@ -173,7 +178,7 @@ function reducer(state, action) {
                 userNameUpdate: data.username,
                 userEmailUpdate: data.email,
             }
-        case "GET_USER_BLOG":
+        case "GET_ALL_USER_BLOG":
             return {
                 ...state,
                 loading: false,
@@ -231,7 +236,7 @@ function reducer(state, action) {
                 blogCategoryUpdate: data.blogCreated.category,
                 blogPicturePathUpdate: data.blogCreated.picturePath,
             }
-        case "UPDATE_BLOG_SUCCESS": 
+        case "UPDATE_BLOG_SUCCESS":
             return {
                 ...state,
                 loading: false,
@@ -266,6 +271,17 @@ function reducer(state, action) {
             return {
                 ...state,
                 changePasswordLoading: true,
+            }
+        case "POST_COMMENT_LOADING":
+            return {
+                ...state,
+                postCommentLoading: true,
+            }
+        case "POST_COMMENT_SUCCESS": 
+            return {
+                ...state,
+                postCommentLoading: false,
+                isNewComment: true,
             }
         case "CHANGE_PAGE":
             return {

@@ -1,30 +1,61 @@
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGlobalContext } from "context/context";
 import Comment from "./Comment";
 import NoComment from "components/NoComment";
+import Loading from "components/Loading";
 
 export default function FormComment() {
     const { id } = useParams();
-    const { 
-        comments, 
-        commentLoading, 
-        getMoreComments, 
+    const {
+        getComments,
+        commentLoading,
+        comments,
+        getMoreComments,
         isFinalComment,
-        isHasComment, 
+        isHasComment,
+        postComment,
+        postCommentLoading
     } = useGlobalContext();
+    const [content, setContent] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        postComment(id, content);
+        getComments(id);
+        setContent("");
+    }
 
     return (
         <div className="rounded border border-gray-200 p-5 lg:px-10 lg:pt-10 my-12 shadow-lg">
-            <form className="w-full bg-white rounded-lg px-4">
+            <form
+                onSubmit={handleSubmit}
+                className="w-full bg-white rounded-lg px-4"
+            >
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-full lg:px-3 mb-2 mt-2">
-                        <textarea className="border-b border-gray-200 leading-normal resize-none w-full h-20 py-2 font-medium placeholder-gray-300 focus:outline-none focus:bg-white" name="body" placeholder="Type your feeling" required></textarea>
+                        <textarea
+                            className="border-b border-gray-200 leading-normal resize-none w-full h-20 py-2 font-medium placeholder-gray-300 focus:outline-none focus:bg-white"
+                            name="body"
+                            placeholder="Type your feeling"
+                            required
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                        ></textarea>
                     </div>
                     <div className="w-full md:w-full flex items-start md:w-full px-3">
                         <div className="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
                         </div>
                         <div className="-mr-1">
-                            <button type="submit" className="bg-sky-500 text-white font-medium py-1 px-4 border border-gray-300 rounded tracking-wide mr-1 hover:bg-sky-600">Post</button>
+                            {postCommentLoading ?
+                                <Loading width="w-4" heigth="h-4" /> :
+                                <button
+                                    type="submit"
+                                    className="bg-sky-500 text-white font-medium py-1 px-4 border border-gray-300 rounded tracking-wide mr-1 hover:bg-sky-600"
+                                >
+                                    Post
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>

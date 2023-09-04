@@ -11,7 +11,7 @@ export default function Comment({ content, userInfo }) {
                 email={email}
                 profilePath={profilePicturePath}
             />
-            <div className="px-2 my-2">
+            <div className="px-2 mt-2 mb-10">
                 {content}
             </div>
         </React.Fragment>

@@ -10,8 +10,8 @@ import {
 const router = express.Router();
 
 router.get("/:id/comments", getComments);
-router.post("/:id/create-comment", verifyToken, createComment);
-router.patch("/:id/update-comment", verifyToken, updateComment);
-router.delete("/:id/delete-comment", verifyToken, deleteComment);
+router.post("/create-comment", verifyToken, createComment);
+router.patch("/update-comment", verifyToken, updateComment);
+router.delete("/delete-comment", verifyToken, deleteComment);
 
 export default router;

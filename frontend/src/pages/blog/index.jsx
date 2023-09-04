@@ -8,6 +8,7 @@ import ContentPlaceholder from "components/skeleton/ContentPlaceholder";
 export default function Blog() {
     const { id } = useParams();
     const {
+        isAuthenticated,
         loading,
         getBlogDetail,
         blogTitle,
@@ -24,6 +25,7 @@ export default function Blog() {
     useEffect(() => {
         getBlogDetail(id);
     }, []);
+
 
     return (
         <div className="mt-20">

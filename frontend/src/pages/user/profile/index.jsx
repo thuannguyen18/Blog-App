@@ -9,7 +9,7 @@ import { useGlobalContext } from "context/context";
 export default function Profile() {
     const {
         loading,
-        getUserBlog,
+        getAllUserBlog,
         userId,
         userName,
         userEmail,
@@ -18,7 +18,7 @@ export default function Profile() {
     } = useGlobalContext();
 
     useEffect(() => {
-        getUserBlog(userId);
+        getAllUserBlog(userId);
     }, []);
 
     return (

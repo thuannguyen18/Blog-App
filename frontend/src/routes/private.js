@@ -4,11 +4,6 @@ import Settings from "pages/user/settings";
 import EditorPost from "pages/post/editor";
 import EditPost from "pages/post/edit";
 
-import PostEditor from "../components/post/PostEditor";
-import Blogs from "../components/Blogs";
-import PostDetail from "../components/post/PostDetail";
-import PostUpdate from "../components/post/PostUpdate";
-
 export const privateRoutes = [
     {
         path: '/user',
