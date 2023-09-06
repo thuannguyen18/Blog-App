@@ -48,7 +48,15 @@ export const createComment = asyncHandler(async (req, res) => {
 ** @path http://localhost:3500/blog-detail/update-comment
 */
 export const updateComment = asyncHandler(async (req, res) => {
-    res.status(200).json("Update comment");
+    const comment = await Comment.findById(req.params.id);
+
+    if (!comment) {
+        return res.sendStatus(404);
+    }
+
+    comment.content = req.body.content;
+    await comment.save();
+    return res.status(200).json("Comment updated");
 });
 
 
@@ -56,8 +64,15 @@ export const updateComment = asyncHandler(async (req, res) => {
 ** @access Private
 ** @desc Delete a comment by user in specific blog
 ** @method DELETE
-** @path http://localhost:3500/blog-detail/delete-comment
+** @path http://localhost:3500/blog-detail/delete-comment/:id
 */
 export const deleteComment = asyncHandler(async (req, res) => {
-    res.status(200).json("Delete comment");
+    const comment = await Comment.findById(req.params.id);
+
+    if (!comment) {
+        return res.sendStatus(404);
+    }
+
+    await comment.deleteOne();
+    return res.status(200).json("Comment deleted");
 });

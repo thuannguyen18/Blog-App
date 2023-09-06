@@ -283,6 +283,16 @@ function reducer(state, action) {
                 postCommentLoading: false,
                 isNewComment: true,
             }
+        case "DELETE_COMMENT_LOADING": 
+            return {
+                ...state,
+                deleteCommentLoading: true,
+            }
+        case "DELETE_COMMENT_SUCCESS":
+            return {
+                ...state,
+                deleteCommentLoading: false
+            }
         case "CHANGE_PAGE":
             return {
                 ...state,

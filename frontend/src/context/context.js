@@ -94,6 +94,7 @@ const initalState = {
     updateUserLoading: false,
     changePasswordLoading: false,
     postCommentLoading: false,
+    deleteCommentLoading: false,
 }
 
 function AppProvider({ children }) {
@@ -518,6 +519,7 @@ function AppProvider({ children }) {
         }
     }
 
+    // Get comments belong to a blog
     const getComments = async (blogId) => {
         let limit = 5;
         if (state.isNewComment) {
@@ -537,7 +539,7 @@ function AppProvider({ children }) {
         }
     }
 
-    // User comment 
+    // User comments in a blog
     const postComment = async (blogId, content) => {
         const token = localStorage.getItem("access_token");
 
@@ -548,21 +550,41 @@ function AppProvider({ children }) {
 
         dispatch({ type: "POST_COMMENT_LOADING" });
 
-        const payload = { userId: state.userId, blogId, content }
-        console.log(payload.userId)
+        const payload = {
+            userId: state.userId,
+            blogId,
+            content
+        };
+
         try {
-            const response = await axiosConfig
-                .post(`/blog-detail/create-comment`, payload, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
+            await axiosConfig.post(`/blog-detail/create-comment`, payload, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             dispatch({ type: "POST_COMMENT_SUCCESS" });
             toast.success("Post comment success");
         } catch (error) {
             console.log(error);
             dispatch({ type: "POST_COMMENT_FAIL" });
             toast.error("Something went wrong");
+        }
+    }
+
+    // User delete comment in a blog
+    const deleteComment = async (id) => {
+        dispatch({ type: "DELETE_COMMENT_LOADING" });
+        const token = localStorage.getItem("access_token");
+        try {
+            await axiosConfig.delete(`/blog-detail/delete-comment/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            dispatch({ type: "DELETE_COMMENT_SUCCESS" });
+        } catch (error) {
+            console.log(error);
+            dispatch({ type: "DELETE_COMMENT_FAIL" });
         }
     }
 
