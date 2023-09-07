@@ -82,6 +82,7 @@ export default function EditPost() {
             category,
             thumbnail,
         }
+        console.log(id)
         console.log(title);
         console.log(subTitle);
         console.log(content);

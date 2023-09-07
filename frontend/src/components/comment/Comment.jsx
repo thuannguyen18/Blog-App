@@ -3,11 +3,11 @@ import UserInfo from "components/user/UserInfo";
 import { useGlobalContext } from "context/context";
 
 export default function Comment({ commentId, content, userInfo }) {
-    const { userId, userIdComment } = useGlobalContext();
+    const { userId, userIdComment, deleteComment } = useGlobalContext();
     const { username, email, profilePicturePath } = userInfo;
 
     const handleDelete = () => {
-        console.log(commentId);
+        deleteComment(commentId);
     }
 
     return (

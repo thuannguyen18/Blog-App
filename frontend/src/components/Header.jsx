@@ -14,14 +14,11 @@ import UserAvatar from "components/user/UserAvatar";
 import Container from "components/Container";
 
 export default function Header() {
-    const {
-        isAuthenticated,
-        userName,
-        userEmail,
-        userProfilePicturePath,
-        logout,
-    } = useGlobalContext();
+    const token = localStorage.getItem("access_token");
+    const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
+    const { logout } = useGlobalContext();
+    
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
@@ -57,10 +54,10 @@ export default function Header() {
                 render={attrs => (
                     <div className="box w-72 shadow rounded bg-white border border-gray-200" tabIndex="-1" {...attrs}>
                         <div className="flex items-center p-4 h-[96px] w-full">
-                            <UserAvatar width="w-12" height="h-12" rounded profilePicturePath={userProfilePicturePath}/>
+                            <UserAvatar width="w-12" height="h-12" rounded profilePicturePath={userInformation?.profilePicturePath}/>
                             <div className="ml-2">
-                                <span className="block font-semibold">{userName}</span>
-                                <span className="block ">@{userEmail.replace("@gmail.com", "")}</span>
+                                <span className="block font-semibold">{userInformation?.username}</span>
+                                <span className="block ">@{userInformation?.email}</span>
                             </div>
                         </div>
                         <div className="border-t border-gray-200 p-2">
@@ -108,14 +105,14 @@ export default function Header() {
                         width="w-10"
                         height="h-10"
                         center
-                        profilePicturePath={userProfilePicturePath}
+                        profilePicturePath={userInformation?.profilePicturePath}
                     />
                 </div>
             </Tippy>
         </React.Fragment>
     );
 
-    const navbar = isAuthenticated ? navbarPrivate : navbarPublic;
+    const navbar = token ? navbarPrivate : navbarPublic;
 
     return (
         <React.Fragment>

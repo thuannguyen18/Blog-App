@@ -106,6 +106,12 @@ function reducer(state, action) {
                 blogContent: data.content,
                 blogPicturePath: data.picturePath,
                 blogCategory: data.category,
+                blogIdUpdate: data._id,
+                blogTitleUpdate: data.title,
+                blogSubtitleUpdate: data.subTitle,
+                blogContentUpdate: data.draftContents,
+                blogCategoryUpdate: data.category,
+                blogPicturePathUpdate: data.picturePath,
             }
         }
         case "GET_COMMENTS":

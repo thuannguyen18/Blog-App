@@ -163,10 +163,10 @@ export const createBlog = asyncHandler(async (req, res) => {
 ** @path http://localhost:3500/blog/:id
 **/
 export const updateBlog = asyncHandler(async (req, res) => {
-    const { userId, blogId, title, subTitle, content, category } = req.body;
+    const { userId, title, subTitle, content, category } = req.body;
     const file = req.file;
     const contents = JSON.parse(content);
-    const blog = await Blog.findById(blogId);
+    const blog = await Blog.findById(req.params.id);
 
     if (!blog) {
         return res.sendStatus(404);

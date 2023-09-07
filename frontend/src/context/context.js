@@ -55,7 +55,6 @@ const initalState = {
     authorProfilePicturePath: "",
     authorBlogs: [],
     // Authorization 
-    isAuthenticated: false,
     userBlogs: [],
     userId: "",
     userName: "",
@@ -148,12 +147,14 @@ function AppProvider({ children }) {
             };
             const response = await axiosConfig.post("/auth/login", payload);
             const token = response.data.accessToken;
-
+            
             if (token) {
-                localStorage.setItem("access_token", token);
                 const { UserInfo } = jwt(token);
+                localStorage.setItem("access_token", token);
+                localStorage.setItem("user_information", JSON.stringify(UserInfo));
                 dispatch({ type: "AUTH_SUCCESS", payload: UserInfo });
                 navigate("/");
+                window.location.reload();
             }
 
             dispatch({ type: "SIGN_IN_SUCCESS" });
@@ -232,12 +233,13 @@ function AppProvider({ children }) {
     // Get blog detail and comments belong to that blog
     const getBlogDetail = async (blogId) => {
         dispatch({ type: "LOADING" });
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
+
         try {
             const response = await Promise.all([
                 axiosConfig.get(`/blog/${blogId}`),
                 axiosConfig.get(`/blog-detail/${blogId}/comments?page=1&limit=5`)
             ]);
-
 
             dispatch({
                 type: "GET_BLOG_DETAIL",
@@ -245,7 +247,7 @@ function AppProvider({ children }) {
             });
 
             const commentData = {};
-            const user = response[1].data.find(item => item.userId._id === state.userId);
+            const user = response[1].data.find(item => item.userId._id === userInformation?.id);
 
             if (user) {
                 const { userId } = user;
@@ -423,9 +425,10 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
 
         const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
         const formData = new FormData();
-        formData.append("userId", state.userId)
+        formData.append("userId", userInformation?.id);
         formData.append("title", blogInfo.title);
         formData.append("subTitle", blogInfo.subTitle);
         formData.append("content", JSON.stringify(blogInfo.content));
@@ -485,9 +488,11 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
 
         const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
+
         const formData = new FormData();
-        formData.append("userId", state.userId);
-        formData.append("blogId", blogInfo.id)
+        formData.append("userId", userInformation?.id);
+        // formData.append("blogId", blogInfo.id)
         formData.append("title", blogInfo.title);
         formData.append("subTitle", blogInfo.subTitle);
         formData.append("content", JSON.stringify(blogInfo.content));
@@ -500,7 +505,7 @@ function AppProvider({ children }) {
         }
 
         try {
-            const response = await axiosConfig.patch(`/blog/${state.userId}`, formData, {
+            const response = await axiosConfig.patch(`/blog/${blogInfo.id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -582,9 +587,11 @@ function AppProvider({ children }) {
                 }
             });
             dispatch({ type: "DELETE_COMMENT_SUCCESS" });
+            toast.success("Your comment has been deleted");
         } catch (error) {
             console.log(error);
             dispatch({ type: "DELETE_COMMENT_FAIL" });
+            toast.error("Something went wrong");
         }
     }
 
@@ -619,8 +626,9 @@ function AppProvider({ children }) {
                 getMoreComments,
                 getCategoryBlogs,
                 closeAlertMessage,
-                postComment,
                 getComments,
+                postComment,
+                deleteComment,
             }}
         >
             {children}

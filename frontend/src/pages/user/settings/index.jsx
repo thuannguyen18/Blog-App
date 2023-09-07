@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -6,6 +6,8 @@ import Container from "components/Container";
 import { useGlobalContext } from "context/context";
 
 export default function Settings() {
+    const userInformation = JSON.parse(localStorage.getItem("user_information"));
+
     const {
         userAvatar,
         userNameUpdate,
@@ -21,6 +23,14 @@ export default function Settings() {
         changePasswordLoading,
     } = useGlobalContext();
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (!userAvatar && !userNameUpdate && !userEmailUpdate) {
+            setUserAvatar(userInformation?.profilePicturePath);
+            setUserName(userInformation?.username);
+            setUserEmail(userInformation?.email);
+        }
+    }, []);
 
     // Using formik to validate password fields
     const formik = useFormik({

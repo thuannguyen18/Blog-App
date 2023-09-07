@@ -7,19 +7,22 @@ import UserAvatar from "components/user/UserAvatar";
 import { useGlobalContext } from "context/context";
 
 export default function Profile() {
+    const userInformation = JSON.parse(localStorage.getItem("user_information"));
     const {
         loading,
         getAllUserBlog,
+        userBlogs,
         userId,
         userName,
         userEmail,
         userProfilePicturePath,
-        userBlogs,
     } = useGlobalContext();
 
     useEffect(() => {
-        getAllUserBlog(userId);
+        getAllUserBlog(userInformation?.id);
     }, []);
+
+    console.log(userInformation)
 
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
@@ -27,11 +30,11 @@ export default function Profile() {
                 <React.Fragment>
                     <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
                         <div className="mx-auto">
-                            <UserAvatar width="w-28 lg:w-36" height="h-28 lg:h-36" center profilePicturePath={userProfilePicturePath} />
+                            <UserAvatar width="w-28 lg:w-36" height="h-28 lg:h-36" center profilePicturePath={userInformation?.profilePicturePath} />
                         </div>
                         <div className="text-center">
-                            <h3 className="text-lg font-bold mt-2">{userName}</h3>
-                            <p className="text-sm">{userEmail}</p>
+                            <h3 className="text-lg font-bold mt-2">{userInformation?.username}</h3>
+                            <p className="text-sm">{userInformation?.email}</p>
                         </div>
                         <button className="mt-4 p-1 w-full h-10 rounded border border-gray-300 hover:bg-gray-200">Edit Profile</button>
                         <div className="grid grid-cols-3 mt-4 gap-8 text-center">

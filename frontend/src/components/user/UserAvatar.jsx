@@ -1,11 +1,14 @@
 import defaultAvatarPath from "assets/images/default-avatar.webp";
 import "../../App.css";
 
-function UserAvatar({ width = "w-2", height = "h-2", center, rounded, profilePicturePath }) {
-
-    const picturePath = profilePicturePath
-        ? `http://localhost:3500/assets/${profilePicturePath}`
-        : null;
+function UserAvatar({
+    width = "w-2",
+    height = "h-2",
+    center,
+    rounded,
+    profilePicturePath
+}) {
+    const picturePath = profilePicturePath ? `http://localhost:3500/assets/${profilePicturePath}` : null;
 
     return (
         <img

@@ -23,8 +23,8 @@ export const privateRoutes = [
     },
 ];
 
-function PrivateRoute({ auth: { isAuthenticated }, children }) {
-    return isAuthenticated ? children : <Navigate to="/login" />;
+function PrivateRoute({ auth: { token }, children }) {
+    return token ? children : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
