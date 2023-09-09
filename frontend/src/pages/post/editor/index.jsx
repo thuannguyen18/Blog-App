@@ -93,7 +93,7 @@ export default function EditorPost() {
                 <div id="editorjs"></div>
             </div>
             <div className="fixed md:top-[92%] md:left-[42%] z-10">
-                <button className="text-sm border border-gray-300 rounded h-10 px-4 hover:bg-gray-200 mr-2">Save draft</button>
+                <button className="text-sm border border-gray-300 bg-white rounded h-10 px-4 hover:bg-gray-200 mr-2">Save draft</button>
                 <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600" onClick={() => setOpen(true)}>Next step</button>
             </div>
             <EditorModal visible={open}>

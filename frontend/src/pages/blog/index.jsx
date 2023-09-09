@@ -25,9 +25,6 @@ export default function Blog() {
         getBlogDetail(id);
     }, []);
 
-    console.log(id)
-
-
     return (
         <div className="mt-20">
             <div className="container mx-auto px-4 md:w-4/6 lg:w-3/6">

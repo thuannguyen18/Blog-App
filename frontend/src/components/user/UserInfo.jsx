@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import AlertModal from "components/AlertModal";
 import UserAvatar from "components/user/UserAvatar";
 import { useGlobalContext } from "context/context";
+import { userInformation } from "constants";
 
 export default function UserInfo({ id, name, email, profilePath }) {
-    const userInformation = JSON.parse(localStorage.getItem("user_information"));
-    const { userId, authorId, blogIdUpdate } = useGlobalContext();
+    const { authorId, blogIdUpdate } = useGlobalContext();
     const [open, setOpen] = useState(false);
-
-    console.log(blogIdUpdate);
 
     return (
         <React.Fragment>

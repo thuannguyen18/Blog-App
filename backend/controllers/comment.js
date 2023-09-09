@@ -7,7 +7,7 @@ import User from "../models/User.js";
 ** @desc Get comments for specific blog
 ** @method GET
 ** @path http://localhost:3500/blog-detail/:id/comments?page=""&limit=""
-** @query page & limit
+** @query page=""&limit=""
 ** @param id
 */
 export const getComments = asyncHandler(async (req, res) => {

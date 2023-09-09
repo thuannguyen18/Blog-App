@@ -24,3 +24,7 @@ export const CATEGORIES = [
     "Entertainment",
     "Computer-IT Business"
 ];
+
+export const token = localStorage.getItem("access_token");
+
+export const userInformation = JSON.parse(localStorage.getItem("user_information"));

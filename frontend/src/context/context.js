@@ -233,7 +233,6 @@ function AppProvider({ children }) {
     // Get blog detail and comments belong to that blog
     const getBlogDetail = async (blogId) => {
         dispatch({ type: "LOADING" });
-        const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
         try {
             const response = await Promise.all([
@@ -246,19 +245,9 @@ function AppProvider({ children }) {
                 payload: response[0].data
             });
 
-            const commentData = {};
-            const user = response[1].data.find(item => item.userId._id === userInformation?.id);
-
-            if (user) {
-                const { userId } = user;
-                commentData.id = userId._id;
-            }
-
-            commentData.comments = response[1].data;
-
             dispatch({
                 type: "GET_COMMENTS",
-                payload: commentData
+                payload: response[1].data
             });
         } catch (error) {
             console.log(error);
@@ -272,19 +261,9 @@ function AppProvider({ children }) {
             const response = await axiosConfig
                 .get(`/blog-detail/${id}/comments?page=${state.nextComments += 1}&limit=5`);
 
-            const commentData = {};
-            const user = response.data.find(item => item.userId._id === state.userId);
-
-            if (user) {
-                const { userId } = user;
-                commentData.id = userId._id;
-            }
-
-            commentData.comments = response.data;
-
             dispatch({
                 type: "GET_MORE_COMMENTS",
-                payload: commentData
+                payload: response.data
             });
         } catch (error) {
             console.log(error);
@@ -358,17 +337,24 @@ function AppProvider({ children }) {
     const setDefault = () => dispatch({ type: "SET_DEFAULT" });
 
     // Update user's information
-    const updateUser = async () => {
+    const updateUser = async (userUpdateInfo) => {
+        const { 
+            userAvatarUpdate, 
+            userNameUpdate, 
+            userEmailUpdate 
+        } = userUpdateInfo;
+
         dispatch({ type: "UPDATE_USER_LOADING" });
 
         const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
         const formData = new FormData();
-        formData.append("username", state.userNameUpdate);
-        formData.append("email", state.userEmailUpdate);
+        formData.append("username", userNameUpdate);
+        formData.append("email", userEmailUpdate);
 
-        if (state.userAvatar) {
-            formData.append("picture", state.userAvatar);
+        if (userAvatarUpdate) {
+            formData.append("picture", userAvatarUpdate);
         } else {
             formData.append("picture", null);
         }
@@ -378,7 +364,7 @@ function AppProvider({ children }) {
         // }
 
         try {
-            const response = await axiosConfig.patch(`/user/${state.userId}`, formData, {
+            const response = await axiosConfig.patch(`/user/${userInformation.id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -400,11 +386,12 @@ function AppProvider({ children }) {
     // Change password in user settings
     const changePassword = async (payload) => {
         dispatch({ type: "CHANGE_PASSWORD_LOADING" });
+        const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
         try {
-            const token = localStorage.getItem("access_token");
             const response = await axiosConfig
-                .patch(`/user/${state.userId}/change-password`, payload, {
+                .patch(`/user/${userInformation.id}/change-password`, payload, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -547,6 +534,7 @@ function AppProvider({ children }) {
     // User comments in a blog
     const postComment = async (blogId, content) => {
         const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
         if (!token) {
             navigate("/login");
@@ -556,10 +544,12 @@ function AppProvider({ children }) {
         dispatch({ type: "POST_COMMENT_LOADING" });
 
         const payload = {
-            userId: state.userId,
+            userId: userInformation.id,
             blogId,
             content
         };
+
+        console.log(payload)
 
         try {
             await axiosConfig.post(`/blog-detail/create-comment`, payload, {
@@ -605,10 +595,6 @@ function AppProvider({ children }) {
                 signUp,
                 signIn,
                 logout,
-                setUserAvatar,
-                setUserName,
-                setUserEmail,
-                setDefault,
                 getAuthor,
                 updateUser,
                 changePassword,

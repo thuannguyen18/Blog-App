@@ -115,8 +115,8 @@ function reducer(state, action) {
             }
         }
         case "GET_COMMENTS":
-            if (data.comments.length <= 5) {
-                if (data.comments.length === 0) {
+            if (data.length <= 4) {
+                if (data.length < 1) {
                     return {
                         ...state,
                         comments: [],
@@ -125,26 +125,24 @@ function reducer(state, action) {
                 }
                 return {
                     ...state,
-                    comments: data.comments,
-                    userIdComment: data.id ?? 0,
+                    comments: data,
                     isFinalComment: true,
                     isHasComment: true,
                 }
             }
             return {
                 ...state,
-                comments: data.comments,
-                userIdComment: data.id ?? 0,
+                comments: data,
                 isFinalComment: false,
                 isHasComment: true,
             }
         case "GET_MORE_COMMENTS":
-            if (data.comments.length < 5) {
+            if (data.length < 5) {
                 return {
                     ...state,
                     commentLoading: false,
                     isFinalComment: true,
-                    comments: [...state.comments, ...data.comments],
+                    comments: [...state.comments, ...data],
                     userIdComment: data.id ?? 0,
                     nextComments: 1,
                 }
@@ -152,7 +150,7 @@ function reducer(state, action) {
             return {
                 ...state,
                 commentLoading: false,
-                comments: [...state.comments, ...data.comments],
+                comments: [...state.comments, ...data],
                 userIdComment: data.id ?? 0,
             }
         case "GET_CATEGORY_BLOGS":

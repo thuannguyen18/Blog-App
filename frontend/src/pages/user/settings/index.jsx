@@ -1,36 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Container from "components/Container";
 import { useGlobalContext } from "context/context";
+import { userInformation } from "constants";
 
 export default function Settings() {
-    const userInformation = JSON.parse(localStorage.getItem("user_information"));
-
+    // global states
     const {
-        userAvatar,
-        userNameUpdate,
-        userEmailUpdate,
-        setUserAvatar,
-        setUserName,
-        setUserEmail,
-        isChange,
-        setDefault,
         updateUser,
         changePassword,
         updateUserLoading,
         changePasswordLoading,
     } = useGlobalContext();
-    const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        if (!userAvatar && !userNameUpdate && !userEmailUpdate) {
-            setUserAvatar(userInformation?.profilePicturePath);
-            setUserName(userInformation?.username);
-            setUserEmail(userInformation?.email);
-        }
-    }, []);
+    // local states
+    const [isChange, setIsChange] = useState(false);
+    const [userAvatarUpdate, setUserAvatarUpdate] = useState(null);
+    const [userNameUpdate, setUserNameUpdate] = useState(userInformation?.username);
+    const [userEmailUpdate, setUserEmailUpdate] = useState(userInformation?.email);
+    const [isOpen, setIsOpen] = useState(false);
 
     // Using formik to validate password fields
     const formik = useFormik({
@@ -59,20 +49,21 @@ export default function Settings() {
         }
     });
 
+    // Input options
     const options = [
         {
             id: "username",
             htmlFor: "username",
             value: userNameUpdate,
             type: "text",
-            onChange: setUserName,
+            onChange: setUserNameUpdate,
         },
         {
             id: "email",
             htmlFor: "email",
             value: userEmailUpdate,
             type: "email",
-            onChange: setUserEmail,
+            onChange: setUserEmailUpdate,
         },
     ];
 
@@ -121,11 +112,33 @@ export default function Settings() {
         const fileUpload = e.target.files[0];
         const previewUrl = URL.createObjectURL(fileUpload);
         fileUpload.preview = previewUrl;
-        setUserAvatar(fileUpload);
+        setUserAvatarUpdate(fileUpload);
     }
 
-    // disable & enable setting buttons
-    const disableSaveBtn = isChange && !updateUserLoading ? "bg-sky-500 hover:bg-sky-600" : "bg-sky-300 cursor-not-allowed";
+    // When user click update button
+    const handleUpdate = () => {
+        const formData = {
+            userAvatarUpdate,
+            userNameUpdate,
+            userEmailUpdate,
+        };
+        console.log(formData);
+        updateUser(formData);
+    }
+
+    // When user click cancel button
+    const handleCancel = () => {
+        setIsChange(false);
+        setUserNameUpdate(userInformation?.username);
+        setUserEmailUpdate(userInformation?.email);
+    }
+
+    // disable & enable save button
+    const disableSaveBtn = (isChange && !updateUserLoading) ?
+        "bg-sky-500 hover:bg-sky-600" :
+        "bg-sky-300 cursor-not-allowed";
+
+    // disable & enable change password button
     const disablePasswordBtn =
         (formik.values.password
             && formik.values.newPassword
@@ -137,10 +150,10 @@ export default function Settings() {
             <div className="mx-auto mt-10 md:w-[720px] overflow-hidden p-8">
                 <div className="flex items-center justify-center w-32 h-32">
                     <label htmlFor="dropzone-file" className="flex flex-col items-center rounded-full justify-center w-full h-full border-2 border-gray-300 cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                        {!userAvatar && <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                        {!userAvatarUpdate && <div className="flex flex-col items-center justify-center pt-5 pb-6">
                             <AiOutlineCamera className="w-12 h-12 text-gray-300" />
                         </div>}
-                        {userAvatar && <img className="w-full h-full object-cover rounded-full" src={userAvatar.preview} alt="avatar" />}
+                        {userAvatarUpdate && <img className="w-full h-full object-cover rounded-full" src={userAvatarUpdate.preview} alt="avatar" />}
                         <input id="dropzone-file" type="file" className="hidden" onChange={handleFile} />
                     </label>
                 </div>
@@ -157,7 +170,10 @@ export default function Settings() {
                                 value={option.value}
                                 type={option.type}
                                 id={option.id}
-                                onChange={(e) => option.onChange(e.target.value)}
+                                onChange={(e) => {
+                                    option.onChange(e.target.value);
+                                    setIsChange(true);
+                                }}
                                 className="w-full h-12 py-2 px-3 bg-gray-350 border border-gray-300 rounded outline-none focus:bg-white mb-4"
                             />
                         </div>
@@ -207,7 +223,7 @@ export default function Settings() {
                     <button
                         type="button"
                         className={`text-white h-10 px-6 rounded-full ml-2 ${disableSaveBtn}`}
-                        onClick={updateUser}
+                        onClick={handleUpdate}
                         disabled={!updateUserLoading && !isChange}
                     >
                         {updateUserLoading ? "Update..." : "Update"}
@@ -215,7 +231,7 @@ export default function Settings() {
                     <button
                         type="button"
                         className="h-10 px-6 rounded-full shadow border hover:bg-gray-200"
-                        onClick={setDefault}
+                        onClick={handleCancel}
                     >
                         Cancel
                     </button>
