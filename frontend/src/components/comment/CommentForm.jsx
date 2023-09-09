@@ -39,8 +39,6 @@ export default function FormComment() {
         </button>
     );
 
-    console.log(comments)
-
     const noComment = !isHasComment && <NoComment />;
 
     return (
@@ -54,7 +52,7 @@ export default function FormComment() {
                         <textarea
                             className="border-b border-gray-200 leading-normal resize-none w-full h-20 py-2 font-medium placeholder-gray-300 focus:outline-none focus:bg-white"
                             name="body"
-                            placeholder="Type your feeling"
+                            placeholder="Type your feeling about this blog..."
                             required
                             value={content}
                             onChange={(e) => setContent(e.target.value)}

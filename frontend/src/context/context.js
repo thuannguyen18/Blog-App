@@ -549,8 +549,6 @@ function AppProvider({ children }) {
             content
         };
 
-        console.log(payload)
-
         try {
             await axiosConfig.post(`/blog-detail/create-comment`, payload, {
                 headers: {
@@ -585,6 +583,21 @@ function AppProvider({ children }) {
         }
     }
 
+    // User update comment in a blog
+    const updateComment = async (id, content) => {
+        const token = localStorage.getItem("access_token");
+        try {
+            await axiosConfig.patch(`/blog-detail/update-comment/${id}`, { content }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong");
+        }
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -615,6 +628,7 @@ function AppProvider({ children }) {
                 getComments,
                 postComment,
                 deleteComment,
+                updateComment
             }}
         >
             {children}

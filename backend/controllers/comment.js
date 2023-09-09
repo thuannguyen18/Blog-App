@@ -45,7 +45,7 @@ export const createComment = asyncHandler(async (req, res) => {
 ** @access Private
 ** @desc Update a comment by user in specific blog
 ** @method PATCH
-** @path http://localhost:3500/blog-detail/update-comment
+** @path http://localhost:3500/blog-detail/update-comment/:id
 */
 export const updateComment = asyncHandler(async (req, res) => {
     const comment = await Comment.findById(req.params.id);
