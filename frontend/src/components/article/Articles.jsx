@@ -26,7 +26,7 @@ export default function Article({
             <div className="lg:col-span-6 flex flex-col justify-between lg:pl-4">
                 <div className="flex items-center justify-between mt-1 mb-2 lg:mt-0">
                     <Link className="text-sm text-sky-500 hover:text-sky-600 uppercase" to={`/category/${category}`}>{category}</Link>
-                    <Bookmark />
+                    <Bookmark id={id} />
                 </div>
                 <div className="grow">
                     <Link className="block" to={`/blog/${id}`}>

@@ -251,6 +251,12 @@ function reducer(state, action) {
                 blogCategoryUpdate: data.category,
                 blogPicturePathUpdate: data.picturePath,
             }
+        case "GET_SAVED_BLOGS": 
+            return {
+                ...state,
+                savedBlogLoading: false,
+                savedBlogs: data
+            }
         case "LOADING":
             return {
                 ...state,
@@ -281,16 +287,21 @@ function reducer(state, action) {
                 ...state,
                 postCommentLoading: true,
             }
-        case "POST_COMMENT_SUCCESS": 
+        case "DELETE_COMMENT_LOADING":
+            return {
+                ...state,
+                deleteCommentLoading: true,
+            }
+        case "SAVE_BLOG_LOADING":
+            return {
+                ...state,
+                savedBlogLoading: true,
+            }
+        case "POST_COMMENT_SUCCESS":
             return {
                 ...state,
                 postCommentLoading: false,
                 isNewComment: true,
-            }
-        case "DELETE_COMMENT_LOADING": 
-            return {
-                ...state,
-                deleteCommentLoading: true,
             }
         case "DELETE_COMMENT_SUCCESS":
             return {

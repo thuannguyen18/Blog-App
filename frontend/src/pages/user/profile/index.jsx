@@ -1,28 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "components/Container";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import UserInfoPlaceholder from "components/skeleton/UserInfoPlaceholder";
 import UserArticle from "components/article/UserArticle";
 import UserAvatar from "components/user/UserAvatar";
 import { useGlobalContext } from "context/context";
+import { userInformation } from "constants";
 
 export default function Profile() {
-    const userInformation = JSON.parse(localStorage.getItem("user_information"));
+    const [isBlogs, setIsBlogs] = useState(true);
+    const [isSaved, setIsSaved] = useState(false);
+
     const {
         loading,
         getAllUserBlog,
         userBlogs,
-        userId,
-        userName,
-        userEmail,
-        userProfilePicturePath,
+        getSavedBlog,
+        savedBlogs
     } = useGlobalContext();
 
     useEffect(() => {
         getAllUserBlog(userInformation?.id);
-    }, []);
+    }, [isBlogs]);
 
-    console.log(userInformation)
+    useEffect(() => {
+        getSavedBlog();
+    }, [isSaved]);
+
+    console.log(savedBlogs)
+
 
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
@@ -57,9 +63,22 @@ export default function Profile() {
             <div className="p-4  md:border md:border-gray-200 md:shadow-lg md:mt-6 md:rounded lg:mt-0 lg:col-span-3">
                 <nav className="border-b border-slate-200">
                     <button
-                        className={`font-semibold h-10 w-32`}
+                        onClick={() => {
+                            setIsBlogs(true);
+                            setIsSaved(false);
+                        }}
+                        className={`text-sm uppercase font-semibold h-10 w-32 ${isBlogs && "border-b border-sky-500"}`}
                     >
-                        POSTS
+                        BLOGS ()
+                    </button>
+                    <button
+                        onClick={() => {
+                            setIsBlogs(false);
+                            setIsSaved(true);
+                        }}
+                        className={`text-sm uppercase font-semibold h-10 w-32 ${isSaved && "border-b border-sky-500"}`}
+                    >
+                        SAVED
                     </button>
                 </nav>
                 <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">

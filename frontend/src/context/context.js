@@ -56,6 +56,7 @@ const initalState = {
     authorBlogs: [],
     // Authorization 
     userBlogs: [],
+    savedBlogs: [],
     userId: "",
     userName: "",
     userEmail: "",
@@ -94,6 +95,7 @@ const initalState = {
     changePasswordLoading: false,
     postCommentLoading: false,
     deleteCommentLoading: false,
+    savedBlogLoading: false,
 }
 
 function AppProvider({ children }) {
@@ -147,7 +149,7 @@ function AppProvider({ children }) {
             };
             const response = await axiosConfig.post("/auth/login", payload);
             const token = response.data.accessToken;
-            
+
             if (token) {
                 const { UserInfo } = jwt(token);
                 localStorage.setItem("access_token", token);
@@ -324,10 +326,10 @@ function AppProvider({ children }) {
 
     // Update user's information
     const updateUser = async (userUpdateInfo) => {
-        const { 
-            userAvatarUpdate, 
-            userNameUpdate, 
-            userEmailUpdate 
+        const {
+            userAvatarUpdate,
+            userNameUpdate,
+            userEmailUpdate
         } = userUpdateInfo;
 
         dispatch({ type: "UPDATE_USER_LOADING" });
@@ -584,6 +586,52 @@ function AppProvider({ children }) {
         }
     }
 
+    // User save a blog
+    const saveBlog = async (id) => {
+        const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
+
+        const payload = {
+            userId: userInformation.id,
+            blogId: id
+        };
+
+        try {
+            await axiosConfig.post("/save-blog", payload, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            toast.success("Save blog success");
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong");
+        }
+    }
+
+    // Get blogs which saved by user
+    const getSavedBlog = async () => {
+        const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
+
+        dispatch({ type: "SAVED_BLOG_LOADING" });
+        try {
+            const response = await axiosConfig
+                .get(`/save-blog?userId=${userInformation.id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            console.log(response.data)
+            dispatch({ 
+                type: "GET_SAVED_BLOGS",
+                payload: response.data
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -614,7 +662,9 @@ function AppProvider({ children }) {
                 getComments,
                 postComment,
                 deleteComment,
-                updateComment
+                updateComment,
+                saveBlog,
+                getSavedBlog
             }}
         >
             {children}
