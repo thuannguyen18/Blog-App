@@ -6,12 +6,13 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import path from "path";
 import { fileURLToPath } from "url";
+
 import connectDB from "./config/dbConnection.js";
 import authRoute from "./routes/auth.js";
 import blogRoute from "./routes/blog.js";
 import userRoute from "./routes/user.js";
 import commentRoute from "./routes/comment.js";
-import publicRoute from "./routes/public.js";
+import saveBlogRoute from "./routes/saveBlog.js";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -34,7 +35,7 @@ app.use("/auth", authRoute);
 app.use("/user", userRoute);
 app.use("/blog", blogRoute);
 app.use("/blog-detail", commentRoute);
-// app.use("/", publicRoute);
+app.use("/save-blog", saveBlogRoute);
 
 app.listen(process.env.PORT, (err) => {
     if (err) console.log(err);

@@ -67,12 +67,12 @@ export default function Feed() {
                 <div className="order-last col-span-6 lg:col-span-4 lg:order-first lg:pr-10 mt-6 lg:mt-0">
                     <nav className="border-b border-slate-200">
                         <button
-                            className={`${isAllTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-32 lg:text-base`}
+                            className={`${isAllTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-32`}
                             onClick={() => setAllTopics()}>
                             FOR YOU
                         </button>
                         <button
-                            className={`${isBestTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-40 lg:text-base`}
+                            className={`${isBestTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-40`}
                             onClick={() => setBestTopics()}
                         >
                             BEST TOPICS

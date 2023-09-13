@@ -22,10 +22,12 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// Public routes
 router.get("/", getAllBlogs);
-router.get("/:id", getBlogDetail);
 router.get("/category", getCategoryBlogs);
+router.get("/:id", getBlogDetail);
 
+// Private routes
 router.post("/", verifyToken, upload.single("picture"), createBlog);
 router.patch("/:id", verifyToken, upload.single("picture"), updateBlog);
 router.delete("/:id", verifyToken, deleteBlog);

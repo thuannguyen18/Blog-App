@@ -12,7 +12,6 @@ export default function Category() {
                         to={`/category/${category}`} 
                         key={index} 
                         className="border border-slate-300 rounded-full py-2 px-4 mr-2 mb-3 lg:h-10"
-                        onClick={(e) => console.log(e.target.innerText)}
                     >
                         {category}
                     </Link>

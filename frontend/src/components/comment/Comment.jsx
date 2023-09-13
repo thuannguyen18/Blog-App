@@ -34,7 +34,7 @@ export default function Comment({ commentId, content, userInfo }) {
                     email={email}
                     profilePath={profilePicturePath}
                 />
-                {userInformation.id === _id &&
+                {userInformation?.id === _id &&
                     <div className="invisible group/edit group-hover/item:visible">
                         <button className="text-sm text-gray-600 rounded hover:bg-gray-350 py-2 px-3 group-hover/edit:text-gray-700" onClick={handleUpdateMode}>Update</button>
                         <button className="text-sm text-gray-600 rounded hover:bg-gray-350 py-2 px-3 group-hover/edit:text-gray-700" onClick={handleDelete}>Delete</button>

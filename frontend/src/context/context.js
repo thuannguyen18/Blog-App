@@ -168,6 +168,7 @@ function AppProvider({ children }) {
     const logout = () => {
         localStorage.clear();
         dispatch({ type: "LOG_OUT" });
+        window.location.reload();
     }
 
     // Close alert message when submit fail on Sign in page 
@@ -276,7 +277,7 @@ function AppProvider({ children }) {
         try {
             const response = await axiosConfig
                 .get(`/blog/category?name=${category}&page=${state.categoryCurrentPage}`);
-
+            console.log(response)
             dispatch({
                 type: "GET_CATEGORY_BLOGS",
                 payload: response.data
@@ -320,21 +321,6 @@ function AppProvider({ children }) {
             console.log(error);
         }
     }
-
-    // User Account Settings
-    const setUserAvatar = (value) => dispatch({
-        type: "SET_USER_AVATAR",
-        payload: value
-    });
-    const setUserName = (value) => dispatch({
-        type: "SET_USER_NAME",
-        payload: value
-    });
-    const setUserEmail = (value) => dispatch({
-        type: "SET_USER_EMAIL",
-        payload: value
-    });
-    const setDefault = () => dispatch({ type: "SET_DEFAULT" });
 
     // Update user's information
     const updateUser = async (userUpdateInfo) => {
@@ -636,6 +622,7 @@ function AppProvider({ children }) {
     );
 }
 
+// custom hook
 export const useGlobalContext = () => {
     return useContext(AppContext);
 }

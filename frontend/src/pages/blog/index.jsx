@@ -33,8 +33,8 @@ export default function Blog() {
                         {/* USER AND BLOG INFO */}
                         <div className="mb-4">
                             <Link to={`/category/${blogCategory}`} className="text-sm text-gray-500 hover:underline">{blogCategory}</Link>
-                            <h1 className="text-4xl lg:text-5xl lg:leading-normal font-semibold my-2">{blogTitle}</h1>
-                            <p className="text-gray-500 italic">{blogSubtitle}</p>
+                            <h1 className="text-4xl lg:text-5xl lg:leading-normal font-semibold my-2 text-gray-550">{blogTitle}</h1>
+                            <p className="text-gray-250 italic">{blogSubtitle}</p>
                             <UserInfo
                                 id={authorId}
                                 name={authorName}
@@ -55,7 +55,6 @@ export default function Blog() {
                         </div>
                         {/* COMMENTS */}
                         <FormComment />
-                        <div className="">sdaf</div>
                     </React.Fragment>
                 }
             </div>

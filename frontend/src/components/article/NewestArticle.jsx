@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { CATEGORIES as categories } from "constants";
 import UserAvatar from "components/user/UserAvatar";
+
 
 export default function NewestArticle({ 
     id, 
@@ -17,7 +19,9 @@ export default function NewestArticle({
                 {picturePath && <img className="rounded object-cover w-full h-full md:h-28 lg:h-36 border border-gray-200 " src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="col-span-8 pl-4 flex flex-col">
-                <Link className="text-sm text-sky-500 block hover:text-sky-600" to="/category">{category}</Link>
+                <Link className="text-xs text-sky-500 block uppercase hover:text-sky-600" to={`/category/${category}`}>
+                    {category}
+                </Link>
                 <div className="grow">
                     <Link to={`/blog/${id}`}>
                         <h2 className="text-sm font-semibold lg:text-base">{title}</h2>

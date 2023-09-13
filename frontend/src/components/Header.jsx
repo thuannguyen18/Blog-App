@@ -18,7 +18,7 @@ export default function Header() {
     const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
     const { logout } = useGlobalContext();
-    
+
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
@@ -54,7 +54,7 @@ export default function Header() {
                 render={attrs => (
                     <div className="box w-72 shadow rounded bg-white border border-gray-200" tabIndex="-1" {...attrs}>
                         <div className="flex items-center p-4 h-[96px] w-full">
-                            <UserAvatar width="w-12" height="h-12" rounded profilePicturePath={userInformation?.profilePicturePath}/>
+                            <UserAvatar width="w-12" height="h-12" rounded profilePicturePath={userInformation?.profilePicturePath} />
                             <div className="ml-2">
                                 <span className="block font-semibold">{userInformation?.username}</span>
                                 <span className="block ">@{userInformation?.email}</span>
@@ -116,7 +116,7 @@ export default function Header() {
 
     return (
         <React.Fragment>
-            <header className="h-[69px] shadow-lg bg-white z-10 relative">
+            <header className="h-[69px] shadow-8xl bg-white z-10 relative">
                 <Container styles={"flex justify-between items-center h-full"}>
                     <Link className="text-sky-700 text-2xl md:text-3xl font-normal" to="/">MyBlog</Link>
                     <nav className="flex items-center">
@@ -125,6 +125,11 @@ export default function Header() {
                 </Container>
             </header>
             <Outlet />
+            <footer>
+                <Container styles={"flex justify-between items-center h-full"}>
+                    Footer
+                </Container>
+            </footer>
         </React.Fragment>
     );
 }

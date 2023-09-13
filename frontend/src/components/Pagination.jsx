@@ -1,4 +1,4 @@
-import React, { forwardRef }from "react";
+import React from "react";
 import { useGlobalContext } from "context/context";
 
 export default function Pagination({ handleClick }) {

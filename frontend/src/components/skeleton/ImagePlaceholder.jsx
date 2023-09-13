@@ -7,12 +7,13 @@ export default function ImagePlaceholder() {
                 </svg>
             </div>
             <div className="w-full">
-                <div className="h-2.5 bg-gray-200 w-48 mb-4"></div>
-                <div className="h-2 bg-gray-200 max-w-[480px] mb-2.5"></div>
-                <div className="h-2 bg-gray-200 mb-2.5"></div>
-                <div className="h-2 bg-gray-200 max-w-[440px] mb-2.5"></div>
-                <div className="h-2 bg-gray-200 max-w-[460px] mb-2.5"></div>
-                <div className="h-2 bg-gray-200 max-w-[360px]"></div>
+                <div className="h-3 bg-gray-200 rounded-sm w-32 mb-4"></div>
+                <div className="h-12 bg-gray-200 rounded-sm mb-4"></div>
+                <div className="h-2.5 bg-gray-200 rounded-sm max-w-[480px] mb-2.5"></div>
+                <div className="h-2.5 bg-gray-200 rounded-sm mb-2.5"></div>
+                <div className="h-2.5 bg-gray-200 rounded-sm max-w-[440px] mb-2.5"></div>
+                <div className="h-2.5 bg-gray-200 rounded-sm max-w-[460px] mb-2.5"></div>
+                <div className="h-2.5 bg-gray-200 rounded-sm max-w-[360px]"></div>
             </div>
             <span className="sr-only">Loading...</span>
         </div>
