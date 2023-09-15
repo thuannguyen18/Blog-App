@@ -7,6 +7,6 @@ const router = express.Router();
 router.use(verifyToken);
 router.get("/", getSavedBlogs);
 router.post("/", saveBlog);
-router.delete("/", unSaveBlog);
+router.delete("/:id", unSaveBlog);
 
 export default router;

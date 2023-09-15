@@ -11,6 +11,7 @@ module.exports = {
         "gray-450": "#C4C4C4",
         "gray-550": "#2D3748",
         "gray-650": "#969696",
+        "gray-750": "#606266"
       },
       boxShadow: {
         "8xl": "4px 4px 20px rgba(0,0,0,.1)"

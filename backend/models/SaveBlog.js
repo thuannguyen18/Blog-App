@@ -8,7 +8,11 @@ const SavedBlogSchema = new mongoose.Schema({
     blogId: {
         type: mongoose.Types.ObjectId,
         ref: "Blog"
-    }
+    },
+    authorId: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+    },
 });
 
 const SavedBlog = mongoose.model("Saved_Blog", SavedBlogSchema);

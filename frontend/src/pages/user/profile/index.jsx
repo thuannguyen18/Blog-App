@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BsBookmark, BsVectorPen } from "react-icons/bs";
+import { useGlobalContext } from "context/context";
+import { userInformation } from "constants";
+import Article from "components/article/Articles";
 import Container from "components/Container";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import UserInfoPlaceholder from "components/skeleton/UserInfoPlaceholder";
 import UserArticle from "components/article/UserArticle";
 import UserAvatar from "components/user/UserAvatar";
-import { useGlobalContext } from "context/context";
-import { userInformation } from "constants";
 
 export default function Profile() {
     const [isBlogs, setIsBlogs] = useState(true);
@@ -14,8 +17,10 @@ export default function Profile() {
     const {
         loading,
         getAllUserBlog,
+        userBlogsLoading,
         userBlogs,
-        getSavedBlog,
+        getSavedBlogs,
+        savedBlogsLoading,
         savedBlogs
     } = useGlobalContext();
 
@@ -24,11 +29,10 @@ export default function Profile() {
     }, [isBlogs]);
 
     useEffect(() => {
-        getSavedBlog();
+        if (isSaved) {
+            getSavedBlogs();
+        }
     }, [isSaved]);
-
-    console.log(savedBlogs)
-
 
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
@@ -42,7 +46,9 @@ export default function Profile() {
                             <h3 className="text-lg font-bold mt-2">{userInformation?.username}</h3>
                             <p className="text-sm">{userInformation?.email}</p>
                         </div>
-                        <button className="mt-4 p-1 w-full h-10 rounded border border-gray-300 hover:bg-gray-200">Edit Profile</button>
+                        <button className="mt-4 p-1 w-full h-10 rounded border border-gray-300 hover:bg-gray-200">
+                            <Link className="block h-full w-full leading-[30px]" to="/user/settings">Edit Profile</Link>
+                        </button>
                         <div className="grid grid-cols-3 mt-4 gap-8 text-center">
                             <div className="col-span-1">
                                 <span className="block font-bold">18</span>
@@ -67,23 +73,29 @@ export default function Profile() {
                             setIsBlogs(true);
                             setIsSaved(false);
                         }}
-                        className={`text-sm uppercase font-semibold h-10 w-32 ${isBlogs && "border-b border-sky-500"}`}
+                        className={`text-sm text-gray-750 uppercase py-2 px-4 ${isBlogs && " text-black border-b-2 border-sky-500 font-semibold"}`}
                     >
-                        BLOGS ()
+                        <span className="flex items-center justify-center">
+                            <BsVectorPen className="text-gray-650" />
+                            <span className="ml-2">BLOGS ({userBlogs.length})</span>
+                        </span>
                     </button>
                     <button
                         onClick={() => {
                             setIsBlogs(false);
                             setIsSaved(true);
                         }}
-                        className={`text-sm uppercase font-semibold h-10 w-32 ${isSaved && "border-b border-sky-500"}`}
+                        className={`text-sm text-gray-750 uppercase py-2 px-4 ${isSaved && "text-black border-b-2 border-sky-500 font-semibold"}`}
                     >
-                        SAVED
+                        <span className="flex items-center justify-center">
+                            <BsBookmark className="text-gray-650" />
+                            <span className="ml-2">SAVED</span>
+                        </span>
                     </button>
                 </nav>
-                <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
+                {isBlogs && <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
                     {userBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
-                        loading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
+                        userBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
                             <UserArticle
                                 key={_id}
                                 id={_id}
@@ -93,7 +105,33 @@ export default function Profile() {
                                 likes={likes}
                             />
                     ))}
-                </div>
+                </div>}
+                {(isSaved && savedBlogs.length > 0) ?
+                    savedBlogs.map(({
+                        _id: saveId,
+                        authorId,
+                        blogId: { _id, title, subTitle, category, picturePath, likes, isSaved }
+                    }) => (
+                        savedBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
+                            <div className="mt-4">
+                                <Article
+                                    key={_id}
+                                    id={_id}
+                                    title={title}
+                                    subTitle={subTitle}
+                                    category={category}
+                                    picturePath={picturePath}
+                                    likes={likes}
+                                    userId={authorId._id}
+                                    userName={authorId.username}
+                                    profilePicturePath={authorId.profilePicturePath}
+                                    isSaved={isSaved}
+                                    saveId={saveId}
+                                />
+                            </div>
+                    )) :
+                    <p className="text-center text-xl mt-8">You don't have any blog yet</p>
+                }
             </div>
         </Container>
     );

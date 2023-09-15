@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { BsPencilSquare } from "react-icons/bs";
 import { BiBookmark } from "react-icons/bi";
-import { CgNotes } from "react-icons/cg";
+import { BsPencilSquare, BsVectorPen } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { IoIosSettings } from "react-icons/io";
 import { ImProfile } from "react-icons/im";
@@ -42,13 +41,9 @@ export default function Header() {
 
     const navbarPrivate = (
         <React.Fragment>
-            <Link className="ml-6 text-slate-900 flex items-center" to="/blogs">
-                <CgNotes className="text-lg" />
-                <span className="ml-2">Blogs</span>
-            </Link>
-            <Link className="ml-6 text-slate-900 flex items-center" to="/blog/editor">
-                <BsPencilSquare className="text-lg" />
-                <span className="ml-2">New Article</span>
+            <Link className="ml-6 text-slate-900 flex items-center py-2 px-6 border rounded-full hover:bg-gray-200" to="/blog/editor">
+                <BsVectorPen className="text-lg" />
+                <span className="ml-2">Write blog</span>
             </Link>
             <Tippy
                 render={attrs => (
@@ -57,7 +52,7 @@ export default function Header() {
                             <UserAvatar width="w-12" height="h-12" rounded profilePicturePath={userInformation?.profilePicturePath} />
                             <div className="ml-2">
                                 <span className="block font-semibold">{userInformation?.username}</span>
-                                <span className="block ">@{userInformation?.email}</span>
+                                <span className="block ">@{userInformation?.email.replace("@gmail.com", "")}</span>
                             </div>
                         </div>
                         <div className="border-t border-gray-200 p-2">
@@ -98,7 +93,7 @@ export default function Header() {
                 placement="bottom-end"
             >
                 <div
-                    className="ml-6 text-slate-900 flex items-center cursor-pointer bg-gray-200 h-12 w-12 rounded-full"
+                    className="ml-1 text-slate-900 flex items-center cursor-pointer h-12 w-12 rounded-full"
                     onClick={visible ? hide : show}
                 >
                     <UserAvatar

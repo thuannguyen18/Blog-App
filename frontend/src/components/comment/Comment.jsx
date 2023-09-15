@@ -3,16 +3,16 @@ import UserInfo from "components/user/UserInfo";
 import { useGlobalContext } from "context/context";
 import { userInformation } from "constants";
 
-export default function Comment({ commentId, content, userInfo }) {
+export default function Comment({ blogId, commentId, content, userInfo }) {
+    const { deleteComment, updateComment } = useGlobalContext();
     const { _id, username, email, profilePicturePath } = userInfo;
 
-    const { deleteComment, updateComment } = useGlobalContext();
     const [isUpdate, setIsUpdate] = useState(false);
     const [isUpdateMode, setIsUpdateMode] = useState(false);
     const [contentUpdate, setContentUpdate] = useState(content);
 
     const handleDelete = () => {
-        deleteComment(commentId);
+        deleteComment(commentId, blogId);
     }
 
     const handleUpdateMode = () => {

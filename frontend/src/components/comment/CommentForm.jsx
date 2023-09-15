@@ -79,6 +79,7 @@ export default function FormComment() {
                 {comments.map(comment => (
                     <Comment
                         key={comment._id}
+                        blogId={id}
                         commentId={comment._id}
                         content={comment.content}
                         userInfo={comment.userId}

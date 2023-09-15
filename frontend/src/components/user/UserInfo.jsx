@@ -23,7 +23,9 @@ export default function UserInfo({ id, name, email, profilePath }) {
                 </div>
                 {userInformation?.id === authorId &&
                     <div className="">
-                        <Link to={`/blog/edit/${blogIdUpdate}`} className="border border-gray-500 text-gray-400 py-2 px-4 text-center rounded hover:bg-gray-500 hover:text-white">Update</Link>
+                        <button className="border border-gray-500 text-gray-400 py-2 px-4 text-center rounded hover:bg-gray-500 hover:text-white">
+                            <Link to={`/blog/edit/${blogIdUpdate}`}>Update</Link>
+                        </button>
                         <button
                             onClick={() => setOpen(true)}
                             className="border border-red-500 text-red-400 py-2 px-4 ml-3 rounded hover:bg-red-500 hover:text-white"

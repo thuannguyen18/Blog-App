@@ -33,7 +33,7 @@ export default function Feed() {
         getTopBlogs();
     }, [currentPage, isBestTopics]);
 
-    const content = isAllTopics ? allBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes }) => (
+    const content = isAllTopics ? allBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes, isSaved }) => (
         feedLoading ? <ImagePlaceholder key={_id} /> : <Article
             key={_id}
             id={_id}
@@ -45,6 +45,7 @@ export default function Feed() {
             category={category}
             picturePath={picturePath}
             likes={likes}
+            isSaved={isSaved}
         />
     )) : topBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes }) => (
         feedLoading ? <ImagePlaceholder key={_id} /> : <Article

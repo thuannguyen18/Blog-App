@@ -116,7 +116,7 @@ export default function EditorPost() {
                         >
                             <option selected disabled hidden>{category || "-- Choose category --"}</option>
                             {categories.map(category => (
-                                <option value={category}>{category}</option>
+                                <option key={category} value={category}>{category}</option>
                             ))}
                         </select>
                     </div>

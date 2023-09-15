@@ -19,7 +19,7 @@ export default function UserArticle({ id, title, subtitle, picturePath, likes })
                 <span className="text-xs">28/07/2023</span>
                 <span className="text-xs flex items-center">
                     <BiLike className="text-base mr-1"/>
-                    {likes}
+                    {likes || 0}
                 </span>
             </div>
         </article>

@@ -25,8 +25,12 @@ const BlogShema = new mongoose.Schema({
         type: Array,
         default: []
     },
+    isSaved: {
+        type: Boolean,
+        default: false,
+    },
     picturePath: String,
-    likes: Number
+    likes: Number,
 }, { timestamps: true });
 
 const Blog = mongoose.model("Blog", BlogShema);

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
 import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
+import { token } from "constants";
 import Bookmark from "components/Bookmark";
 import UserAvatar from "components/user/UserAvatar";
 
@@ -13,11 +14,10 @@ export default function Article({
     userName,
     profilePicturePath,
     picturePath,
-    likes
+    likes,
+    isSaved = false,
+    saveId 
 }) {
-
-    console.log(likes);
-
     return (
         <div className="grid lg:grid-cols-9 mb-12">
             <Link className="max-h-52 lg:col-span-3 rounded" to={`/blog/${id}`}>
@@ -26,7 +26,14 @@ export default function Article({
             <div className="lg:col-span-6 flex flex-col justify-between lg:pl-4">
                 <div className="flex items-center justify-between mt-1 mb-2 lg:mt-0">
                     <Link className="text-sm text-sky-500 hover:text-sky-600 uppercase" to={`/category/${category}`}>{category}</Link>
-                    <Bookmark id={id} />
+                    {token &&
+                        <Bookmark
+                            id={id}
+                            authorId={userId}
+                            isSaved={isSaved}
+                            saveId={saveId}
+                        />
+                    }
                 </div>
                 <div className="grow">
                     <Link className="block" to={`/blog/${id}`}>

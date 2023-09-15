@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import jwt from "jwt-decode";
@@ -95,7 +95,8 @@ const initalState = {
     changePasswordLoading: false,
     postCommentLoading: false,
     deleteCommentLoading: false,
-    savedBlogLoading: false,
+    savedBlogsLoading: false,
+    userBlogsLoading: false
 }
 
 function AppProvider({ children }) {
@@ -170,6 +171,7 @@ function AppProvider({ children }) {
     const logout = () => {
         localStorage.clear();
         dispatch({ type: "LOG_OUT" });
+        navigate("/");
         window.location.reload();
     }
 
@@ -304,9 +306,9 @@ function AppProvider({ children }) {
         }
     }
 
-    // Get user's blog who has authorized
+    // Get user's blogs who has authorized
     const getAllUserBlog = async (id) => {
-        dispatch({ type: "LOADING" });
+        dispatch({ type: "USER_BLOGS_LOADING" });
         try {
             const token = localStorage.getItem("access_token");
             const response = await axiosConfig.get(`/user/${id}/user-blog`, {
@@ -553,7 +555,7 @@ function AppProvider({ children }) {
     }
 
     // User delete comment in a blog
-    const deleteComment = async (id) => {
+    const deleteComment = async (id, blogId) => {
         dispatch({ type: "DELETE_COMMENT_LOADING" });
         const token = localStorage.getItem("access_token");
         try {
@@ -562,6 +564,7 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
+            getComments(blogId);
             dispatch({ type: "DELETE_COMMENT_SUCCESS" });
             toast.success("Your comment has been deleted");
         } catch (error) {
@@ -587,13 +590,14 @@ function AppProvider({ children }) {
     }
 
     // User save a blog
-    const saveBlog = async (id) => {
+    const saveBlog = async (id, authorId) => {
         const token = localStorage.getItem("access_token");
         const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
         const payload = {
             userId: userInformation.id,
-            blogId: id
+            blogId: id,
+            authorId
         };
 
         try {
@@ -602,7 +606,7 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            toast.success("Save blog success");
+            toast.success("Save success");
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");
@@ -610,7 +614,7 @@ function AppProvider({ children }) {
     }
 
     // Get blogs which saved by user
-    const getSavedBlog = async () => {
+    const getSavedBlogs = async () => {
         const token = localStorage.getItem("access_token");
         const userInformation = JSON.parse(localStorage.getItem("user_information"));
 
@@ -622,13 +626,41 @@ function AppProvider({ children }) {
                         Authorization: `Bearer ${token}`
                     }
                 });
-            console.log(response.data)
             dispatch({ 
                 type: "GET_SAVED_BLOGS",
                 payload: response.data
             });
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    const unSaveBlog = async (id) => {
+        const token = localStorage.getItem("access_token");
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
+
+        try {
+            await axiosConfig.delete(`/save-blog/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            const response = await axiosConfig
+                .get(`/save-blog?userId=${userInformation.id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+
+            dispatch({ 
+                type: "UNSAVE_BLOG_SUCCESS",
+                payload: response.data
+            });
+            toast.success("Unsave success");
+        } catch (error) {
+            console.log(error);
+            toast.error("something went wrong");
         }
     }
 
@@ -664,7 +696,8 @@ function AppProvider({ children }) {
                 deleteComment,
                 updateComment,
                 saveBlog,
-                getSavedBlog
+                getSavedBlogs,
+                unSaveBlog
             }}
         >
             {children}

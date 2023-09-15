@@ -185,7 +185,7 @@ function reducer(state, action) {
         case "GET_ALL_USER_BLOG":
             return {
                 ...state,
-                loading: false,
+                userBlogsLoading: false,
                 userBlogs: data,
             }
         case "UPDATE_USER_SUCCESS":
@@ -254,7 +254,7 @@ function reducer(state, action) {
         case "GET_SAVED_BLOGS": 
             return {
                 ...state,
-                savedBlogLoading: false,
+                savedBlogsLoading: false,
                 savedBlogs: data
             }
         case "LOADING":
@@ -292,10 +292,20 @@ function reducer(state, action) {
                 ...state,
                 deleteCommentLoading: true,
             }
-        case "SAVE_BLOG_LOADING":
+        case "SAVED_BLOG_LOADING":
             return {
                 ...state,
-                savedBlogLoading: true,
+                savedBlogsLoading: true,
+            }
+        case "UNSAVE_BLOG_SUCCESS":
+            return {
+                ...state,
+                savedBlogs: data
+            }
+        case "USER_BLOGS_LOADING":
+            return {
+                ...state,
+                userBlogsLoading: true
             }
         case "POST_COMMENT_SUCCESS":
             return {
