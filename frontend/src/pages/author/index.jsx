@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Container from "components/Container";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
@@ -15,10 +15,30 @@ export default function Author() {
         authorName,
         authorEmail,
         authorProfilePicturePath,
-        authorBlogs
+        authorBlogs,
+        follow,
+        isFollowing,
     } = useGlobalContext();
 
+    const [following, setFollowing] = useState(isFollowing ? "Following" : "Follow");
+    
+
+    const handleFollow = () => {
+        if (isFollowing) {
+            setFollowing("Follow");
+            //unfollow();
+            return;
+        }
+        setFollowing("Following");
+        follow(id);
+    }
+
     useEffect(() => {
+        if (isFollowing) {
+            setFollowing("Follow");
+        } else {
+            setFollowing("Following");
+        }
         getAuthor(id);
     }, []);
 
@@ -48,7 +68,9 @@ export default function Author() {
                                 <span className="text-sm">Blogs</span>
                             </div>
                         </div>
-                        <button className="mt-4 p-1 w-full bg-sky-100 h-10 text-sky-500">Follow</button>
+                        <button className="mt-4 p-1 w-full bg-sky-100 h-10 text-sky-500" onClick={handleFollow}>
+                            {following}
+                        </button>
                     </div>
                 </React.Fragment>
             }

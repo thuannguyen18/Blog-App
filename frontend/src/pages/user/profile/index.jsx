@@ -16,6 +16,8 @@ export default function Profile() {
 
     const {
         loading,
+        userName,
+        userEmail,
         getAllUserBlog,
         userBlogsLoading,
         userBlogs,
@@ -34,6 +36,9 @@ export default function Profile() {
         }
     }, [isSaved]);
 
+    console.log(userName);
+    console.log(userEmail)
+
     return (
         <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
             {loading ? <UserInfoPlaceholder /> :
@@ -43,8 +48,8 @@ export default function Profile() {
                             <UserAvatar width="w-28 lg:w-36" height="h-28 lg:h-36" center profilePicturePath={userInformation?.profilePicturePath} />
                         </div>
                         <div className="text-center">
-                            <h3 className="text-lg font-bold mt-2">{userInformation?.username}</h3>
-                            <p className="text-sm">{userInformation?.email}</p>
+                            <h3 className="text-lg font-bold mt-2">{userName}</h3>
+                            <p className="text-sm">{userEmail}</p>
                         </div>
                         <button className="mt-4 p-1 w-full h-10 rounded border border-gray-300 hover:bg-gray-200">
                             <Link className="block h-full w-full leading-[30px]" to="/user/settings">Edit Profile</Link>
@@ -106,32 +111,29 @@ export default function Profile() {
                             />
                     ))}
                 </div>}
-                {(isSaved && savedBlogs.length > 0) ?
-                    savedBlogs.map(({
-                        _id: saveId,
-                        authorId,
-                        blogId: { _id, title, subTitle, category, picturePath, likes, isSaved }
-                    }) => (
-                        savedBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
-                            <div className="mt-4">
-                                <Article
-                                    key={_id}
-                                    id={_id}
-                                    title={title}
-                                    subTitle={subTitle}
-                                    category={category}
-                                    picturePath={picturePath}
-                                    likes={likes}
-                                    userId={authorId._id}
-                                    userName={authorId.username}
-                                    profilePicturePath={authorId.profilePicturePath}
-                                    isSaved={isSaved}
-                                    saveId={saveId}
-                                />
-                            </div>
-                    )) :
-                    <p className="text-center text-xl mt-8">You don't have any blog yet</p>
-                }
+                {isSaved && savedBlogs.map(({
+                    _id: saveId,
+                    authorId,
+                    blogId: { _id, title, subTitle, category, picturePath, likes, isSaved }
+                }) => (
+                    savedBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
+                        <div className="mt-4">
+                            <Article
+                                key={_id}
+                                id={_id}
+                                title={title}
+                                subTitle={subTitle}
+                                category={category}
+                                picturePath={picturePath}
+                                likes={likes}
+                                userId={authorId._id}
+                                userName={authorId.username}
+                                profilePicturePath={authorId.profilePicturePath}
+                                isSaved={isSaved}
+                                saveId={saveId}
+                            />
+                        </div>
+                ))}
             </div>
         </Container>
     );

@@ -168,19 +168,17 @@ function reducer(state, action) {
                 authorEmail: data.user.email,
                 authorProfilePicturePath: data.user.profilePicturePath,
                 authorBlogs: data.userBlog,
+                isFollowing: data.user.isFollowing
             };
         case "AUTH_SUCCESS":
             return {
                 ...state,
                 isAlert: false,
                 isSuccess: false,
-                isAuthenticated: true,
                 userId: data.id,
                 userName: data.username,
                 userEmail: data.email,
                 userProfilePicturePath: data.profilePicturePath,
-                userNameUpdate: data.username,
-                userEmailUpdate: data.email,
             }
         case "GET_ALL_USER_BLOG":
             return {

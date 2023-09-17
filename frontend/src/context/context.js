@@ -54,6 +54,7 @@ const initalState = {
     authorEmail: "",
     authorProfilePicturePath: "",
     authorBlogs: [],
+    isFollowing: false,
     // Authorization 
     userBlogs: [],
     savedBlogs: [],
@@ -150,17 +151,18 @@ function AppProvider({ children }) {
             };
             const response = await axiosConfig.post("/auth/login", payload);
             const token = response.data.accessToken;
+            const { UserInfo } = jwt(token);
+            console.log(UserInfo)
 
             if (token) {
-                const { UserInfo } = jwt(token);
                 localStorage.setItem("access_token", token);
                 localStorage.setItem("user_information", JSON.stringify(UserInfo));
                 dispatch({ type: "AUTH_SUCCESS", payload: UserInfo });
                 navigate("/");
-                window.location.reload();
             }
-
+            
             dispatch({ type: "SIGN_IN_SUCCESS" });
+            window.location.reload();
         } catch (error) {
             const message = error.response.data.message
             dispatch({ type: "SIGN_IN_FAIL", payload: message });
@@ -281,7 +283,6 @@ function AppProvider({ children }) {
         try {
             const response = await axiosConfig
                 .get(`/blog/category?name=${category}&page=${state.categoryCurrentPage}`);
-            console.log(response)
             dispatch({
                 type: "GET_CATEGORY_BLOGS",
                 payload: response.data
@@ -295,12 +296,12 @@ function AppProvider({ children }) {
     const getAuthor = async (id) => {
         dispatch({ type: "LOADING" });
         try {
-            const response = await axiosConfig.get(`/user/${id}`); // /author/:id
+            const response = await axiosConfig.get(`/user/${id}`);
+            console.log(response.data);
             dispatch({
                 type: "GET_AUTHOR",
                 payload: response.data
             });
-            console.log(response.data)
         } catch (error) {
             console.log(error);
         }
@@ -334,24 +335,20 @@ function AppProvider({ children }) {
             userEmailUpdate
         } = userUpdateInfo;
 
-        dispatch({ type: "UPDATE_USER_LOADING" });
-
         const token = localStorage.getItem("access_token");
         const userInformation = JSON.parse(localStorage.getItem("user_information"));
-
+        
         const formData = new FormData();
         formData.append("username", userNameUpdate);
         formData.append("email", userEmailUpdate);
-
+        
         if (userAvatarUpdate) {
             formData.append("picture", userAvatarUpdate);
         } else {
             formData.append("picture", null);
         }
-
-        // for (let key of formData.entries()) {
-        //     console.log(key[0] + ', ' + key[1]);
-        // }
+        
+        dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
             const response = await axiosConfig.patch(`/user/${userInformation.id}`, formData, {
@@ -664,6 +661,21 @@ function AppProvider({ children }) {
         }
     }
 
+    const follow = async (id) => {
+        const token = localStorage.getItem("access_token");
+        try {
+            await axiosConfig.post(`/user/${id}/follow`, {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            toast.success("Follow user success");
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong");
+        }
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -697,7 +709,8 @@ function AppProvider({ children }) {
                 updateComment,
                 saveBlog,
                 getSavedBlogs,
-                unSaveBlog
+                unSaveBlog,
+                follow
             }}
         >
             {children}

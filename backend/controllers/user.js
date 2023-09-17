@@ -5,45 +5,54 @@ import User from "../models/User.js";
 import Blog from "../models/Blog.js";
 
 export const getUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id).select("-password");
+    const { id } = req.params;
+
+    const user = await User.findById(id).select("-password");
 
     if (!user) {
         return res.status(400).json({ message: "User not found" });
     }
 
     const userBlog = await Blog
-        .find({ userId: req.params.id })
+        .find({ userId: id })
         .select("-content -comments -category");
 
-    res.status(200).json({ user, userBlog });
+    return res.status(200).json({ user, userBlog });
 });
 
 export const getUserBlog = asyncHandler(async (req, res) => {
-    const userBlog = await Blog
-        .find({ userId: req.params.id })
+    const { id } = req.params;
+
+    const userBlogs = await Blog
+        .find({ userId: id })
         .select("-content -comments -category");
 
-    if (userBlog.length === 0)
+    if (userBlogs.length === 0) {
         return res.status(200).json([]);
+    }
 
-    res.status(200).json(userBlog);
+    return res.status(200).json(userBlogs);
 });
 
 export const updateUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id);
+    const { id } = req.params;
+    const { username, email } = req.body;
+    const file = req.file;
+
+    const user = await User.findById(id);
 
     if (!user) {
         return res.status(400).json({ message: "User not found" });
     }
 
-    const file = req.file;
 
     if (!file) {
         user.profilePicturePath = user.profilePicturePath;
-        user.username = req.body.username;
-        user.email = req.body.email;
+        user.username = username;
+        user.email = email;
+
         await user.save();
-        return res.status(200).json("Update success");
+        return res.sendStatus(200);
     }
 
     user.username = req.body.username;
@@ -51,14 +60,15 @@ export const updateUser = asyncHandler(async (req, res) => {
     user.profilePicturePath = file.path.slice(14);
 
     await user.save();
-
-    res.status(200).json("Update success");
+    return res.sendStatus(200);
 });
 
 export const changePassword = asyncHandler(async (req, res) => {
+    const { id } = req.params;
     const { password, newPassword, confirmNewPassword } = req.body;
-    const user = await User.findById(req.params.id);
-    const hashedPassword = newPassword === confirmNewPassword && await bcrypt.hash(confirmNewPassword, 10);
+
+    const user = await User.findById(id);
+    const hashedPassword = (newPassword === confirmNewPassword) && await bcrypt.hash(confirmNewPassword, 10);
     const match = bcrypt.compare(password, user.password);
 
     if (match) {
@@ -70,9 +80,10 @@ export const changePassword = asyncHandler(async (req, res) => {
 
 
 export const uploadFile = asyncHandler(async (req, res) => {
+    const { id } = req.params;
     const { avatar } = req.body;
 
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(id);
 
     if (!user) {
         return res.status(400).json({ message: "User not found" });
@@ -82,5 +93,50 @@ export const uploadFile = asyncHandler(async (req, res) => {
 
     await user.save();
 
-    res.json({ message: "Successfully uploaded files", file: user.profilePictureURL });
+    return res.json({
+        message: "Successfully uploaded files",
+        file: user.profilePictureURL
+    });
+});
+
+export const followUser = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const userId= req.userId;
+
+    const userIsFollowed = await User.findById(id);
+    const userWantToFollow = await User.findById(userId);
+
+    if (!userIsFollowed || !userWantToFollow) {
+        return res.status(404).json("User not found");
+    }
+
+    if (userWantToFollow.following.indexOf(id) === -1) {
+        userWantToFollow.following.push(id);
+        await userWantToFollow.save();
+    }
+
+    if (userIsFollowed.followers.indexOf(userId) === -1) {
+        userIsFollowed.followers.push(userId);
+        userIsFollowed.isFollowing = true;
+        await userIsFollowed.save();
+    }
+    
+    return res.status(200).json("Follow success");
+});
+
+export const unfollowUser = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const userWantToUnfollow = req.userId;
+    
+    const user = await User.findById(id);
+
+    if (!user) {
+        return res.status(404).json("User not found");
+    }
+
+    user.following.remove(userWantToUnfollow);
+    user.isFollowing = false;
+    await user.save();
+    
+    return res.status(200).json("Unfollowing success");
 });

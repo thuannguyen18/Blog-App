@@ -14,10 +14,6 @@ export default function Register() {
         isAlert
     } = useGlobalContext();
 
-    console.log(username);
-    console.log(email);
-    console.log(password);
-
     const inputs = [
         {
             value: username,

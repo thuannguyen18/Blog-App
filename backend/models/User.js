@@ -27,12 +27,18 @@ const UserSchema = new mongoose.Schema({
         required: [true, "Password is required"]
     },
     profilePicturePath: {
-        type: String, 
+        type: String,
         default: "",
     },
-    followers: {
-        type: Array,
-        default: [],
+    following: [
+        { type: mongoose.Types.ObjectId, ref: "User" }
+    ],
+    followers: [
+        { type: mongoose.Types.ObjectId, ref: "User" }
+    ],
+    isFollowing: {
+        type: Boolean,
+        default: false,
     }
 }, { timestamps: true });
 
