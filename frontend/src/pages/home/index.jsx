@@ -1,16 +1,16 @@
 import React from "react";
 import Banner from "components/Banner";
-import Latest from "components/Latest";
-import Recommend from "components/Recommend";
-import Feed from "components/Feed";
+import LatestBlogs from "components/LatestBlogs";
+import RecommendBlogs from "components/RecommendBlogs";
+import Feeds from "components/Feeds";
 
 export default function Home() {
     return (
         <React.Fragment>
             <Banner />
-            <Latest />
-            <Recommend />
-            <Feed />
+            <LatestBlogs />
+            <RecommendBlogs />
+            <Feeds />
         </React.Fragment>
     );
 }

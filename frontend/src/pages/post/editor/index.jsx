@@ -81,7 +81,7 @@ export default function EditorPost() {
     }
 
     return (
-        <Container>
+        <Container styles="h-screen">
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
                 <input
                     value={title}

@@ -1,20 +1,20 @@
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer, Zoom } from "react-toastify";
+
+import { token } from 'constants';
 import { publicRoutes, authRoutes } from "routes/public";
 import { privateRoutes } from 'routes/private';
 import PrivateRoute from "routes/private";
-import Header from "components/Header";
+import Layout from "pages/layout";
 import NotFound from "pages/error";
 
 export default function App() {
-    const token = localStorage.getItem("access_token");
-
     return (
         <main className="app">
             <Routes>
                 <Route path="*" element={<NotFound />} />
-                <Route path="/" element={<Header />}>
+                <Route path="/" element={<Layout />}>
                     {publicRoutes.map((route, index) => {
                         const Element = route.element;
                         return <Route key={index} path={route.path} element={<Element />} />;

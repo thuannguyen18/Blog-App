@@ -126,17 +126,22 @@ export const followUser = asyncHandler(async (req, res) => {
 
 export const unfollowUser = asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const userWantToUnfollow = req.userId;
-    
-    const user = await User.findById(id);
+    const userId = req.userId;
 
-    if (!user) {
+    const userWantToUnfollow = await User.findById(userId);
+    const userIsFollowed = await User.findById(id);
+    
+    if (!userIsFollowed || !userWantToUnfollow) {
         return res.status(404).json("User not found");
     }
 
-    user.following.remove(userWantToUnfollow);
-    user.isFollowing = false;
-    await user.save();
+    userWantToUnfollow.following.remove(id);
+    
+    userIsFollowed.followers.remove(userId);
+    userIsFollowed.isFollowing = false;
+
+    await userWantToUnfollow.save();
+    await userIsFollowed.save();
     
     return res.status(200).json("Unfollowing success");
 });

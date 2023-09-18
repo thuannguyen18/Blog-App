@@ -6,7 +6,7 @@ import Container from "components/Container";
 import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
 import Pagination from "components/Pagination";
 
-export default function Feed() {
+export default function Feeds() {
     const {
         feedLoading,
         getAllBlogs,

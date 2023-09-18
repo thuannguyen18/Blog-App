@@ -4,7 +4,7 @@ import Container from "components/Container";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import RecommendArticle from "components/article/RecommendArticle";
 
-export default function Recommend() {
+export default function RecommendBlogs() {
     const { loading, randomBlogs, getBlogs } = useGlobalContext();
 
     useEffect(() => {

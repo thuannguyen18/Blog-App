@@ -146,7 +146,7 @@ export default function Settings() {
         ) ? "bg-sky-500" : "bg-sky-300 cursor-not-allowed";
 
     return (
-        <Container>
+        <Container styles="h-screen">
             <div className="mx-auto mt-10 md:w-[720px] overflow-hidden p-8">
                 <div className="flex items-center justify-center w-32 h-32">
                     <label htmlFor="dropzone-file" className="flex flex-col items-center rounded-full justify-center w-full h-full border-2 border-gray-300 cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">

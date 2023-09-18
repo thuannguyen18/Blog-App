@@ -1,4 +1,4 @@
-export default function UserInfoPlaceholder() {
+export default function ProfileCardPlaceholder() {
     return (
         <div role="status" className="border border-gray-200 rounded shadow animate-pulse lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
             <div className="flex items-center justify-center h-48 rounded">

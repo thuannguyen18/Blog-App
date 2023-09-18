@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
-import UserAvatar from "components/user/UserAvatar";
-
 
 export default function UserArticle({ id, title, subtitle, picturePath, likes }) {
     return (

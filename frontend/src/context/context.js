@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import jwt from "jwt-decode";
-import axios from "axios";
 import axiosConfig from "config/axiosConfig";
 
 import reducer from "./reducer";
@@ -19,7 +18,7 @@ const initalState = {
     email: "",
     password: "",
     // Blogs for home page 
-    newestBlogs: [],
+    latestBlogs: [],
     randomBlogs: [],
     allBlogs: [],
     topBlogs: [],
@@ -37,13 +36,13 @@ const initalState = {
     blogPicturePath: "",
     blogCategory: "",
     // Get comments and pagination
-    userIdComment: {},
+    //userIdComment: {},
     comments: [],
     nextComments: 1,
     isFinalComment: false,
     isHasComment: false,
     isNewComment: false,
-    // Get blogs have same category and pagination
+    // Get blogs that have same category and pagination
     categoryBlogs: [],
     categoryTotalPages: "",
     categoryCurrentPage: 1,
@@ -54,41 +53,27 @@ const initalState = {
     authorEmail: "",
     authorProfilePicturePath: "",
     authorBlogs: [],
+    authorFollowers: [],
+    authorFollowing: [],
     isFollowing: false,
     // Authorization 
     userBlogs: [],
     savedBlogs: [],
-    userId: "",
     userName: "",
     userEmail: "",
-    userProfilePicturePath: "",
     // Account Setting
     isChange: false,
     userNameUpdate: "",
     userEmailUpdate: "",
     userAvatar: undefined,
-
-    // ===================================================================
-    // =====================================
-    title: "",
-    content: "",
-    blogs: [],
-    articleTitle: "",
-    articleContent: "",
-    userNameBlog: "",
-    userIdBlog: "",
-    otherUserAvatar: "",
-
-    // ========== Blogs ==========
-
-    // ========== Blog Update ==========
+    // Blog Updat
     blogIdUpdate: "",
     blogTitleUpdate: "",
     blogSubtitleUpdate: "",
     blogContentUpdate: [],
     blogPicturePathUpdate: "",
     blogCategoryUpdate: "",
-    // ========== Loading ==========
+    // Loading
     loading: false,
     feedLoading: false,
     commentLoading: false,
@@ -151,17 +136,15 @@ function AppProvider({ children }) {
             };
             const response = await axiosConfig.post("/auth/login", payload);
             const token = response.data.accessToken;
-            const { UserInfo } = jwt(token);
-            console.log(UserInfo)
-
+            
             if (token) {
+                const { UserInfo } = jwt(token);
                 localStorage.setItem("access_token", token);
                 localStorage.setItem("user_information", JSON.stringify(UserInfo));
-                dispatch({ type: "AUTH_SUCCESS", payload: UserInfo });
-                navigate("/");
             }
             
             dispatch({ type: "SIGN_IN_SUCCESS" });
+            navigate("/");
             window.location.reload();
         } catch (error) {
             const message = error.response.data.message
@@ -297,7 +280,6 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
         try {
             const response = await axiosConfig.get(`/user/${id}`);
-            console.log(response.data);
             dispatch({
                 type: "GET_AUTHOR",
                 payload: response.data
@@ -348,6 +330,10 @@ function AppProvider({ children }) {
             formData.append("picture", null);
         }
         
+        userInformation.username = userNameUpdate;
+        userInformation.email = userEmailUpdate;
+        localStorage.setItem("user_information", JSON.stringify(userInformation));
+        
         dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
@@ -356,12 +342,13 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`,
                 },
             });
-
+            
+            
             dispatch({
                 type: "UPDATE_USER_SUCCESS",
                 payload: response.data
             });
-
+            
             navigate("/user");
             toast.success("Update success");
         } catch (error) {
@@ -669,7 +656,22 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            toast.success("Follow user success");
+            toast.success("Follow success");
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong");
+        }
+    }
+
+    const unfollow = async (id) => {
+        const token = localStorage.getItem("access_token");
+        try {
+            await axiosConfig.delete(`/user/${id}/follow`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            toast.success("Unfollow success");
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");
@@ -710,7 +712,8 @@ function AppProvider({ children }) {
                 saveBlog,
                 getSavedBlogs,
                 unSaveBlog,
-                follow
+                follow,
+                unfollow
             }}
         >
             {children}

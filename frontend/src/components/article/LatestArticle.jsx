@@ -3,7 +3,7 @@ import { CATEGORIES as categories } from "constants";
 import UserAvatar from "components/user/UserAvatar";
 
 
-export default function NewestArticle({ 
+export default function LatestArticle({ 
     id, 
     userId, 
     title, 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 import Loading from "./Loading";
 
-function Form({ title, to, text, buttonText, linkText, children }) {
+export default function Form({ title, to, text, buttonText, linkText, children }) {
     const { signUp, signIn, loading } = useGlobalContext();
 
     const handleSubmit = (e) => {
@@ -37,5 +37,3 @@ function Form({ title, to, text, buttonText, linkText, children }) {
         </form>
     );
 }
-
-export default Form;

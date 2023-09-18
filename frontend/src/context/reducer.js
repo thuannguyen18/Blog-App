@@ -27,8 +27,9 @@ function reducer(state, action) {
             return {
                 ...state,
                 loading: false,
-                userPassword: "",
-            }
+                isAlert: false,
+                isSuccess: false,
+            };
         case "SIGN_IN_FAIL":
             return {
                 ...state,
@@ -36,15 +37,14 @@ function reducer(state, action) {
                 isAlert: true,
                 message: data,
                 isSuccess: false
-            }
+            };
         case "LOG_OUT":
             return {
                 ...state,
-                userId: "",
-                isAuthenticated: false,
                 name: "",
                 email: "",
                 password: "",
+                isSuccess: false,
             };
         case "CLOSE_ALERT_MESSAGE":
             return {
@@ -55,7 +55,7 @@ function reducer(state, action) {
             return {
                 ...state,
                 loading: false,
-                newestBlogs: data
+                latestBlogs: data
             }
         case "GET_RANDOM_BLOGS":
             return {
@@ -168,18 +168,10 @@ function reducer(state, action) {
                 authorEmail: data.user.email,
                 authorProfilePicturePath: data.user.profilePicturePath,
                 authorBlogs: data.userBlog,
+                authorFollowers: data.user.followers,
+                authorFollowing: data.user.following,
                 isFollowing: data.user.isFollowing
             };
-        case "AUTH_SUCCESS":
-            return {
-                ...state,
-                isAlert: false,
-                isSuccess: false,
-                userId: data.id,
-                userName: data.username,
-                userEmail: data.email,
-                userProfilePicturePath: data.profilePicturePath,
-            }
         case "GET_ALL_USER_BLOG":
             return {
                 ...state,
@@ -249,7 +241,7 @@ function reducer(state, action) {
                 blogCategoryUpdate: data.category,
                 blogPicturePathUpdate: data.picturePath,
             }
-        case "GET_SAVED_BLOGS": 
+        case "GET_SAVED_BLOGS":
             return {
                 ...state,
                 savedBlogsLoading: false,
