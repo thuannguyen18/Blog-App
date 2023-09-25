@@ -7,7 +7,8 @@ import {
     createBlog,
     updateBlog,
     deleteBlog,
-    getCategoryBlogs
+    getCategoryBlogs,
+    likeBlog
 } from "../controllers/blog.js";
 
 const router = express.Router();
@@ -29,6 +30,7 @@ router.get("/:id", getBlogDetail);
 
 // Private routes
 router.post("/", verifyToken, upload.single("picture"), createBlog);
+router.post("/:id/like", verifyToken, likeBlog);
 router.patch("/:id", verifyToken, upload.single("picture"), updateBlog);
 router.delete("/:id", verifyToken, deleteBlog);
 

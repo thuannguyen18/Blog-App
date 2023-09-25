@@ -36,7 +36,6 @@ const initalState = {
     blogPicturePath: "",
     blogCategory: "",
     // Get comments and pagination
-    //userIdComment: {},
     comments: [],
     nextComments: 1,
     isFinalComment: false,
@@ -678,6 +677,21 @@ function AppProvider({ children }) {
         }
     }
 
+    const likeBlog = async (blogId) => {
+        const token = localStorage.getItem("access_token");
+
+        try {
+            const { data } = await axiosConfig.post(`/blog/${blogId}/like`, {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -713,7 +727,8 @@ function AppProvider({ children }) {
                 getSavedBlogs,
                 unSaveBlog,
                 follow,
-                unfollow
+                unfollow,
+                likeBlog
             }}
         >
             {children}

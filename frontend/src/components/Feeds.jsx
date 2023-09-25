@@ -18,6 +18,7 @@ export default function Feeds() {
         isBestTopics,
         setAllTopics,
         setBestTopics,
+        likeBlog
     } = useGlobalContext();
     const ref = useRef();
 
@@ -33,7 +34,23 @@ export default function Feeds() {
         getTopBlogs();
     }, [currentPage, isBestTopics]);
 
-    const content = isAllTopics ? allBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes, isSaved }) => (
+    const content = isAllTopics ? allBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes, isSaved, isLiked }) => (
+        feedLoading ? <ImagePlaceholder key={_id} /> : <Article
+            key={_id}
+            id={_id}
+            userId={userId._id}
+            userName={userId.username}
+            profilePicturePath={userId.profilePicturePath}
+            title={title}
+            subTitle={subTitle}
+            category={category}
+            picturePath={picturePath}
+            likes={likes}
+            isSaved={isSaved}
+            likeBlog={likeBlog}
+            isLiked={isLiked}
+        />
+    )) : topBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes, isSaved }) => (
         feedLoading ? <ImagePlaceholder key={_id} /> : <Article
             key={_id}
             id={_id}
@@ -47,19 +64,6 @@ export default function Feeds() {
             likes={likes}
             isSaved={isSaved}
         />
-    )) : topBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes }) => (
-        feedLoading ? <ImagePlaceholder key={_id} /> : <Article
-            key={_id}
-            id={_id}
-            userId={userId._id}
-            userName={userId.username}
-            profilePicturePath={userId.profilePicturePath}
-            title={title}
-            subTitle={subTitle}
-            category={category}
-            picturePath={picturePath}
-            likes={likes}
-        />
     ));
 
     return (
@@ -68,12 +72,12 @@ export default function Feeds() {
                 <div className="order-last col-span-6 lg:col-span-4 lg:order-first lg:pr-10 mt-6 lg:mt-0">
                     <nav className="border-b border-slate-200">
                         <button
-                            className={`${isAllTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-32`}
+                            className={`${isAllTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 w-32`}
                             onClick={() => setAllTopics()}>
                             FOR YOU
                         </button>
                         <button
-                            className={`${isBestTopics && "border-b-4 border-sky-500"} text-sm font-semibold h-10 w-40`}
+                            className={`${isBestTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 w-40`}
                             onClick={() => setBestTopics()}
                         >
                             BEST TOPICS

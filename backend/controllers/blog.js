@@ -86,8 +86,8 @@ export const getBlogDetail = asyncHandler(async (req, res) => {
         .populate("userId", "username email profilePicturePath");
 
     if (!blogDetail) {
-        return res.status(404).json({ message: "Blog not found" });
-    } 
+        return res.sendStatus(404);
+    }
 
     return res.status(200).json(blogDetail);
 });
@@ -99,7 +99,7 @@ export const getBlogDetail = asyncHandler(async (req, res) => {
 ** @method GET
 ** @path http://localhost:3500/blog/category?
 ** @query name="game"&page="1"
-*/
+**/
 export const getCategoryBlogs = asyncHandler(async (req, res) => {
     const { name, page } = req.query;
 
@@ -149,9 +149,9 @@ export const createBlog = asyncHandler(async (req, res) => {
         return res.sendStatus(500);
     }
 
-    return res.status(201).json({ 
-        message: "Create success", 
-        blogCreated 
+    return res.status(201).json({
+        message: "Create success",
+        blogCreated
     });
 });
 
@@ -200,13 +200,55 @@ export const updateBlog = asyncHandler(async (req, res) => {
 ** @path http://localhost:3500/blog/:id
 **/
 export const deleteBlog = asyncHandler(async (req, res) => {
-    const blog = await Blog.findById(req.params.id);
+    const { id } = req.params;
+    const blog = await Blog.findById(id);
 
     if (!blog) {
         return res.sendStatus(404);
     }
 
-    const deletedBlog = await blog.deleteOne();
-    const reply = `Blog '${deletedBlog.title}' with ID ${deletedBlog._id} deleted`;
-    return res.status(200).json(reply);
+    await blog.deleteOne();
+    return res.sendStatus(200);
+});
+
+
+/** 
+** @access Private
+** @desc Like a blog by user
+** @method POST
+** @path http://localhost:3500/blog/:id/like
+**/
+export const likeBlog = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const blog = await Blog.findById(id);
+
+    if (!blog) {
+        return res.sendStatus(404);
+    }
+
+    blog.likes += 1;
+    await blog.save();
+
+    return res.sendStatus(200);
+});
+
+
+/** 
+** @access Private
+** @desc Like a blog by user
+** @method PATCH
+** @path http://localhost:3500/blog/:id/like
+**/
+export const unlikeBlog = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const blog = await Blog.findById(id);
+
+    if (!blog) {
+        return res.sendStatus(404);
+    }
+
+    blog.likes -= 1;
+    await blog.save();
+
+    return res.sendStatus(200);
 });

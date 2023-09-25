@@ -28,7 +28,7 @@ export const saveBlog = asyncHandler(async (req, res) => {
     };
 
     await SaveBlog.create(blogNeedToSave);
-    return res.status(201).json("Save blog success");
+    return res.sendStatus(201);
 });
 
 export const unSaveBlog = asyncHandler(async (req, res) => {

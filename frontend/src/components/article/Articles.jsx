@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import { BiLike } from "react-icons/bi";
-import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { token } from "constants";
 import Bookmark from "components/Bookmark";
 import UserAvatar from "components/user/UserAvatar";
+import Reactions from "components/Reactions";
 
 export default function Article({
     id,
@@ -16,8 +16,32 @@ export default function Article({
     picturePath,
     likes,
     isSaved = false,
-    saveId 
+    saveId,
+    likeBlog,
+    isLiked = false
 }) {
+    const [like, setLike] = useState(likes || 0)
+    const [isLike, setIsLike] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLike = () => {
+        if (!token) {
+            navigate("/login");
+            return;
+        }
+
+        if (isLike) {
+            setLike(prev => prev - 1);
+            setIsLike(false);
+            // unlike(id);
+            return;
+        }
+
+        setLike(prev => prev + 1);
+        setIsLike(true);
+        likeBlog(id);
+    }
+
     return (
         <div className="grid lg:grid-cols-9 mb-12">
             <Link className="max-h-52 lg:col-span-3 rounded" to={`/blog/${id}`}>
@@ -48,16 +72,11 @@ export default function Article({
                         <UserAvatar width="w-12" height="h-12" isDefault={true} profilePicturePath={profilePicturePath} />
                         <Link className="text-sm font-semibold block ml-2" to={`/user/${userId}`}>{userName}</Link>
                     </div>
-                    <div className="flex justify-evenly">
-                        <span className="flex items-center">
-                            <BiLike className="text-lg text-gray-650" />
-                            <span className="ml-1 text-sm">{likes ? likes : "0"}</span>
-                        </span>
-                        <span className="hidden items-center ml-4 md:flex">
-                            <HiOutlineChatBubbleOvalLeftEllipsis className="text-lg text-gray-650" />
-                            <span className="ml-1 text-sm">0</span>
-                        </span>
-                    </div>
+                    <Reactions
+                        likeCount={like}
+                        handleLike={handleLike}
+                        isLiked={isLiked}
+                    />
                 </div>
             </div>
         </div>
