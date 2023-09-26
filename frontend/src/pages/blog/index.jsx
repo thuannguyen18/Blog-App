@@ -26,7 +26,7 @@ export default function Blog() {
     }, []);
 
     return (
-        <div className="mt-20">
+        <div className="my-20">
             <div className="container mx-auto px-4 md:w-4/6 lg:w-3/6">
                 {loading ? <ContentPlaceholder /> :
                     <BlogContent 

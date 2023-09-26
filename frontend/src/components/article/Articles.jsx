@@ -5,21 +5,22 @@ import Bookmark from "components/Bookmark";
 import UserAvatar from "components/user/UserAvatar";
 import Reactions from "components/Reactions";
 
-export default function Article({
-    id,
-    userId,
-    title,
-    subTitle,
-    category,
-    userName,
-    profilePicturePath,
-    picturePath,
-    likes,
-    isSaved = false,
-    saveId,
-    likeBlog,
-    isLiked = false
-}) {
+export default function Article({ topic }) {
+    const {
+        id,
+        title,
+        subTitle,
+        category,
+        picturePath,
+        likes,
+        isSaved = false,
+        saveId,
+        likeBlog,
+        isLiked = false
+    } = topic;
+
+    const { username, profilePicturePath, _id: userId } = topic.userId;
+
     const [like, setLike] = useState(likes || 0)
     const [isLike, setIsLike] = useState(false);
     const navigate = useNavigate();
@@ -50,13 +51,11 @@ export default function Article({
             <div className="lg:col-span-6 flex flex-col justify-between lg:pl-4">
                 <div className="flex items-center justify-between mt-1 mb-2 lg:mt-0">
                     <Link className="text-sm text-sky-500 hover:text-sky-600 uppercase" to={`/category/${category}`}>{category}</Link>
-                    {token &&
-                        <Bookmark
-                            id={id}
-                            authorId={userId}
-                            isSaved={isSaved}
-                            saveId={saveId}
-                        />
+                    {token && <Bookmark
+                        id={id}
+                        authorId={userId}
+                        isSaved={isSaved}
+                        saveId={saveId} />
                     }
                 </div>
                 <div className="grow">
@@ -69,8 +68,8 @@ export default function Article({
                 </div>
                 <div className="flex items-center justify-between mt-4">
                     <div className="flex items-center">
-                        <UserAvatar width="w-12" height="h-12" isDefault={true} profilePicturePath={profilePicturePath} />
-                        <Link className="text-sm font-semibold block ml-2" to={`/user/${userId}`}>{userName}</Link>
+                        <UserAvatar width="w-12" height="h-12" profilePicturePath={profilePicturePath} />
+                        <Link className="text-sm font-semibold block ml-2" to={`/user/${userId}`}>{username}</Link>
                     </div>
                     <Reactions
                         likeCount={like}

@@ -29,19 +29,8 @@ export default function Category() {
                             <span className="border-l-4 border-sky-600 uppercase text-lg font-bold pl-2">{id} category</span>
                         </nav>
                         <div className="pt-6">
-                            {categoryBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes }) => (
-                                loading ? <ImagePlaceholder key={_id} /> : <Article
-                                    key={_id}
-                                    id={_id}
-                                    userId={userId._id}
-                                    userName={userId.username}
-                                    profilePicturePath={userId.profilePicturePath}
-                                    title={title}
-                                    subTitle={subTitle}
-                                    category={category}
-                                    picturePath={picturePath}
-                                    likes={likes}
-                                />
+                            {categoryBlogs.map((topic) => (
+                                loading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} />
                             ))}
                         </div>
                     </div>

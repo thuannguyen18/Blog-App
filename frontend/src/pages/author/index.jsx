@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Container from "components/Container";
 import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import UserArticle from "components/article/UserArticle";
 import ProfileCardPlaceholder from "components/skeleton/ProfileCardPlaceholder";
 import ProfileCard from "components/ProfileCard";
+import { token } from "constants";
 import { useGlobalContext } from "context/context";
 
 export default function Author() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const {
         loading,
         getAuthor,
@@ -24,10 +26,16 @@ export default function Author() {
     } = useGlobalContext();
 
     const handleFollow = () => {
+        if (!token) {
+            navigate("/login");
+            return;
+        }
+
         if (1 + 2) {
             unfollow(id);
             return;
         }
+
         follow(id);
     }
 

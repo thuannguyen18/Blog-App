@@ -3,7 +3,7 @@ import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 
 export default function Reactions({ likeCount, isLiked = false, handleLike }) {
-    const heartIcon = isLiked ?
+    const heartIcon = false ?
         <FcLike className="text-lg cursor-pointer text-gray-650" onClick={handleLike} /> :
         <FcLikePlaceholder className="text-lg cursor-pointer text-gray-650" onClick={handleLike} />
 

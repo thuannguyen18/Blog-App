@@ -29,42 +29,10 @@ export default function Feeds() {
     useEffect(() => {
         getAllBlogs();
     }, [currentPage, isAllTopics]);
-    
+
     useEffect(() => {
         getTopBlogs();
     }, [currentPage, isBestTopics]);
-
-    const content = isAllTopics ? allBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes, isSaved, isLiked }) => (
-        feedLoading ? <ImagePlaceholder key={_id} /> : <Article
-            key={_id}
-            id={_id}
-            userId={userId._id}
-            userName={userId.username}
-            profilePicturePath={userId.profilePicturePath}
-            title={title}
-            subTitle={subTitle}
-            category={category}
-            picturePath={picturePath}
-            likes={likes}
-            isSaved={isSaved}
-            likeBlog={likeBlog}
-            isLiked={isLiked}
-        />
-    )) : topBlogs.map(({ _id, title, subTitle, category, userId, picturePath, likes, isSaved }) => (
-        feedLoading ? <ImagePlaceholder key={_id} /> : <Article
-            key={_id}
-            id={_id}
-            userId={userId._id}
-            userName={userId.username}
-            profilePicturePath={userId.profilePicturePath}
-            title={title}
-            subTitle={subTitle}
-            category={category}
-            picturePath={picturePath}
-            likes={likes}
-            isSaved={isSaved}
-        />
-    ));
 
     return (
         <Container styles={"my-4 py-4"}>
@@ -84,7 +52,11 @@ export default function Feeds() {
                         </button>
                     </nav>
                     <div className="pt-8">
-                        {content}
+                        {isAllTopics ? allBlogs.map((topic) => (
+                            feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} />
+                        )) : topBlogs.map((topic) => (
+                            feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} />
+                        ))}
                     </div>
                 </div>
                 <div className="col-span-6 lg:col-span-2">
