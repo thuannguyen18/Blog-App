@@ -18,6 +18,7 @@ export default function Feeds() {
         isBestTopics,
         setAllTopics,
         setBestTopics,
+        saves,
         likeBlog
     } = useGlobalContext();
     const ref = useRef();
@@ -52,8 +53,8 @@ export default function Feeds() {
                         </button>
                     </nav>
                     <div className="pt-8">
-                        {isAllTopics ? allBlogs.map((topic) => (
-                            feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} />
+                        {isAllTopics ? allBlogs.map((topic, index) => (
+                            feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} isSaved={saves[index]} />
                         )) : topBlogs.map((topic) => (
                             feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} />
                         ))}

@@ -13,6 +13,10 @@ const SavedBlogSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "User",
     },
+    isSaved: {
+        type: Boolean,
+        default: true,
+    }
 });
 
 const SavedBlog = mongoose.model("Saved_Blog", SavedBlogSchema);

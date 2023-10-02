@@ -7,6 +7,7 @@ export default function ProfileCard({
     profilePicturePath,
     followers,
     following,
+    isFollowing,
     blogs,
     handleFollow,
 }) {
@@ -54,7 +55,7 @@ export default function ProfileCard({
                 className="mt-4 p-1 w-full bg-sky-100 h-10 text-sky-500"
                 onClick={handleFollow}
             >
-                Follow
+                {isFollowing ? "Following": "Follow"}
             </button>
         </div>
     );

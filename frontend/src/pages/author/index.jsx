@@ -6,7 +6,7 @@ import UserArticle from "components/article/UserArticle";
 import ProfileCardPlaceholder from "components/skeleton/ProfileCardPlaceholder";
 import ProfileCard from "components/ProfileCard";
 import { token } from "constants";
-import { useGlobalContext } from "context/context";
+import { useGlobalContext } from "context/context"
 
 export default function Author() {
     const { id } = useParams();
@@ -20,9 +20,9 @@ export default function Author() {
         authorBlogs,
         authorFollowers,
         authorFollowing,
-        isFollowing,
         follow,
-        unfollow
+        unfollow,
+        isFollowing,
     } = useGlobalContext();
 
     const handleFollow = () => {
@@ -31,7 +31,7 @@ export default function Author() {
             return;
         }
 
-        if (1 + 2) {
+        if (isFollowing) {
             unfollow(id);
             return;
         }
@@ -54,6 +54,7 @@ export default function Author() {
                         profilePicturePath={authorProfilePicturePath}
                         followers={authorFollowers}
                         following={authorFollowing}
+                        isFollowing={isFollowing}
                         blogs={authorBlogs}
                         handleFollow={handleFollow}
                     />

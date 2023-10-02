@@ -60,12 +60,13 @@ const initalState = {
     savedBlogs: [],
     userName: "",
     userEmail: "",
+    saves: [],
     // Account Setting
     isChange: false,
     userNameUpdate: "",
     userEmailUpdate: "",
     userAvatar: undefined,
-    // Blog Updat
+    // Blog Update
     blogIdUpdate: "",
     blogTitleUpdate: "",
     blogSubtitleUpdate: "",
@@ -81,7 +82,7 @@ const initalState = {
     postCommentLoading: false,
     deleteCommentLoading: false,
     savedBlogsLoading: false,
-    userBlogsLoading: false
+    userBlogsLoading: false,
 }
 
 function AppProvider({ children }) {
@@ -188,6 +189,8 @@ function AppProvider({ children }) {
                 type: "GET_ALL_BLOGS",
                 payload: response.data
             });
+
+            console.log(response.data);
         } catch (error) {
             console.log(error);
         }
@@ -277,7 +280,17 @@ function AppProvider({ children }) {
     // Get author's information 
     const getAuthor = async (id) => {
         dispatch({ type: "LOADING" });
+        const userInformation = JSON.parse(localStorage.getItem("user_information"));
+        
         try {
+            if (userInformation?.id) {
+                const response = await axiosConfig.get(`/user/${id}?userId=${userInformation.id}`);
+                dispatch({
+                    type: "GET_AUTHOR",
+                    payload: response.data
+                });
+                return;
+            }
             const response = await axiosConfig.get(`/user/${id}`);
             dispatch({
                 type: "GET_AUTHOR",

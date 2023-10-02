@@ -25,10 +25,9 @@ const BlogShema = new mongoose.Schema({
         type: Array,
         default: []
     },
-    isSaved: {
-        type: Boolean,
-        default: false,
-    },
+    saves: [
+        { type: mongoose.Types.ObjectId, ref: "User" }
+    ],
     picturePath: String,
     likes: Number,
 }, { timestamps: true });

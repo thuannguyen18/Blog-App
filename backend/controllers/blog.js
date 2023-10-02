@@ -65,10 +65,15 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
         .skip((page - 1) * limit);
     const count = await Blog.count();
 
+    const blogsAreSaved = blogs.map(blog => {
+        return blog.saves.some(id => id.toString() === "64e385040a5d143a657580ba");
+    });
+
     return res.status(200).json({
         blogs,
         totalPages: Math.ceil(count / limit),
         currentPage: page,
+        blogsAreSaved
     });
 });
 

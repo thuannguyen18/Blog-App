@@ -35,11 +35,7 @@ const UserSchema = new mongoose.Schema({
     ],
     followers: [
         { type: mongoose.Types.ObjectId, ref: "User" }
-    ],
-    isFollowing: {
-        type: Boolean,
-        default: false,
-    }
+    ]
 }, { timestamps: true });
 
 const User = mongoose.model("User", UserSchema);

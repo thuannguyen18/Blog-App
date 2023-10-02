@@ -6,6 +6,7 @@ import Blog from "../models/Blog.js";
 
 export const getUser = asyncHandler(async (req, res) => {
     const { id } = req.params;
+    const { userId } = req.query;
 
     const user = await User.findById(id).select("-password");
 
@@ -13,11 +14,15 @@ export const getUser = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: "User not found" });
     }
 
+
+    const isFollowing = user.followers.some(id => id.toString() === userId);
+    
+
     const userBlog = await Blog
         .find({ userId: id })
         .select("-content -comments -category");
 
-    return res.status(200).json({ user, userBlog });
+    return res.status(200).json({ user, userBlog, isFollowing, userId });
 });
 
 export const getUserBlog = asyncHandler(async (req, res) => {
@@ -78,27 +83,6 @@ export const changePassword = asyncHandler(async (req, res) => {
     }
 });
 
-
-export const uploadFile = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const { avatar } = req.body;
-
-    const user = await User.findById(id);
-
-    if (!user) {
-        return res.status(400).json({ message: "User not found" });
-    }
-
-    user.profilePictureURL = avatar;
-
-    await user.save();
-
-    return res.json({
-        message: "Successfully uploaded files",
-        file: user.profilePictureURL
-    });
-});
-
 export const followUser = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const userId= req.userId;
@@ -117,7 +101,6 @@ export const followUser = asyncHandler(async (req, res) => {
 
     if (userIsFollowed.followers.indexOf(userId) === -1) {
         userIsFollowed.followers.push(userId);
-        userIsFollowed.isFollowing = true;
         await userIsFollowed.save();
     }
     
@@ -138,7 +121,6 @@ export const unfollowUser = asyncHandler(async (req, res) => {
     userWantToUnfollow.following.remove(id);
     
     userIsFollowed.followers.remove(userId);
-    userIsFollowed.isFollowing = false;
 
     await userWantToUnfollow.save();
     await userIsFollowed.save();

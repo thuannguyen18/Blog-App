@@ -76,7 +76,8 @@ function reducer(state, action) {
                 ...state,
                 feedLoading: false,
                 allBlogs: data.blogs,
-                totalPages: data.totalPages
+                totalPages: data.totalPages,
+                saves: data.blogsAreSaved
             }
         case "SET_BEST_TOPICS":
             return {
@@ -170,7 +171,7 @@ function reducer(state, action) {
                 authorBlogs: data.userBlog,
                 authorFollowers: data.user.followers,
                 authorFollowing: data.user.following,
-                isFollowing: data.user.isFollowing
+                isFollowing: data.isFollowing
             };
         case "GET_ALL_USER_BLOG":
             return {

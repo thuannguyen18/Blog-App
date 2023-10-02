@@ -36,8 +36,7 @@ export default function Profile() {
         }
     }, [isSaved]);
 
-    console.log(userName);
-    console.log(userEmail);
+    console.log(savedBlogs)
 
     return (
         <div className="h-screen">
@@ -112,26 +111,15 @@ export default function Profile() {
                                 />
                         ))}
                     </div>}
-                    {isSaved && savedBlogs.map(({
-                        _id: saveId,
-                        authorId,
-                        blogId: { _id, title, subTitle, category, picturePath, likes, isSaved }
-                    }) => (
-                        savedBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
+                    {isSaved && savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
+                        savedBlogsLoading ? <CardPlaceholder key={blogId._id} isProfilePicture={false} /> :
                             <div className="mt-4">
                                 <Article
-                                    key={_id}
-                                    id={_id}
-                                    title={title}
-                                    subTitle={subTitle}
-                                    category={category}
-                                    picturePath={picturePath}
-                                    likes={likes}
-                                    userId={authorId._id}
-                                    userName={authorId.username}
-                                    profilePicturePath={authorId.profilePicturePath}
-                                    isSaved={isSaved}
+                                    key={blogId._id}
+                                    topic={blogId}
+                                    authorId={authorId}
                                     saveId={saveId}
+                                    isSaved={isSaved}
                                 />
                             </div>
                     ))}

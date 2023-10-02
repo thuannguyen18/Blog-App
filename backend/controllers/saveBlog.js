@@ -12,21 +12,20 @@ export const getSavedBlogs = asyncHandler(async (req, res) => {
 
 export const saveBlog = asyncHandler(async (req, res) => {
     const { authorId, userId, blogId } = req.body;
-    
+    const blog = await Blog.findById(blogId);
+
     if (!authorId || !userId || !blogId) {
         return res.sendStatus(400);
     }
-    
-    const blog = await Blog.findById(blogId);
-    blog.isSaved = true;
+
+    if (!blog) {
+        return res.sendStatus(404);
+    }
+
+    blog.saves.push(userId);
     await blog.save();
 
-    const blogNeedToSave = {
-        authorId,
-        userId,
-        blogId,
-    };
-
+    const blogNeedToSave = { authorId, userId, blogId };
     await SaveBlog.create(blogNeedToSave);
     return res.sendStatus(201);
 });
@@ -34,11 +33,11 @@ export const saveBlog = asyncHandler(async (req, res) => {
 export const unSaveBlog = asyncHandler(async (req, res) => {
     const saveBlog = await SaveBlog.findById(req.params.id);
     const blog = await Blog.findById(saveBlog.blogId);
-    
+
     if (!saveBlog) {
         return res.sendStatus(404);
     }
-    
+
     blog.isSaved = false;
     await blog.save();
 
