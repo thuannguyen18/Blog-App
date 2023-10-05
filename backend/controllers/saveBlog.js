@@ -1,6 +1,5 @@
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
-import User from "../models/User.js";
 import SaveBlog from "../models/SaveBlog.js";
 
 export const getSavedBlogs = asyncHandler(async (req, res) => {
@@ -11,8 +10,17 @@ export const getSavedBlogs = asyncHandler(async (req, res) => {
 });
 
 export const saveBlog = asyncHandler(async (req, res) => {
-    const { authorId, userId, blogId } = req.body;
+    const { authorId, userId, blogId, saveId } = req.body;
     const blog = await Blog.findById(blogId);
+
+    // if user have saved this blog then unsave it
+    if (blog.saves.includes(userId)) {
+        const saveBlog = await SaveBlog.findById(saveId);
+        blog.saves = blog.saves.filter(id => id.toString() !== userId);
+        await blog.save();
+        await saveBlog.deleteOne();
+        return res.sendStatus(200);
+    }
 
     if (!authorId || !userId || !blogId) {
         return res.sendStatus(400);
@@ -31,14 +39,15 @@ export const saveBlog = asyncHandler(async (req, res) => {
 });
 
 export const unSaveBlog = asyncHandler(async (req, res) => {
-    const saveBlog = await SaveBlog.findById(req.params.id);
+    const { id } = req.params;
+    const saveBlog = await SaveBlog.findById(id);
     const blog = await Blog.findById(saveBlog.blogId);
 
     if (!saveBlog) {
         return res.sendStatus(404);
     }
 
-    blog.isSaved = false;
+    blog.saves = blog.saves.filter(id => id.toString() !== req.userId);
     await blog.save();
 
     await saveBlog.deleteOne();

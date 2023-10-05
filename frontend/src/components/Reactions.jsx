@@ -2,8 +2,8 @@ import React from "react";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 
-export default function Reactions({ likeCount, isLiked = false, handleLike }) {
-    const heartIcon = false ?
+export default function Reactions({ likeCount, isLiked, handleLike }) {
+    const heartIcon = isLiked ?
         <FcLike className="text-lg cursor-pointer text-gray-650" onClick={handleLike} /> :
         <FcLikePlaceholder className="text-lg cursor-pointer text-gray-650" onClick={handleLike} />
 
@@ -11,7 +11,7 @@ export default function Reactions({ likeCount, isLiked = false, handleLike }) {
         <div className="flex justify-evenly">
             <span className="flex items-center">
                 {heartIcon}
-                <span className="ml-1 text-sm">{likeCount}</span>
+                <span className="ml-1 text-sm">{likeCount ?? 0}</span>
             </span>
             <span className="hidden items-center ml-4 md:flex">
                 <HiOutlineChatBubbleOvalLeftEllipsis className="text-lg text-gray-650" />

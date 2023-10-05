@@ -11,9 +11,7 @@ import UserArticle from "components/article/UserArticle";
 import UserAvatar from "components/user/UserAvatar";
 
 export default function Profile() {
-    const [isBlogs, setIsBlogs] = useState(true);
-    const [isSaved, setIsSaved] = useState(false);
-
+    // Global State
     const {
         loading,
         getAllUserBlog,
@@ -22,62 +20,81 @@ export default function Profile() {
         getSavedBlogs,
         savedBlogsLoading,
         savedBlogs,
-        userName,
-        userEmail,
     } = useGlobalContext();
 
+    // Local State
+    const [isBlogs, setIsBlogs] = useState(true);
+    const [isSave, setIsSave] = useState(false);
+
+    // User stats info 
+    const stats = [
+        {
+            title: "Followers",
+            infor: userInformation.followStats.followers.length,
+        },
+        {
+            title: "Following",
+            infor: userInformation.followStats.following.length,
+        },
+        {
+            title: "Posts",
+            infor: userBlogs.length,
+        },
+    ];
+
+    const handleChangeBlog = () => {
+        setIsBlogs(true);
+        setIsSave(false);
+    }
+
+    const handleChangeSave = () => {
+        setIsBlogs(false);
+        setIsSave(true);
+    }
+
+
+    // Get user's blogs when user clike blog button
     useEffect(() => {
         getAllUserBlog(userInformation?.id);
     }, [isBlogs]);
 
+    // Get user's saved blogs when user clike saved button
     useEffect(() => {
-        if (isSaved) {
+        if (isSave) {
             getSavedBlogs();
         }
-    }, [isSaved]);
+    }, [isSave]);
 
-    console.log(savedBlogs)
 
     return (
-        <div className="h-screen">
+        <div className="">
             <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
                 {loading ? <ProfileCardPlaceholder /> :
-                    <React.Fragment>
-                        <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
-                            <div className="mx-auto">
-                                <UserAvatar width="w-28 lg:w-36" height="h-28 lg:h-36" center profilePicturePath={userInformation?.profilePicturePath} />
-                            </div>
-                            <div className="text-center">
-                                <h3 className="text-lg font-bold mt-2">{userInformation.username}</h3>
-                                <p className="text-sm">{userInformation.email}</p>
-                            </div>
-                            <button className="mt-4 p-1 w-full h-10 rounded border border-gray-300 hover:bg-gray-200">
-                                <Link className="block h-full w-full leading-[30px]" to="/user/settings">Edit Profile</Link>
-                            </button>
-                            <div className="grid grid-cols-3 mt-4 gap-8 text-center">
-                                <div className="col-span-1">
-                                    <span className="block font-bold">18</span>
-                                    <span className="text-sm">Followers</span>
-                                </div>
-                                <div className="col-span-1">
-                                    <span className="block font-bold">11</span>
-                                    <span className="text-sm">Following</span>
-                                </div>
-                                <div className="col-span-1">
-                                    <span className="block font-bold">{userBlogs.length}</span>
-                                    <span className="text-sm">Posts</span>
-                                </div>
-                            </div>
+                    <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
+                        <div className="mx-auto">
+                            <UserAvatar width="w-28 lg:w-36" height="h-28 lg:h-36" center profilePicturePath={userInformation?.profilePicturePath} />
                         </div>
-                    </React.Fragment>
+                        <div className="text-center">
+                            <h3 className="text-lg font-bold mt-2">{userInformation.username}</h3>
+                            <p className="text-sm">{userInformation.email}</p>
+                        </div>
+                        <button className="mt-4 p-1 w-full h-10 rounded border border-gray-300 hover:bg-gray-200">
+                            <Link className="block h-full w-full leading-[30px]" to="/user/settings">Edit Profile</Link>
+                        </button>
+                        <div className="grid grid-cols-3 mt-4 gap-8 text-center">
+                            {stats.map(stat => (
+                                <div key={stat.title} className="col-span-1">
+                                    <span className="block font-bold">{stat.infor}</span>
+                                    <span className="text-sm">{stat.title}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 }
                 <div className="p-4 md:border md:border-gray-200 md:shadow-lg md:mt-6 md:rounded lg:mt-0 lg:col-span-3">
                     <nav className="border-b border-slate-200">
                         <button
-                            onClick={() => {
-                                setIsBlogs(true);
-                                setIsSaved(false);
-                            }}
+                            onClick={handleChangeBlog}
                             className={`text-sm text-gray-750 uppercase py-2 px-4 ${isBlogs && " text-black border-b-2 border-sky-500 font-semibold"}`}
                         >
                             <span className="flex items-center justify-center">
@@ -86,11 +103,8 @@ export default function Profile() {
                             </span>
                         </button>
                         <button
-                            onClick={() => {
-                                setIsBlogs(false);
-                                setIsSaved(true);
-                            }}
-                            className={`text-sm text-gray-750 uppercase py-2 px-4 ${isSaved && "text-black border-b-2 border-sky-500 font-semibold"}`}
+                            onClick={handleChangeSave}
+                            className={`text-sm text-gray-750 uppercase py-2 px-4 ${isSave && "text-black border-b-2 border-sky-500 font-semibold"}`}
                         >
                             <span className="flex items-center justify-center">
                                 <BsBookmark className="text-gray-650" />
@@ -111,7 +125,7 @@ export default function Profile() {
                                 />
                         ))}
                     </div>}
-                    {isSaved && savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
+                    {isSave && savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
                         savedBlogsLoading ? <CardPlaceholder key={blogId._id} isProfilePicture={false} /> :
                             <div className="mt-4">
                                 <Article

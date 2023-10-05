@@ -2,14 +2,14 @@ import { useState } from "react";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import { useGlobalContext } from "context/context";
 
-export default function Bookmark({ id, authorId, saveId, isSaved = false }) {
-    const { saveBlog, unSaveBlog} = useGlobalContext();
+export default function Bookmark({ id, authorId, saveId, isSaved }) {
+    const { saveBlog, unSaveBlog } = useGlobalContext();
     const [saved, setSaved] = useState(false);
-
+    
     const handleSave = () => {
-        if (isSaved) {
+        if (isSaved || saved) {
             setSaved(false);
-            unSaveBlog(saveId);
+            saveBlog(id, authorId, saveId);
             return;
         }
         setSaved(true);

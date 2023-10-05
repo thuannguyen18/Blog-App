@@ -6,21 +6,21 @@ import UserAvatar from "components/user/UserAvatar";
 import Reactions from "components/Reactions";
 import { useGlobalContext } from "context/context";
 
-export default function Article({ topic, authorId, saveId, isSaved }) {
-    let authorName, authorProfilePicturePath, author;
-    const { likeBlog } = useGlobalContext();
-    const {
-        _id,
-        title,
-        subTitle,
-        category,
-        picturePath,
-        likes,
-        isLiked = false
-    } = topic;
 
+export default function Article({ topic, authorId, saveId, isSaved, isLiked }) {
+    const navigate = useNavigate();
+
+    // Global State and Props
+    const { _id, title, subTitle, category, picturePath, likes, } = topic;
     const { username, profilePicturePath, _id: userId } = topic.userId;
+    const { likeBlog } = useGlobalContext();
 
+    // Local State
+    const [isActive, setIsActive] = useState(isLiked);
+    const [likeCount, setLikeCount] = useState(likes.length || 0);
+
+    // Author's informaiton in save page
+    let authorName, authorProfilePicturePath, author;
     if (authorId && saveId) {
         const { username, profilePicturePath, _id } = authorId;
         author = _id;
@@ -28,25 +28,20 @@ export default function Article({ topic, authorId, saveId, isSaved }) {
         authorProfilePicturePath = profilePicturePath
     }
 
-    const [like, setLike] = useState(likes || 0)
-    const [isLike, setIsLike] = useState(false);
-    const navigate = useNavigate();
-
+    // Like & Unlike Blog
     const handleLike = () => {
         if (!token) {
             navigate("/login");
             return;
         }
 
-        if (isLike) {
-            setLike(prev => prev - 1);
-            setIsLike(false);
-            // unlike(id);
-            return;
+        if (isActive) {
+            setLikeCount(prev => prev - 1);
+        } else {
+            setLikeCount(prev => prev + 1);
         }
 
-        setLike(prev => prev + 1);
-        setIsLike(true);
+        setIsActive(!isActive);
         likeBlog(_id);
     }
 
@@ -79,9 +74,9 @@ export default function Article({ topic, authorId, saveId, isSaved }) {
                         <Link className="text-sm font-semibold block ml-2" to={`/user/${userId || author}`}>{username || authorName}</Link>
                     </div>
                     <Reactions
-                        likeCount={like}
+                        likeCount={likeCount}
+                        isLiked={isActive}
                         handleLike={handleLike}
-                        isLiked={isLiked}
                     />
                 </div>
             </div>

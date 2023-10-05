@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "components/Container";
 import { BsFacebook, BsInstagram, BsTwitter, BsGithub, BsYoutube } from "react-icons/bs";
+import { useGlobalContext } from "context/context";
 
 const list = [
     {
@@ -45,6 +46,13 @@ const socialMediaIcons = [
 ];
 
 export default function Footer() {
+    // Global State
+    const { editorMode } = useGlobalContext();
+
+    if (editorMode) {
+        return <div></div>
+    }
+    
     return (
         <footer className="mt-12 py-8 px-4 border-t border-gray-150">
             <Container>

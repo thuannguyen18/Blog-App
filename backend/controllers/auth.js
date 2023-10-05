@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 export const register = asyncHandler(async (req, res) => {
+    // Get data from request 
     const { username, email, password } = req.body;
 
     // Confirm data
@@ -33,6 +34,7 @@ export const register = asyncHandler(async (req, res) => {
 });
 
 export const login = asyncHandler(async (req, res) => {
+    // Get data from request
     const { email, password } = req.body;
 
     // Confirm data
@@ -62,10 +64,14 @@ export const login = asyncHandler(async (req, res) => {
                     "username": user.username,
                     "email": user.email,
                     "profilePicturePath": user.profilePicturePath,
+                    "followStats": {
+                        followers: user.followers,
+                        following: user.following
+                    }
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "30m" }
+            { expiresIn: "1h" }
         );
         res.status(200).json({ accessToken });
     }

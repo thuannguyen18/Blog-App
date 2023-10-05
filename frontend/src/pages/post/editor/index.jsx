@@ -21,14 +21,18 @@ const DEFAULT_INITIAL_DATA = {
 }
 
 export default function EditorPost() {
+    // Global State
+    const { editorMode, closeEditorMode, createBlog } = useGlobalContext();
+
+    // Local State
     const [open, setOpen] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState([]);
     const [subTitle, setSubTitle] = useState("");
     const [category, setCategory] = useState("");
     const [thumbnail, setThumbnail] = useState();
-    const { createBlog } = useGlobalContext();
 
+    // Editor js config
     const ejInstance = useRef();
     const initEditor = () => {
         const editor = new EditorJS({
@@ -57,6 +61,7 @@ export default function EditorPost() {
         return () => {
             ejInstance?.current?.destroy();
             ejInstance.current = null;
+            closeEditorMode();
         };
     }, []);
 
@@ -81,7 +86,7 @@ export default function EditorPost() {
     }
 
     return (
-        <Container styles="h-screen">
+        <Container>
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
                 <input
                     value={title}

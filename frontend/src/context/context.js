@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import jwt from "jwt-decode";
 import axiosConfig from "config/axiosConfig";
-
 import reducer from "./reducer";
+import { token, userInformation } from "constants";
 
 const AppContext = createContext();
 
@@ -22,6 +22,7 @@ const initalState = {
     randomBlogs: [],
     allBlogs: [],
     topBlogs: [],
+    savesAndLikes: [],
     isAllTopics: true,
     isBestTopics: false,
     // Blog pagination 
@@ -60,12 +61,11 @@ const initalState = {
     savedBlogs: [],
     userName: "",
     userEmail: "",
-    saves: [],
     // Account Setting
     isChange: false,
     userNameUpdate: "",
     userEmailUpdate: "",
-    userAvatar: undefined,
+    userAvatar: null,
     // Blog Update
     blogIdUpdate: "",
     blogTitleUpdate: "",
@@ -73,6 +73,8 @@ const initalState = {
     blogContentUpdate: [],
     blogPicturePathUpdate: "",
     blogCategoryUpdate: "",
+    // Reaction
+    isActive: false,
     // Loading
     loading: false,
     feedLoading: false,
@@ -83,11 +85,18 @@ const initalState = {
     deleteCommentLoading: false,
     savedBlogsLoading: false,
     userBlogsLoading: false,
+
+    // Editor mode
+    editorMode: false,
 }
 
 function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initalState);
     const navigate = useNavigate();
+
+    // Set editor mode
+    const openEditorMode = () => dispatch({ type: "OPEN_EDITOR_MODE" });
+    const closeEditorMode = () => dispatch({ type: "CLOSE_EDITOR_MODE" });
 
     // Set values for form sign up & sign in page
     const setName = (value) => dispatch({
@@ -136,13 +145,13 @@ function AppProvider({ children }) {
             };
             const response = await axiosConfig.post("/auth/login", payload);
             const token = response.data.accessToken;
-            
+
             if (token) {
                 const { UserInfo } = jwt(token);
                 localStorage.setItem("access_token", token);
                 localStorage.setItem("user_information", JSON.stringify(UserInfo));
             }
-            
+
             dispatch({ type: "SIGN_IN_SUCCESS" });
             navigate("/");
             window.location.reload();
@@ -182,6 +191,17 @@ function AppProvider({ children }) {
     const getAllBlogs = async () => {
         dispatch({ type: "FEED_LOADING" });
         try {
+            if (userInformation?.id) {
+                const response = await axiosConfig
+                    .get(`/blog?page=${state.currentPage}&limit=${state.limitPerPage}&userId=${userInformation.id}`);
+
+                dispatch({
+                    type: "GET_ALL_BLOGS",
+                    payload: response.data
+                });
+                return;
+            }
+
             const response = await axiosConfig
                 .get(`/blog?page=${state.currentPage}&limit=${state.limitPerPage}`);
 
@@ -189,8 +209,6 @@ function AppProvider({ children }) {
                 type: "GET_ALL_BLOGS",
                 payload: response.data
             });
-
-            console.log(response.data);
         } catch (error) {
             console.log(error);
         }
@@ -200,6 +218,16 @@ function AppProvider({ children }) {
     const getTopBlogs = async () => {
         dispatch({ type: "FEED_LOADING" });
         try {
+            if (userInformation?.id) {
+                const response = await axiosConfig
+                    .get(`/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}&userId=${userInformation?.id}`);
+
+                dispatch({
+                    type: "GET_TOP_BLOGS",
+                    payload: response.data
+                });
+                return;
+            }
             const response = await axiosConfig
                 .get(`/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}`);
 
@@ -281,7 +309,7 @@ function AppProvider({ children }) {
     const getAuthor = async (id) => {
         dispatch({ type: "LOADING" });
         const userInformation = JSON.parse(localStorage.getItem("user_information"));
-        
+
         try {
             if (userInformation?.id) {
                 const response = await axiosConfig.get(`/user/${id}?userId=${userInformation.id}`);
@@ -331,21 +359,21 @@ function AppProvider({ children }) {
 
         const token = localStorage.getItem("access_token");
         const userInformation = JSON.parse(localStorage.getItem("user_information"));
-        
+
         const formData = new FormData();
         formData.append("username", userNameUpdate);
         formData.append("email", userEmailUpdate);
-        
+
         if (userAvatarUpdate) {
             formData.append("picture", userAvatarUpdate);
         } else {
             formData.append("picture", null);
         }
-        
+
         userInformation.username = userNameUpdate;
         userInformation.email = userEmailUpdate;
         localStorage.setItem("user_information", JSON.stringify(userInformation));
-        
+
         dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
@@ -354,13 +382,13 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            
-            
+
+
             dispatch({
                 type: "UPDATE_USER_SUCCESS",
                 payload: response.data
             });
-            
+
             navigate("/user");
             toast.success("Update success");
         } catch (error) {
@@ -586,23 +614,39 @@ function AppProvider({ children }) {
     }
 
     // User save a blog
-    const saveBlog = async (id, authorId) => {
-        const token = localStorage.getItem("access_token");
-        const userInformation = JSON.parse(localStorage.getItem("user_information"));
-
+    const saveBlog = async (blogId, authorId, saveId) => {
         const payload = {
             userId: userInformation.id,
-            blogId: id,
-            authorId
+            blogId,
+            authorId,
+            saveId
         };
 
         try {
-            await axiosConfig.post("/save-blog", payload, {
+            const response = await axiosConfig.post("/save-blog", payload, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
-            toast.success("Save success");
+
+            if (response.data === "Created") {
+                toast.success("Save success");
+            }
+
+            if (response.data === "OK") {
+                const response = await axiosConfig
+                    .get(`/save-blog?userId=${userInformation.id}`, {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    });
+
+                dispatch({
+                    type: "UNSAVE_BLOG_SUCCESS",
+                    payload: response.data
+                });
+                toast.success("Unsave success");
+            }
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");
@@ -611,9 +655,6 @@ function AppProvider({ children }) {
 
     // Get blogs which saved by user
     const getSavedBlogs = async () => {
-        const token = localStorage.getItem("access_token");
-        const userInformation = JSON.parse(localStorage.getItem("user_information"));
-
         dispatch({ type: "SAVED_BLOG_LOADING" });
         try {
             const response = await axiosConfig
@@ -622,7 +663,7 @@ function AppProvider({ children }) {
                         Authorization: `Bearer ${token}`
                     }
                 });
-            dispatch({ 
+            dispatch({
                 type: "GET_SAVED_BLOGS",
                 payload: response.data
             });
@@ -631,37 +672,7 @@ function AppProvider({ children }) {
         }
     }
 
-    const unSaveBlog = async (id) => {
-        const token = localStorage.getItem("access_token");
-        const userInformation = JSON.parse(localStorage.getItem("user_information"));
-
-        try {
-            await axiosConfig.delete(`/save-blog/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-
-            const response = await axiosConfig
-                .get(`/save-blog?userId=${userInformation.id}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-
-            dispatch({ 
-                type: "UNSAVE_BLOG_SUCCESS",
-                payload: response.data
-            });
-            toast.success("Unsave success");
-        } catch (error) {
-            console.log(error);
-            toast.error("something went wrong");
-        }
-    }
-
     const follow = async (id) => {
-        const token = localStorage.getItem("access_token");
         try {
             await axiosConfig.post(`/user/${id}/follow`, {}, {
                 headers: {
@@ -676,7 +687,6 @@ function AppProvider({ children }) {
     }
 
     const unfollow = async (id) => {
-        const token = localStorage.getItem("access_token");
         try {
             await axiosConfig.delete(`/user/${id}/follow`, {
                 headers: {
@@ -691,15 +701,12 @@ function AppProvider({ children }) {
     }
 
     const likeBlog = async (blogId) => {
-        const token = localStorage.getItem("access_token");
-
         try {
-            const { data } = await axiosConfig.post(`/blog/${blogId}/like`, {}, {
+            await axiosConfig.post(`/blog/${blogId}/like`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
-            console.log(data);
         } catch (error) {
             console.log(error);
         }
@@ -709,6 +716,8 @@ function AppProvider({ children }) {
         <AppContext.Provider
             value={{
                 ...state,
+                openEditorMode,
+                closeEditorMode,
                 setName,
                 setEmail,
                 setPassword,
@@ -738,7 +747,6 @@ function AppProvider({ children }) {
                 updateComment,
                 saveBlog,
                 getSavedBlogs,
-                unSaveBlog,
                 follow,
                 unfollow,
                 likeBlog

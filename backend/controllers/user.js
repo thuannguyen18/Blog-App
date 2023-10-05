@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
@@ -14,15 +13,18 @@ export const getUser = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: "User not found" });
     }
 
-
     const isFollowing = user.followers.some(id => id.toString() === userId);
-    
 
     const userBlog = await Blog
         .find({ userId: id })
         .select("-content -comments -category");
 
-    return res.status(200).json({ user, userBlog, isFollowing, userId });
+    return res.status(200).json({ 
+        user, 
+        userBlog, 
+        isFollowing, 
+        userId 
+    });
 });
 
 export const getUserBlog = asyncHandler(async (req, res) => {

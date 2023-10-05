@@ -46,7 +46,7 @@ export default function Banner() {
                         <p className="text-sm text-slate-700 font-semibold my-4 md:text-lg xl:text-xl">
                             Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.
                         </p>
-                        <Link className="inline-block px-[50px] py-2 text-center text-slate-700 border border-slate-700 rounded-full md:text-lg hover:bg-blue-200" to="/login">
+                        <Link className="transition inline-block px-[50px] py-2 text-center text-slate-700 border border-slate-700 rounded-full md:text-lg hover:bg-blue-200" to="/login">
                             Create blog
                         </Link>
                     </div>

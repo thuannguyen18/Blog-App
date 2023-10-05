@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiBookmark } from "react-icons/bi";
-import { BsPencilSquare, BsVectorPen } from "react-icons/bs";
+import { BsVectorPen, BsFillCaretDownFill } from "react-icons/bs";
+import { HiOutlinePencilAlt } from "react-icons/hi";
 import { FiLogOut } from "react-icons/fi";
 import { IoIosSettings } from "react-icons/io";
 import { ImProfile } from "react-icons/im";
@@ -13,18 +14,53 @@ import { useGlobalContext } from "context/context";
 import UserAvatar from "components/user/UserAvatar";
 
 export default function NavbarPrivate() {
-    const { logout } = useGlobalContext();
+    // Global State
+    const { openEditorMode, editorMode, logout } = useGlobalContext();
+
+    // Local State
     const [visible, setVisible] = useState(false);
 
+    // Show & hide tippy
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
 
+    // Menu items
+    const items = [
+        {
+            title: "Profile",
+            icon: <ImProfile />,
+            to: "/user"
+        },
+        {
+            title: "All my posts",
+            icon: <HiOutlinePencilAlt />,
+            to: "/user"
+        },
+        {
+            title: "Saved",
+            icon: <BiBookmark />,
+            to: "/user"
+        },
+        {
+            title: "Account settings",
+            icon: <IoIosSettings />,
+            to: "/user/settings"
+        },
+    ];
+
     return (
         <React.Fragment>
-            <Link className="ml-6 text-slate-900 flex items-center py-2 px-6 border rounded-full hover:bg-gray-200" to="/blog/editor">
-                <BsVectorPen className="text-lg" />
-                <span className="ml-2">Write blog</span>
-            </Link>
+            {!editorMode &&
+                <Link
+                    onClick={openEditorMode}
+                    className="transition ml-6 text-slate-900 flex items-center py-2 px-6 border rounded-full hover:bg-gray-200" to="/blog/editor"
+                >
+                    <span className="text-lg text-gray-650">
+                        <BsVectorPen />
+                    </span>
+                    <span className="ml-2">Write blog</span>
+                </Link>
+            }
             <Tippy
                 render={attrs => (
                     <div className="box w-72 shadow rounded bg-white border border-gray-200" tabIndex="-1" {...attrs}>
@@ -36,32 +72,24 @@ export default function NavbarPrivate() {
                             </div>
                         </div>
                         <div className="border-t border-gray-200 p-2">
-                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="/user">
-                                <ImProfile className="text-xl mr-2" />
-                                <span className="text-gray-700">Profile</span>
-                            </Link>
-                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="/user">
-                                <BsPencilSquare className="text-xl mr-2" />
-                                <span className="text-gray-700">All my posts</span>
-                            </Link>
-                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="">
-                                <BiBookmark className="text-2xl relative left-[-1px] mr-1" />
-                                <span className="text-gray-700">Saved</span>
-                            </Link>
-                            <Link className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100" to="/user/settings">
-                                <IoIosSettings className="text-2xl mr-1" />
-                                <span className="text-gray-700">Account settings</span>
-                            </Link>
+                            {items.map(item => (
+                                <Link key={item.title} className="transition flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-150" to={item.to}>
+                                    <span className="text-xl text-gray-650 mr-2">
+                                        {item.icon}
+                                    </span>
+                                    <span className="text-black-150">{item.title}</span>
+                                </Link>
+                            ))}
                         </div>
                         <div className="border-t border-gray-200 p-2">
                             <button
-                                className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-100 w-full"
+                                className="flex items-center h-14 py-2.5 px-2 rounded hover:bg-gray-150 w-full"
                                 onClick={() => {
                                     logout();
                                     setVisible(false);
                                 }}
                             >
-                                <FiLogOut className="text-xl mr-2" />
+                                <FiLogOut className="text-lg text-gray-650 mr-2" />
                                 <span className="">Log out</span>
                             </button>
                         </div>
@@ -82,6 +110,9 @@ export default function NavbarPrivate() {
                         center
                         profilePicturePath={userInformation?.profilePicturePath}
                     />
+                    <span className="text-xs">
+                        <BsFillCaretDownFill />
+                    </span>
                 </div>
             </Tippy>
         </React.Fragment>

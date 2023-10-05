@@ -77,7 +77,7 @@ function reducer(state, action) {
                 feedLoading: false,
                 allBlogs: data.blogs,
                 totalPages: data.totalPages,
-                saves: data.blogsAreSaved
+                savesAndLikes: data.isSavedAndLiked
             }
         case "SET_BEST_TOPICS":
             return {
@@ -314,6 +314,16 @@ function reducer(state, action) {
                 ...state,
                 activePage: data,
                 currentPage: data
+            }
+        case "OPEN_EDITOR_MODE": 
+            return {
+                ...state,
+                editorMode: true,
+            }
+        case "CLOSE_EDITOR_MODE": 
+            return {
+                ...state,
+                editorMode: false,
             }
         default: return new Error('Invalid action');
     }

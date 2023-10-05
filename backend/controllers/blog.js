@@ -1,18 +1,8 @@
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
-/** 
-** @access Public
-** @desc Get all blogs (10 blogs per page)
-** @method GET
-** @path http://localhost:3500/blog?
-** @query
-**  page=1&limit=10
-**  sort=latest&limit=10
-**  sort=random&limit=10
-**  sort=top&page=1&limit=10
-*/
+
 export const getAllBlogs = asyncHandler(async (req, res) => {
-    const { page, newest, random, limit, sort } = req.query;
+    const { page, newest, random, limit, sort, userId } = req.query;
     let blogs, sortBy;
 
     if (newest) {
@@ -65,26 +55,21 @@ export const getAllBlogs = asyncHandler(async (req, res) => {
         .skip((page - 1) * limit);
     const count = await Blog.count();
 
-    const blogsAreSaved = blogs.map(blog => {
-        return blog.saves.some(id => id.toString() === "64e385040a5d143a657580ba");
+    const isSavedAndLiked = blogs.map(blog => {
+        const isSaved = blog.saves.some(id => id.toString() === userId);
+        const isLiked = blog.likes.some(id => id.toString() === userId);
+        return { isSaved, isLiked };
     });
 
     return res.status(200).json({
         blogs,
         totalPages: Math.ceil(count / limit),
         currentPage: page,
-        blogsAreSaved
+        isSavedAndLiked
     });
 });
 
 
-/** 
-** @access Public
-** @desc Get blog detail by id
-** @path http://localhost:3500/blog/:id
-** @method GET
-** @param id
-*/
 export const getBlogDetail = asyncHandler(async (req, res) => {
     const blogDetail = await Blog
         .findById(req.params.id)
@@ -98,13 +83,6 @@ export const getBlogDetail = asyncHandler(async (req, res) => {
 });
 
 
-/** 
-** @access Public
-** @desc Get category blogs
-** @method GET
-** @path http://localhost:3500/blog/category?
-** @query name="game"&page="1"
-**/
 export const getCategoryBlogs = asyncHandler(async (req, res) => {
     const { name, page } = req.query;
 
@@ -123,12 +101,6 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
 });
 
 
-/** 
-** @access Private
-** @desc Create a new blog by user
-** @method POST
-** @path http://localhost:3500/blog
-**/
 export const createBlog = asyncHandler(async (req, res) => {
     const { userId, title, subTitle, content, category } = req.body;
     const file = req.file;
@@ -161,12 +133,6 @@ export const createBlog = asyncHandler(async (req, res) => {
 });
 
 
-/** 
-** @accesse Private
-** @desc Update a blog by user
-** @method PATCH
-** @path http://localhost:3500/blog/:id
-**/
 export const updateBlog = asyncHandler(async (req, res) => {
     const { userId, title, subTitle, content, category } = req.body;
     const file = req.file;
@@ -198,12 +164,6 @@ export const updateBlog = asyncHandler(async (req, res) => {
 });
 
 
-/** 
-** @access Private
-** @desc Delete a blog by user
-** @method DELETE
-** @path http://localhost:3500/blog/:id
-**/
 export const deleteBlog = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const blog = await Blog.findById(id);
@@ -217,12 +177,6 @@ export const deleteBlog = asyncHandler(async (req, res) => {
 });
 
 
-/** 
-** @access Private
-** @desc Like a blog by user
-** @method POST
-** @path http://localhost:3500/blog/:id/like
-**/
 export const likeBlog = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const blog = await Blog.findById(id);
@@ -231,28 +185,17 @@ export const likeBlog = asyncHandler(async (req, res) => {
         return res.sendStatus(404);
     }
 
-    blog.likes += 1;
-    await blog.save();
+    // if user liked it then unlike it
+    if (blog.likes.includes(req.userId)) {
+        blog.likes = blog.likes.filter(id =>
+            id.toString() !== req.userId
+        );
+        await blog.save();
 
-    return res.sendStatus(200);
-});
-
-
-/** 
-** @access Private
-** @desc Like a blog by user
-** @method PATCH
-** @path http://localhost:3500/blog/:id/like
-**/
-export const unlikeBlog = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const blog = await Blog.findById(id);
-
-    if (!blog) {
-        return res.sendStatus(404);
+        return res.sendStatus(200);
     }
 
-    blog.likes -= 1;
+    blog.likes.push(req.userId);
     await blog.save();
 
     return res.sendStatus(200);

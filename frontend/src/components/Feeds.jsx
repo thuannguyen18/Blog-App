@@ -7,6 +7,7 @@ import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
 import Pagination from "components/Pagination";
 
 export default function Feeds() {
+    // Global State
     const {
         feedLoading,
         getAllBlogs,
@@ -18,22 +19,48 @@ export default function Feeds() {
         isBestTopics,
         setAllTopics,
         setBestTopics,
-        saves,
-        likeBlog
+        savesAndLikes
     } = useGlobalContext();
-    const ref = useRef();
 
+    // Scroll when user change page
+    const ref = useRef();
     const handleClick = () => {
         ref.current?.scrollIntoView({ behavior: "smooth" });
     }
 
+    // All blogs
+    const allBlogsContent = allBlogs.map((topic, index) => (
+        feedLoading ?
+            <ImagePlaceholder key={topic._id} /> :
+            <Article
+                key={topic._id}
+                topic={topic}
+                isSaved={savesAndLikes[index].isSaved}
+                isLiked={savesAndLikes[index].isLiked}
+            />
+    ));
+
+    // All best blogs
+    const allTopBlogsContent = topBlogs.map((topic, index) => (
+        feedLoading ?
+            <ImagePlaceholder key={topic._id} /> :
+            <Article
+                key={topic._id}
+                topic={topic}
+            />
+    ));
+
+
+    // Get all blogs
     useEffect(() => {
         getAllBlogs();
     }, [currentPage, isAllTopics]);
 
+    // Get all blogs which the best topic
     useEffect(() => {
         getTopBlogs();
     }, [currentPage, isBestTopics]);
+
 
     return (
         <Container styles={"my-4 py-4"}>
@@ -53,11 +80,7 @@ export default function Feeds() {
                         </button>
                     </nav>
                     <div className="pt-8">
-                        {isAllTopics ? allBlogs.map((topic, index) => (
-                            feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} isSaved={saves[index]} />
-                        )) : topBlogs.map((topic) => (
-                            feedLoading ? <ImagePlaceholder key={topic._id} /> : <Article key={topic._id} topic={topic} />
-                        ))}
+                        {isAllTopics ? allBlogsContent : allTopBlogsContent}
                     </div>
                 </div>
                 <div className="col-span-6 lg:col-span-2">

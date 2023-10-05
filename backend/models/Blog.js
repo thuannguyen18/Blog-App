@@ -28,8 +28,10 @@ const BlogShema = new mongoose.Schema({
     saves: [
         { type: mongoose.Types.ObjectId, ref: "User" }
     ],
+    likes: [
+        { type: mongoose.Types.ObjectId, ref: "User" }
+    ],
     picturePath: String,
-    likes: Number,
 }, { timestamps: true });
 
 const Blog = mongoose.model("Blog", BlogShema);

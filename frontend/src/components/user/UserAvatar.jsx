@@ -19,6 +19,8 @@ function UserAvatar({
                 ${rounded && "rounded"}
                 ${!rounded && "rounded-full"}
                 object-cover
+                border
+                border-gray-350
             `}
             src={picturePath || defaultAvatarPath}
             alt="avatar"

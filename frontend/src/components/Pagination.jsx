@@ -2,8 +2,10 @@ import React from "react";
 import { useGlobalContext } from "context/context";
 
 export default function Pagination({ handleClick }) {
+    // Global State
     const { totalPages, changePage, activePage } = useGlobalContext();
 
+    // Page numbers
     const pages = [];
     for (let page = 1; page <= totalPages; page++) {
         pages.push(page);
@@ -55,7 +57,7 @@ export default function Pagination({ handleClick }) {
                     <li key={page}>
                         <button
                             value={page}
-                            className={`flex items-center justify-center px-4 h-10 leading-tight hover:bg-gray-200 ${activePage === (index + 1) && "bg-sky-500 text-white hover:bg-sky-500"}`}
+                            className={`transition flex items-center justify-center px-4 h-10 leading-tight hover:bg-gray-200 ${activePage === (index + 1) && "bg-sky-500 text-white hover:bg-sky-500"}`}
                             onClick={(e) => {
                                 if (activePage === (index + 1)) return;
                                 changePage(Number(e.target.value))
@@ -66,7 +68,7 @@ export default function Pagination({ handleClick }) {
                         </button>
                     </li>
                 ))}
-                {nextBtn}
+                {activePage !== pages[pages.length - 1] && nextBtn}
             </ul>
         </nav>
     );
