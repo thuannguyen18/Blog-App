@@ -1,3 +1,6 @@
+import { unlink } from "fs/promises";
+import { fileURLToPath } from "url";
+import path from "path";
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 
@@ -103,11 +106,14 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
 
 export const createBlog = asyncHandler(async (req, res) => {
     const { userId, title, subTitle, content, category } = req.body;
-    const file = req.file;
     const contents = JSON.parse(content);
+    const file = req.file;
 
+    let picturePath;
     if (!file) {
-        return res.sendStatus(400);
+        picturePath = "blog-default.jpg";
+    } else {
+        picturePath = file.path.slice(14);
     }
 
     const blogData = {
@@ -115,7 +121,7 @@ export const createBlog = asyncHandler(async (req, res) => {
         title,
         subTitle,
         content: contents.map(content => content.data.text).join("\n"),
-        picturePath: file.path.slice(14),
+        picturePath,
         category,
         draftContents: contents,
     }
@@ -167,9 +173,18 @@ export const updateBlog = asyncHandler(async (req, res) => {
 export const deleteBlog = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const blog = await Blog.findById(id);
+    // Read file
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, `../public/assets/${blog.picturePath}`);
 
     if (!blog) {
         return res.sendStatus(404);
+    }
+
+    if (blog.picturePath !== "blog-default.jpg") {
+        // Delete file
+        await unlink(filePath);
     }
 
     await blog.deleteOne();

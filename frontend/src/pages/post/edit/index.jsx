@@ -10,16 +10,19 @@ import { useGlobalContext } from "context/context";
 
 
 export default function EditPost() {
+    const { id } = useParams();
+    // Global State
     const { 
         blogTitleUpdate,
         blogSubtitleUpdate,
         blogContentUpdate,
         blogPicturePathUpdate,
         blogCategoryUpdate,
-        updateBlog
+        updateBlog,
+        closeEditorMode
     } = useGlobalContext();
-    const { id } = useParams();
     
+    // Local State
     const [open, setOpen] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState([]);
@@ -61,6 +64,7 @@ export default function EditPost() {
         return () => {
             ejInstance?.current?.destroy();
             ejInstance.current = null;
+            closeEditorMode();
         };
     }, []);
 

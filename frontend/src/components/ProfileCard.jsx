@@ -1,33 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import UserAvatar from "components/user/UserAvatar";
 
 export default function ProfileCard({
     name,
     email,
     profilePicturePath,
-    followers,
-    following,
     isFollowing,
-    blogs,
     handleFollow,
-}) {
-    const profileInfoStats = [
-        {
-            id: 1,
-            stats: followers.length,
-            info: "Followers"
-        },
-        {
-            id: 2,
-            stats: following.length,
-            info: "Following"
-        },
-        {
-            id: 3,
-            stats: blogs.length,
-            info: "Posts"
-        },
-    ];
+    profileInfoStats
+}) {    
+    // Local State
+    const [active, setActive] = useState(isFollowing);
+
+    const handleClick = () => {
+        handleFollow();
+        setActive(!active);
+    }
 
     return (
         <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
@@ -51,11 +39,11 @@ export default function ProfileCard({
                     </div>
                 ))}
             </div>
-            <button
-                className="mt-4 p-1 w-full bg-sky-100 h-10 text-sky-500"
-                onClick={handleFollow}
+            <button 
+                className="mt-4 p-1 w-full bg-sky-100 h-10 text-sky-500" 
+                onClick={handleClick}
             >
-                {isFollowing ? "Following": "Follow"}
+                {active ? "Following": "Follow"}
             </button>
         </div>
     );

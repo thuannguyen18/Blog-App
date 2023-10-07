@@ -14,27 +14,30 @@ export default function Profile() {
     // Global State
     const {
         loading,
-        getAllUserBlog,
+        getUser,
         userBlogsLoading,
         userBlogs,
         getSavedBlogs,
         savedBlogsLoading,
         savedBlogs,
+        userFollowersCount,
+        userFollowingCount,
     } = useGlobalContext();
 
     // Local State
     const [isBlogs, setIsBlogs] = useState(true);
     const [isSave, setIsSave] = useState(false);
 
+
     // User stats info 
     const stats = [
         {
             title: "Followers",
-            infor: userInformation.followStats.followers.length,
+            infor: userFollowersCount,
         },
         {
             title: "Following",
-            infor: userInformation.followStats.following.length,
+            infor: userFollowingCount,
         },
         {
             title: "Posts",
@@ -42,29 +45,29 @@ export default function Profile() {
         },
     ];
 
+    // When user click button "Blog"
     const handleChangeBlog = () => {
         setIsBlogs(true);
         setIsSave(false);
     }
 
+    // When user click button "Saved"
     const handleChangeSave = () => {
         setIsBlogs(false);
         setIsSave(true);
     }
 
-
-    // Get user's blogs when user clike blog button
+    // Get user's blogs when user click blog button
     useEffect(() => {
-        getAllUserBlog(userInformation?.id);
+        getUser();
     }, [isBlogs]);
 
-    // Get user's saved blogs when user clike saved button
+    // Get user's saved blogs when user click saved button
     useEffect(() => {
         if (isSave) {
             getSavedBlogs();
         }
     }, [isSave]);
-
 
     return (
         <div className="">

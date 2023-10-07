@@ -22,7 +22,7 @@ const DEFAULT_INITIAL_DATA = {
 
 export default function EditorPost() {
     // Global State
-    const { editorMode, closeEditorMode, createBlog } = useGlobalContext();
+    const { closeEditorMode, createBlog } = useGlobalContext();
 
     // Local State
     const [open, setOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function EditorPost() {
             tools: {
                 embed: Embed,
                 header: Header,
-            }
+            },
         });
     }
 
@@ -80,7 +80,7 @@ export default function EditorPost() {
             subTitle,
             content,
             category,
-            thumbnail
+            thumbnail,
         }
         createBlog(blogInfo);
     }
@@ -128,7 +128,7 @@ export default function EditorPost() {
                     <div className="py-3">
                         <p className="text-sm text-gray-700 mb-2 font-semibold">Thumbnail for your post</p>
                         <div className="flex items-center justify-center w-full">
-                            <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
+                            <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-72 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
                                 {thumbnail && <img src={thumbnail.preview} alt="thumbnail" className="w-full h-full object-cover rounded" />}
                                 {!thumbnail && <React.Fragment>
                                     <div className="flex flex-col items-center justify-center pt-5 pb-6">

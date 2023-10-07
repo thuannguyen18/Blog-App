@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 export const register = asyncHandler(async (req, res) => {
-    // Get data from request 
     const { username, email, password } = req.body;
 
     // Confirm data
@@ -34,26 +33,26 @@ export const register = asyncHandler(async (req, res) => {
 });
 
 export const login = asyncHandler(async (req, res) => {
-    // Get data from request
     const { email, password } = req.body;
-
-    // Confirm data
-    if (!email || !password) {
-        return res.status(400).json({ message: 'All fields are required' });
-    }
-
-    // Check email's user
     const user = await User.findOne({ email });
-
-    if (!user) {
-        return res.status(400).json({ message: 'Email or password is not correct' });
-    }
-
-    // Check password
     const match = await bcrypt.compare(password, user.password);
 
+    if (!email || !password) {
+        return res.status(400).json({ 
+            message: 'All fields are required' 
+        });
+    }
+
+    if (!user) {
+        return res.status(400).json({ 
+            message: 'Email or password is not correct'
+        });
+    }
+
     if (!match) {
-        return res.status(400).json({ message: "Email or password is not correct" });
+        return res.status(400).json({ 
+            message: "Email or password is not correct" 
+        });
     }
 
     if (user && match) {
@@ -64,10 +63,6 @@ export const login = asyncHandler(async (req, res) => {
                     "username": user.username,
                     "email": user.email,
                     "profilePicturePath": user.profilePicturePath,
-                    "followStats": {
-                        followers: user.followers,
-                        following: user.following
-                    }
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,

@@ -1,71 +1,76 @@
+import { unlink } from "fs/promises";
+import { fileURLToPath } from "url";
+import path from "path";
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import Blog from "../models/Blog.js";
 
-export const getUser = asyncHandler(async (req, res) => {
-    const { id } = req.params;
+export const getAuthor = asyncHandler(async (req, res) => {
+    const { authorId } = req.params;
     const { userId } = req.query;
 
-    const user = await User.findById(id).select("-password");
+    const author = await User.findById(authorId).select("-password");
 
-    if (!user) {
-        return res.status(400).json({ message: "User not found" });
-    }
+    const isFollowing = author.followers.some(id => id.toString() === userId);
 
-    const isFollowing = user.followers.some(id => id.toString() === userId);
-
-    const userBlog = await Blog
-        .find({ userId: id })
+    const authorBlogs = await Blog
+        .find({ userId: authorId })
         .select("-content -comments -category");
 
-    return res.status(200).json({ 
-        user, 
-        userBlog, 
-        isFollowing, 
-        userId 
+    return res.status(200).json({
+        authorBlogs,
+        author,
+        isFollowing,
+        userId
     });
 });
 
-export const getUserBlog = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-
-    const userBlogs = await Blog
-        .find({ userId: id })
+export const getUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.userId);
+    const userBlogs = await Blog.find({ userId: req.userId })
         .select("-content -comments -category");
 
-    if (userBlogs.length === 0) {
-        return res.status(200).json([]);
-    }
-
-    return res.status(200).json(userBlogs);
+    return res.status(200).json({
+        userBlogs,
+        followers: user.followers.length,
+        following: user.following.length,
+    });
 });
 
 export const updateUser = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { username, email } = req.body;
     const file = req.file;
-
     const user = await User.findById(id);
+    // Read file
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, `../public/assets/${user.profilePicturePath}`);
 
     if (!user) {
-        return res.status(400).json({ message: "User not found" });
+        return res.sendStatus(404);
     }
 
+    if (!username || !email) {
+        return res.sendStatus(400);
+    }
 
+    // Only update username and email
     if (!file) {
-        user.profilePicturePath = user.profilePicturePath;
         user.username = username;
         user.email = email;
-
         await user.save();
         return res.sendStatus(200);
     }
 
-    user.username = req.body.username;
-    user.email = req.body.email;
-    user.profilePicturePath = file.path.slice(14);
+    // Delete old profile picture
+    await unlink(filePath);
 
+    // Update user with new informations
+    user.username = username;
+    user.email = email;
+    user.profilePicturePath = file.path.slice(14);
     await user.save();
     return res.sendStatus(200);
 });
@@ -73,59 +78,49 @@ export const updateUser = asyncHandler(async (req, res) => {
 export const changePassword = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { password, newPassword, confirmNewPassword } = req.body;
-
     const user = await User.findById(id);
-    const hashedPassword = (newPassword === confirmNewPassword) && await bcrypt.hash(confirmNewPassword, 10);
     const match = bcrypt.compare(password, user.password);
 
+    if (newPassword !== confirmNewPassword) {
+        return res.sendStatus(400);
+    }
+
     if (match) {
+        const hashedPassword = await bcrypt.hash(confirmNewPassword, 10);
         user.password = hashedPassword;
         await user.save();
-        return res.status(200).json("Change password success");
+        return res.sendStatus(200);
+    } else {
+        return res.status(400).json("Current password is not correct");
     }
 });
 
-export const followUser = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const userId= req.userId;
-
-    const userIsFollowed = await User.findById(id);
-    const userWantToFollow = await User.findById(userId);
-
-    if (!userIsFollowed || !userWantToFollow) {
-        return res.status(404).json("User not found");
-    }
-
-    if (userWantToFollow.following.indexOf(id) === -1) {
-        userWantToFollow.following.push(id);
-        await userWantToFollow.save();
-    }
-
-    if (userIsFollowed.followers.indexOf(userId) === -1) {
-        userIsFollowed.followers.push(userId);
-        await userIsFollowed.save();
-    }
-    
-    return res.status(200).json("Follow success");
-});
-
-export const unfollowUser = asyncHandler(async (req, res) => {
-    const { id } = req.params;
+export const followAuthor = asyncHandler(async (req, res) => {
+    const { authorId } = req.params;
     const userId = req.userId;
+    const author = await User.findById(authorId);
+    const user = await User.findById(userId);
 
-    const userWantToUnfollow = await User.findById(userId);
-    const userIsFollowed = await User.findById(id);
-    
-    if (!userIsFollowed || !userWantToUnfollow) {
-        return res.status(404).json("User not found");
+    if (!author || !user) {
+        return res.sendStatus(404);
     }
 
-    userWantToUnfollow.following.remove(id);
-    
-    userIsFollowed.followers.remove(userId);
+    const isNotFollow = user.following.indexOf(authorId) === -1 &&
+        author.followers.indexOf(userId) === -1;
 
-    await userWantToUnfollow.save();
-    await userIsFollowed.save();
-    
-    return res.status(200).json("Unfollowing success");
+    if (isNotFollow) {
+        user.following.push(authorId);
+        author.followers.push(userId);
+    } else {
+        user.following.remove(authorId);
+        author.followers.remove(userId);
+    }
+
+    await user.save();
+    await author.save();
+
+    return res.status(200).json({
+        authorFollowerCount: author.followers.length,
+        userFollowingCount: user.following.length,
+    });
 });

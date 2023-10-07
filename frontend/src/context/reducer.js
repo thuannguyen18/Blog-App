@@ -165,19 +165,21 @@ function reducer(state, action) {
             return {
                 ...state,
                 loading: false,
-                authorName: data.user.username,
-                authorEmail: data.user.email,
-                authorProfilePicturePath: data.user.profilePicturePath,
-                authorBlogs: data.userBlog,
-                authorFollowers: data.user.followers,
-                authorFollowing: data.user.following,
+                authorName: data.author.username,
+                authorEmail: data.author.email,
+                authorProfilePicturePath: data.author.profilePicturePath,
+                authorBlogs: data.authorBlogs,
+                authorFollowers: data.author.followers,
+                authorFollowing: data.author.following,
                 isFollowing: data.isFollowing
             };
-        case "GET_ALL_USER_BLOG":
+        case "GET_USER":
             return {
                 ...state,
                 userBlogsLoading: false,
-                userBlogs: data,
+                userBlogs: data.userBlogs,
+                userFollowersCount: data.followers,
+                userFollowingCount: data.following
             }
         case "UPDATE_USER_SUCCESS":
             return {
@@ -324,6 +326,18 @@ function reducer(state, action) {
             return {
                 ...state,
                 editorMode: false,
+            }
+        case "GET_USER_STATS": 
+            return {
+                ...state,
+                userFollowersCount: data.followers,
+                userFollowingCount: data.following,
+            }
+        case "FOLLOW":
+            return {
+                ...state,
+                authorFollowersCount: data.authorFollowerCount,
+                userFollowingCount: data.userFollowingCount,
             }
         default: return new Error('Invalid action');
     }

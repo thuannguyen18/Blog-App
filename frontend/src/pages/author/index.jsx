@@ -23,46 +23,55 @@ export default function Author() {
         authorFollowers,
         authorFollowing,
         follow,
-        unfollow,
         isFollowing,
     } = useGlobalContext();
 
+    // Statistical data
+    const profileInfoStats = [
+        {
+            id: 1,
+            stats: authorFollowers.length,
+            info: "Followers"
+        },
+        {
+            id: 2,
+            stats: authorFollowing.length,
+            info: "Following"
+        },
+        {
+            id: 3,
+            stats: authorBlogs.length,
+            info: "Posts"
+        },
+    ];
+
     // Follow & Unfollow author
     const handleFollow = () => {
-        if (!token) {
+        if (token) {
+            follow(id);
+        } else {
             navigate("/login");
-            return;
         }
-
-        if (isFollowing) {
-            unfollow(id);
-            return;
-        }
-
-        follow(id);
     }
-
 
     // Get author's information
     useEffect(() => {
         getAuthor(id);
     }, []);
 
-
     return (
         <div className="">
             <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
-                {loading ? <ProfileCardPlaceholder /> :
-                    <ProfileCard
-                        name={authorName}
-                        email={authorEmail}
-                        profilePicturePath={authorProfilePicturePath}
-                        followers={authorFollowers}
-                        following={authorFollowing}
-                        isFollowing={isFollowing}
-                        blogs={authorBlogs}
-                        handleFollow={handleFollow}
-                    />
+                {
+                    loading ? <ProfileCardPlaceholder /> :
+                        <ProfileCard
+                            name={authorName}
+                            email={authorEmail}
+                            profilePicturePath={authorProfilePicturePath}
+                            isFollowing={isFollowing}
+                            handleFollow={handleFollow}
+                            profileInfoStats={profileInfoStats}
+                        />
                 }
                 <div className="p-4 md:border md:border-gray-200 md:shadow-lg md:mt-6 md:rounded lg:mt-0 lg:col-span-3">
                     <nav className="border-b border-slate-200">

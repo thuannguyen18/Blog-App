@@ -7,7 +7,7 @@ import { useGlobalContext } from "context/context";
 import { userInformation } from "constants";
 
 export default function Settings() {
-    // global states
+    // Global states
     const {
         updateUser,
         changePassword,
@@ -15,7 +15,7 @@ export default function Settings() {
         changePasswordLoading,
     } = useGlobalContext();
 
-    // local states
+    // Local states
     const [isChange, setIsChange] = useState(false);
     const [userAvatarUpdate, setUserAvatarUpdate] = useState(null);
     const [userNameUpdate, setUserNameUpdate] = useState(userInformation?.username);
@@ -113,6 +113,7 @@ export default function Settings() {
         const previewUrl = URL.createObjectURL(fileUpload);
         fileUpload.preview = previewUrl;
         setUserAvatarUpdate(fileUpload);
+        setIsChange(true);
     }
 
     // When user click update button
@@ -122,7 +123,6 @@ export default function Settings() {
             userNameUpdate,
             userEmailUpdate,
         };
-        console.log(formData);
         updateUser(formData);
     }
 
@@ -150,9 +150,12 @@ export default function Settings() {
             <div className="mx-auto mt-10 md:w-[720px] overflow-hidden p-8">
                 <div className="flex items-center justify-center w-32 h-32">
                     <label htmlFor="dropzone-file" className="flex flex-col items-center rounded-full justify-center w-full h-full border-2 border-gray-300 cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                        {!userAvatarUpdate && <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <AiOutlineCamera className="w-12 h-12 text-gray-300" />
-                        </div>}
+                        {
+                            !userAvatarUpdate &&
+                            <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                <AiOutlineCamera className="w-12 h-12 text-gray-300" />
+                            </div>
+                        }
                         {userAvatarUpdate && <img className="w-full h-full object-cover rounded-full" src={userAvatarUpdate.preview} alt="avatar" />}
                         <input id="dropzone-file" type="file" className="hidden" onChange={handleFile} />
                     </label>
