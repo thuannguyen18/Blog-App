@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BsBookmark, BsVectorPen } from "react-icons/bs";
+import { MdOutlineStickyNote2 } from "react-icons/md";
 import { useGlobalContext } from "context/context";
 import { userInformation } from "constants";
 import Article from "components/article/Articles";
@@ -9,6 +10,7 @@ import CardPlaceholder from "components/skeleton/CardPlaceholder";
 import ProfileCardPlaceholder from "components/skeleton/ProfileCardPlaceholder";
 import UserArticle from "components/article/UserArticle";
 import UserAvatar from "components/user/UserAvatar";
+import Draft from "components/Draft";
 
 export default function Profile() {
     // Global State
@@ -22,11 +24,14 @@ export default function Profile() {
         savedBlogs,
         userFollowersCount,
         userFollowingCount,
+        getAllDrafts,
+        drafts,
     } = useGlobalContext();
 
     // Local State
     const [isBlogs, setIsBlogs] = useState(true);
     const [isSave, setIsSave] = useState(false);
+    const [isDraft, setIsDraft] = useState(false);
 
 
     // User stats info 
@@ -49,30 +54,47 @@ export default function Profile() {
     const handleChangeBlog = () => {
         setIsBlogs(true);
         setIsSave(false);
+        setIsDraft(false);
     }
 
     // When user click button "Saved"
     const handleChangeSave = () => {
         setIsBlogs(false);
         setIsSave(true);
+        setIsDraft(false);
     }
 
-    // Get user's blogs when user click blog button
+    // When user click button "Draft"
+    const handleChangeDraft = () => {
+        setIsBlogs(false);
+        setIsSave(false);
+        setIsDraft(true);
+    }
+
+    // Get user's blogs 
     useEffect(() => {
         getUser();
     }, [isBlogs]);
 
-    // Get user's saved blogs when user click saved button
+    // Get user's saved blogs 
     useEffect(() => {
         if (isSave) {
             getSavedBlogs();
         }
     }, [isSave]);
 
+    // Get user's drafts 
+    useEffect(() => {
+        if (isDraft) {
+            getAllDrafts();
+        }
+    }, [isDraft]);
+
     return (
         <div className="">
             <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
-                {loading ? <ProfileCardPlaceholder /> :
+                {loading ?
+                    <ProfileCardPlaceholder /> :
                     <div className="lg:col-span-1 md:border md:border-gray-200 p-4 md:rounded md:shadow-lg max-h-[355px]">
                         <div className="mx-auto">
                             <UserAvatar width="w-28 lg:w-36" height="h-28 lg:h-36" center profilePicturePath={userInformation?.profilePicturePath} />
@@ -114,32 +136,60 @@ export default function Profile() {
                                 <span className="ml-2">SAVED</span>
                             </span>
                         </button>
+                        <button
+                            onClick={handleChangeDraft}
+                            className={`text-sm text-gray-750 uppercase py-2 px-4 ${isDraft && "text-black border-b-2 border-sky-500 font-semibold"}`}
+                        >
+                            <span className="flex items-center justify-center">
+                                <MdOutlineStickyNote2 className="text-gray-650" />
+                                <span className="ml-2">DRAFT</span>
+                            </span>
+                        </button>
                     </nav>
-                    {isBlogs && <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
-                        {userBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
-                            userBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
-                                <UserArticle
-                                    key={_id}
-                                    id={_id}
-                                    title={title}
-                                    subtitle={subTitle}
-                                    picturePath={picturePath}
-                                    likes={likes}
-                                />
-                        ))}
-                    </div>}
-                    {isSave && savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
-                        savedBlogsLoading ? <CardPlaceholder key={blogId._id} isProfilePicture={false} /> :
-                            <div className="mt-4">
-                                <Article
-                                    key={blogId._id}
-                                    topic={blogId}
-                                    authorId={authorId}
-                                    saveId={saveId}
-                                    isSaved={isSaved}
-                                />
-                            </div>
-                    ))}
+                    {
+                        isBlogs &&
+                        <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
+                            {userBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
+                                userBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
+                                    <UserArticle
+                                        key={_id}
+                                        id={_id}
+                                        title={title}
+                                        subtitle={subTitle}
+                                        picturePath={picturePath}
+                                        likes={likes}
+                                    />
+                            ))}
+                        </div>
+                    }
+                    {
+                        isSave &&
+                        savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
+                            savedBlogsLoading ?
+                                <CardPlaceholder key={blogId._id} isProfilePicture={false} /> :
+                                <div className="mt-4">
+                                    <Article
+                                        key={blogId._id}
+                                        topic={blogId}
+                                        authorId={authorId}
+                                        saveId={saveId}
+                                        isSaved={isSaved}
+                                    />
+                                </div>
+                        ))
+                    }
+                    {
+                        isDraft &&
+                        drafts.map(draft => (
+                            <Draft
+                                key={draft._id}
+                                id={draft._id}
+                                title={draft.title}
+                                content={draft.content}
+                                createdAt={draft.createdAt}
+                            />
+                        ))
+                    }
                 </div>
             </Container>
         </div>

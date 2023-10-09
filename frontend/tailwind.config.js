@@ -13,6 +13,7 @@ module.exports = {
         "gray-550": "#2D3748",
         "gray-650": "#969696",
         "gray-750": "#606266",
+        "gray-850": "#e2e8f0",
         "black-150": "#161616",
       },
       boxShadow: {

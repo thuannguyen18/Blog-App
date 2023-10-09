@@ -339,6 +339,31 @@ function reducer(state, action) {
                 authorFollowersCount: data.authorFollowerCount,
                 userFollowingCount: data.userFollowingCount,
             }
+        // case "SAVE_DRAFT_LOADING": 
+        //     return {
+        //         ...state,
+        //         saveDraftLoading: true,
+        //     }
+        // case "SAVE_DRAFT_SUCCESS": 
+        //     return {
+        //         ...state,
+        //         saveDraftLoading: false,
+        //     }
+        case "GET_ALL_DRAFT":
+            return {
+                ...state,
+                drafts: data
+            }
+        case "DELETE_DRAFT_SUCCESS":
+            return {
+                ...state,
+                drafts: data
+            }
+        case "DRAFT_UPDATE":
+            return {
+                ...state,
+                draftUpdate: data
+            }
         default: return new Error('Invalid action');
     }
 }

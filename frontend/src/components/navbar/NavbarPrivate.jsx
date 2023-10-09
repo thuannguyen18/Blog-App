@@ -29,17 +29,17 @@ export default function NavbarPrivate() {
         {
             title: "Profile",
             icon: <ImProfile />,
-            to: "/user"
+            to: "/user/me/posts"
         },
         {
             title: "All my posts",
             icon: <HiOutlinePencilAlt />,
-            to: "/user"
+            to: "/user/me/posts"
         },
         {
             title: "Saved",
             icon: <BiBookmark />,
-            to: "/user"
+            to: "/user/me/saved"
         },
         {
             title: "Account settings",

@@ -34,20 +34,22 @@ export const register = asyncHandler(async (req, res) => {
 
 export const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    const match = await bcrypt.compare(password, user.password);
-
+    
     if (!email || !password) {
         return res.status(400).json({ 
             message: 'All fields are required' 
         });
     }
+    
+    const user = await User.findOne({ email });
 
     if (!user) {
-        return res.status(400).json({ 
-            message: 'Email or password is not correct'
+        return res.status(404).json({ 
+            message: "User not found"
         });
     }
+    
+    const match = await bcrypt.compare(password, user.password);
 
     if (!match) {
         return res.status(400).json({ 

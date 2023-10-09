@@ -7,32 +7,40 @@ import EditorModal from "components/EditorModal";
 import { CATEGORIES as categories } from "constants";
 import { useGlobalContext } from "context/context";
 
-const DEFAULT_INITIAL_DATA = {
-    "time": new Date().getTime(),
-    "blocks": [
-        {
-            "type": "header",
-            "data": {
-                "text": "",
-                "level": 1
-            }
-        },
-    ]
-}
-
 export default function EditorPost() {
     // Global State
-    const { closeEditorMode, createBlog } = useGlobalContext();
+    const { 
+        closeEditorMode, 
+        createBlog,
+        saveDraft,
+        saveDraftLoading,
+        draftUpdate,
+        setDraftUpdate
+    } = useGlobalContext();
 
     // Local State
     const [open, setOpen] = useState(false);
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState([]);
+    const [title, setTitle] = useState(draftUpdate.title || "");
+    const [content, setContent] = useState([
+        {
+            "type": "header",
+            "data": {
+                "text": draftUpdate.content,
+                "level": 1
+            }
+        },
+    ]);
     const [subTitle, setSubTitle] = useState("");
     const [category, setCategory] = useState("");
     const [thumbnail, setThumbnail] = useState();
 
+    
     // Editor js config
+    const DEFAULT_INITIAL_DATA = {
+        "time": new Date().getTime(),
+        "blocks": content
+    }
+
     const ejInstance = useRef();
     const initEditor = () => {
         const editor = new EditorJS({
@@ -62,6 +70,10 @@ export default function EditorPost() {
             ejInstance?.current?.destroy();
             ejInstance.current = null;
             closeEditorMode();
+            setDraftUpdate({
+                title: "",
+                content: ""
+            });
         };
     }, []);
 
@@ -85,6 +97,12 @@ export default function EditorPost() {
         createBlog(blogInfo);
     }
 
+    // When user click save draft buttons
+    const handleSave = () => {
+        const draftInfo = { title, content };
+        saveDraft(draftInfo);
+    }
+
     return (
         <Container>
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
@@ -98,7 +116,13 @@ export default function EditorPost() {
                 <div id="editorjs"></div>
             </div>
             <div className="fixed md:top-[92%] md:left-[42%] z-10">
-                <button className="text-sm border border-gray-300 bg-white rounded h-10 px-4 hover:bg-gray-200 mr-2">Save draft</button>
+                <button
+                    className="text-sm border border-gray-300 bg-white rounded h-10 px-4 hover:bg-gray-200 mr-2"
+                    onClick={handleSave}
+                    disabled={title.length < 6 && content.length < 1}
+                >
+                    Save draft
+                </button>
                 <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600" onClick={() => setOpen(true)}>Next step</button>
             </div>
             <EditorModal visible={open}>

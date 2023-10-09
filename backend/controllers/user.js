@@ -46,8 +46,7 @@ export const updateUser = asyncHandler(async (req, res) => {
     // Read file
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    const filePath = path.join(__dirname, `../public/assets/${user.profilePicturePath}`);
-
+    
     if (!user) {
         return res.sendStatus(404);
     }
@@ -65,7 +64,10 @@ export const updateUser = asyncHandler(async (req, res) => {
     }
 
     // Delete old profile picture
-    await unlink(filePath);
+    if (user.profilePicturePath) {
+        const filePath = path.join(__dirname, `../public/assets/${user.profilePicturePath}`);
+        await unlink(filePath);
+    }
 
     // Update user with new informations
     user.username = username;

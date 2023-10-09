@@ -85,6 +85,7 @@ const initalState = {
     deleteCommentLoading: false,
     savedBlogsLoading: false,
     userBlogsLoading: false,
+    saveDraftLoading: false,
     // Editor mode
     editorMode: false,
     // Follow
@@ -92,7 +93,10 @@ const initalState = {
     authorFollowingCount: 0,
     userFollowersCount: 0,
     userFollowingCount: 0,
-    isFollow: false
+    isFollow: false,
+    // Draft
+    drafts: [],
+    draftUpdate: null,
 }
 
 function AppProvider({ children }) {
@@ -102,6 +106,9 @@ function AppProvider({ children }) {
     // Set editor mode
     const openEditorMode = () => dispatch({ type: "OPEN_EDITOR_MODE" });
     const closeEditorMode = () => dispatch({ type: "CLOSE_EDITOR_MODE" });
+
+    // Set draft update
+    const setDraftUpdate = (data) => dispatch({ type: "DRAFT_UPDATE", payload: data });
 
     // Set values for form sign up & sign in page
     const setName = (value) => dispatch({
@@ -478,9 +485,6 @@ function AppProvider({ children }) {
     const updateBlog = async (blogInfo) => {
         dispatch({ type: "LOADING" });
 
-        const token = localStorage.getItem("access_token");
-        const userInformation = JSON.parse(localStorage.getItem("user_information"));
-
         const formData = new FormData();
         formData.append("userId", userInformation?.id);
         // formData.append("blogId", blogInfo.id)
@@ -690,6 +694,55 @@ function AppProvider({ children }) {
         }
     }
 
+    const saveDraft = async (draftInfo) => {
+        // dispatch({ type: "SAVE_DRAFT_LOADING" });
+        
+        const draft = { 
+            title: draftInfo.title, 
+            content: JSON.stringify(draftInfo.content),
+        };
+
+        try {
+            const response = await axiosConfig.post("/api/v1/save-draft", draft, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            console.log(response.data);
+            // dispatch({ type: "SAVE_DRAFT_SUCCESSS" });
+
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong");
+        }
+    }
+
+    const getAllDrafts = async () => {
+        try {
+            const response = await axiosConfig.get("/api/v1/save-draft", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            dispatch({ type: "GET_ALL_DRAFT", payload: response.data });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const deleteDraft = async (id) => {
+        try {
+            const response = await axiosConfig.delete(`/api/v1/save-draft/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            dispatch({ type: "DELETE_DRAFT_SUCCESS", payload: response.data });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -726,7 +779,11 @@ function AppProvider({ children }) {
                 saveBlog,
                 getSavedBlogs,
                 follow,
-                likeBlog
+                likeBlog,
+                saveDraft,
+                getAllDrafts,
+                deleteDraft,
+                setDraftUpdate
             }}
         >
             {children}
