@@ -364,6 +364,16 @@ function reducer(state, action) {
                 ...state,
                 draftUpdate: data
             }
+        case "GET_SEARCH_RESULTS":
+            return {
+                ...state,
+                results: data
+            }
+        case "SEARCH_QUERY": 
+            return {
+                ...state,
+                query: data,
+            }
         default: return new Error('Invalid action');
     }
 }

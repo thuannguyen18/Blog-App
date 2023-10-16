@@ -97,11 +97,17 @@ const initalState = {
     // Draft
     drafts: [],
     draftUpdate: null,
+    // Search Result
+    query: "",
+    results: [],
 }
 
 function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initalState);
     const navigate = useNavigate();
+
+    // Set search query
+    const setQuery = (data) => dispatch({ type: "SEARCH_QUERY", payload: data });
 
     // Set editor mode
     const openEditorMode = () => dispatch({ type: "OPEN_EDITOR_MODE" });
@@ -696,9 +702,9 @@ function AppProvider({ children }) {
 
     const saveDraft = async (draftInfo) => {
         // dispatch({ type: "SAVE_DRAFT_LOADING" });
-        
-        const draft = { 
-            title: draftInfo.title, 
+
+        const draft = {
+            title: draftInfo.title,
             content: JSON.stringify(draftInfo.content),
         };
 
@@ -738,6 +744,37 @@ function AppProvider({ children }) {
                 }
             });
             dispatch({ type: "DELETE_DRAFT_SUCCESS", payload: response.data });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getResults = async (query, type = "") => {
+        try {
+            const response = await axiosConfig
+                .get(`/blog/search?q=${query}&type=${type}&page=${1}`);
+
+            if (type === "author") {
+                dispatch({
+                    type: "GET_SEARCH_RESULTS",
+                    payload: response.data.users
+                });
+                return;
+            }
+
+            if (type === "category") {
+                dispatch({
+                    type: "GET_SEARCH_RESULTS",
+                    payload: response.data.categories
+                });
+                return;
+            }
+
+            dispatch({
+                type: "GET_SEARCH_RESULTS",
+                payload: response.data.blogs
+            });
+
         } catch (error) {
             console.log(error);
         }
@@ -783,7 +820,9 @@ function AppProvider({ children }) {
                 saveDraft,
                 getAllDrafts,
                 deleteDraft,
-                setDraftUpdate
+                setDraftUpdate,
+                getResults,
+                setQuery
             }}
         >
             {children}

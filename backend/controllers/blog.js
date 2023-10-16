@@ -3,7 +3,10 @@ import { fileURLToPath } from "url";
 import path from "path";
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
+import User from "../models/User.js";
 
+
+// READ
 export const getAllBlogs = asyncHandler(async (req, res) => {
     const { page, newest, random, limit, sort, userId } = req.query;
     let blogs, sortBy;
@@ -103,7 +106,64 @@ export const getCategoryBlogs = asyncHandler(async (req, res) => {
     });
 });
 
+export const getResults = asyncHandler(async (req, res) => {
+    const { q, type, page } = req.query;
+    let limit = 10;
 
+    if (!q) {
+        return res.json("Khong co query");
+    }
+
+    if (type === "author") {
+        const users = await User
+            .find({ username: { $regex: `.*${q}.*` } })
+            .limit(limit)
+            .skip((page - 1) * limit);
+
+        const count = users.length;
+
+        return res.status(200).json({
+            users,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page
+        });
+    }
+
+    if (type === "category") {
+        const categories = await Blog
+            .find({ category: { $regex: `.*${q}.*` } })
+            .populate("userId", "username profilePicturePath")
+            .limit(limit)
+            .skip((page - 1) * limit);
+
+        const count = categories.length;
+
+        return res.status(200).json({
+            categories,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page
+        });
+    }
+
+
+    const blogs = await Blog
+        .find({ title: { $regex: `.*${q}.*` } })
+        .populate("userId", "username profilePicturePath")
+        .limit(limit)
+        .skip((page - 1) * limit);
+
+    const count = blogs.length;
+
+    return res.status(200).json({
+        blogs,
+        count,
+        totalPages: Math.ceil(count / limit),
+        currentPage: page
+    });
+});
+
+
+// CREATE
 export const createBlog = asyncHandler(async (req, res) => {
     const { userId, title, subTitle, content, category } = req.body;
     const contents = JSON.parse(content);
@@ -138,7 +198,32 @@ export const createBlog = asyncHandler(async (req, res) => {
     });
 });
 
+export const likeBlog = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const blog = await Blog.findById(id);
 
+    if (!blog) {
+        return res.sendStatus(404);
+    }
+
+    // if user liked it then unlike it
+    if (blog.likes.includes(req.userId)) {
+        blog.likes = blog.likes.filter(id =>
+            id.toString() !== req.userId
+        );
+        await blog.save();
+
+        return res.sendStatus(200);
+    }
+
+    blog.likes.push(req.userId);
+    await blog.save();
+
+    return res.sendStatus(200);
+});
+
+
+// UPDATE
 export const updateBlog = asyncHandler(async (req, res) => {
     const { userId, title, subTitle, content, category } = req.body;
     const file = req.file;
@@ -170,6 +255,7 @@ export const updateBlog = asyncHandler(async (req, res) => {
 });
 
 
+// DELETE
 export const deleteBlog = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const blog = await Blog.findById(id);
@@ -192,26 +278,3 @@ export const deleteBlog = asyncHandler(async (req, res) => {
 });
 
 
-export const likeBlog = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const blog = await Blog.findById(id);
-
-    if (!blog) {
-        return res.sendStatus(404);
-    }
-
-    // if user liked it then unlike it
-    if (blog.likes.includes(req.userId)) {
-        blog.likes = blog.likes.filter(id =>
-            id.toString() !== req.userId
-        );
-        await blog.save();
-
-        return res.sendStatus(200);
-    }
-
-    blog.likes.push(req.userId);
-    await blog.save();
-
-    return res.sendStatus(200);
-});

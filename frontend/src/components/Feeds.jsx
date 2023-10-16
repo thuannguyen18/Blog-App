@@ -28,7 +28,7 @@ export default function Feeds() {
         ref.current?.scrollIntoView({ behavior: "smooth" });
     }
 
-    // All blogs
+    // Render all blogs
     const allBlogsContent = allBlogs.map((topic, index) => (
         feedLoading ?
             <ImagePlaceholder key={topic._id} /> :
@@ -40,7 +40,7 @@ export default function Feeds() {
             />
     ));
 
-    // All best blogs
+    // Render best blogs
     const allTopBlogsContent = topBlogs.map((topic, index) => (
         feedLoading ?
             <ImagePlaceholder key={topic._id} /> :
@@ -49,7 +49,6 @@ export default function Feeds() {
                 topic={topic}
             />
     ));
-
 
     // Get all blogs
     useEffect(() => {
@@ -60,7 +59,6 @@ export default function Feeds() {
     useEffect(() => {
         getTopBlogs();
     }, [currentPage, isBestTopics]);
-
 
     return (
         <Container styles={"my-4 py-4"}>

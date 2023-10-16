@@ -3,11 +3,12 @@ import multer from "multer";
 import verifyToken from "../middlewares/verifyToken.js";
 import {
     getAllBlogs,
+    getCategoryBlogs,
+    getResults,
     getBlogDetail,
     createBlog,
     updateBlog,
     deleteBlog,
-    getCategoryBlogs,
     likeBlog
 } from "../controllers/blog.js";
 
@@ -26,6 +27,7 @@ const upload = multer({ storage });
 // Public routes
 router.get("/", getAllBlogs);
 router.get("/category", getCategoryBlogs);
+router.get("/search", getResults);
 router.get("/:id", getBlogDetail);
 
 // Private routes

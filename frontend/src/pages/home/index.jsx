@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "components/Banner";
 import LatestBlogs from "components/LatestBlogs";
 import RecommendBlogs from "components/RecommendBlogs";
