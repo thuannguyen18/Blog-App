@@ -29,12 +29,12 @@ export default function NavbarPrivate() {
         {
             title: "Profile",
             icon: <ImProfile />,
-            to: "/user/me/posts"
+            to: "/user/me"
         },
         {
             title: "All my posts",
             icon: <HiOutlinePencilAlt />,
-            to: "/user/me/posts"
+            to: "/user/me"
         },
         {
             title: "Saved",

@@ -25,7 +25,7 @@ export default function Header() {
             <Container styles={"flex justify-between items-center h-full"}>
                 {!isSearch && <>
                     <Logo />
-                    <Navbar handleBack={handleBack} />
+                    <Navbar handleBack={handleBack} editorMode={editorMode} />
                 </>}
                 {isSearch && <SearchBar handleBack={handleBack} />}
             </Container>

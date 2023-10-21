@@ -68,6 +68,7 @@ function reducer(state, action) {
                 ...state,
                 isAllTopics: true,
                 isBestTopics: false,
+                isAuthorTopics: false,
                 currentPage: 1,
                 activePage: 1,
             }
@@ -84,6 +85,7 @@ function reducer(state, action) {
                 ...state,
                 isAllTopics: false,
                 isBestTopics: true,
+                isAuthorTopics: false,
                 currentPage: 1,
                 activePage: 1,
             }
@@ -92,6 +94,22 @@ function reducer(state, action) {
                 ...state,
                 feedLoading: false,
                 topBlogs: data.blogs,
+                totalPages: data.totalPages
+            }
+        case "SET_AUTHOR_TOPICS":
+            return {
+                ...state,
+                isAllTopics: false,
+                isBestTopics: false,
+                isAuthorTopics: true,
+                currentPage: 1,
+                activePage: 1,
+            }
+        case "GET_FOLLOWING_AUTHOR_BLOGS":
+            return {
+                ...state,
+                feedLoading: false,
+                followingBlogs: data.blogs,
                 totalPages: data.totalPages
             }
         case "GET_BLOG_DETAIL": {
@@ -317,17 +335,17 @@ function reducer(state, action) {
                 activePage: data,
                 currentPage: data
             }
-        case "OPEN_EDITOR_MODE": 
+        case "OPEN_EDITOR_MODE":
             return {
                 ...state,
                 editorMode: true,
             }
-        case "CLOSE_EDITOR_MODE": 
+        case "CLOSE_EDITOR_MODE":
             return {
                 ...state,
                 editorMode: false,
             }
-        case "GET_USER_STATS": 
+        case "GET_USER_STATS":
             return {
                 ...state,
                 userFollowersCount: data.followers,
@@ -339,16 +357,16 @@ function reducer(state, action) {
                 authorFollowersCount: data.authorFollowerCount,
                 userFollowingCount: data.userFollowingCount,
             }
-        // case "SAVE_DRAFT_LOADING": 
-        //     return {
-        //         ...state,
-        //         saveDraftLoading: true,
-        //     }
-        // case "SAVE_DRAFT_SUCCESS": 
-        //     return {
-        //         ...state,
-        //         saveDraftLoading: false,
-        //     }
+        case "SAVE_DRAFT_LOADING":
+            return {
+                ...state,
+                saveDraftLoading: true,
+            }
+        case "SAVE_DRAFT_SUCCESS":
+            return {
+                ...state,
+                saveDraftLoading: false,
+            }
         case "GET_ALL_DRAFT":
             return {
                 ...state,
@@ -367,9 +385,16 @@ function reducer(state, action) {
         case "GET_SEARCH_RESULTS":
             return {
                 ...state,
-                results: data
+                results: data.result,
+                titleSearch: data.title
             }
-        case "SEARCH_QUERY": 
+        case "GET_USER_SEARCH_RESULTS":
+            return {
+                ...state,
+                userResults: data.result,
+                titleSearch: data.title
+            }
+        case "SEARCH_QUERY":
             return {
                 ...state,
                 query: data,

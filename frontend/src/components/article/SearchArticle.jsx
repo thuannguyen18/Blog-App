@@ -18,7 +18,7 @@ export default function SearchArticle({ result }) {
                     {result.subTitle}
                 </p>
                 <div className="flex items-center">
-                    <UserAvatar height="h-[48px]" width="w-[48px]" profilePicturePath={result.userId.profilePicturePath} />
+                    <UserAvatar height="h-[48px]" width="w-[48px]" profilePicturePath={result?.userId?.profilePicturePath} />
                     <Link to={`/user/${result.userId._id}`} className="ml-2">{result.userId.username}</Link>
                 </div>
             </div>

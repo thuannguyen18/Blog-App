@@ -4,13 +4,14 @@ import Header from '@editorjs/header';
 import EditorJS from "@editorjs/editorjs";
 import Container from "components/Container";
 import EditorModal from "components/EditorModal";
+import Loading from "components/Loading";
 import { CATEGORIES as categories } from "constants";
 import { useGlobalContext } from "context/context";
 
 export default function EditorPost() {
     // Global State
-    const { 
-        closeEditorMode, 
+    const {
+        closeEditorMode,
         createBlog,
         saveDraft,
         saveDraftLoading,
@@ -18,14 +19,15 @@ export default function EditorPost() {
         setDraftUpdate
     } = useGlobalContext();
 
+
     // Local State
     const [open, setOpen] = useState(false);
-    const [title, setTitle] = useState(draftUpdate.title || "");
+    const [title, setTitle] = useState(draftUpdate?.title || "");
     const [content, setContent] = useState([
         {
             "type": "header",
             "data": {
-                "text": draftUpdate.content,
+                "text": draftUpdate?.content,
                 "level": 1
             }
         },
@@ -34,7 +36,7 @@ export default function EditorPost() {
     const [category, setCategory] = useState("");
     const [thumbnail, setThumbnail] = useState();
 
-    
+
     // Editor js config
     const DEFAULT_INITIAL_DATA = {
         "time": new Date().getTime(),
@@ -103,6 +105,8 @@ export default function EditorPost() {
         saveDraft(draftInfo);
     }
 
+    const disableSaveBtn = title ? "cursor-poniter" : "bg-zinc-200 cursor-not-allowed";
+
     return (
         <Container>
             <div className="mx-auto md:w-[750px] overflow-hidden p-8">
@@ -117,11 +121,12 @@ export default function EditorPost() {
             </div>
             <div className="fixed md:top-[92%] md:left-[42%] z-10">
                 <button
-                    className="text-sm border border-gray-300 bg-white rounded h-10 px-4 hover:bg-gray-200 mr-2"
+                    type="button"
+                    className={`text-sm border border-gray-300 bg-white rounded h-10 px-4 hover:bg-gray-200 mr-2 ${disableSaveBtn}`}
                     onClick={handleSave}
-                    disabled={title.length < 6 && content.length < 1}
+                    disabled={!title}
                 >
-                    Save draft
+                    {saveDraftLoading ? "Saving..." :"Save draft"}
                 </button>
                 <button className="text-sm text-white rounded bg-sky-500 h-10 px-4 hover:bg-sky-600" onClick={() => setOpen(true)}>Next step</button>
             </div>

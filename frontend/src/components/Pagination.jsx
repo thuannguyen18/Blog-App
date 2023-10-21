@@ -4,7 +4,7 @@ import { useGlobalContext } from "context/context";
 export default function Pagination({ handleClick }) {
     // Global State
     const { totalPages, changePage, activePage } = useGlobalContext();
-
+    
     // Page numbers
     const pages = [];
     for (let page = 1; page <= totalPages; page++) {
@@ -50,14 +50,14 @@ export default function Pagination({ handleClick }) {
     );
 
     return (
-        <nav className="lg:grid lg:grid-cols-6" aria-label="Page navigation example">
-            <ul className="flex flex-wrap items-center justify-between -space-x-px h-10 text-base lg:col-span-4">
+        <nav className="" aria-label="Page navigation example">
+            <ul className="flex items-center -space-x-px h-10 text-base">
                 {activePage !== 1 && prevBtn}
                 {pages.map((page, index) => (
                     <li key={page}>
                         <button
                             value={page}
-                            className={`transition flex items-center justify-center px-4 h-10 leading-tight hover:bg-gray-200 ${activePage === (index + 1) && "bg-sky-500 text-white hover:bg-sky-500"}`}
+                            className={`transition flex items-center justify-center px-4 mr-4 h-10 leading-tight hover:bg-gray-200 ${activePage === (index + 1) && "bg-sky-500 text-white hover:bg-sky-500"}`}
                             onClick={(e) => {
                                 if (activePage === (index + 1)) return;
                                 changePage(Number(e.target.value))

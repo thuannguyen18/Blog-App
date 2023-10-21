@@ -6,7 +6,7 @@ import EditPost from "pages/post/edit";
 
 export const privateRoutes = [
     {
-        path: '/user/me/posts',
+        path: '/user/me',
         element: Profile,
     },
     {

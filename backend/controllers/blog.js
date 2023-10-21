@@ -111,7 +111,7 @@ export const getResults = asyncHandler(async (req, res) => {
     let limit = 10;
 
     if (!q) {
-        return res.json("Khong co query");
+        return res.sendStatus(400);
     }
 
     if (type === "author") {
@@ -159,6 +159,29 @@ export const getResults = asyncHandler(async (req, res) => {
         count,
         totalPages: Math.ceil(count / limit),
         currentPage: page
+    });
+});
+
+export const getBlogsByAuthors = asyncHandler(async (req, res) => {
+    const { page, limit } = req.query;
+    const user = await User.findById(req.userId);
+
+    if (!user) {
+        return res.sendStatus(404);
+    }
+
+    const blogs = await Blog
+        .find({ userId: { $in: user.following } })
+        .populate("userId", "username profilePicturePath")
+        .limit(limit * 1)
+        .skip((page - 1) * limit);
+    const count = await Blog.count({ userId: { $in: user.following } });
+
+    return res.status(200).json({
+        blogs,
+        currentPage: page,
+        totalPages: Math.ceil(count / limit),
+        test: count
     });
 });
 
@@ -212,13 +235,11 @@ export const likeBlog = asyncHandler(async (req, res) => {
             id.toString() !== req.userId
         );
         await blog.save();
-
         return res.sendStatus(200);
     }
 
     blog.likes.push(req.userId);
     await blog.save();
-
     return res.sendStatus(200);
 });
 

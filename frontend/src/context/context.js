@@ -22,11 +22,13 @@ const initalState = {
     randomBlogs: [],
     allBlogs: [],
     topBlogs: [],
+    followingBlogs: [],
     savesAndLikes: [],
     isAllTopics: true,
     isBestTopics: false,
+    isAuthorTopics: false,
     // Blog pagination 
-    totalPages: "",
+    totalPages: 0,
     currentPage: 1,
     activePage: 1,
     limitPerPage: 10,
@@ -100,6 +102,8 @@ const initalState = {
     // Search Result
     query: "",
     results: [],
+    userResults: [],
+    titleSearch: "",
 }
 
 function AppProvider({ children }) {
@@ -107,7 +111,9 @@ function AppProvider({ children }) {
     const navigate = useNavigate();
 
     // Set search query
-    const setQuery = (data) => dispatch({ type: "SEARCH_QUERY", payload: data });
+    const setQuery = (data) => {
+        dispatch({ type: "SEARCH_QUERY", payload: data });
+    }
 
     // Set editor mode
     const openEditorMode = () => dispatch({ type: "OPEN_EDITOR_MODE" });
@@ -246,6 +252,7 @@ function AppProvider({ children }) {
                     type: "GET_TOP_BLOGS",
                     payload: response.data
                 });
+                console.log(response.data);
                 return;
             }
             const response = await axiosConfig
@@ -260,9 +267,29 @@ function AppProvider({ children }) {
         }
     }
 
+    const getAuthorBlogs = async () => {
+        dispatch({ type: "FEED_LOADING" });
+        try {
+            const response = await axiosConfig
+                .get(`/blog/author-following?page=${state.currentPage}&limit=${state.limitPerPage}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            console.log(response.data);
+            dispatch({
+                type: "GET_FOLLOWING_AUTHOR_BLOGS",
+                payload: response.data
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     // Set values to get the specific topic
     const setAllTopics = () => dispatch({ type: "SET_ALL_TOPICS" });
     const setBestTopics = () => dispatch({ type: "SET_BEST_TOPICS" });
+    const setAuthorTopics = () => dispatch({ type: "SET_AUTHOR_TOPICS" });
 
     // Pagination in home page
     const changePage = (page) => dispatch({
@@ -401,7 +428,7 @@ function AppProvider({ children }) {
                 payload: response.data
             });
 
-            navigate("/user");
+            navigate("/user/me");
             toast.success("Update success");
         } catch (error) {
             console.log(error);
@@ -701,7 +728,7 @@ function AppProvider({ children }) {
     }
 
     const saveDraft = async (draftInfo) => {
-        // dispatch({ type: "SAVE_DRAFT_LOADING" });
+        dispatch({ type: "SAVE_DRAFT_LOADING" });
 
         const draft = {
             title: draftInfo.title,
@@ -715,7 +742,7 @@ function AppProvider({ children }) {
                 }
             });
             console.log(response.data);
-            // dispatch({ type: "SAVE_DRAFT_SUCCESSS" });
+            dispatch({ type: "SAVE_DRAFT_SUCCESS" });
 
         } catch (error) {
             console.log(error);
@@ -743,21 +770,25 @@ function AppProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
+            console.log(response.data);
             dispatch({ type: "DELETE_DRAFT_SUCCESS", payload: response.data });
         } catch (error) {
             console.log(error);
         }
     }
 
-    const getResults = async (query, type = "") => {
+    const getResults = async (query, type = "posts") => {
         try {
             const response = await axiosConfig
                 .get(`/blog/search?q=${query}&type=${type}&page=${1}`);
 
             if (type === "author") {
                 dispatch({
-                    type: "GET_SEARCH_RESULTS",
-                    payload: response.data.users
+                    type: "GET_USER_SEARCH_RESULTS",
+                    payload: {
+                        result: response.data.users,
+                        title: query
+                    }
                 });
                 return;
             }
@@ -765,16 +796,21 @@ function AppProvider({ children }) {
             if (type === "category") {
                 dispatch({
                     type: "GET_SEARCH_RESULTS",
-                    payload: response.data.categories
+                    payload: {
+                        result: response.data.categories,
+                        title: query
+                    }
                 });
                 return;
             }
 
             dispatch({
                 type: "GET_SEARCH_RESULTS",
-                payload: response.data.blogs
+                payload: {
+                    result: response.data.blogs,
+                    title: query
+                }
             });
-
         } catch (error) {
             console.log(error);
         }
@@ -803,9 +839,11 @@ function AppProvider({ children }) {
                 deleteBlog,
                 getBlogs,
                 getTopBlogs,
+                getAuthorBlogs,
                 changePage,
                 setAllTopics,
                 setBestTopics,
+                setAuthorTopics,
                 getMoreComments,
                 getCategoryBlogs,
                 closeAlertMessage,

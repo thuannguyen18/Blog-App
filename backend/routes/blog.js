@@ -6,6 +6,7 @@ import {
     getCategoryBlogs,
     getResults,
     getBlogDetail,
+    getBlogsByAuthors,
     createBlog,
     updateBlog,
     deleteBlog,
@@ -28,6 +29,7 @@ const upload = multer({ storage });
 router.get("/", getAllBlogs);
 router.get("/category", getCategoryBlogs);
 router.get("/search", getResults);
+router.get("/author-following", verifyToken, getBlogsByAuthors);
 router.get("/:id", getBlogDetail);
 
 // Private routes

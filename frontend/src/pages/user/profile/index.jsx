@@ -11,6 +11,7 @@ import ProfileCardPlaceholder from "components/skeleton/ProfileCardPlaceholder";
 import UserArticle from "components/article/UserArticle";
 import UserAvatar from "components/user/UserAvatar";
 import Draft from "components/Draft";
+import NoData from "components/NoData";
 
 export default function Profile() {
     // Global State
@@ -30,7 +31,7 @@ export default function Profile() {
 
     // Local State
     const [isBlogs, setIsBlogs] = useState(true);
-    const [isSave, setIsSave] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
     const [isDraft, setIsDraft] = useState(false);
 
 
@@ -53,23 +54,62 @@ export default function Profile() {
     // When user click button "Blog"
     const handleChangeBlog = () => {
         setIsBlogs(true);
-        setIsSave(false);
+        setIsSaved(false);
         setIsDraft(false);
     }
 
     // When user click button "Saved"
     const handleChangeSave = () => {
         setIsBlogs(false);
-        setIsSave(true);
+        setIsSaved(true);
         setIsDraft(false);
     }
 
     // When user click button "Draft"
     const handleChangeDraft = () => {
         setIsBlogs(false);
-        setIsSave(false);
+        setIsSaved(false);
         setIsDraft(true);
     }
+
+    // Render tab contents
+    const userTab = userBlogs.length > 0 ? <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
+        {userBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
+            userBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
+                <UserArticle
+                    key={_id}
+                    id={_id}
+                    title={title}
+                    subtitle={subTitle}
+                    picturePath={picturePath}
+                    likes={likes}
+                />
+        ))}
+    </div> : <NoData />
+
+    const savedTab = savedBlogs.length > 0 ? savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
+        savedBlogsLoading ?
+            <CardPlaceholder key={blogId._id} isProfilePicture={false} /> :
+            <div className="mt-4">
+                <Article
+                    key={blogId._id}
+                    topic={blogId}
+                    authorId={authorId}
+                    saveId={saveId}
+                    isSaved={isSaved}
+                />
+            </div>
+    )) : <NoData />;
+
+    const draftTab = drafts.length > 0 ? drafts.map(draft => (
+        <Draft
+            key={draft._id}
+            id={draft._id}
+            title={draft.title}
+            content={draft.content}
+            createdAt={draft.createdAt}
+        />
+    )) : <NoData />;
 
     // Get user's blogs 
     useEffect(() => {
@@ -78,10 +118,10 @@ export default function Profile() {
 
     // Get user's saved blogs 
     useEffect(() => {
-        if (isSave) {
+        if (isSaved) {
             getSavedBlogs();
         }
-    }, [isSave]);
+    }, [isSaved]);
 
     // Get user's drafts 
     useEffect(() => {
@@ -129,7 +169,7 @@ export default function Profile() {
                         </button>
                         <button
                             onClick={handleChangeSave}
-                            className={`text-sm text-gray-750 uppercase py-2 px-4 ${isSave && "text-black border-b-2 border-sky-500 font-semibold"}`}
+                            className={`text-sm text-gray-750 uppercase py-2 px-4 ${isSaved && "text-black border-b-2 border-sky-500 font-semibold"}`}
                         >
                             <span className="flex items-center justify-center">
                                 <BsBookmark className="text-gray-650" />
@@ -146,50 +186,9 @@ export default function Profile() {
                             </span>
                         </button>
                     </nav>
-                    {
-                        isBlogs &&
-                        <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
-                            {userBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
-                                userBlogsLoading ? <CardPlaceholder key={_id} isProfilePicture={false} /> :
-                                    <UserArticle
-                                        key={_id}
-                                        id={_id}
-                                        title={title}
-                                        subtitle={subTitle}
-                                        picturePath={picturePath}
-                                        likes={likes}
-                                    />
-                            ))}
-                        </div>
-                    }
-                    {
-                        isSave &&
-                        savedBlogs.map(({ _id: saveId, authorId, blogId, isSaved }) => (
-                            savedBlogsLoading ?
-                                <CardPlaceholder key={blogId._id} isProfilePicture={false} /> :
-                                <div className="mt-4">
-                                    <Article
-                                        key={blogId._id}
-                                        topic={blogId}
-                                        authorId={authorId}
-                                        saveId={saveId}
-                                        isSaved={isSaved}
-                                    />
-                                </div>
-                        ))
-                    }
-                    {
-                        isDraft &&
-                        drafts.map(draft => (
-                            <Draft
-                                key={draft._id}
-                                id={draft._id}
-                                title={draft.title}
-                                content={draft.content}
-                                createdAt={draft.createdAt}
-                            />
-                        ))
-                    }
+                    {isBlogs && userTab}
+                    {isSaved && savedTab}
+                    {isDraft && draftTab}
                 </div>
             </Container>
         </div>

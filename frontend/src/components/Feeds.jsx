@@ -5,6 +5,7 @@ import Category from "components/Category";
 import Container from "components/Container";
 import ImagePlaceholder from "components/skeleton/ImagePlaceholder";
 import Pagination from "components/Pagination";
+import { token } from "constants";
 
 export default function Feeds() {
     // Global State
@@ -14,9 +15,13 @@ export default function Feeds() {
         allBlogs,
         getTopBlogs,
         topBlogs,
+        getAuthorBlogs,
+        followingBlogs,
         currentPage,
         isAllTopics,
         isBestTopics,
+        isAuthorTopics,
+        setAuthorTopics,
         setAllTopics,
         setBestTopics,
         savesAndLikes
@@ -41,7 +46,17 @@ export default function Feeds() {
     ));
 
     // Render best blogs
-    const allTopBlogsContent = topBlogs.map((topic, index) => (
+    const allTopBlogsContent = topBlogs.map((topic) => (
+        feedLoading ?
+            <ImagePlaceholder key={topic._id} /> :
+            <Article
+                key={topic._id}
+                topic={topic}
+            />
+    ));
+
+    // Render following author blogs
+    const followingAuthorContent = followingBlogs.map((topic) => (
         feedLoading ?
             <ImagePlaceholder key={topic._id} /> :
             <Article
@@ -52,13 +67,16 @@ export default function Feeds() {
 
     // Get all blogs
     useEffect(() => {
-        getAllBlogs();
-    }, [currentPage, isAllTopics]);
+        if (isBestTopics) {
+            getTopBlogs();
+        }
 
-    // Get all blogs which the best topic
-    useEffect(() => {
-        getTopBlogs();
-    }, [currentPage, isBestTopics]);
+        if (isAuthorTopics) {
+            getAuthorBlogs()
+        }
+
+        getAllBlogs();
+    }, [currentPage, isAllTopics, isBestTopics, isAuthorTopics]);
 
     return (
         <Container styles={"my-4 py-4"}>
@@ -66,19 +84,27 @@ export default function Feeds() {
                 <div className="order-last col-span-6 lg:col-span-4 lg:order-first lg:pr-10 mt-6 lg:mt-0">
                     <nav className="border-b border-slate-200">
                         <button
-                            className={`${isAllTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 w-32`}
+                            className={`${isAllTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 px-6 mr-2`}
                             onClick={() => setAllTopics()}>
                             FOR YOU
                         </button>
                         <button
-                            className={`${isBestTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 w-40`}
+                            className={`${isBestTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 px-6 mr-2`}
                             onClick={() => setBestTopics()}
                         >
                             BEST TOPICS
                         </button>
+                        {token && <button
+                            className={`${isAuthorTopics && "border-b-4 border-sky-500"} text-sm font-medium h-10 px-6 mr-2`}
+                            onClick={() => setAuthorTopics()}
+                        >
+                            AUTHOR'S TOPICS
+                        </button>}
                     </nav>
                     <div className="pt-8">
-                        {isAllTopics ? allBlogsContent : allTopBlogsContent}
+                        {isAllTopics && allBlogsContent}
+                        {isBestTopics && allTopBlogsContent}
+                        {isAuthorTopics && followingAuthorContent}
                     </div>
                 </div>
                 <div className="col-span-6 lg:col-span-2">

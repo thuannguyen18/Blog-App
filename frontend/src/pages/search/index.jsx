@@ -8,13 +8,12 @@ import UserSearchResult from "components/UserSearchResult";
 
 export default function Search() {
     // Global State
-    const { getResults, results, setQuery, query } = useGlobalContext();
+    const { getResults, results, userResults, titleSearch } = useGlobalContext();
 
     // Local State
     const [isPosts, setIsPosts] = useState(true);
     const [isAuthors, setIsAuthors] = useState(false);
     const [isCategories, setIsCategories] = useState(false);
-    const [searchTitle, setSearchTitle] = useState(query);
 
     // Tab buttons
     const buttons = [
@@ -58,19 +57,16 @@ export default function Search() {
         }
     }
 
-    const result =
-        <>
-            {results.length < 1 ? "Not getting any results" :
-                results.map(result => (
-                    <SearchArticle key={result._id} result={result} />
-                ))
-            }
-        </>
+    const result = results.length < 1 ?
+        <p className="pt-8 font-semibold text-center">Not getting any results</p> :
+        results.map(result => (
+            <SearchArticle key={result._id} result={result} />
+        ));
 
     const userResult =
         <div className="grid grid-cols-1 md:grid-cols-2">
-            {results.length < 1 ? "Not getting any results" :
-                results.map(result => (
+            {userResults.length < 1 ? <p className="pt-8 font-semibold text-center md:col-span-2">Not getting any results</p> :
+                userResults.map(result => (
                     <UserSearchResult key={result._id} result={result} />
                 ))
             }
@@ -79,24 +75,21 @@ export default function Search() {
     // Get results
     useEffect(() => {
         if (isAuthors) {
-            getResults(searchTitle, "author");
+            getResults(localStorage.getItem("query"), "author");
             return;
         }
-
+        
         if (isCategories) {
-            getResults(searchTitle, "category");
+            getResults(localStorage.getItem("query"), "category");
             return;
         }
-        getResults(searchTitle);
 
-        return () => setQuery("");
+        getResults(localStorage.getItem("query"));
     }, [isPosts, isAuthors, isCategories]);
-
-    console.log(results);
-
+    
     return (
         <Container styles="flex flex-col items-center">
-            <span className="text-black-150 font-semibold text-3xl my-8 block align-center">Search result: "{searchTitle}"</span>
+            <span className="text-black-150 font-semibold text-3xl my-8 block align-center">Search result: "{titleSearch}"</span>
             <div className="w-full md:w-[766px] border border-gray-850 rounded py-1 px-2 md:p-8">
                 <div className="h-[57px] w-full border-b border-slate-200 grid grid-cols-3">
                     {buttons.map(btn => (

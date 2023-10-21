@@ -48,7 +48,7 @@ export const deleteDraft = asyncHandler(async (req, res) => {
     }
 
     await draft.deleteOne();
-
-    const drafts = await Draft.find();
+    const drafts = await Draft.find({ userId: req.userId });
+    
     return res.status(200).json(drafts);
 });
