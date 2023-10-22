@@ -105,7 +105,14 @@ export default function EditorPost() {
         saveDraft(draftInfo);
     }
 
+    // Disable save button
     const disableSaveBtn = title ? "cursor-poniter" : "bg-zinc-200 cursor-not-allowed";
+
+    // Change title
+    useEffect(() => {
+        document.title = "Write new blog...";
+        return () => document.title = "MyBlog";
+    });
 
     return (
         <Container>

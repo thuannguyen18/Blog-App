@@ -59,6 +59,12 @@ export default function Author() {
         getAuthor(id);
     }, []);
 
+    // Change title
+    useEffect(() => {
+        document.title = `${authorName}'s posts`
+        return () => document.title = "MyBlog";
+    });
+
     return (
         <div className="">
             <Container styles={"lg:grid lg:grid-cols-4 lg:gap-4 md:mt-8"}>
@@ -80,7 +86,7 @@ export default function Author() {
                         </button>
                     </nav>
                     <div className="grid md:grid-cols-3 gap-8 lg:gap-4 mt-4">
-                        {authorBlogs.map(({ _id, title, subTitle, picturePath, likes }) => (
+                        {authorBlogs.map(({ _id, title, subTitle, picturePath, likes, createdAt }) => (
                             loading ?
                                 <CardPlaceholder
                                     key={_id}
@@ -93,6 +99,7 @@ export default function Author() {
                                     subtitle={subTitle}
                                     picturePath={picturePath}
                                     likeCount={likes.length}
+                                    createdAt={createdAt}
                                 />
                         ))}
                     </div>

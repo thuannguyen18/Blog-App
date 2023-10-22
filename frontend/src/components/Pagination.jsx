@@ -51,7 +51,7 @@ export default function Pagination({ handleClick }) {
 
     return (
         <nav className="" aria-label="Page navigation example">
-            <ul className="flex items-center -space-x-px h-10 text-base">
+            <ul className="flex flex-wrap items-center  -space-x-px h-10 text-base">
                 {activePage !== 1 && prevBtn}
                 {pages.map((page, index) => (
                     <li key={page}>

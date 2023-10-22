@@ -3,8 +3,10 @@ import AlertMessage from "components/AlertMessge";
 import Form from "components/Form";
 import Input from "components/Input";
 import { useGlobalContext } from "context/context";
+import { useEffect } from "react";
 
 export default function Login() {
+    // Global State
     const {
         email,
         password,
@@ -33,6 +35,10 @@ export default function Login() {
             onChange: setPassword,
         }
     ];
+
+    useEffect(() => {
+        document.title = "Login";
+    });
 
     return (
         <div className="flex justify-center items-center h-screen">

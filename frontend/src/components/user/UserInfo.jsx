@@ -4,8 +4,9 @@ import AlertModal from "components/AlertModal";
 import UserAvatar from "components/user/UserAvatar";
 import { useGlobalContext } from "context/context";
 import { userInformation } from "constants";
+import formatDate from "utils/formatDate";
 
-export default function UserInfo({ id, name, email, profilePath }) {
+export default function UserInfo({ id, name, email, profilePath, createdAt }) {
     // Global State
     const { authorId, blogIdUpdate, openEditorMode } = useGlobalContext();
     // Local State
@@ -18,10 +19,10 @@ export default function UserInfo({ id, name, email, profilePath }) {
                 <div className="flex items-center flex-1">
                     <UserAvatar width="w-10 lg:w-14" height="h-10 lg:h-14" isDefault={true} profilePicturePath={profilePath} />
                     <div className="ml-2">
-                        <Link to={`/user/${id}`} className="text-sm font-semibold block hover:underline">
+                        <Link to={`/user/${id}`} className="text-sm text-black-150 font-bold block hover:underline">
                             {name}
                         </Link>
-                        <span className="block text-xs">@{email.replace("@gmail.com", "")}</span>
+                        <span className="block text-xs text-gray-950">{formatDate(createdAt)}</span>
                     </div>
                 </div>
                 {isUser &&

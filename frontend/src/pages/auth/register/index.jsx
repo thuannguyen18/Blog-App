@@ -1,9 +1,11 @@
+import React, { useEffect } from "react";
 import AlertMessage from "components/AlertMessge";
 import Form from "components/Form";
 import Input from "components/Input";
 import { useGlobalContext } from "context/context";
 
 export default function Register() {
+    // Global State
     const {
         username,
         email,
@@ -43,6 +45,10 @@ export default function Register() {
             onChange: setPassword,
         }
     ];
+
+    useEffect(() => {
+        document.title = "Sign up";
+    });
 
     return (
         <div className="relative flex flex-col justify-center items-center h-screen">

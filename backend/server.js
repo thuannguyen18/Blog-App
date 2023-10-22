@@ -32,11 +32,11 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* ROUTES */
-app.use("/auth", authRoute);
-app.use("/user", userRoute);
-app.use("/blog", blogRoute);
-app.use("/blog-detail", commentRoute);
-app.use("/save-blog", saveBlogRoute);
+app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/user", userRoute);
+app.use("/api/v1/blog", blogRoute);
+app.use("/api/v1/blog-detail", commentRoute);
+app.use("/api/v1/save-blog", saveBlogRoute);
 app.use("/api/v1/save-draft", saveDraftRoute);
 
 app.listen(process.env.PORT, (err) => {

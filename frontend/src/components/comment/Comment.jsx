@@ -3,24 +3,28 @@ import UserInfo from "components/user/UserInfo";
 import { useGlobalContext } from "context/context";
 import { userInformation } from "constants";
 
-export default function Comment({ blogId, commentId, content, userInfo }) {
+export default function Comment({ comment }) {
+    // Global State
     const { deleteComment, updateComment } = useGlobalContext();
-    const { _id, username, email, profilePicturePath } = userInfo;
-
+    const { _id, username, email, profilePicturePath } = comment.userId;
+    
+    // Local State
     const [isUpdate, setIsUpdate] = useState(false);
     const [isUpdateMode, setIsUpdateMode] = useState(false);
-    const [contentUpdate, setContentUpdate] = useState(content);
+    const [contentUpdate, setContentUpdate] = useState(comment.content);
 
+    // Delete comment
     const handleDelete = () => {
-        deleteComment(commentId, blogId);
+        deleteComment(comment._id, comment.blogId);
     }
 
+    // Update comment
     const handleUpdateMode = () => {
         setIsUpdateMode(!isUpdateMode);
     }
 
     const handleUpdate = () => {
-        updateComment(commentId, contentUpdate);
+        updateComment(comment._id, contentUpdate);
         setIsUpdate(true);
         setIsUpdateMode(false);
     }
@@ -33,6 +37,7 @@ export default function Comment({ blogId, commentId, content, userInfo }) {
                     name={username}
                     email={email}
                     profilePath={profilePicturePath}
+                    createdAt={comment.createdAt}
                 />
                 {userInformation?.id === _id &&
                     <div className="invisible group/edit group-hover/item:visible">
@@ -42,7 +47,7 @@ export default function Comment({ blogId, commentId, content, userInfo }) {
                 }
             </div>
             <div className="px-2 mt-2 mb-8">
-                {isUpdate ? contentUpdate : content}
+                {isUpdate ? contentUpdate : comment.content}
             </div>
             {isUpdateMode && <div className="flex items-center border-y border-gray-200 mb-4 py-4">
                 <textarea

@@ -5,13 +5,13 @@ import Bookmark from "components/Bookmark";
 import UserAvatar from "components/user/UserAvatar";
 import Reactions from "components/Reactions";
 import { useGlobalContext } from "context/context";
-
+import formatDate from "utils/formatDate";
 
 export default function Article({ topic, authorId, saveId, isSaved, isLiked }) {
     const navigate = useNavigate();
 
     // Global State and Props
-    const { _id, title, subTitle, category, picturePath, likes, } = topic;
+    const { _id, title, subTitle, category, picturePath, likes, createdAt } = topic;
     const { username, profilePicturePath, _id: userId } = topic.userId;
     const { likeBlog } = useGlobalContext();
 
@@ -71,7 +71,10 @@ export default function Article({ topic, authorId, saveId, isSaved, isLiked }) {
                 <div className="flex items-center justify-between mt-4">
                     <div className="flex items-center">
                         <UserAvatar width="w-12" height="h-12" profilePicturePath={profilePicturePath || authorProfilePicturePath} />
-                        <Link className="text-sm font-semibold block ml-2" to={`/user/${userId || author}`}>{username || authorName}</Link>
+                        <div className="flex items-center items-baseline">
+                            <Link className="text-sm font-semibold block ml-2" to={`/user/${userId || author}`}>{username || authorName}</Link>
+                            <span className="text-xs text-gray-950 ml-1">&#x2022; {formatDate(createdAt)}</span>
+                        </div>
                     </div>
                     <Reactions
                         likeCount={likeCount}

@@ -16,17 +16,10 @@ export default function RecommendBlogs() {
             <Container>
                 <h3 className="font-semibold my-5 text-sm md:text-base uppercase">Recommended for You</h3>
                 <div className="grid md:grid-cols-4 gap-8 lg:gap-4">
-                    {randomBlogs.map(({ _id, title, user, picturePath }) => (
-                        loading ? <CardPlaceholder key={_id} /> :
-                            <RecommendArticle
-                                key={_id}
-                                id={_id}
-                                userId={user._id}
-                                title={title}
-                                userName={user.username}
-                                profilePicturePath={user.profilePicturePath}
-                                picturePath={picturePath}
-                            />
+                    {randomBlogs.map(article => (
+                        loading
+                            ? <CardPlaceholder key={article._id} />
+                            : <RecommendArticle key={article._id} article={article} />
                     ))}
                 </div>
             </Container>

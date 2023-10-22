@@ -11,7 +11,6 @@ const BlogShema = new mongoose.Schema({
     },
     subTitle: {
         type: String,
-        required: true,
     },
     content: {
         type: String,

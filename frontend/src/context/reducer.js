@@ -120,6 +120,7 @@ function reducer(state, action) {
                 authorName: data.userId.username,
                 authorEmail: data.userId.email,
                 authorProfilePicturePath: data.userId.profilePicturePath,
+                blogId: data._id,
                 blogTitle: data.title,
                 blogSubtitle: data.subTitle,
                 blogContent: data.content,
@@ -131,6 +132,7 @@ function reducer(state, action) {
                 blogContentUpdate: data.draftContents,
                 blogCategoryUpdate: data.category,
                 blogPicturePathUpdate: data.picturePath,
+                blogCreatedAt: data.createdAt,
             }
         }
         case "GET_COMMENTS":

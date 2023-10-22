@@ -7,6 +7,7 @@ import Loading from "components/Loading";
 
 export default function FormComment() {
     const { id } = useParams();
+    // Global State
     const {
         getComments,
         commentLoading,
@@ -17,8 +18,10 @@ export default function FormComment() {
         postComment,
         postCommentLoading
     } = useGlobalContext();
+    // Local State
     const [content, setContent] = useState("");
 
+    // Post comment
     const handleSubmit = (e) => {
         e.preventDefault();
         postComment(id, content);
@@ -26,6 +29,7 @@ export default function FormComment() {
         setContent("");
     }
 
+    // Render load more comment button
     const loadMoreCommentBtn = (!isFinalComment && isHasComment) && (
         <button
             className="text-sm h-10 w-full p-2 border-t border-slate-300 font-semibold hover:text-sky-500"
@@ -39,6 +43,7 @@ export default function FormComment() {
         </button>
     );
 
+    // If has no comment 
     const noComment = !isHasComment && <NoComment />;
 
     return (
@@ -74,13 +79,7 @@ export default function FormComment() {
             </form>
             <div className="mt-6">
                 {comments.map(comment => (
-                    <Comment
-                        key={comment._id}
-                        blogId={id}
-                        commentId={comment._id}
-                        content={comment.content}
-                        userInfo={comment.userId}
-                    />
+                    <Comment key={comment._id} comment={comment} />
                 ))}
             </div>
             {loadMoreCommentBtn}

@@ -35,9 +35,9 @@ export default function Feeds() {
 
     // Render all blogs
     const allBlogsContent = allBlogs.map((topic, index) => (
-        feedLoading ?
-            <ImagePlaceholder key={topic._id} /> :
-            <Article
+        feedLoading
+            ? <ImagePlaceholder key={topic._id} />
+            : <Article
                 key={topic._id}
                 topic={topic}
                 isSaved={savesAndLikes[index].isSaved}
@@ -46,20 +46,20 @@ export default function Feeds() {
     ));
 
     // Render best blogs
-    const allTopBlogsContent = topBlogs.map((topic) => (
-        feedLoading ?
-            <ImagePlaceholder key={topic._id} /> :
-            <Article
+    const allTopBlogsContent = topBlogs.map((topic, index) => (
+        feedLoading
+            ? <ImagePlaceholder key={topic._id} />
+            : <Article
                 key={topic._id}
                 topic={topic}
             />
     ));
 
     // Render following author blogs
-    const followingAuthorContent = followingBlogs.map((topic) => (
-        feedLoading ?
-            <ImagePlaceholder key={topic._id} /> :
-            <Article
+    const followingAuthorContent = followingBlogs.map((topic, index) => (
+        feedLoading
+            ? <ImagePlaceholder key={topic._id} />
+            : <Article
                 key={topic._id}
                 topic={topic}
             />
@@ -72,7 +72,7 @@ export default function Feeds() {
         }
 
         if (isAuthorTopics) {
-            getAuthorBlogs()
+            getAuthorBlogs();
         }
 
         getAllBlogs();

@@ -33,11 +33,13 @@ const initalState = {
     activePage: 1,
     limitPerPage: 10,
     // Get blog detail 
+    blogId: "",
     blogTitle: "",
     blogSubtitle: "",
     blogContent: "",
     blogPicturePath: "",
     blogCategory: "",
+    blogCreatedAt: "",
     // Get comments and pagination
     comments: [],
     nextComments: 1,
@@ -145,7 +147,7 @@ function AppProvider({ children }) {
                 email: state.email,
                 password: state.password
             };
-            const response = await axiosConfig.post("auth/register", payload);
+            const response = await axiosConfig.post("/api/v1/auth/register", payload);
 
             dispatch({
                 type: "SIGN_UP_SUCCESS",
@@ -167,7 +169,7 @@ function AppProvider({ children }) {
                 email: state.email,
                 password: state.password
             };
-            const response = await axiosConfig.post("/auth/login", payload);
+            const response = await axiosConfig.post("/api/v1/auth/login", payload);
             const token = response.data.accessToken;
 
             if (token) {
@@ -202,7 +204,7 @@ function AppProvider({ children }) {
     const getBlogs = async (dispatchType, queryType) => {
         dispatch({ type: "LOADING" });
         try {
-            const response = await axiosConfig.get(`/blog?${queryType}=true&limit=4`);
+            const response = await axiosConfig.get(`/api/v1/blog?${queryType}=true&limit=4`);
 
             dispatch({
                 type: dispatchType,
@@ -219,7 +221,7 @@ function AppProvider({ children }) {
         try {
             if (userInformation?.id) {
                 const response = await axiosConfig
-                    .get(`/blog?page=${state.currentPage}&limit=${state.limitPerPage}&userId=${userInformation.id}`);
+                    .get(`/api/v1/blog?page=${state.currentPage}&limit=${state.limitPerPage}&userId=${userInformation.id}`);
 
                 dispatch({
                     type: "GET_ALL_BLOGS",
@@ -229,7 +231,7 @@ function AppProvider({ children }) {
             }
 
             const response = await axiosConfig
-                .get(`/blog?page=${state.currentPage}&limit=${state.limitPerPage}`);
+                .get(`/api/v1/blog?page=${state.currentPage}&limit=${state.limitPerPage}`);
 
             dispatch({
                 type: "GET_ALL_BLOGS",
@@ -246,17 +248,16 @@ function AppProvider({ children }) {
         try {
             if (userInformation?.id) {
                 const response = await axiosConfig
-                    .get(`/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}&userId=${userInformation?.id}`);
+                    .get(`/api/v1/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}&userId=${userInformation?.id}`);
 
                 dispatch({
                     type: "GET_TOP_BLOGS",
                     payload: response.data
                 });
-                console.log(response.data);
                 return;
             }
             const response = await axiosConfig
-                .get(`/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}`);
+                .get(`/api/v1/blog?sort=top&page=${state.currentPage}&limit=${state.limitPerPage}`);
 
             dispatch({
                 type: "GET_TOP_BLOGS",
@@ -271,12 +272,11 @@ function AppProvider({ children }) {
         dispatch({ type: "FEED_LOADING" });
         try {
             const response = await axiosConfig
-                .get(`/blog/author-following?page=${state.currentPage}&limit=${state.limitPerPage}`, {
+                .get(`/api/v1/blog/author-following?page=${state.currentPage}&limit=${state.limitPerPage}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 });
-            console.log(response.data);
             dispatch({
                 type: "GET_FOLLOWING_AUTHOR_BLOGS",
                 payload: response.data
@@ -303,8 +303,8 @@ function AppProvider({ children }) {
 
         try {
             const response = await Promise.all([
-                axiosConfig.get(`/blog/${blogId}`),
-                axiosConfig.get(`/blog-detail/${blogId}/comments?page=1&limit=5`)
+                axiosConfig.get(`/api/v1/blog/${blogId}`),
+                axiosConfig.get(`/api/v1/blog-detail/${blogId}/comments?page=1&limit=5`)
             ]);
 
             dispatch({
@@ -326,7 +326,7 @@ function AppProvider({ children }) {
         dispatch({ type: "COMMENT_LOADING" });
         try {
             const response = await axiosConfig
-                .get(`/blog-detail/${id}/comments?page=${state.nextComments += 1}&limit=5`);
+                .get(`/api/v1/blog-detail/${id}/comments?page=${state.nextComments += 1}&limit=5`);
 
             dispatch({
                 type: "GET_MORE_COMMENTS",
@@ -342,7 +342,7 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
         try {
             const response = await axiosConfig
-                .get(`/blog/category?name=${category}&page=${state.categoryCurrentPage}`);
+                .get(`/api/v1/blog/category?name=${category}&page=${state.categoryCurrentPage}`);
             dispatch({
                 type: "GET_CATEGORY_BLOGS",
                 payload: response.data
@@ -357,14 +357,14 @@ function AppProvider({ children }) {
         dispatch({ type: "LOADING" });
         try {
             if (userInformation?.id) {
-                const response = await axiosConfig.get(`user/${authorId}?userId=${userInformation.id}`);
+                const response = await axiosConfig.get(`/api/v1/user/${authorId}?userId=${userInformation.id}`);
                 dispatch({
                     type: "GET_AUTHOR",
                     payload: response.data
                 });
                 return;
             }
-            const response = await axiosConfig.get(`user/${authorId}`);
+            const response = await axiosConfig.get(`/api/v1/user/${authorId}`);
             dispatch({
                 type: "GET_AUTHOR",
                 payload: response.data
@@ -379,7 +379,7 @@ function AppProvider({ children }) {
         dispatch({ type: "USER_BLOGS_LOADING" });
 
         try {
-            const { data } = await axiosConfig.get("/user", {
+            const { data } = await axiosConfig.get("/api/v1/user", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -416,7 +416,7 @@ function AppProvider({ children }) {
         dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
-            const response = await axiosConfig.patch(`/user/${userInformation.id}`, formData, {
+            const response = await axiosConfig.patch(`/api/v1/user/${userInformation.id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -444,7 +444,7 @@ function AppProvider({ children }) {
 
         try {
             const response = await axiosConfig
-                .patch(`/user/${userInformation.id}/change-password`, payload, {
+                .patch(`/api/v1/user/${userInformation.id}/change-password`, payload, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -476,7 +476,7 @@ function AppProvider({ children }) {
         }
 
         try {
-            const response = await axiosConfig.post("/blog", formData, {
+            const response = await axiosConfig.post("/api/v1/blog", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -500,7 +500,7 @@ function AppProvider({ children }) {
         const token = localStorage.getItem("access_token");
 
         try {
-            await axiosConfig.delete(`/blog/${id}`, {
+            await axiosConfig.delete(`/api/v1/blog/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -533,7 +533,7 @@ function AppProvider({ children }) {
         }
 
         try {
-            const response = await axiosConfig.patch(`/blog/${blogInfo.id}`, formData, {
+            const response = await axiosConfig.patch(`/api/v1/blog/${blogInfo.id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -561,7 +561,7 @@ function AppProvider({ children }) {
 
         try {
             const response = await axiosConfig
-                .get(`/blog-detail/${blogId}/comments?page=1&limit=${limit}`);
+                .get(`/api/v1/blog-detail/${blogId}/comments?page=1&limit=${limit}`);
 
             dispatch({
                 type: "GET_COMMENTS",
@@ -591,7 +591,7 @@ function AppProvider({ children }) {
         };
 
         try {
-            await axiosConfig.post(`/blog-detail/create-comment`, payload, {
+            await axiosConfig.post(`/api/v1/blog-detail/create-comment`, payload, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -610,7 +610,7 @@ function AppProvider({ children }) {
         dispatch({ type: "DELETE_COMMENT_LOADING" });
         const token = localStorage.getItem("access_token");
         try {
-            await axiosConfig.delete(`/blog-detail/delete-comment/${id}`, {
+            await axiosConfig.delete(`/api/v1/blog-detail/delete-comment/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -627,9 +627,8 @@ function AppProvider({ children }) {
 
     // User update comment in a blog
     const updateComment = async (id, content) => {
-        const token = localStorage.getItem("access_token");
         try {
-            await axiosConfig.patch(`/blog-detail/update-comment/${id}`, { content }, {
+            await axiosConfig.patch(`/api/v1/blog-detail/update-comment/${id}`, { content }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -650,7 +649,7 @@ function AppProvider({ children }) {
         };
 
         try {
-            const response = await axiosConfig.post("/save-blog", payload, {
+            const response = await axiosConfig.post("/api/v1/save-blog", payload, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -662,7 +661,7 @@ function AppProvider({ children }) {
 
             if (response.data === "OK") {
                 const response = await axiosConfig
-                    .get(`/save-blog?userId=${userInformation.id}`, {
+                    .get(`/api/v1/save-blog?userId=${userInformation.id}`, {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }
@@ -685,7 +684,7 @@ function AppProvider({ children }) {
         dispatch({ type: "SAVED_BLOG_LOADING" });
         try {
             const response = await axiosConfig
-                .get(`/save-blog?userId=${userInformation.id}`, {
+                .get(`/api/v1/save-blog?userId=${userInformation.id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -701,7 +700,7 @@ function AppProvider({ children }) {
 
     const follow = async (id) => {
         try {
-            const response = await axiosConfig.post(`/user/${id}/follow`, {}, {
+            const response = await axiosConfig.post(`/api/v1/user/${id}/follow`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -717,7 +716,7 @@ function AppProvider({ children }) {
 
     const likeBlog = async (blogId) => {
         try {
-            await axiosConfig.post(`/blog/${blogId}/like`, {}, {
+            await axiosConfig.post(`/api/v1/blog/${blogId}/like`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -780,7 +779,7 @@ function AppProvider({ children }) {
     const getResults = async (query, type = "posts") => {
         try {
             const response = await axiosConfig
-                .get(`/blog/search?q=${query}&type=${type}&page=${1}`);
+                .get(`/api/v1/blog/search?q=${query}&type=${type}&page=${1}`);
 
             if (type === "author") {
                 dispatch({

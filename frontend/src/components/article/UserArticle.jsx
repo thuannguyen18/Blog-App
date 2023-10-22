@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import formatDate from "utils/formatDate";
 
-export default function UserArticle({ id, title, subtitle, picturePath }) {
+export default function UserArticle({ id, title, subtitle, picturePath, createdAt }) {
     return (
         <article className="md:col-span-1">
             <Link className="max-h-48" to={`/blog/${id}`}>
@@ -13,7 +14,7 @@ export default function UserArticle({ id, title, subtitle, picturePath }) {
                 <p className="paragraph-max-line text-sm mt-2">{subtitle}</p>
             </div>
             <div className="flex items-center justify-between mt-10">
-                <span className="text-xs text-gray-750">28/07/2023</span>
+                <span className="text-xs text-gray-750">{formatDate(createdAt)}</span>
             </div>
         </article>
     );

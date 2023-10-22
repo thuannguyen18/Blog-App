@@ -5,7 +5,6 @@ import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 import User from "../models/User.js";
 
-
 // READ
 export const getAllBlogs = asyncHandler(async (req, res) => {
     const { page, newest, random, limit, sort, userId } = req.query;

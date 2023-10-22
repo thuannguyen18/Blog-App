@@ -7,15 +7,23 @@ import Container from "components/Container";
 
 export default function Category() {
     const { id } = useParams();
+    // Global State
     const {
         loading,
         getCategoryBlogs,
         categoryBlogs,
     } = useGlobalContext();
 
+    // Get category blogs
     useEffect(() => {
         getCategoryBlogs(id);
     }, []);
+
+    // Change title
+    useEffect(() => {
+        document.title = id;
+        return () => document.title = "MyBlog";
+    });
 
     return (
         <React.Fragment>
