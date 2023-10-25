@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BiBookmark } from "react-icons/bi";
 import { BsVectorPen, BsFillCaretDownFill } from "react-icons/bs";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { FiLogOut } from "react-icons/fi";
@@ -35,11 +34,6 @@ export default function NavbarPrivate() {
             title: "All my posts",
             icon: <HiOutlinePencilAlt />,
             to: "/user/me"
-        },
-        {
-            title: "Saved",
-            icon: <BiBookmark />,
-            to: "/user/me/saved"
         },
         {
             title: "Account settings",

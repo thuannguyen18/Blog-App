@@ -42,7 +42,7 @@ export default function Category() {
                             ))}
                         </div>
                     </div>
-                    <div className="col-span-6 lg:col-span-2 h-96 bg-gray-400"></div>
+                    <div className="col-span-6 lg:col-span-2 h-96"></div>
                 </div>
             </Container>
         </React.Fragment>

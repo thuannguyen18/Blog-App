@@ -5,7 +5,7 @@ import {
     getDraft,
     saveDraft,
     deleteDraft,
-} from "../controllers/saveDraft.js";
+} from "../controllers/draft.js";
 
 const router = express.Router();
 

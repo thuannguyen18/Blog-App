@@ -147,12 +147,13 @@ function AppProvider({ children }) {
                 email: state.email,
                 password: state.password
             };
-            const response = await axiosConfig.post("/api/v1/auth/register", payload);
-
+            const response = await axiosConfig.post("/api/v1/auth/register", payload)
+            
             dispatch({
                 type: "SIGN_UP_SUCCESS",
                 payload: response.data.message
             });
+
 
             navigate("/login");
         } catch (error) {
@@ -416,12 +417,11 @@ function AppProvider({ children }) {
         dispatch({ type: "UPDATE_USER_LOADING" });
 
         try {
-            const response = await axiosConfig.patch(`/api/v1/user/${userInformation.id}`, formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-
+            const response = await axiosConfig.patch(
+                `/api/v1/user/${userInformation.id}`,
+                formData,
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
 
             dispatch({
                 type: "UPDATE_USER_SUCCESS",
@@ -431,7 +431,7 @@ function AppProvider({ children }) {
             navigate("/user/me");
             toast.success("Update success");
         } catch (error) {
-            console.log(error);
+            toast.error("Something went wrong");
             dispatch({ type: "UPDATE_USER_FAIL" });
         }
     }
@@ -560,9 +560,7 @@ function AppProvider({ children }) {
         }
 
         try {
-            const response = await axiosConfig
-                .get(`/api/v1/blog-detail/${blogId}/comments?page=1&limit=${limit}`);
-
+            const response = await axiosConfig.get(`/api/v1/blog-detail/${blogId}/comments?page=1&limit=${limit}`);
             dispatch({
                 type: "GET_COMMENTS",
                 payload: response.data
@@ -706,8 +704,6 @@ function AppProvider({ children }) {
                 }
             });
             dispatch({ type: "FOLLOW", payload: response.data });
-            console.log(response.data)
-            toast.success("Follow success");
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");
@@ -735,14 +731,11 @@ function AppProvider({ children }) {
         };
 
         try {
-            const response = await axiosConfig.post("/api/v1/save-draft", draft, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+            await axiosConfig.post("/api/v1/draft", draft, {
+                headers: { Authorization: `Bearer ${token}` }
             });
-            console.log(response.data);
-            dispatch({ type: "SAVE_DRAFT_SUCCESS" });
 
+            dispatch({ type: "SAVE_DRAFT_SUCCESS" });
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");
@@ -751,10 +744,8 @@ function AppProvider({ children }) {
 
     const getAllDrafts = async () => {
         try {
-            const response = await axiosConfig.get("/api/v1/save-draft", {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+            const response = await axiosConfig.get("/api/v1/draft", {
+                headers: { Authorization: `Bearer ${token}` }
             });
             dispatch({ type: "GET_ALL_DRAFT", payload: response.data });
         } catch (error) {
@@ -764,12 +755,9 @@ function AppProvider({ children }) {
 
     const deleteDraft = async (id) => {
         try {
-            const response = await axiosConfig.delete(`/api/v1/save-draft/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+            const response = await axiosConfig.delete(`/api/v1/draft/${id}`, {
+                headers: { Authorization: `Bearer ${token}` }
             });
-            console.log(response.data);
             dispatch({ type: "DELETE_DRAFT_SUCCESS", payload: response.data });
         } catch (error) {
             console.log(error);

@@ -5,10 +5,11 @@ import UserAvatar from "components/user/UserAvatar";
 import { useGlobalContext } from "context/context";
 import { userInformation } from "constants";
 import formatDate from "utils/formatDate";
+import Bookmark from "components/Bookmark";
 
-export default function UserInfo({ id, name, email, profilePath, createdAt }) {
+export default function UserInfo({ id, name, profilePath, createdAt }) {
     // Global State
-    const { authorId, blogIdUpdate, openEditorMode } = useGlobalContext();
+    const { authorId, blogIdUpdate, openEditorMode, comments } = useGlobalContext();
     // Local State
     const [open, setOpen] = useState(false);
     const isUser = userInformation?.id === authorId;
@@ -26,7 +27,7 @@ export default function UserInfo({ id, name, email, profilePath, createdAt }) {
                     </div>
                 </div>
                 {isUser &&
-                    <React.Fragment>
+                    <div>
                         <button className="transition border border-gray-250 text-gray-550 py-2 px-4 text-center rounded hover:bg-gray-500 hover:text-white">
                             <Link onClick={openEditorMode} to={`/blog/edit/${blogIdUpdate}`}>Update</Link>
                         </button>
@@ -36,7 +37,7 @@ export default function UserInfo({ id, name, email, profilePath, createdAt }) {
                         >
                             Delete
                         </button>
-                    </React.Fragment>
+                    </div>
                 }
             </div>
             <AlertModal open={open} setOpen={setOpen} />

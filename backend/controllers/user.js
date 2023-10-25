@@ -9,18 +9,15 @@ import Blog from "../models/Blog.js";
 export const getAuthor = asyncHandler(async (req, res) => {
     const { authorId } = req.params;
     const { userId } = req.query;
-
     const author = await User.findById(authorId).select("-password");
-
     const isFollowing = author.followers.some(id => id.toString() === userId);
-
     const authorBlogs = await Blog
         .find({ userId: authorId })
         .select("-content -comments -category");
 
     return res.status(200).json({
-        authorBlogs,
         author,
+        authorBlogs,
         isFollowing,
         userId
     });
@@ -51,7 +48,7 @@ export const updateUser = asyncHandler(async (req, res) => {
         return res.sendStatus(404);
     }
 
-    if (!username || !email) {
+    if (!username.trim() || !email.trim()) {
         return res.sendStatus(400);
     }
 

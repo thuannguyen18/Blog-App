@@ -4,6 +4,7 @@ import { useGlobalContext } from "context/context";
 import Comment from "./Comment";
 import NoComment from "components/NoComment";
 import Loading from "components/Loading";
+import { useEffect } from "react";
 
 export default function FormComment() {
     const { id } = useParams();
@@ -45,6 +46,10 @@ export default function FormComment() {
 
     // If has no comment 
     const noComment = !isHasComment && <NoComment />;
+
+    useEffect(() => {
+        getComments(id);
+    }, []);
 
     return (
         <div className="rounded-sm border border-gray-200 px-5 pt-5 lg:px-10 lg:pt-10 my-12 shadow-md">

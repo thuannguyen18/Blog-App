@@ -4,7 +4,6 @@ import { useGlobalContext } from "context/context";
 import { Link } from "react-router-dom";
 import ContentPlaceholder from "components/skeleton/ContentPlaceholder";
 import UserInfo from "components/user/UserInfo";
-import Bookmark from "components/Bookmark";
 
 export default function BlogContent() {
     const { id } = useParams();
@@ -47,7 +46,7 @@ export default function BlogContent() {
                 <Link to={`/category/${blogCategory}`} className="text-sm text-gray-500 hover:underline">{blogCategory}</Link>
                 <h1 className="text-4xl lg:text-[42px] lg:leading-normal font-semibold my-2 text-gray-550">{blogTitle}</h1>
                 <p className="text-gray-250 italic my-2">{blogSubtitle}</p>
-                <div className="flex items-center justify-between">
+                <div className="">
                     <UserInfo
                         id={authorId}
                         name={authorName}
@@ -55,16 +54,10 @@ export default function BlogContent() {
                         profilePath={authorProfilePicturePath}
                         createdAt={blogCreatedAt}
                     />
-                    <span className="mt-4">
-                        <Bookmark
-                            id={blogId}
-                            authorId={authorId}
-                        />
-                    </span>
                 </div>
             </div>
             {/* THUMBNAIL IMAGE */}
-            <img className="rounded w-full" src={`http://localhost:3500/assets/${blogPicturePath}`} alt="image" />
+            <img className="rounded w-full" src={`http://localhost:3500/assets/${blogPicturePath}`} alt="thumbnail" />
             {/* BLOG CONTENT */}
             <div className="mt-6">
                 {blogContent.split("\n").map((paragraph, index) => (

@@ -13,7 +13,7 @@ import blogRoute from "./routes/blog.js";
 import userRoute from "./routes/user.js";
 import commentRoute from "./routes/comment.js";
 import saveBlogRoute from "./routes/saveBlog.js";
-import saveDraftRoute from "./routes/saveDraft.js";
+import draftRoute from "./routes/draft.js";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -37,7 +37,7 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/blog", blogRoute);
 app.use("/api/v1/blog-detail", commentRoute);
 app.use("/api/v1/save-blog", saveBlogRoute);
-app.use("/api/v1/save-draft", saveDraftRoute);
+app.use("/api/v1/draft", draftRoute);
 
 app.listen(process.env.PORT, (err) => {
     if (err) console.log(err);

@@ -2,6 +2,7 @@ import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 import SaveBlog from "../models/SaveBlog.js";
 
+// READ
 export const getSavedBlogs = asyncHandler(async (req, res) => {
     const savedBlogs = await SaveBlog
         .find({ userId: req.query.userId })
@@ -9,6 +10,8 @@ export const getSavedBlogs = asyncHandler(async (req, res) => {
     return res.status(200).json(savedBlogs);
 });
 
+
+// CREATE
 export const saveBlog = asyncHandler(async (req, res) => {
     const { authorId, userId, blogId, saveId } = req.body;
     const blog = await Blog.findById(blogId);
@@ -38,6 +41,8 @@ export const saveBlog = asyncHandler(async (req, res) => {
     return res.sendStatus(201);
 });
 
+
+// DELETE
 export const unSaveBlog = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const saveBlog = await SaveBlog.findById(id);

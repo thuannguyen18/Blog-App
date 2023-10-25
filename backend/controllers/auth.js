@@ -7,7 +7,7 @@ export const register = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
 
     // Confirm data
-    if (!username || !email || !password) {
+    if (!username.trim() || !email || !password.trim()) {
         return res.status(400).json({ message: "All fields are required" });
     }
 
