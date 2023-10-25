@@ -56,14 +56,16 @@ export default function Feeds() {
     ));
 
     // Render following author blogs
-    const followingAuthorContent = followingBlogs.map((topic, index) => (
-        feedLoading
-            ? <ImagePlaceholder key={topic._id} />
-            : <Article
-                key={topic._id}
-                topic={topic}
-            />
-    ));
+    const followingAuthorContent = followingBlogs.length < 1
+        ? <p className="text-center font-semibold">Please follow authors to see their blog</p>
+        : followingBlogs.map((topic, index) => (
+            feedLoading
+                ? <ImagePlaceholder key={topic._id} />
+                : <Article
+                    key={topic._id}
+                    topic={topic}
+                />
+        ));
 
     // Get all blogs
     useEffect(() => {

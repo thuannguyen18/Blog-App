@@ -3,6 +3,7 @@ import Blog from "../models/Blog.js";
 import Comment from "../models/Comment.js";
 import User from "../models/User.js";
 
+// READ
 export const getComments = asyncHandler(async (req, res) => {
     const { page, limit } = req.query;
     const blog = await Blog.findById(req.params.id);
@@ -22,6 +23,7 @@ export const getComments = asyncHandler(async (req, res) => {
 });
 
 
+// CREATE
 export const createComment = asyncHandler(async (req, res) => {
     const { userId, blogId, content } = req.body;
     await Comment.create({ userId, blogId, content });
@@ -29,6 +31,7 @@ export const createComment = asyncHandler(async (req, res) => {
 });
 
 
+// UPDATE
 export const updateComment = asyncHandler(async (req, res) => {
     const comment = await Comment.findById(req.params.id);
 
@@ -42,6 +45,7 @@ export const updateComment = asyncHandler(async (req, res) => {
 });
 
 
+// DELETE
 export const deleteComment = asyncHandler(async (req, res) => {
     const comment = await Comment.findById(req.params.id);
 

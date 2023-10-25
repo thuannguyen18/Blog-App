@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import Blog from "../models/Blog.js";
 
+// READ
 export const getAuthor = asyncHandler(async (req, res) => {
     const { authorId } = req.params;
     const { userId } = req.query;
@@ -35,6 +36,7 @@ export const getUser = asyncHandler(async (req, res) => {
     });
 });
 
+// CREATE
 export const updateUser = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { username, email } = req.body;
@@ -74,6 +76,8 @@ export const updateUser = asyncHandler(async (req, res) => {
     return res.sendStatus(200);
 });
 
+
+// UPDATE
 export const changePassword = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { password, newPassword, confirmNewPassword } = req.body;

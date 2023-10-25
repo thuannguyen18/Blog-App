@@ -736,6 +736,7 @@ function AppProvider({ children }) {
             });
 
             dispatch({ type: "SAVE_DRAFT_SUCCESS" });
+            toast.success("Save draft success");
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");

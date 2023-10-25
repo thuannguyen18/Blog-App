@@ -1,5 +1,5 @@
 import express from "express";
-import multer from "multer";
+import { upload } from "../utils/upload.js";
 import { 
     getAuthor, 
     getUser, 
@@ -10,16 +10,6 @@ import {
 import verifyToken from "../middlewares/verifyToken.js";
 
 const router = express.Router();
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "public/assets");
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    },
-});
-const upload = multer({ storage });
 
 router.get("/", verifyToken, getUser);
 router.get("/:authorId", getAuthor);

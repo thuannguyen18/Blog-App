@@ -4,6 +4,7 @@ import path from "path";
 import asyncHandler from "express-async-handler";
 import Blog from "../models/Blog.js";
 import User from "../models/User.js";
+import Comment from "../models/Comment.js";
 
 // READ
 export const getAllBlogs = asyncHandler(async (req, res) => {
