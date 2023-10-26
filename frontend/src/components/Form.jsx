@@ -3,8 +3,10 @@ import { useGlobalContext } from "../context/context";
 import Loading from "./Loading";
 
 export default function Form({ title, to, text, buttonText, linkText, children }) {
+    // Global State
     const { signUp, signIn, loading } = useGlobalContext();
 
+    // Submit form
     const handleSubmit = (e) => {
         e.preventDefault();
         if (buttonText === 'Sign up') {
