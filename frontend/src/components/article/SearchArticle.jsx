@@ -5,7 +5,13 @@ export default function SearchArticle({ result }) {
     return (
         <div className="flex py-8">
             <Link className="h-[148px] md:w-[228px] rounded" to={`/blog/${result._id}`}>
-                {result.picturePath && <img className="rounded object-cover w-full h-full border border-gray-200 " src={`http://localhost:3500/assets/${result.picturePath}`} alt="thumbnail" />}
+                {result.picturePath &&
+                    <img
+                        className="rounded object-cover w-full h-full border border-gray-200"
+                        src={`${process.env.REACT_APP_BASE_URL}/assets/${result.picturePath}`}
+                        alt="thumbnail"
+                    />
+                }
             </Link>
             <div className="flex-1 pl-4">
                 <div className="flex items-center justify-between mt-1 mb-2 lg:mt-0">

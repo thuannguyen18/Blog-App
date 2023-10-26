@@ -48,7 +48,7 @@ export default function Article({ topic, authorId, saveId, isSaved, isLiked }) {
     return (
         <div className="grid lg:grid-cols-9 mb-12">
             <Link className="max-h-52 lg:col-span-3 rounded" to={`/blog/${_id}`}>
-                {picturePath && <img className="rounded object-cover w-full h-full border border-gray-200 " src={`http://localhost:3500/assets/${picturePath}`} alt="thumbnail" />}
+                {picturePath && <img className="rounded object-cover w-full h-full border border-gray-200 " src={`${process.env.REACT_APP_BASE_URL}/assets/${picturePath}`} alt="thumbnail" />}
             </Link>
             <div className="lg:col-span-6 flex flex-col justify-between lg:pl-4">
                 <div className="flex items-center justify-between mt-1 mb-2 lg:mt-0">

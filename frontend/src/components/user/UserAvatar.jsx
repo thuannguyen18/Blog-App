@@ -8,7 +8,7 @@ function UserAvatar({
     rounded,
     profilePicturePath
 }) {
-    const picturePath = profilePicturePath ? `http://localhost:3500/assets/${profilePicturePath}` : null;
+    const picturePath = profilePicturePath ? `${process.env.REACT_APP_BASE_URL}/assets/${profilePicturePath}` : null;
 
     return (
         <img

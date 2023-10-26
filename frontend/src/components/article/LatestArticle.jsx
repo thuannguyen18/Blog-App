@@ -12,7 +12,7 @@ export default function LatestArticle({ article }) {
                 {article.picturePath &&
                     <img
                         className="rounded object-cover w-full h-full md:h-28 lg:h-36 border border-gray-200"
-                        src={`http://localhost:3500/assets/${article.picturePath}`}
+                        src={`${process.env.REACT_APP_BASE_URL}/assets/${article.picturePath}`}
                         alt="thumbnail"
                     />
                 }
